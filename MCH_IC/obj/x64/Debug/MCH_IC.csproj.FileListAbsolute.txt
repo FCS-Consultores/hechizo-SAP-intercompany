@@ -1,0 +1,2 @@
+c:\users\consult07\documents\visual studio 2015\Projects\MCH_IC\MCH_IC\bin\x64\Debug\MCH_IC.exe.config
+E:\haydee\MCH\MCH_IC\MCH_IC\bin\x64\Debug\MCH_IC.exe.config
