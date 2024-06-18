@@ -15,12 +15,13 @@ using Intercompany.Models;
 
 namespace Intercompany.Data
 {
-    class inter
+    public class Intercompany
     {
         static RegistroLog objRegistraLog = new RegistroLog(); //Log en caso de error
         private static CookieCollection cookieData = new CookieCollection();
         static Marketing ObjSap = new Marketing();
         static string RR = "";
+        
         public static Respuesta SINCROERROR()
         {
             Respuesta R = new Respuesta();
@@ -54,709 +55,36 @@ namespace Intercompany.Data
             }
             return R;
         }
-        public static Respuesta CrearFabricanteTODAS()
+      
+
+
+
+        public static void Fabricante(string bd)
         {
             int resul = 0;
-            string En_DN = "";
-            string pais = "";
-            string nomcod = string.Empty;
-            DateTime horaActual = DateTime.Now;
-            TimeSpan horaLimite = new TimeSpan(7, 0, 0);
-            Respuesta R = new Respuesta();
-            try
-            {
-                using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
-                {
-                    string queryEnCRSV = $"SELECT  \"FirmName\" FROM  \"{Conexion.ORIGEN}\".\"OMRC\" where \"FirmName\" not in (SELECT  \"FirmName\" FROM \"{Conexion.acero}\".\"OMRC\")"; //Query Encabezado
-                    OdbcCommand CmD = new OdbcCommand(queryEnCRSV, conn); // llama al Query Encabezado con la conexion
-
-
-                    using (OdbcDataReader dr = CmD.ExecuteReader())
-                    {
-                        conn.Open();
-                        if (dr.RecordsAffected != 0)
-                        {
-                            if (conecta_service_layer(Conexion.acero, "fcspa-cloud\\Rali49", "Pr12!!0bn9", "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
-                            {
-                                R.Codigo = -2;
-                                R.Mensaje = RR;
-                                objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
-                                return R;
-                            }
-
-
-                            while (dr.Read())
-                            {
-
-                                Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
-                                pais = "DISTRIBUIDORA";
-                                nomcod = dr["FirmName"].ToString();
-                                JsonObject.Add(new JProperty("ManufacturerName", nomcod));
-
-                                var myjs = JsonObject.ToString();
-                                resul = EnviaSap("POST", JsonObject, "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Manufacturers"); //
-
-                                if (resul == 0) // Caso que inserto 
-                                {
-
-                                    objRegistraLog.GrabaProc("Insertado a Sap Satisfactoriamente el Documento : " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-
-                                }
-                                else
-                                {
-                                    objRegistraLog.Graba("Error insertando fabricanteTD: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                                                                                                                                                         //RR = "";
-                                                                                                                                                                         //BUSCO EL MAX DOCENTRY
-                                    string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
-                                    OdbcCommand cmand = new OdbcCommand(query, conn);
-                                    OdbcDataReader dr1 = cmand.ExecuteReader();
-                                    int numero = 0;
-                                    while (dr1.Read())
-                                    {
-
-                                        numero = Convert.ToInt32(dr1["num"]) + 1;
-
-                                    }
-                                    dr1.Close();
-                                    string tip = "OMRC";
-                                    string PAIS = pais.ToString();
-                                    string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
-                                        "values(" + numero + "," + numero + ",'" + nomcod + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
-                                    OdbcCommand cmc1 = new OdbcCommand(queryAct, conn);
-                                    cmc1.ExecuteNonQuery();
-
-                                }
-                            }
-
-                            conn.Close();
-                            LiberaMemoria.FlushMemory();
-                        }
-
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                R.Codigo = -1;
-                R.Mensaje = "Alerta: " + ex.Message;
-
-                objRegistraLog.Graba("Error al intentar Insertar FabricanteTD : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
-
-            }
-
-            return R;
-        }
-        public static Respuesta CrearGrupoTODAS()
-        {
-            int resul = 0;
-            string En_DN = "";
-            string pais = "";
             string nomcod = string.Empty;
             Respuesta R = new Respuesta();
             try
             {
-                using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
+                using (OdbcConnection conn2 = new OdbcConnection(Conexion.strCon))
                 {
-                    string queryEnCRSV = $"SELECT  \"ItmsGrpNam\" FROM  \"{Conexion.ORIGEN}\".\"OITB\"where \"ItmsGrpNam\" not in (SELECT  \"ItmsGrpNam\" FROM \"{Conexion.DESTINO}\".\"OITB\")"; //Query Encabezado
-                    OdbcCommand CmD = new OdbcCommand(queryEnCRSV, conn); // llama al Query Encabezado con la conexion
-
-                    conn.Open();
-
-                    using (OdbcDataReader dr = CmD.ExecuteReader())
-                    {
-
-                        if (dr.RecordsAffected != 0)
-                        {
-                            if (conecta_service_layer(Conexion.DESTINO, "fcspa-cloud\\Rali49", "Pr12!!0bn9", "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
-                            {
-                                R.Codigo = -2;
-                                R.Mensaje = RR;
-                                objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
-                                return R;
-                            }
-
-
-                            while (dr.Read())
-                            {
-
-                                Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
-                                pais = "DISTRIBUIDORA";
-                                nomcod = dr["ItmsGrpNam"].ToString();
-                                JsonObject.Add(new JProperty("GroupName", nomcod));
-
-                                var myjs = JsonObject.ToString();
-                                resul = EnviaSap("POST", JsonObject, "https://hana-002.fcspa-cloud.net:50000/b1s/v1/ItemGroups"); //
-
-                                if (resul == 0) // Caso que inserto 
-                                {
-
-                                    objRegistraLog.GrabaProc("Insertado a Sap Satisfactoriamente el Documento: " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-
-                                }
-                                else
-                                {
-                                    objRegistraLog.Graba("Error insertando documento GrupoTD: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                                                                                                                                                              //RR = "";
-                                                                                                                                                                              //BUSCO EL MAX DOCENTRY
-                                    string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
-                                    OdbcCommand cmand = new OdbcCommand(query, conn);
-                                    OdbcDataReader dr1 = cmand.ExecuteReader();
-                                    int numero = 0;
-                                    while (dr1.Read())
-                                    {
-
-                                        numero = Convert.ToInt32(dr1["num"]) + 1;
-
-                                    }
-                                    dr1.Close();
-                                    string tip = "OITB";
-                                    string PAIS = "DISTRIBUIDORA";
-                                    string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
-                                        "values(" + numero + "," + numero + ",'" + En_DN + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
-                                    OdbcCommand cmc1 = new OdbcCommand(queryAct, conn);
-                                    cmc1.ExecuteNonQuery();
-
-                                }
-                            }
-
-                            conn.Close();
-                            LiberaMemoria.FlushMemory();
-                        }
-
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                R.Codigo = -1;
-                R.Mensaje = "Alerta: " + ex.Message;
-
-                objRegistraLog.Graba("Error al intentar Insertar GrupoTD : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
-
-            }
-
-            return R;
-        }
-
-        public static Respuesta CrearArticulosTD()
-        {
-            int resul = 0;
-            string nomgru = string.Empty;
-            string nomcod = string.Empty;
-            //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
-            //List<Task<int>> tasks = new List<Task<int>>();
-            Respuesta R = new Respuesta();
-            try
-            {
-
-                using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
-                {
-
-                    string queryEnCRSV = $"SELECT top 5  * FROM \"_SYS_BIC\".\"{Conexion.ORIGEN}.INTERCOMPANY/IC_ADD_ITEMSTD\""; //Query Encabezado
-                    OdbcCommand CmD = new OdbcCommand(queryEnCRSV, conn); // llama al Query Encabezado con la conexion
-
-                    conn.Open();
-
-                    using (OdbcDataReader dr = CmD.ExecuteReader())
-                    {
-
-                        if (dr.RecordsAffected != 0)
-                        {
-                            if (conecta_service_layer(Conexion.DESTINO, "fcspa-cloud\\Rali49", "Pr12!!0bn9", "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
-                            {
-                                R.Codigo = -2;
-                                R.Mensaje = RR;
-                                objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
-                                return R;
-                            }
-
-                            while (dr.Read())
-                            {
-                                nomcod = dr["ItemCode"].ToString();
-                                Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
-                                JsonObject = CrearObjetoJson(dr);
-                                var myjs = JsonObject.ToString();
-                                resul = EnviaSap("POST", JsonObject, "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Items");//
-                                if (resul == 0) // Caso que inserto 
-                                {
-
-                                    objRegistraLog.GrabaProc("Insertado a Sap Satisfactoriamente el Documento: " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-
-                                }
-                                else
-                                {
-                                    objRegistraLog.Graba("Error insertando documento ArticulosTD: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                                                                                                                                                                  //RR = "";
-                                                                                                                                                                                  //BUSCO EL MAX DOCENTRY
-                                    string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
-                                    OdbcCommand cmand = new OdbcCommand(query, conn);
-                                    OdbcDataReader dr1 = cmand.ExecuteReader();
-                                    int numero = 0;
-                                    while (dr1.Read())
-                                    {
-
-                                        numero = Convert.ToInt32(dr1["num"]) + 1;
-
-                                    }
-                                    dr1.Close();
-                                    string tip = "OITM";
-                                    string pais = "DISTRIBUIDORA";
-                                    string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
-                                        "values(" + numero + "," + numero + ",'" + nomcod + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
-                                    OdbcCommand cmc1 = new OdbcCommand(queryAct, conn);
-                                    cmc1.ExecuteNonQuery();
-
-
-                                }
-                            }
-
-
-
-                            conn.Close();
-                            LiberaMemoria.FlushMemory();
-                        }
-
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                R.Codigo = -1;
-                R.Mensaje = "Alerta: " + ex.Message;
-
-                objRegistraLog.Graba("Error al intentar Insertar ArticulosTD : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
-
-            }
-
-            return R;
-        }
-        public static Respuesta CrearAduanasTODAS()
-        {
-            int resul = 0;
-            string nomgru = string.Empty;
-            string nomcod = string.Empty;
-            //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
-            //List<Task<int>> tasks = new List<Task<int>>();
-            Respuesta R = new Respuesta();
-            try
-            {
-
-                using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
-                {
-
-                    string queryEnCRSV = $"SELECT top 5  * FROM \"_SYS_BIC\".\"{Conexion.ORIGEN}.INTERCOMPANY/IC_ADD_ITEMSTD\""; //Query Encabezado
-                    OdbcCommand CmD = new OdbcCommand(queryEnCRSV, conn); // llama al Query Encabezado con la conexion
-
-                    conn.Open();
-
-                    using (OdbcDataReader dr = CmD.ExecuteReader())
-                    {
-
-                        if (dr.RecordsAffected != 0)
-                        {
-                            if (conecta_service_layer(Conexion.DESTINO, "fcspa-cloud\\Rali49", "Pr12!!0bn9", "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
-                            {
-                                R.Codigo = -2;
-                                R.Mensaje = RR;
-                                objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
-                                return R;
-                            }
-
-                            while (dr.Read())
-                            {
-                                nomcod = dr["ItemCode"].ToString();
-                                Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
-                                JsonObject = CrearObjetoJson(dr);
-                                var myjs = JsonObject.ToString();
-                                resul = EnviaSap("POST", JsonObject, "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Items");//
-                                if (resul == 0) // Caso que inserto 
-                                {
-
-                                    objRegistraLog.GrabaProc("Insertado a Sap Satisfactoriamente el Documento: " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-
-                                }
-                                else
-                                {
-                                    objRegistraLog.Graba("Error insertando documento ArticulosTD: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                                                                                                                                                                  //RR = "";
-                                                                                                                                                                                  //BUSCO EL MAX DOCENTRY
-                                    string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
-                                    OdbcCommand cmand = new OdbcCommand(query, conn);
-                                    OdbcDataReader dr1 = cmand.ExecuteReader();
-                                    int numero = 0;
-                                    while (dr1.Read())
-                                    {
-
-                                        numero = Convert.ToInt32(dr1["num"]) + 1;
-
-                                    }
-                                    dr1.Close();
-                                    string tip = "OITM";
-                                    string pais = "DISTRIBUIDORA";
-                                    string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
-                                        "values(" + numero + "," + numero + ",'" + nomcod + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
-                                    OdbcCommand cmc1 = new OdbcCommand(queryAct, conn);
-                                    cmc1.ExecuteNonQuery();
-
-
-                                }
-                            }
-
-
-
-                            conn.Close();
-                            LiberaMemoria.FlushMemory();
-                        }
-
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                R.Codigo = -1;
-                R.Mensaje = "Alerta: " + ex.Message;
-
-                objRegistraLog.Graba("Error al intentar Insertar ArticulosTD : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
-
-            }
-
-            return R;
-        }
-        public static Respuesta CrearFamiliaTODAS()
-        {
-            int resul = 0;
-            string nomgru = string.Empty;
-            string nomcod = string.Empty;
-            //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
-            //List<Task<int>> tasks = new List<Task<int>>();
-            Respuesta R = new Respuesta();
-            try
-            {
-
-                using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
-                {
-
-                    string queryEnCRSV = $"SELECT top 5  * FROM \"_SYS_BIC\".\"{Conexion.DESTINO}.INTERCOMPANY/IC_ADD_ITEMSDT\""; //Query Encabezado
-                    OdbcCommand CmD = new OdbcCommand(queryEnCRSV, conn); // llama al Query Encabezado con la conexion
-
-                    conn.Open();
-
-                    using (OdbcDataReader dr = CmD.ExecuteReader())
-                    {
-
-                        if (dr.RecordsAffected != 0)
-                        {
-                            if (conecta_service_layer(Conexion.ORIGEN, "fcspa-cloud\\Rali49", "Pr12!!0bn9", "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
-                            {
-                                R.Codigo = -2;
-                                R.Mensaje = RR;
-                                objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
-                                return R;
-                            }
-
-                            while (dr.Read())
-                            {
-                                nomcod = dr["ItemCode"].ToString();
-                                Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
-                                JsonObject = CrearObjetoJson(dr);
-                                var myjs = JsonObject.ToString();
-                                resul = EnviaSap("POST", JsonObject, "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Items");//
-                                if (resul == 0) // Caso que inserto 
-                                {
-
-                                    objRegistraLog.GrabaProc("Insertado a Sap Satisfactoriamente el Documento: " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-
-                                }
-                                else
-                                {
-                                    objRegistraLog.Graba("Error insertando documento ArticulosDT: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                                                                                                                                                                  //RR = "";
-                                                                                                                                                                                  //BUSCO EL MAX DOCENTRY
-                                    string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
-                                    OdbcCommand cmand = new OdbcCommand(query, conn);
-                                    OdbcDataReader dr1 = cmand.ExecuteReader();
-                                    int numero = 0;
-                                    while (dr1.Read())
-                                    {
-
-                                        numero = Convert.ToInt32(dr1["num"]) + 1;
-
-                                    }
-                                    dr1.Close();
-                                    string tip = "OITM";
-                                    string pais = "COMERCIAL";
-                                    string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
-                                        "values(" + numero + "," + numero + ",'" + nomcod + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
-                                    OdbcCommand cmc1 = new OdbcCommand(queryAct, conn);
-                                    cmc1.ExecuteNonQuery();
-
-
-                                }
-                            }
-
-
-
-                            conn.Close();
-                            LiberaMemoria.FlushMemory();
-                        }
-
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                R.Codigo = -1;
-                R.Mensaje = "Alerta: " + ex.Message;
-
-                objRegistraLog.Graba("Error al intentar Insertar ArticulosDT : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
-
-            }
-
-            return R;
-        }
-        public static Respuesta convierteOVTA_OC()
-        {
-            int resul = 0;
-            string En_DN = "";
-            string pais = "";
-            // string bdsucursal = "20006_MODENA_S.A.";
-            // double precio = 0;
-            //  int ser = 73;
-            Respuesta R = new Respuesta();
-            //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
-            //CREA ORDEN DE COMPRA DESDE LA ORDEN DE VENTA DE PRIZMA QUE CAE EN SAP VER VISTA IC_OVTA_A_OC_DT PARA LUEGO SER ENVIADA 
-            try
-            {
-                using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
-                {
-                    if (conecta_service_layer(Conexion.DESTINO, "fcspa-cloud\\Rali49", "Pr12!!0bn9", "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
-                    {
-                        R.Codigo = -2;
-                        R.Mensaje = RR;
-                        objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
-
-                        return R;
-                    }
-
-                    //using (OdbcConnection conn = new OdbcConnection(
-                    //    //Conexion.strCon
-                    //    connectionString
-                    //    ))
-                    {
-                      
-                        string queryEn = $"SELECT \"ItemCode\", \"DocEntry\",	 \"Quantity\",	 \"PriceBefDi\",	\"DiscPrcnt\"  FROM \"_SYS_BIC\".\"{Conexion.DESTINO}.INTERCOMPANY/IC_OVTA_A_OC_DT\"";
-                      
-                        OdbcCommand CmD = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
-
-                        conn.Open();
-
-                        using (OdbcDataReader dr = CmD.ExecuteReader())
-                        {
-                            if (dr.HasRows)
-                            {
-                                List<DetallesOPORT> detallesFacturas = new List<DetallesOPORT>();
-                                while (dr.Read())
-                                {
-                                    int DocEntry = (int)dr["DocEntry"];
-                                    string ItemCode = (string)dr["ItemCode"];
-                                    decimal Quantity = (decimal)dr["Quantity"];
-                                    decimal PriceBefDi = (decimal)dr["PriceBefDi"];
-                                    //decimal DiscPrcnt = (decimal)dr["DiscPrcnt"];
-
-                                    detallesFacturas.Add(new DetallesOPORT
-                                    {
-                                        DocEntry = DocEntry,
-                                        ItemCode = ItemCode,
-                                        Quantity = Quantity,
-                                        PriceBefDi = PriceBefDi,
-                                        //DiscPrcnt = DiscPrcnt
-                                    });
-                                }
-                                var detallesAgrupados = detallesFacturas
-                                .GroupBy(detalle => detalle.DocEntry)
-                                .Select(grupo => new { NumeroDocumento = grupo.Key, Detalles = grupo.ToList() })
-                                .ToList();
-
-                                foreach (var grupo in detallesAgrupados)
-                                {
-                                    string COD = "PL00030";
-                                    Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
-                                    string DocDueDate = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd");
-                                    JsonObject.Add(new JProperty("CardCode",COD ));
-                                   // JsonObject.Add(new JProperty("DocDueDate", DocDueDate));
-                                    JsonObject.Add(new JProperty("Comments", "Orden Automatica Prizma"));
-                                    JsonObject.Add(new JProperty("U_ENVIOSUC", "Y"));
-                                    JsonObject.Add(new JProperty("U_sisori", "Sistema"));
-                                    var list = new ArrayList();
-                                    foreach (var detalle in grupo.Detalles)
-                                    {
-                                        Newtonsoft.Json.Linq.JObject JsonObjectRow = new Newtonsoft.Json.Linq.JObject();
-                                        JsonObjectRow.Add(new JProperty("ItemCode", detalle.ItemCode));
-                                        JsonObjectRow.Add(new JProperty("Quantity", detalle.Quantity));
-                                        JsonObjectRow.Add(new JProperty("UnitPrice", detalle.PriceBefDi));
-                                        //JsonObjectRow.Add(new JProperty("DiscPrcnt", detalle.DiscPrcnt));
-                                        list.Add(JsonObjectRow);
-                                    }
-
-                                    JsonObject.Add(new JProperty("DocumentLines", list));
-                                    string data = JsonObject.ToString();
-                                    resul = EnviaSap("POST", JsonObject, "https://hana-002.fcspa-cloud.net:50000/b1s/v1/PurchaseOrders");
-                                    if (resul == 0) // Caso que inserto 
-                                    {
-
-                                        objRegistraLog.GrabaProc("Insertado a Sap Satisfactoriamente el Documento: " + grupo.NumeroDocumento + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                        try
-                                        {
-                                            //string query = $"UPDATE  \"{Conexion.DESTINO}\".OPOR('{grupo.NumeroDocumento}')"; //Query Encabezado
-                                            string query = $"UPDATE  \"{Conexion.DESTINO}\".ORDR\" SET \"U_Enviado\" = '0' WHERE \"ItemCode\" =  '" + grupo.NumeroDocumento + "'";
-                                            // string queryAct = $"UPDATE \"{BRETASV}\".\"OITM\" SET \"U_act\" = '" + vac + "' WHERE \"ItemCode\" =  '" + En_DN + "'"; //Query Actualiza Entry_fac
-                                            OdbcCommand cmand = new OdbcCommand(query, conn);
-                                            OdbcDataReader dr1 = cmand.ExecuteReader();
-                                        }
-                                        catch (Exception e)
-                                        {
-                                            Console.WriteLine(e);
-                                        }
-                                    }
-                                    else
-                                    {
-                                        objRegistraLog.Graba("Error convirtiendo OVTA a OC: " + RR + " " + grupo.NumeroDocumento + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                                                                                                                                                                         //RR = "";
-                                                                                                                                                                                         //BUSCO EL MAX DOCENTRY
-                                        string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
-                                        OdbcCommand cmand = new OdbcCommand(query, conn);
-                                        OdbcDataReader dr1 = cmand.ExecuteReader();
-                                        int numero = 0;
-                                        string method = "ORDR PRIZMA";
-                                        while (dr1.Read())
-                                        {
-
-                                            numero = Convert.ToInt32(dr1["num"]) + 1;
-
-                                        }
-                                        dr1.Close();
-                                        string tip = "ORDR";
-                                        // string PAIS = "Costa Rica";
-                                        string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
-                                                 "values(" + numero + "," + numero + ",'" + grupo.NumeroDocumento + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
-                                        OdbcCommand cmc1 = new OdbcCommand(queryAct, conn);
-                                        cmc1.ExecuteNonQuery();
-
-
-                                    }
-                                }
-                            }
-
-
-                            conn.Close();
-                            LiberaMemoria.FlushMemory();
-                        }
-
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                R.Codigo = -1;
-                R.Mensaje = "Alerta: " + ex.Message;
-
-                objRegistraLog.Graba("Error al intentar Insertar orden convierte ovta_oc : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
-
-            }
-
-            return R;
-        }
-        public static Respuesta NuevaOporautDC()
-        {
-            int resul = 0;
-            string En_DN = "";
-            string pais = "Dist";
-            //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
-            Respuesta R = new Respuesta();
-            try
-            {
-                using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
-                {
-                    if (conecta_service_layer(Conexion.DESTINO, "fcspa-cloud\\Rali49", "Pr12!!0bn9", "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
-                    {
-                        R.Codigo = -2;
-                        R.Mensaje = RR;
-                        objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
-                        return R;
-                    }
                     
+                    string queryEnCRSV = $"SELECT  \"FirmName\" FROM  \"{Conexion.ORIGEN}\".\"OMRC\" where \"FirmName\" not in (SELECT  \"FirmName\" FROM \"{bd}\".\"OMRC\")"; //Query Encabezado
+                    OdbcCommand CmD = new OdbcCommand(queryEnCRSV, conn2); // llama al Query Encabezado con la conexion
+                    conn2.Open();
+                    using (OdbcDataReader dr = CmD.ExecuteReader())
                     {
-                        string queryEn = $"SELECT * FROM \"_SYS_BIC\".\"{Conexion.DESTINO}.INTERCOMPANY/IC_GET_ITEMS_REORDER\"";
-                        //string crDet =$"SELECT \"LineNum\",\"ItemCode\",\"Quantity\",\"DiscountPercent\",\"ItemDescription\",\"Price\",\"TaxCode\",\"LineTotal\" FROM \"_SYS_BIC\".\"10028_COPPER_GROUP/SINCRONIZADOR_ORDR_CR_DET\"('PLACEHOLDER' = ('$$numdoc$$','{En_DN}'))";
-
-                        OdbcCommand CmD = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
-
-                        conn.Open();
-
-                        using (OdbcDataReader dr = CmD.ExecuteReader())
+                    
+                        if (dr.RecordsAffected != 0)
                         {
-                            if (dr.HasRows)
+
+                            while (dr.Read())
                             {
-                                List<DetallesOPORT> detallesFacturas = new List<DetallesOPORT>();
-                                JObject JsonObject = new JObject();
-                                string cod = "PL00030";
-
-                                JsonObject.Add(new JProperty("CardCode", cod));
-                                JsonObject.Add(new JProperty("Comments", "Orden Automatica "));
-                                JsonObject.Add(new JProperty("U_ENVIOSUC", "Y"));//se van en automatico con el intercompany
-
-                                var list = new ArrayList();
-                                while (dr.Read())
-                                {
-                                    Newtonsoft.Json.Linq.JObject JsonObjectRow = new Newtonsoft.Json.Linq.JObject();
-                                    JsonObjectRow.Add(new JProperty("ItemCode", dr["ItemCode"]));
-                                    JsonObjectRow.Add(new JProperty("Quantity", dr["Quantity"]));
-                                    //JsonObjectRow.Add(new JProperty("UnitPrice", dr["PriceBefDi"]));
-                                    //JsonObjectRow.Add(new JProperty("PriceSource", "Manual"));
-
-                                    list.Add(JsonObjectRow);
-                                }
-                                JsonObject.Add(new JProperty("DocumentLines", list));
-                                string data = JsonObject.ToString();
-                                resul = EnviaSap("POST", JsonObject, "https://hana-002.fcspa-cloud.net:50000/b1s/v1/PurchaseOrders");
-                                if (resul == 0) // Caso que inserto 
-                                {
-
-                                    objRegistraLog.GrabaProc("Insertado a Sap Satisfactoriamente el Documento: "  + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-
-                                }
-                                else
-                                {
-                                    objRegistraLog.Graba("Error insertando documento orden autDC: " + RR + " " + "Orden autDC" + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                                                                                                                                                                 //RR = "";
-                                                                                                                                                                                 //BUSCO EL MAX DOCENTRY
-                                    string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
-                                    OdbcCommand cmand = new OdbcCommand(query, conn);
-                                    OdbcDataReader dr1 = cmand.ExecuteReader();
-                                    int numero = 0;
-                                    string method = "OPOR";
-                                    while (dr1.Read())
-                                    {
-
-                                        numero = Convert.ToInt32(dr1["num"]) + 1;
-
-                                    }
-                                    dr1.Close();
-                                    string tip = "OPORDC";
-                                    // string PAIS = "Costa Rica";
-                                    string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
-                                             "values(" + numero + "," + numero + ",'" + 0 + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
-                                    OdbcCommand cmc1 = new OdbcCommand(queryAct, conn);
-                                    cmc1.ExecuteNonQuery();
-
-
-                                }
+                                nomcod = dr["FirmName"].ToString();
+                                CrearFabricanteTODAS(bd, nomcod);
                             }
-
-                            conn.Close();
-                            LiberaMemoria.FlushMemory();
                         }
-
+                        conn2.Close();
                     }
                 }
             }
@@ -764,615 +92,1159 @@ namespace Intercompany.Data
             {
                 R.Codigo = -1;
                 R.Mensaje = "Alerta: " + ex.Message;
-
-                objRegistraLog.Graba("Error al intentar Insertar orden  oporautDC: " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
-
-            }
-
-            return R;
+                objRegistraLog.Graba("Error al consultar Fabricante : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+            }          
         }
-        public static Respuesta NuevaOrdenvtaDT()
-        {
-            int resul = 0;
-            string En_DN = "";
-            string pais = "";
-            // string bdsucursal = "20006_MODENA_S.A.";
-            // double precio = 0;
-            //  int ser = 73;
-            Respuesta R = new Respuesta();
-            //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
+
+
+        //public static Respuesta CrearGrupoTODAS()
+        //{
+        //    int resul = 0;
+        //    string En_DN = "";
+        //    string pais = "";
+        //    string nomcod = string.Empty;
+        //    Respuesta R = new Respuesta();
+        //    try
+        //    {
+        //        using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
+        //        {
+        //            string queryEnCRSV = $"SELECT  \"ItmsGrpNam\" FROM  \"{Conexion.ORIGEN}\".\"OITB\"where \"ItmsGrpNam\" not in (SELECT  \"ItmsGrpNam\" FROM \"{Conexion.DESTINO}\".\"OITB\")"; //Query Encabezado
+        //            OdbcCommand CmD = new OdbcCommand(queryEnCRSV, conn); // llama al Query Encabezado con la conexion
+
+        //            conn.Open();
+
+        //            using (OdbcDataReader dr = CmD.ExecuteReader())
+        //            {
+
+        //                if (dr.RecordsAffected != 0)
+        //                {
+        //                    if (conecta_service_layer(Conexion.DESTINO, "fcspa-cloud\\mch05", "QUtg!335Gb", "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
+        //                    {
+        //                        R.Codigo = -2;
+        //                        R.Mensaje = RR;
+        //                        objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
+        //                        return R;
+        //                    }
+
+
+        //                    while (dr.Read())
+        //                    {
+
+        //                        Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
+        //                        pais = "DISTRIBUIDORA";
+        //                        nomcod = dr["ItmsGrpNam"].ToString();
+        //                        JsonObject.Add(new JProperty("GroupName", nomcod));
+
+        //                        var myjs = JsonObject.ToString();
+        //                        resul = EnviaSap("POST", JsonObject, "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/ItemGroups"); //
+
+        //                        if (resul == 0) // Caso que inserto 
+        //                        {
+
+        //                            objRegistraLog.GrabaProc("Insertado a Sap Satisfactoriamente el Documento: " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+
+        //                        }
+        //                        else
+        //                        {
+        //                            objRegistraLog.Graba("Error insertando documento GrupoTD: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio                                  
+        //                            Inserterror("AMD", "OMRC", nomcod); 
+        //                        }
+        //                    }
+
+        //                    conn.Close();
+        //                    LiberaMemoria.FlushMemory();
+        //                }
+
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        R.Codigo = -1;
+        //        R.Mensaje = "Alerta: " + ex.Message;
+
+        //        objRegistraLog.Graba("Error al intentar Insertar GrupoTD : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+
+        //    }
+
+        //    return R;
+        //}
+
+        //public static Respuesta CrearArticulosTD()
+        //{
+        //    int resul = 0;
+        //    string nomgru = string.Empty;
+        //    string nomcod = string.Empty;
+        //    //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
+        //    //List<Task<int>> tasks = new List<Task<int>>();
+        //    Respuesta R = new Respuesta();
+        //    try
+        //    {
+
+        //        using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
+        //        {
+
+        //            string queryEnCRSV = $"SELECT top 5  * FROM \"_SYS_BIC\".\"{Conexion.ORIGEN}.INTERCOMPANY/IC_ADD_ITEMSTD\""; //Query Encabezado
+        //            OdbcCommand CmD = new OdbcCommand(queryEnCRSV, conn); // llama al Query Encabezado con la conexion
+
+        //            conn.Open();
+
+        //            using (OdbcDataReader dr = CmD.ExecuteReader())
+        //            {
+
+        //                if (dr.RecordsAffected != 0)
+        //                {
+        //                    if (conecta_service_layer(Conexion.DESTINO, "fcspa-cloud\\mch05", "QUtg!335Gb", "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
+        //                    {
+        //                        R.Codigo = -2;
+        //                        R.Mensaje = RR;
+        //                        objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
+        //                        return R;
+        //                    }
+
+        //                    while (dr.Read())
+        //                    {
+        //                        nomcod = dr["ItemCode"].ToString();
+        //                        Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
+        //                        JsonObject = CrearObjetoJson(dr);
+        //                        var myjs = JsonObject.ToString();
+        //                        resul = EnviaSap("POST", JsonObject, "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Items");//
+        //                        if (resul == 0) // Caso que inserto 
+        //                        {
+
+        //                            objRegistraLog.GrabaProc("Insertado a Sap Satisfactoriamente el Documento: " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+
+        //                        }
+        //                        else
+        //                        {
+        //                            objRegistraLog.Graba("Error insertando documento ArticulosTD: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+        //                            Inserterror("AMD", "OMRC", nomcod);
+        //                        }
+        //                    }
 
 
 
-            try
-            {
-                using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
-                {
-                    if (conecta_service_layer(Conexion.ORIGEN, "fcspa-cloud\\Rali49", "Pr12!!0bn9", "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
-                    {
-                        R.Codigo = -2;
-                        R.Mensaje = RR;
-                        objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+        //                    conn.Close();
+        //                    LiberaMemoria.FlushMemory();
+        //                }
 
-                        return R;
-                    }
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        R.Codigo = -1;
+        //        R.Mensaje = "Alerta: " + ex.Message;
 
-                    //using (OdbcConnection conn = new OdbcConnection(
-                    //    //Conexion.strCon
-                    //    connectionString
-                    //    ))
-                    {
+        //        objRegistraLog.Graba("Error al intentar Insertar ArticulosTD : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
 
-                        string queryEn = $"SELECT * FROM \"_SYS_BIC\".\"{Conexion.DESTINO}.INTERCOMPANY/IC_GET_PURCHASE_ORDERSDT\"";
-                        //string crDet =$"SELECT \"LineNum\",\"ItemCode\",\"Quantity\",\"DiscountPercent\",\"ItemDescription\",\"Price\",\"TaxCode\",\"LineTotal\" FROM \"_SYS_BIC\".\"10028_COPPER_GROUP/SINCRONIZADOR_ORDR_CR_DET\"('PLACEHOLDER' = ('$$numdoc$$','{En_DN}'))";
+        //    }
 
-                        OdbcCommand CmD = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
+        //    return R;
+        //}
+        //public static Respuesta CrearAduanasTODAS()
+        //{
+        //    int resul = 0;
+        //    string nomgru = string.Empty;
+        //    string nomcod = string.Empty;
+        //    //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
+        //    //List<Task<int>> tasks = new List<Task<int>>();
+        //    Respuesta R = new Respuesta();
+        //    try
+        //    {
 
-                        conn.Open();
+        //        using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
+        //        {
 
-                        using (OdbcDataReader dr = CmD.ExecuteReader())
-                        {
-                            if (dr.HasRows)
-                            {
-                                List<DetallesOPORT> detallesFacturas = new List<DetallesOPORT>();
-                                while (dr.Read())
-                                {
-                                    int DocEntry = (int)dr["DocEntry"];
-                                    string ItemCode = (string)dr["ItemCode"];
-                                    decimal Quantity = (decimal)dr["Quantity"];
-                                    decimal PriceBefDi = (decimal)dr["PriceBefDi"];
-                                    decimal DiscPrcnt = (decimal)dr["DiscPrcnt"];
+        //            string queryEnCRSV = $"SELECT top 5  * FROM \"_SYS_BIC\".\"{Conexion.ORIGEN}.INTERCOMPANY/IC_ADD_ITEMSTD\""; //Query Encabezado
+        //            OdbcCommand CmD = new OdbcCommand(queryEnCRSV, conn); // llama al Query Encabezado con la conexion
 
-                                    detallesFacturas.Add(new DetallesOPORT
-                                    {
-                                        DocEntry = DocEntry,
-                                        ItemCode = ItemCode,
-                                        Quantity = Quantity,
-                                        PriceBefDi = PriceBefDi,
-                                        DiscPrcnt = DiscPrcnt
-                                    });
-                                }
-                                var detallesAgrupados = detallesFacturas
-                                .GroupBy(detalle => detalle.DocEntry)
-                                .Select(grupo => new { NumeroDocumento = grupo.Key, Detalles = grupo.ToList() })
-                                .ToList();
+        //            conn.Open();
 
-                                foreach (var grupo in detallesAgrupados)
-                                {
-                                    Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
-                                    string DocDueDate = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd");
-                                    JsonObject.Add(new JProperty("CardCode", "C15967"));
-                                    JsonObject.Add(new JProperty("DocDueDate", DocDueDate));
-                                    JsonObject.Add(new JProperty("Comments", "Orden Automatica"));
-                                    var list = new ArrayList();
-                                    foreach (var detalle in grupo.Detalles)
-                                    {
-                                        Newtonsoft.Json.Linq.JObject JsonObjectRow = new Newtonsoft.Json.Linq.JObject();
-                                        JsonObjectRow.Add(new JProperty("ItemCode", detalle.ItemCode));
-                                        JsonObjectRow.Add(new JProperty("Quantity", detalle.Quantity));
-                                        JsonObjectRow.Add(new JProperty("UnitPrice", detalle.PriceBefDi));
-                                        JsonObjectRow.Add(new JProperty("DiscPrcnt", detalle.DiscPrcnt));
-                                        list.Add(JsonObjectRow);
-                                    }
-                                    JsonObject.Add(new JProperty("DocumentLines", list));
-                                    string data = JsonObject.ToString();
-                                    resul = EnviaSap("POST", JsonObject, "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Orders");
-                                    if (resul == 0) // Caso que inserto 
-                                    {
+        //            using (OdbcDataReader dr = CmD.ExecuteReader())
+        //            {
 
-                                        objRegistraLog.GrabaProc("Insertado a Sap Satisfactoriamente el Documento: " + grupo.NumeroDocumento + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                        try
-                                        {
-                                            string query = $"CALL \"{Conexion.DESTINO}\".FCS_IC_UPDATE_SEND_DIST('{grupo.NumeroDocumento}')"; //Query Encabezado
-                                            OdbcCommand cmand = new OdbcCommand(query, conn);
-                                            OdbcDataReader dr1 = cmand.ExecuteReader();
-                                        }
-                                        catch (Exception e)
-                                        {
-                                            Console.WriteLine(e);
-                                        }
-                                    }
-                                    else
-                                    {
-                                        objRegistraLog.Graba("Error insertando documento ovta DT: " + RR + " " + grupo.NumeroDocumento + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                                                                                                                                                                         //RR = "";
-                                                                                                                                                                                         //BUSCO EL MAX DOCENTRY
-                                        string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
-                                        OdbcCommand cmand = new OdbcCommand(query, conn);
-                                        OdbcDataReader dr1 = cmand.ExecuteReader();
-                                        int numero = 0;
-                                        string method = "Orden de venta";
-                                        while (dr1.Read())
-                                        {
+        //                if (dr.RecordsAffected != 0)
+        //                {
+        //                    if (conecta_service_layer(Conexion.DESTINO, "fcspa-cloud\\mch05", "QUtg!335Gb", "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
+        //                    {
+        //                        R.Codigo = -2;
+        //                        R.Mensaje = RR;
+        //                        objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
+        //                        return R;
+        //                    }
 
-                                            numero = Convert.ToInt32(dr1["num"]) + 1;
+        //                    while (dr.Read())
+        //                    {
+        //                        nomcod = dr["ItemCode"].ToString();
+        //                        Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
+        //                        JsonObject = CrearObjetoJson(dr);
+        //                        var myjs = JsonObject.ToString();
+        //                        resul = EnviaSap("POST", JsonObject, "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Items");//
+        //                        if (resul == 0) // Caso que inserto 
+        //                        {
 
-                                        }
-                                        dr1.Close();
-                                        string tip = "ORDR";
-                                        // string PAIS = "Costa Rica";
-                                        string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
-                                                 "values(" + numero + "," + numero + ",'" + grupo.NumeroDocumento + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
-                                        OdbcCommand cmc1 = new OdbcCommand(queryAct, conn);
-                                        cmc1.ExecuteNonQuery();
+        //                            objRegistraLog.GrabaProc("Insertado a Sap Satisfactoriamente el Documento: " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+
+        //                        }
+        //                        else
+        //                        {
+        //                            objRegistraLog.Graba("Error insertando documento ArticulosTD: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+        //                            Inserterror("AMD", "OMRC", nomcod);
+        //                        }
+        //                    }
 
 
-                                    }
-                                }
-                            }
+
+        //                    conn.Close();
+        //                    LiberaMemoria.FlushMemory();
+        //                }
+
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        R.Codigo = -1;
+        //        R.Mensaje = "Alerta: " + ex.Message;
+
+        //        objRegistraLog.Graba("Error al intentar Insertar ArticulosTD : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+
+        //    }
+
+        //    return R;
+        //}
+        //public static Respuesta CrearFamiliaTODAS()
+        //{
+        //    int resul = 0;
+        //    string nomgru = string.Empty;
+        //    string nomcod = string.Empty;
+        //    //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
+        //    //List<Task<int>> tasks = new List<Task<int>>();
+        //    Respuesta R = new Respuesta();
+        //    try
+        //    {
+
+        //        using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
+        //        {
+
+        //            string queryEnCRSV = $"SELECT top 5  * FROM \"_SYS_BIC\".\"{Conexion.DESTINO}.INTERCOMPANY/IC_ADD_ITEMSDT\""; //Query Encabezado
+        //            OdbcCommand CmD = new OdbcCommand(queryEnCRSV, conn); // llama al Query Encabezado con la conexion
+
+        //            conn.Open();
+
+        //            using (OdbcDataReader dr = CmD.ExecuteReader())
+        //            {
+
+        //                if (dr.RecordsAffected != 0)
+        //                {
+        //                    if (conecta_service_layer(Conexion.ORIGEN, "fcspa-cloud\\mch05", "QUtg!335Gb", "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
+        //                    {
+        //                        R.Codigo = -2;
+        //                        R.Mensaje = RR;
+        //                        objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
+        //                        return R;
+        //                    }
+
+        //                    while (dr.Read())
+        //                    {
+        //                        nomcod = dr["ItemCode"].ToString();
+        //                        Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
+        //                        JsonObject = CrearObjetoJson(dr);
+        //                        var myjs = JsonObject.ToString();
+        //                        resul = EnviaSap("POST", JsonObject, "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Items");//
+        //                        if (resul == 0) // Caso que inserto 
+        //                        {
+
+        //                            objRegistraLog.GrabaProc("Insertado a Sap Satisfactoriamente el Documento: " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+
+        //                        }
+        //                        else
+        //                        {
+        //                            objRegistraLog.Graba("Error insertando documento ArticulosDT: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+        //                            Inserterror("AMD", "OMRC", nomcod); 
+        //                        }
+        //                    }
 
 
-                            conn.Close();
-                            LiberaMemoria.FlushMemory();
-                        }
 
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                R.Codigo = -1;
-                R.Mensaje = "Alerta: " + ex.Message;
+        //                    conn.Close();
+        //                    LiberaMemoria.FlushMemory();
+        //                }
 
-                objRegistraLog.Graba("Error al intentar Insertar orden vta DT : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        R.Codigo = -1;
+        //        R.Mensaje = "Alerta: " + ex.Message;
 
-            }
+        //        objRegistraLog.Graba("Error al intentar Insertar ArticulosDT : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
 
-            return R;
-        }
-        public static Respuesta NuevaOrdenvtaTD()
-        {
-            int resul = 0;
-            string En_DN = "";
-           string pais="";
-           // string bdsucursal = "20006_MODENA_S.A.";
-           // double precio = 0;
-          //  int ser = 73;
-            Respuesta R = new Respuesta();
-            //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
+        //    }
+
+        //    return R;
+        //}
+        //public static Respuesta convierteOVTA_OC()
+        //{
+        //    int resul = 0;
+        //    string En_DN = "";
+        //    string pais = "";
+        //    // string bdsucursal = "20006_MODENA_S.A.";
+        //    // double precio = 0;
+        //    //  int ser = 73;
+        //    Respuesta R = new Respuesta();
+        //    //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
+        //    //CREA ORDEN DE COMPRA DESDE LA ORDEN DE VENTA DE PRIZMA QUE CAE EN SAP VER VISTA IC_OVTA_A_OC_DT PARA LUEGO SER ENVIADA 
+        //    try
+        //    {
+        //        using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
+        //        {
+        //            if (conecta_service_layer(Conexion.DESTINO, "fcspa-cloud\\mch05", "QUtg!335Gb", "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
+        //            {
+        //                R.Codigo = -2;
+        //                R.Mensaje = RR;
+        //                objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+
+        //                return R;
+        //            }
+
+        //            //using (OdbcConnection conn = new OdbcConnection(
+        //            //    //Conexion.strCon
+        //            //    connectionString
+        //            //    ))
+        //            {
+                      
+        //                string queryEn = $"SELECT \"ItemCode\", \"DocEntry\",	 \"Quantity\",	 \"PriceBefDi\",	\"DiscPrcnt\"  FROM \"_SYS_BIC\".\"{Conexion.DESTINO}.INTERCOMPANY/IC_OVTA_A_OC_DT\"";
+                      
+        //                OdbcCommand CmD = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
+
+        //                conn.Open();
+
+        //                using (OdbcDataReader dr = CmD.ExecuteReader())
+        //                {
+        //                    if (dr.HasRows)
+        //                    {
+        //                        List<DetallesOPORT> detallesFacturas = new List<DetallesOPORT>();
+        //                        while (dr.Read())
+        //                        {
+        //                            int DocEntry = (int)dr["DocEntry"];
+        //                            string ItemCode = (string)dr["ItemCode"];
+        //                            decimal Quantity = (decimal)dr["Quantity"];
+        //                            decimal PriceBefDi = (decimal)dr["PriceBefDi"];
+        //                            //decimal DiscPrcnt = (decimal)dr["DiscPrcnt"];
+
+        //                            detallesFacturas.Add(new DetallesOPORT
+        //                            {
+        //                                DocEntry = DocEntry,
+        //                                ItemCode = ItemCode,
+        //                                Quantity = Quantity,
+        //                                PriceBefDi = PriceBefDi,
+        //                                //DiscPrcnt = DiscPrcnt
+        //                            });
+        //                        }
+        //                        var detallesAgrupados = detallesFacturas
+        //                        .GroupBy(detalle => detalle.DocEntry)
+        //                        .Select(grupo => new { NumeroDocumento = grupo.Key, Detalles = grupo.ToList() })
+        //                        .ToList();
+
+        //                        foreach (var grupo in detallesAgrupados)
+        //                        {
+        //                            string COD = "PL00030";
+        //                            Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
+        //                            string DocDueDate = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd");
+        //                            JsonObject.Add(new JProperty("CardCode",COD ));
+        //                           // JsonObject.Add(new JProperty("DocDueDate", DocDueDate));
+        //                            JsonObject.Add(new JProperty("Comments", "Orden Automatica Prizma"));
+        //                            JsonObject.Add(new JProperty("U_ENVIOSUC", "Y"));
+        //                            JsonObject.Add(new JProperty("U_sisori", "Sistema"));
+        //                            var list = new ArrayList();
+        //                            foreach (var detalle in grupo.Detalles)
+        //                            {
+        //                                Newtonsoft.Json.Linq.JObject JsonObjectRow = new Newtonsoft.Json.Linq.JObject();
+        //                                JsonObjectRow.Add(new JProperty("ItemCode", detalle.ItemCode));
+        //                                JsonObjectRow.Add(new JProperty("Quantity", detalle.Quantity));
+        //                                JsonObjectRow.Add(new JProperty("UnitPrice", detalle.PriceBefDi));
+        //                                //JsonObjectRow.Add(new JProperty("DiscPrcnt", detalle.DiscPrcnt));
+        //                                list.Add(JsonObjectRow);
+        //                            }
+
+        //                            JsonObject.Add(new JProperty("DocumentLines", list));
+        //                            string data = JsonObject.ToString();
+        //                            resul = EnviaSap("POST", JsonObject, "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/PurchaseOrders");
+        //                            if (resul == 0) // Caso que inserto 
+        //                            {
+
+        //                                objRegistraLog.GrabaProc("Insertado a Sap Satisfactoriamente el Documento: " + grupo.NumeroDocumento + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+        //                                try
+        //                                {
+        //                                    //string query = $"UPDATE  \"{Conexion.DESTINO}\".OPOR('{grupo.NumeroDocumento}')"; //Query Encabezado
+        //                                    string query = $"UPDATE  \"{Conexion.DESTINO}\".ORDR\" SET \"U_Enviado\" = '0' WHERE \"ItemCode\" =  '" + grupo.NumeroDocumento + "'";
+        //                                    // string queryAct = $"UPDATE \"{BRETASV}\".\"OITM\" SET \"U_act\" = '" + vac + "' WHERE \"ItemCode\" =  '" + En_DN + "'"; //Query Actualiza Entry_fac
+        //                                    OdbcCommand cmand = new OdbcCommand(query, conn);
+        //                                    OdbcDataReader dr1 = cmand.ExecuteReader();
+        //                                }
+        //                                catch (Exception e)
+        //                                {
+        //                                    Console.WriteLine(e);
+        //                                }
+        //                            }
+        //                            else
+        //                            {
+        //                                objRegistraLog.Graba("Error convirtiendo OVTA a OC: " + RR + " " + grupo.NumeroDocumento + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+        //                                                                                                                                                                                 //RR = "";
+        //                                                                                                                                                                                 //BUSCO EL MAX DOCENTRY
+        //                                string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
+        //                                OdbcCommand cmand = new OdbcCommand(query, conn);
+        //                                OdbcDataReader dr1 = cmand.ExecuteReader();
+        //                                int numero = 0;
+        //                                string method = "ORDR PRIZMA";
+        //                                while (dr1.Read())
+        //                                {
+
+        //                                    numero = Convert.ToInt32(dr1["num"]) + 1;
+
+        //                                }
+        //                                dr1.Close();
+        //                                string tip = "ORDR";
+        //                                // string PAIS = "Costa Rica";
+        //                                string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
+        //                                         "values(" + numero + "," + numero + ",'" + grupo.NumeroDocumento + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
+        //                                OdbcCommand cmc1 = new OdbcCommand(queryAct, conn);
+        //                                cmc1.ExecuteNonQuery();
+
+
+        //                            }
+        //                        }
+        //                    }
+
+
+        //                    conn.Close();
+        //                    LiberaMemoria.FlushMemory();
+        //                }
+
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        R.Codigo = -1;
+        //        R.Mensaje = "Alerta: " + ex.Message;
+
+        //        objRegistraLog.Graba("Error al intentar Insertar orden convierte ovta_oc : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+
+        //    }
+
+        //    return R;
+        //}
+        //public static Respuesta NuevaOporautDC()
+        //{
+        //    int resul = 0;
+        //    string En_DN = "";
+        //    string pais = "Dist";
+        //    //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
+        //    Respuesta R = new Respuesta();
+        //    try
+        //    {
+        //        using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
+        //        {
+        //            if (conecta_service_layer(Conexion.DESTINO, "fcspa-cloud\\mch05", "QUtg!335Gb", "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
+        //            {
+        //                R.Codigo = -2;
+        //                R.Mensaje = RR;
+        //                objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
+        //                return R;
+        //            }
+                    
+        //            {
+        //                string queryEn = $"SELECT * FROM \"_SYS_BIC\".\"{Conexion.DESTINO}.INTERCOMPANY/IC_GET_ITEMS_REORDER\"";
+        //                //string crDet =$"SELECT \"LineNum\",\"ItemCode\",\"Quantity\",\"DiscountPercent\",\"ItemDescription\",\"Price\",\"TaxCode\",\"LineTotal\" FROM \"_SYS_BIC\".\"10028_COPPER_GROUP/SINCRONIZADOR_ORDR_CR_DET\"('PLACEHOLDER' = ('$$numdoc$$','{En_DN}'))";
+
+        //                OdbcCommand CmD = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
+
+        //                conn.Open();
+
+        //                using (OdbcDataReader dr = CmD.ExecuteReader())
+        //                {
+        //                    if (dr.HasRows)
+        //                    {
+        //                        List<DetallesOPORT> detallesFacturas = new List<DetallesOPORT>();
+        //                        JObject JsonObject = new JObject();
+        //                        string cod = "PL00030";
+
+        //                        JsonObject.Add(new JProperty("CardCode", cod));
+        //                        JsonObject.Add(new JProperty("Comments", "Orden Automatica "));
+        //                        JsonObject.Add(new JProperty("U_ENVIOSUC", "Y"));//se van en automatico con el intercompany
+
+        //                        var list = new ArrayList();
+        //                        while (dr.Read())
+        //                        {
+        //                            Newtonsoft.Json.Linq.JObject JsonObjectRow = new Newtonsoft.Json.Linq.JObject();
+        //                            JsonObjectRow.Add(new JProperty("ItemCode", dr["ItemCode"]));
+        //                            JsonObjectRow.Add(new JProperty("Quantity", dr["Quantity"]));
+        //                            //JsonObjectRow.Add(new JProperty("UnitPrice", dr["PriceBefDi"]));
+        //                            //JsonObjectRow.Add(new JProperty("PriceSource", "Manual"));
+
+        //                            list.Add(JsonObjectRow);
+        //                        }
+        //                        JsonObject.Add(new JProperty("DocumentLines", list));
+        //                        string data = JsonObject.ToString();
+        //                        resul = EnviaSap("POST", JsonObject, "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/PurchaseOrders");
+        //                        if (resul == 0) // Caso que inserto 
+        //                        {
+
+        //                            objRegistraLog.GrabaProc("Insertado a Sap Satisfactoriamente el Documento: "  + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+
+        //                        }
+        //                        else
+        //                        {
+        //                            objRegistraLog.Graba("Error insertando documento orden autDC: " + RR + " " + "Orden autDC" + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+        //                                                                                                                                                                         //RR = "";
+        //                                                                                                                                                                         //BUSCO EL MAX DOCENTRY
+        //                            string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
+        //                            OdbcCommand cmand = new OdbcCommand(query, conn);
+        //                            OdbcDataReader dr1 = cmand.ExecuteReader();
+        //                            int numero = 0;
+        //                            string method = "OPOR";
+        //                            while (dr1.Read())
+        //                            {
+
+        //                                numero = Convert.ToInt32(dr1["num"]) + 1;
+
+        //                            }
+        //                            dr1.Close();
+        //                            string tip = "OPORDC";
+        //                            // string PAIS = "Costa Rica";
+        //                            string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
+        //                                     "values(" + numero + "," + numero + ",'" + 0 + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
+        //                            OdbcCommand cmc1 = new OdbcCommand(queryAct, conn);
+        //                            cmc1.ExecuteNonQuery();
+
+
+        //                        }
+        //                    }
+
+        //                    conn.Close();
+        //                    LiberaMemoria.FlushMemory();
+        //                }
+
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        R.Codigo = -1;
+        //        R.Mensaje = "Alerta: " + ex.Message;
+
+        //        objRegistraLog.Graba("Error al intentar Insertar orden  oporautDC: " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+
+        //    }
+
+        //    return R;
+        //}
+        //public static Respuesta NuevaOrdenvtaDT()
+        //{
+        //    int resul = 0;
+        //    string En_DN = "";
+        //    string pais = "";
+        //    // string bdsucursal = "20006_MODENA_S.A.";
+        //    // double precio = 0;
+        //    //  int ser = 73;
+        //    Respuesta R = new Respuesta();
+        //    //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
+
+
+
+        //    try
+        //    {
+        //        using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
+        //        {
+        //            if (conecta_service_layer(Conexion.ORIGEN, "fcspa-cloud\\mch05", "QUtg!335Gb", "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
+        //            {
+        //                R.Codigo = -2;
+        //                R.Mensaje = RR;
+        //                objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+
+        //                return R;
+        //            }
+
+        //            //using (OdbcConnection conn = new OdbcConnection(
+        //            //    //Conexion.strCon
+        //            //    connectionString
+        //            //    ))
+        //            {
+
+        //                string queryEn = $"SELECT * FROM \"_SYS_BIC\".\"{Conexion.DESTINO}.INTERCOMPANY/IC_GET_PURCHASE_ORDERSDT\"";
+        //                //string crDet =$"SELECT \"LineNum\",\"ItemCode\",\"Quantity\",\"DiscountPercent\",\"ItemDescription\",\"Price\",\"TaxCode\",\"LineTotal\" FROM \"_SYS_BIC\".\"10028_COPPER_GROUP/SINCRONIZADOR_ORDR_CR_DET\"('PLACEHOLDER' = ('$$numdoc$$','{En_DN}'))";
+
+        //                OdbcCommand CmD = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
+
+        //                conn.Open();
+
+        //                using (OdbcDataReader dr = CmD.ExecuteReader())
+        //                {
+        //                    if (dr.HasRows)
+        //                    {
+        //                        List<DetallesOPORT> detallesFacturas = new List<DetallesOPORT>();
+        //                        while (dr.Read())
+        //                        {
+        //                            int DocEntry = (int)dr["DocEntry"];
+        //                            string ItemCode = (string)dr["ItemCode"];
+        //                            decimal Quantity = (decimal)dr["Quantity"];
+        //                            decimal PriceBefDi = (decimal)dr["PriceBefDi"];
+        //                            decimal DiscPrcnt = (decimal)dr["DiscPrcnt"];
+
+        //                            detallesFacturas.Add(new DetallesOPORT
+        //                            {
+        //                                DocEntry = DocEntry,
+        //                                ItemCode = ItemCode,
+        //                                Quantity = Quantity,
+        //                                PriceBefDi = PriceBefDi,
+        //                                DiscPrcnt = DiscPrcnt
+        //                            });
+        //                        }
+        //                        var detallesAgrupados = detallesFacturas
+        //                        .GroupBy(detalle => detalle.DocEntry)
+        //                        .Select(grupo => new { NumeroDocumento = grupo.Key, Detalles = grupo.ToList() })
+        //                        .ToList();
+
+        //                        foreach (var grupo in detallesAgrupados)
+        //                        {
+        //                            Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
+        //                            string DocDueDate = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd");
+        //                            JsonObject.Add(new JProperty("CardCode", "C15967"));
+        //                            JsonObject.Add(new JProperty("DocDueDate", DocDueDate));
+        //                            JsonObject.Add(new JProperty("Comments", "Orden Automatica"));
+        //                            var list = new ArrayList();
+        //                            foreach (var detalle in grupo.Detalles)
+        //                            {
+        //                                Newtonsoft.Json.Linq.JObject JsonObjectRow = new Newtonsoft.Json.Linq.JObject();
+        //                                JsonObjectRow.Add(new JProperty("ItemCode", detalle.ItemCode));
+        //                                JsonObjectRow.Add(new JProperty("Quantity", detalle.Quantity));
+        //                                JsonObjectRow.Add(new JProperty("UnitPrice", detalle.PriceBefDi));
+        //                                JsonObjectRow.Add(new JProperty("DiscPrcnt", detalle.DiscPrcnt));
+        //                                list.Add(JsonObjectRow);
+        //                            }
+        //                            JsonObject.Add(new JProperty("DocumentLines", list));
+        //                            string data = JsonObject.ToString();
+        //                            resul = EnviaSap("POST", JsonObject, "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Orders");
+        //                            if (resul == 0) // Caso que inserto 
+        //                            {
+
+        //                                objRegistraLog.GrabaProc("Insertado a Sap Satisfactoriamente el Documento: " + grupo.NumeroDocumento + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+        //                                try
+        //                                {
+        //                                    string query = $"CALL \"{Conexion.DESTINO}\".FCS_IC_UPDATE_SEND_DIST('{grupo.NumeroDocumento}')"; //Query Encabezado
+        //                                    OdbcCommand cmand = new OdbcCommand(query, conn);
+        //                                    OdbcDataReader dr1 = cmand.ExecuteReader();
+        //                                }
+        //                                catch (Exception e)
+        //                                {
+        //                                    Console.WriteLine(e);
+        //                                }
+        //                            }
+        //                            else
+        //                            {
+        //                                objRegistraLog.Graba("Error insertando documento ovta DT: " + RR + " " + grupo.NumeroDocumento + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+        //                                                                                                                                                                                 //RR = "";
+        //                                                                                                                                                                                 //BUSCO EL MAX DOCENTRY
+        //                                string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
+        //                                OdbcCommand cmand = new OdbcCommand(query, conn);
+        //                                OdbcDataReader dr1 = cmand.ExecuteReader();
+        //                                int numero = 0;
+        //                                string method = "Orden de venta";
+        //                                while (dr1.Read())
+        //                                {
+
+        //                                    numero = Convert.ToInt32(dr1["num"]) + 1;
+
+        //                                }
+        //                                dr1.Close();
+        //                                string tip = "ORDR";
+        //                                // string PAIS = "Costa Rica";
+        //                                string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
+        //                                         "values(" + numero + "," + numero + ",'" + grupo.NumeroDocumento + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
+        //                                OdbcCommand cmc1 = new OdbcCommand(queryAct, conn);
+        //                                cmc1.ExecuteNonQuery();
+
+
+        //                            }
+        //                        }
+        //                    }
+
+
+        //                    conn.Close();
+        //                    LiberaMemoria.FlushMemory();
+        //                }
+
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        R.Codigo = -1;
+        //        R.Mensaje = "Alerta: " + ex.Message;
+
+        //        objRegistraLog.Graba("Error al intentar Insertar orden vta DT : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+
+        //    }
+
+        //    return R;
+        //}
+        //public static Respuesta NuevaOrdenvtaTD()
+        //{
+        //    int resul = 0;
+        //    string En_DN = "";
+        //   string pais="";
+        //   // string bdsucursal = "20006_MODENA_S.A.";
+        //   // double precio = 0;
+        //  //  int ser = 73;
+        //    Respuesta R = new Respuesta();
+        //    //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
 
 
            
-                try
-            {
-                using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
-                {
-                    if (conecta_service_layer(Conexion.DESTINO, "fcspa-cloud\\Rali49", "Pr12!!0bn9", "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
-                    {
-                        R.Codigo = -2;
-                        R.Mensaje = RR;
-                        objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+        //        try
+        //    {
+        //        using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
+        //        {
+        //            if (conecta_service_layer(Conexion.DESTINO, "fcspa-cloud\\mch05", "QUtg!335Gb", "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
+        //            {
+        //                R.Codigo = -2;
+        //                R.Mensaje = RR;
+        //                objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
 
-                        return R;
-                    }
+        //                return R;
+        //            }
 
-                //using (OdbcConnection conn = new OdbcConnection(
-                //    //Conexion.strCon
-                //    connectionString
-                //    ))
-                {
+        //        //using (OdbcConnection conn = new OdbcConnection(
+        //        //    //Conexion.strCon
+        //        //    connectionString
+        //        //    ))
+        //        {
 
-                    string queryEn = $"SELECT * FROM \"_SYS_BIC\".\"{Conexion.ORIGEN}.INTERCOMPANY/IC_GET_PURCHASE_ORDERSTD\"";
-                    //string crDet =$"SELECT \"LineNum\",\"ItemCode\",\"Quantity\",\"DiscountPercent\",\"ItemDescription\",\"Price\",\"TaxCode\",\"LineTotal\" FROM \"_SYS_BIC\".\"10028_COPPER_GROUP/SINCRONIZADOR_ORDR_CR_DET\"('PLACEHOLDER' = ('$$numdoc$$','{En_DN}'))";
+        //            string queryEn = $"SELECT * FROM \"_SYS_BIC\".\"{Conexion.ORIGEN}.INTERCOMPANY/IC_GET_PURCHASE_ORDERSTD\"";
+        //            //string crDet =$"SELECT \"LineNum\",\"ItemCode\",\"Quantity\",\"DiscountPercent\",\"ItemDescription\",\"Price\",\"TaxCode\",\"LineTotal\" FROM \"_SYS_BIC\".\"10028_COPPER_GROUP/SINCRONIZADOR_ORDR_CR_DET\"('PLACEHOLDER' = ('$$numdoc$$','{En_DN}'))";
 
-                    OdbcCommand CmD = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
+        //            OdbcCommand CmD = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
 
-                    conn.Open();
+        //            conn.Open();
              
-                    using (OdbcDataReader dr = CmD.ExecuteReader())
-                    {
-                        if (dr.HasRows) {
-                            List<DetallesOPORT> detallesFacturas = new List<DetallesOPORT>();
-                            while (dr.Read())
-                            {
-                                int DocEntry = (int)dr["DocEntry"];
-                                string ItemCode = (string)dr["ItemCode"];
-                                decimal Quantity = (decimal)dr["Quantity"];
-                                decimal PriceBefDi = (decimal)dr["PriceBefDi"];
-                                decimal DiscPrcnt = (decimal)dr["DiscPrcnt"];
+        //            using (OdbcDataReader dr = CmD.ExecuteReader())
+        //            {
+        //                if (dr.HasRows) {
+        //                    List<DetallesOPORT> detallesFacturas = new List<DetallesOPORT>();
+        //                    while (dr.Read())
+        //                    {
+        //                        int DocEntry = (int)dr["DocEntry"];
+        //                        string ItemCode = (string)dr["ItemCode"];
+        //                        decimal Quantity = (decimal)dr["Quantity"];
+        //                        decimal PriceBefDi = (decimal)dr["PriceBefDi"];
+        //                        decimal DiscPrcnt = (decimal)dr["DiscPrcnt"];
 
-                                detallesFacturas.Add(new DetallesOPORT
-                                {
-                                    DocEntry = DocEntry,
-                                    ItemCode = ItemCode,
-                                    Quantity = Quantity,
-                                    PriceBefDi = PriceBefDi,
-                                    DiscPrcnt = DiscPrcnt
-                                });
-                            }
-                            var detallesAgrupados = detallesFacturas
-                            .GroupBy(detalle => detalle.DocEntry)
-                            .Select(grupo => new { NumeroDocumento = grupo.Key, Detalles = grupo.ToList() })
-                            .ToList();
+        //                        detallesFacturas.Add(new DetallesOPORT
+        //                        {
+        //                            DocEntry = DocEntry,
+        //                            ItemCode = ItemCode,
+        //                            Quantity = Quantity,
+        //                            PriceBefDi = PriceBefDi,
+        //                            DiscPrcnt = DiscPrcnt
+        //                        });
+        //                    }
+        //                    var detallesAgrupados = detallesFacturas
+        //                    .GroupBy(detalle => detalle.DocEntry)
+        //                    .Select(grupo => new { NumeroDocumento = grupo.Key, Detalles = grupo.ToList() })
+        //                    .ToList();
 
-                            foreach (var grupo in detallesAgrupados)
-                            {
-                                Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
-                                string DocDueDate = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd");
-                                JsonObject.Add(new JProperty("CardCode", "CL02034"));
-                                JsonObject.Add(new JProperty("DocDueDate", DocDueDate));
-                                JsonObject.Add(new JProperty("Comments", "Orden Automatica"));
+        //                    foreach (var grupo in detallesAgrupados)
+        //                    {
+        //                        Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
+        //                        string DocDueDate = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd");
+        //                        JsonObject.Add(new JProperty("CardCode", "CL02034"));
+        //                        JsonObject.Add(new JProperty("DocDueDate", DocDueDate));
+        //                        JsonObject.Add(new JProperty("Comments", "Orden Automatica"));
                            
-                                    var list = new ArrayList();
-                                foreach (var detalle in grupo.Detalles)
-                                {
-                                    Newtonsoft.Json.Linq.JObject JsonObjectRow = new Newtonsoft.Json.Linq.JObject();
-                                    JsonObjectRow.Add(new JProperty("ItemCode", detalle.ItemCode));
-                                    JsonObjectRow.Add(new JProperty("Quantity", detalle.Quantity));
-                                    JsonObjectRow.Add(new JProperty("UnitPrice", detalle.PriceBefDi));
-                                    JsonObjectRow.Add(new JProperty("DiscPrcnt", detalle.DiscPrcnt));
-                                    list.Add(JsonObjectRow);
-                                }
-                                JsonObject.Add(new JProperty("DocumentLines", list));
-                                string data = JsonObject.ToString();
-                                resul = EnviaSap("POST", JsonObject, "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Orders");
-                                if (resul == 0) // Caso que inserto 
-                                {
+        //                            var list = new ArrayList();
+        //                        foreach (var detalle in grupo.Detalles)
+        //                        {
+        //                            Newtonsoft.Json.Linq.JObject JsonObjectRow = new Newtonsoft.Json.Linq.JObject();
+        //                            JsonObjectRow.Add(new JProperty("ItemCode", detalle.ItemCode));
+        //                            JsonObjectRow.Add(new JProperty("Quantity", detalle.Quantity));
+        //                            JsonObjectRow.Add(new JProperty("UnitPrice", detalle.PriceBefDi));
+        //                            JsonObjectRow.Add(new JProperty("DiscPrcnt", detalle.DiscPrcnt));
+        //                            list.Add(JsonObjectRow);
+        //                        }
+        //                        JsonObject.Add(new JProperty("DocumentLines", list));
+        //                        string data = JsonObject.ToString();
+        //                        resul = EnviaSap("POST", JsonObject, "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Orders");
+        //                        if (resul == 0) // Caso que inserto 
+        //                        {
 
-                                    objRegistraLog.GrabaProc("Insertado a Sap Satisfactoriamente el Documento: " + grupo.NumeroDocumento + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                    try
-                                    {
-                                        string query = $"CALL \"{Conexion.ORIGEN}\".FCS_IC_UPDATE_SEND_DIST('{grupo.NumeroDocumento}')"; //Query Encabezado
-                                        OdbcCommand cmand = new OdbcCommand(query, conn);
-                                        OdbcDataReader dr1 = cmand.ExecuteReader();
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        Console.WriteLine(e);
-                                    }
-                                }
-                                else
-                                {
-                                    objRegistraLog.Graba("Error insertando documento ovta TD: " + RR + " " + grupo.NumeroDocumento + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                                                                                                                                                                     //RR = "";
-                                                                                                                                                                                     //BUSCO EL MAX DOCENTRY
-                                    string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
-                                    OdbcCommand cmand = new OdbcCommand(query, conn);
-                                    OdbcDataReader dr1 = cmand.ExecuteReader();
-                                    int numero = 0;
-                                    string method = "Orden de venta";
-                                    while (dr1.Read())
-                                    {
+        //                            objRegistraLog.GrabaProc("Insertado a Sap Satisfactoriamente el Documento: " + grupo.NumeroDocumento + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+        //                            try
+        //                            {
+        //                                string query = $"CALL \"{Conexion.ORIGEN}\".FCS_IC_UPDATE_SEND_DIST('{grupo.NumeroDocumento}')"; //Query Encabezado
+        //                                OdbcCommand cmand = new OdbcCommand(query, conn);
+        //                                OdbcDataReader dr1 = cmand.ExecuteReader();
+        //                            }
+        //                            catch (Exception e)
+        //                            {
+        //                                Console.WriteLine(e);
+        //                            }
+        //                        }
+        //                        else
+        //                        {
+        //                            objRegistraLog.Graba("Error insertando documento ovta TD: " + RR + " " + grupo.NumeroDocumento + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+        //                                                                                                                                                                             //RR = "";
+        //                                                                                                                                                                             //BUSCO EL MAX DOCENTRY
+        //                            string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
+        //                            OdbcCommand cmand = new OdbcCommand(query, conn);
+        //                            OdbcDataReader dr1 = cmand.ExecuteReader();
+        //                            int numero = 0;
+        //                            string method = "Orden de venta";
+        //                            while (dr1.Read())
+        //                            {
 
-                                        numero = Convert.ToInt32(dr1["num"]) + 1;
+        //                                numero = Convert.ToInt32(dr1["num"]) + 1;
 
-                                    }
-                                    dr1.Close();
-                                    string tip = "ORDR";
-                                        // string PAIS = "Costa Rica";
-                                        string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
-                                                 "values(" + numero + "," + numero + ",'" + grupo.NumeroDocumento + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
-                                        OdbcCommand cmc1 = new OdbcCommand(queryAct, conn);
-                                        cmc1.ExecuteNonQuery();
+        //                            }
+        //                            dr1.Close();
+        //                            string tip = "ORDR";
+        //                                // string PAIS = "Costa Rica";
+        //                                string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
+        //                                         "values(" + numero + "," + numero + ",'" + grupo.NumeroDocumento + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
+        //                                OdbcCommand cmc1 = new OdbcCommand(queryAct, conn);
+        //                                cmc1.ExecuteNonQuery();
 
 
-                                    }
-                                }
-                        }
+        //                            }
+        //                        }
+        //                }
                         
 
-                        conn.Close();
-                        LiberaMemoria.FlushMemory();
-                    }
+        //                conn.Close();
+        //                LiberaMemoria.FlushMemory();
+        //            }
 
-                }
-                }
-            }
-            catch (Exception ex)
-            {
-                R.Codigo = -1;
-                R.Mensaje = "Alerta: " + ex.Message;
+        //        }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        R.Codigo = -1;
+        //        R.Mensaje = "Alerta: " + ex.Message;
 
-                objRegistraLog.Graba("Error al intentar Insertar orden venta TD : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+        //        objRegistraLog.Graba("Error al intentar Insertar orden venta TD : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
 
-            }
+        //    }
 
-            return R;
-        }
-        public static Respuesta NuevaOporautCD()
-        {
-            int resul = 0;
-            string En_DN = "";
-            string pais = "Tiend";
-            //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
-            Respuesta R = new Respuesta();
-            try
-            {
-                using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
-                {
-                    if (conecta_service_layer(Conexion.ORIGEN, "fcspa-cloud\\Rali49", "Pr12!!0bn9", "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
-                    {
-                        R.Codigo = -2;
-                        R.Mensaje = RR;
-                        objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
-                        return R;
-                    }
+        //    return R;
+        //}
+        //public static Respuesta NuevaOporautCD()
+        //{
+        //    int resul = 0;
+        //    string En_DN = "";
+        //    string pais = "Tiend";
+        //    //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
+        //    Respuesta R = new Respuesta();
+        //    try
+        //    {
+        //        using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
+        //        {
+        //            if (conecta_service_layer(Conexion.ORIGEN, "fcspa-cloud\\mch05", "QUtg!335Gb", "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
+        //            {
+        //                R.Codigo = -2;
+        //                R.Mensaje = RR;
+        //                objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
+        //                return R;
+        //            }
                     
-                    {
-                       string queryEn = $"SELECT * FROM \"_SYS_BIC\".\"{Conexion.ORIGEN}.INTERCOMPANY/IC_GET_ITEMS_REORDER\"";
-                    //string crDet =$"SELECT \"LineNum\",\"ItemCode\",\"Quantity\",\"DiscountPercent\",\"ItemDescription\",\"Price\",\"TaxCode\",\"LineTotal\" FROM \"_SYS_BIC\".\"10028_COPPER_GROUP/SINCRONIZADOR_ORDR_CR_DET\"('PLACEHOLDER' = ('$$numdoc$$','{En_DN}'))";
+        //            {
+        //               string queryEn = $"SELECT * FROM \"_SYS_BIC\".\"{Conexion.ORIGEN}.INTERCOMPANY/IC_GET_ITEMS_REORDER\"";
+        //            //string crDet =$"SELECT \"LineNum\",\"ItemCode\",\"Quantity\",\"DiscountPercent\",\"ItemDescription\",\"Price\",\"TaxCode\",\"LineTotal\" FROM \"_SYS_BIC\".\"10028_COPPER_GROUP/SINCRONIZADOR_ORDR_CR_DET\"('PLACEHOLDER' = ('$$numdoc$$','{En_DN}'))";
 
-                    OdbcCommand CmD = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
+        //            OdbcCommand CmD = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
 
-                    conn.Open();
+        //            conn.Open();
               
-                    using (OdbcDataReader dr = CmD.ExecuteReader())
-                    {
-                        if (dr.HasRows) {
-                            List<DetallesOPORT> detallesFacturas = new List<DetallesOPORT>();
-                            JObject JsonObject = new JObject();
-                            string cod = "PL0001";
+        //            using (OdbcDataReader dr = CmD.ExecuteReader())
+        //            {
+        //                if (dr.HasRows) {
+        //                    List<DetallesOPORT> detallesFacturas = new List<DetallesOPORT>();
+        //                    JObject JsonObject = new JObject();
+        //                    string cod = "PL0001";
                              
-                            JsonObject.Add(new JProperty("CardCode", cod));
-                            JsonObject.Add(new JProperty("Comments", "Orden Automatica"));
-                            JsonObject.Add(new JProperty("U_ENVIOSUC", "Y"));//se van en automatico con el intercompany
+        //                    JsonObject.Add(new JProperty("CardCode", cod));
+        //                    JsonObject.Add(new JProperty("Comments", "Orden Automatica"));
+        //                    JsonObject.Add(new JProperty("U_ENVIOSUC", "Y"));//se van en automatico con el intercompany
 
-                                var list = new ArrayList();
-                            while (dr.Read())
-                            {
-                                Newtonsoft.Json.Linq.JObject JsonObjectRow = new Newtonsoft.Json.Linq.JObject();
-                                JsonObjectRow.Add(new JProperty("ItemCode", dr["ItemCode"]));
-                                JsonObjectRow.Add(new JProperty("Quantity", dr["Quantity"]));
-                               // JsonObjectRow.Add(new JProperty("UnitPrice", dr["PriceBefDi"]));
-                                //JsonObjectRow.Add(new JProperty("PriceSource", "Manual"));
+        //                        var list = new ArrayList();
+        //                    while (dr.Read())
+        //                    {
+        //                        Newtonsoft.Json.Linq.JObject JsonObjectRow = new Newtonsoft.Json.Linq.JObject();
+        //                        JsonObjectRow.Add(new JProperty("ItemCode", dr["ItemCode"]));
+        //                        JsonObjectRow.Add(new JProperty("Quantity", dr["Quantity"]));
+        //                       // JsonObjectRow.Add(new JProperty("UnitPrice", dr["PriceBefDi"]));
+        //                        //JsonObjectRow.Add(new JProperty("PriceSource", "Manual"));
 
-                                list.Add(JsonObjectRow);
-                            }
-                            JsonObject.Add(new JProperty("DocumentLines", list));
-                            string data = JsonObject.ToString();
-                            resul = EnviaSap("POST", JsonObject, "https://hana-002.fcspa-cloud.net:50000/b1s/v1/PurchaseOrders");
-                            if (resul == 0) // Caso que inserto 
-                            {
+        //                        list.Add(JsonObjectRow);
+        //                    }
+        //                    JsonObject.Add(new JProperty("DocumentLines", list));
+        //                    string data = JsonObject.ToString();
+        //                    resul = EnviaSap("POST", JsonObject, "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/PurchaseOrders");
+        //                    if (resul == 0) // Caso que inserto 
+        //                    {
 
-                                objRegistraLog.GrabaProc("Insertado a Sap Satisfactoriamente el Documento: " + "Orden autCD" + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+        //                        objRegistraLog.GrabaProc("Insertado a Sap Satisfactoriamente el Documento: " + "Orden autCD" + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
                                
-                            }
-                            else
-                            {
-                                objRegistraLog.Graba("Error insertando documento Orden OporautCD: " + RR + " " + "Orden de martes" + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                                                                                                                                                                 //RR = "";
-                                                                                                                                                                                 //BUSCO EL MAX DOCENTRY
-                                string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
-                                OdbcCommand cmand = new OdbcCommand(query, conn);
-                                OdbcDataReader dr1 = cmand.ExecuteReader();
-                                int numero = 0;
-                                string method = "OPOR";
-                                while (dr1.Read())
-                                {
+        //                    }
+        //                    else
+        //                    {
+        //                        objRegistraLog.Graba("Error insertando documento Orden OporautCD: " + RR + " " + "Orden de martes" + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+        //                                                                                                                                                                         //RR = "";
+        //                                                                                                                                                                         //BUSCO EL MAX DOCENTRY
+        //                        string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
+        //                        OdbcCommand cmand = new OdbcCommand(query, conn);
+        //                        OdbcDataReader dr1 = cmand.ExecuteReader();
+        //                        int numero = 0;
+        //                        string method = "OPOR";
+        //                        while (dr1.Read())
+        //                        {
 
-                                    numero = Convert.ToInt32(dr1["num"]) + 1;
+        //                            numero = Convert.ToInt32(dr1["num"]) + 1;
 
-                                }
-                                dr1.Close();
-                                string tip = "OPORCD";
-                                    // string PAIS = "Costa Rica";
-                                    string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
-                                             "values(" + numero + "," + numero + ",'" + 0 + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
-                                    OdbcCommand cmc1 = new OdbcCommand(queryAct, conn);
-                                    cmc1.ExecuteNonQuery();
+        //                        }
+        //                        dr1.Close();
+        //                        string tip = "OPORCD";
+        //                            // string PAIS = "Costa Rica";
+        //                            string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
+        //                                     "values(" + numero + "," + numero + ",'" + 0 + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
+        //                            OdbcCommand cmc1 = new OdbcCommand(queryAct, conn);
+        //                            cmc1.ExecuteNonQuery();
 
 
-                                }
-                            }                       
+        //                        }
+        //                    }                       
 
-                        conn.Close();
-                        LiberaMemoria.FlushMemory();
-                    }
+        //                conn.Close();
+        //                LiberaMemoria.FlushMemory();
+        //            }
 
-                }
-                }
-            }
-            catch (Exception ex)
-            {
-                R.Codigo = -1;
-                R.Mensaje = "Alerta: " + ex.Message;
+        //        }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        R.Codigo = -1;
+        //        R.Mensaje = "Alerta: " + ex.Message;
 
-                objRegistraLog.Graba("Error al intentar Insertar orden OporautCD : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+        //        objRegistraLog.Graba("Error al intentar Insertar orden OporautCD : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
 
-            }
+        //    }
 
-            return R;
-        }
+        //    return R;
+        //}
      
-        public static Respuesta ActualizarArticulosTD()
-        {
-            int resul = 0;      
-            string nomcod = string.Empty;
-            //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
-            //string method = "Actualizar";
-            Respuesta R = new Respuesta();
-            try
-            {
-                using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
-                {
-                    string queryEnCRSV = $"SELECT * FROM \"_SYS_BIC\".\"{Conexion.ORIGEN}.INTERCOMPANY/IC_UPDATE_ITEMSTD\""; //Query Encabezado
+        //public static Respuesta ActualizarArticulosTD()
+        //{
+        //    int resul = 0;      
+        //    string nomcod = string.Empty;
+        //    //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
+        //    //string method = "Actualizar";
+        //    Respuesta R = new Respuesta();
+        //    try
+        //    {
+        //        using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
+        //        {
+        //            string queryEnCRSV = $"SELECT * FROM \"_SYS_BIC\".\"{Conexion.ORIGEN}.INTERCOMPANY/IC_UPDATE_ITEMSTD\""; //Query Encabezado
                     
 
-                    OdbcCommand CmD = new OdbcCommand(queryEnCRSV, conn); // llama al Query Encabezado con la conexion
+        //            OdbcCommand CmD = new OdbcCommand(queryEnCRSV, conn); // llama al Query Encabezado con la conexion
 
-                    conn.Open();
+        //            conn.Open();
 
-                    using (OdbcDataReader dr = CmD.ExecuteReader())
-                    {
+        //            using (OdbcDataReader dr = CmD.ExecuteReader())
+        //            {
 
-                        if (dr.RecordsAffected != 0)
-                        {
-                            if (conecta_service_layer(Conexion.DESTINO, "fcspa-cloud\\Rali49", "Pr12!!0bn9", "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
-                            {
-                                R.Codigo = -2;
-                                R.Mensaje = RR;
-                                objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
-                                return R;
-                            }
+        //                if (dr.RecordsAffected != 0)
+        //                {
+        //                    if (conecta_service_layer(Conexion.DESTINO, "fcspa-cloud\\mch05", "QUtg!335Gb", "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
+        //                    {
+        //                        R.Codigo = -2;
+        //                        R.Mensaje = RR;
+        //                        objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
+        //                        return R;
+        //                    }
 
 
-                            while (dr.Read())
-                            {
+        //                    while (dr.Read())
+        //                    {
 
-                              JObject JsonObject = new JObject();   
+        //                      JObject JsonObject = new JObject();   
                                                              
-                                nomcod = dr["ItemCode"].ToString();
-                                JsonObject = CrearObjetoJson(dr);
-                                JsonObject.Remove("ItemCode");
-                                var myjs = JsonObject.ToString();
+        //                        nomcod = dr["ItemCode"].ToString();
+        //                        JsonObject = CrearObjetoJson(dr);
+        //                        JsonObject.Remove("ItemCode");
+        //                        var myjs = JsonObject.ToString();
                                
-                                resul = EnviaSap("PATCH", JsonObject, "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Items('" + nomcod + "')"); //
+        //                        resul = EnviaSap("PATCH", JsonObject, "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Items('" + nomcod + "')"); //
                          
 
-                                if (resul == 0) // Caso que inserto 
-                                {
+        //                        if (resul == 0) // Caso que inserto 
+        //                        {
 
-                                    objRegistraLog.GrabaProc("Actualizado a Sap Satisfactoriamente el articulo: " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                    try {
-                                        string query = $"CALL \"{Conexion.DESTINO}\".FCS_IC_CLEAR_UPDATE('{nomcod}')"; //Query Encabezado
-                                        OdbcCommand cmand = new OdbcCommand(query, conn);
-                                        OdbcDataReader dr1 = cmand.ExecuteReader();
-                                    } catch(Exception e) {
-                                        Console.WriteLine(e);
-                                    }
-                                }
-                                else
-                                {
-                                    objRegistraLog.Graba("Error actualizando ArticulosTD: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                                                                                                                                                      //RR = "";
-                                                                                                                                                                      //BUSCO EL MAX DOCENTRY
-                                    string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
-                                    OdbcCommand cmand = new OdbcCommand(query, conn);
-                                    OdbcDataReader dr1 = cmand.ExecuteReader();
-                                    int numero = 0;
-                                    while (dr1.Read())
-                                    {
+        //                            objRegistraLog.GrabaProc("Actualizado a Sap Satisfactoriamente el articulo: " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+        //                            try {
+        //                                string query = $"CALL \"{Conexion.DESTINO}\".FCS_IC_CLEAR_UPDATE('{nomcod}')"; //Query Encabezado
+        //                                OdbcCommand cmand = new OdbcCommand(query, conn);
+        //                                OdbcDataReader dr1 = cmand.ExecuteReader();
+        //                            } catch(Exception e) {
+        //                                Console.WriteLine(e);
+        //                            }
+        //                        }
+        //                        else
+        //                        {
+        //                            objRegistraLog.Graba("Error actualizando ArticulosTD: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+        //                                                                                                                                                              //RR = "";
+        //                                                                                                                                                              //BUSCO EL MAX DOCENTRY
+        //                            string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
+        //                            OdbcCommand cmand = new OdbcCommand(query, conn);
+        //                            OdbcDataReader dr1 = cmand.ExecuteReader();
+        //                            int numero = 0;
+        //                            while (dr1.Read())
+        //                            {
 
-                                        numero = Convert.ToInt32(dr1["num"]) + 1;
+        //                                numero = Convert.ToInt32(dr1["num"]) + 1;
 
-                                    }
-                                    dr1.Close();
-                                    string tip = "OITM";
-                                    string pais = "DISTRIBUIDORA";
-                                    string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
-                                        "values(" + numero + "," + numero + ",'" + nomcod + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
-                                    OdbcCommand cmc1 = new OdbcCommand(queryAct, conn);
-                                    cmc1.ExecuteNonQuery();
+        //                            }
+        //                            dr1.Close();
+        //                            string tip = "OITM";
+        //                            string pais = "DISTRIBUIDORA";
+        //                            string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
+        //                                "values(" + numero + "," + numero + ",'" + nomcod + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
+        //                            OdbcCommand cmc1 = new OdbcCommand(queryAct, conn);
+        //                            cmc1.ExecuteNonQuery();
 
-                                }
-                            }
+        //                        }
+        //                    }
 
-                            conn.Close();
-                            LiberaMemoria.FlushMemory();
-                        }
+        //                    conn.Close();
+        //                    LiberaMemoria.FlushMemory();
+        //                }
 
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                R.Codigo = -1;
-                R.Mensaje = "Alerta: " + ex.Message;
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        R.Codigo = -1;
+        //        R.Mensaje = "Alerta: " + ex.Message;
 
-                objRegistraLog.Graba("Error al intentar Insertar ArticulosTD: " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+        //        objRegistraLog.Graba("Error al intentar Insertar ArticulosTD: " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
 
-            }
+        //    }
 
-            return R;
-        }
-        public static Respuesta ActualizarArticulosDT()
-        {
-            int resul = 0;
-            string nomcod = string.Empty;
-            //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
-            //string method = "Actualizar";
-            Respuesta R = new Respuesta();
-            try
-            {
-                using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
-                {
-                    string queryEnCRSV = $"SELECT * FROM \"_SYS_BIC\".\"{Conexion.DESTINO}.INTERCOMPANY/IC_UPDATE_ITEMSDT\""; //Query Encabezado
-
-
-                    OdbcCommand CmD = new OdbcCommand(queryEnCRSV, conn); // llama al Query Encabezado con la conexion
-
-                    conn.Open();
-
-                    using (OdbcDataReader dr = CmD.ExecuteReader())
-                    {
-
-                        if (dr.RecordsAffected != 0)
-                        {
-                            if (conecta_service_layer(Conexion.ORIGEN, "fcspa-cloud\\Rali49", "Pr12!!0bn9", "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
-                            {
-                                R.Codigo = -2;
-                                R.Mensaje = RR;
-                                objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
-                                return R;
-                            }
+        //    return R;
+        //}
+        //public static Respuesta ActualizarArticulosDT()
+        //{
+        //    int resul = 0;
+        //    string nomcod = string.Empty;
+        //    //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
+        //    //string method = "Actualizar";
+        //    Respuesta R = new Respuesta();
+        //    try
+        //    {
+        //        using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
+        //        {
+        //            string queryEnCRSV = $"SELECT * FROM \"_SYS_BIC\".\"{Conexion.DESTINO}.INTERCOMPANY/IC_UPDATE_ITEMSDT\""; //Query Encabezado
 
 
-                            while (dr.Read())
-                            {
+        //            OdbcCommand CmD = new OdbcCommand(queryEnCRSV, conn); // llama al Query Encabezado con la conexion
 
-                                JObject JsonObject = new JObject();
+        //            conn.Open();
 
-                                nomcod = dr["ItemCode"].ToString();
-                                JsonObject = CrearObjetoJson(dr);
-                                JsonObject.Remove("ItemCode");
-                                var myjs = JsonObject.ToString();
-                                resul = EnviaSap("PATCH", JsonObject, "https://hana-002.fcspa-cloud.net:50000/b1s/v1/Items('" + nomcod + "')"); //
-                                if (resul == 0) // Caso que inserto 
-                                {
+        //            using (OdbcDataReader dr = CmD.ExecuteReader())
+        //            {
 
-                                    objRegistraLog.GrabaProc("Actualizado a Sap Satisfactoriamente el articulo: " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                    try
-                                    {
-                                        string query = $"CALL \"{Conexion.ORIGEN}\".FCS_IC_CLEAR_UPDATE('{nomcod}')"; //Query Encabezado
-                                        OdbcCommand cmand = new OdbcCommand(query, conn);
-                                        OdbcDataReader dr1 = cmand.ExecuteReader();
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        Console.WriteLine(e);
-                                    }
-                                }
-                                else
-                                {
-                                    objRegistraLog.Graba("Error actualizando ArticulosDT: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+        //                if (dr.RecordsAffected != 0)
+        //                {
+        //                    if (conecta_service_layer(Conexion.ORIGEN, "fcspa-cloud\\mch05", "QUtg!335Gb", "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
+        //                    {
+        //                        R.Codigo = -2;
+        //                        R.Mensaje = RR;
+        //                        objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
+        //                        return R;
+        //                    }
+
+
+        //                    while (dr.Read())
+        //                    {
+
+        //                        JObject JsonObject = new JObject();
+
+        //                        nomcod = dr["ItemCode"].ToString();
+        //                        JsonObject = CrearObjetoJson(dr);
+        //                        JsonObject.Remove("ItemCode");
+        //                        var myjs = JsonObject.ToString();
+        //                        resul = EnviaSap("PATCH", JsonObject, "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Items('" + nomcod + "')"); //
+        //                        if (resul == 0) // Caso que inserto 
+        //                        {
+
+        //                            objRegistraLog.GrabaProc("Actualizado a Sap Satisfactoriamente el articulo: " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+        //                            try
+        //                            {
+        //                                string query = $"CALL \"{Conexion.ORIGEN}\".FCS_IC_CLEAR_UPDATE('{nomcod}')"; //Query Encabezado
+        //                                OdbcCommand cmand = new OdbcCommand(query, conn);
+        //                                OdbcDataReader dr1 = cmand.ExecuteReader();
+        //                            }
+        //                            catch (Exception e)
+        //                            {
+        //                                Console.WriteLine(e);
+        //                            }
+        //                        }
+        //                        else
+        //                        {
+        //                            objRegistraLog.Graba("Error actualizando ArticulosDT: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
                                                                                                                                                                     
-                                    string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
-                                    OdbcCommand cmand = new OdbcCommand(query, conn);
-                                    OdbcDataReader dr1 = cmand.ExecuteReader();
-                                    int numero = 0;
-                                    while (dr1.Read())
-                                    {
-                                        numero = Convert.ToInt32(dr1["num"]) + 1;
-                                    }
-                                    dr1.Close();
-                                    string tip = "OITM";
-                                    string pais = "DISTRIBUIDORA";
-                                    string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
-                                        "values(" + numero + "," + numero + ",'" + nomcod + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
-                                    OdbcCommand cmc1 = new OdbcCommand(queryAct, conn);
-                                    cmc1.ExecuteNonQuery();
+        //                            string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
+        //                            OdbcCommand cmand = new OdbcCommand(query, conn);
+        //                            OdbcDataReader dr1 = cmand.ExecuteReader();
+        //                            int numero = 0;
+        //                            while (dr1.Read())
+        //                            {
+        //                                numero = Convert.ToInt32(dr1["num"]) + 1;
+        //                            }
+        //                            dr1.Close();
+        //                            string tip = "OITM";
+        //                            string pais = "DISTRIBUIDORA";
+        //                            string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
+        //                                "values(" + numero + "," + numero + ",'" + nomcod + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
+        //                            OdbcCommand cmc1 = new OdbcCommand(queryAct, conn);
+        //                            cmc1.ExecuteNonQuery();
 
-                                }
-                            }
+        //                        }
+        //                    }
 
-                            conn.Close();
-                            LiberaMemoria.FlushMemory();
-                        }
+        //                    conn.Close();
+        //                    LiberaMemoria.FlushMemory();
+        //                }
 
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                R.Codigo = -1;
-                R.Mensaje = "Alerta: " + ex.Message;
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        R.Codigo = -1;
+        //        R.Mensaje = "Alerta: " + ex.Message;
 
-                objRegistraLog.Graba("Error al intentar Insertar ArticulosDT : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+        //        objRegistraLog.Graba("Error al intentar Insertar ArticulosDT : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
 
-            }
+        //    }
 
-            return R;
-        }
+        //    return R;
+        //}
         private static int EnviaSap(string Metodo, JObject JsonObject, string URL) //, ref Marketing ObjSap, ref string RR
         {
             try
@@ -1438,6 +1310,7 @@ namespace Intercompany.Data
 
 
         }
+
         public static int conecta_service_layer(string CompanyDB, string UserName, string Password, string URL)
         {
             try
@@ -1488,6 +1361,84 @@ namespace Intercompany.Data
         {
             return true;
         }
+
+        private static void Inserterror(string pais,string tip, string nomcod) //, ref Marketing ObjSap, ref string RR
+        {
+          
+            try
+            {
+                using (OdbcConnection conn9 = new OdbcConnection(Conexion.strCon))
+                   
+                {
+                    conn9.Open();
+                    string query = $"SELECT  ifnull(max(\"DocEntry\"),0)  as num  FROM \"{Conexion.ORIGEN}\".\"@SINCROERROR\""; //Query Encabezado
+                    OdbcCommand cmand = new OdbcCommand(query, conn9);
+                    OdbcDataReader dr1 = cmand.ExecuteReader();
+                    int numero = 0;
+                    while (dr1.Read())
+                    {
+
+                        numero = Convert.ToInt32(dr1["num"]) + 1;
+
+                    }
+                    dr1.Close();
+                    string queryAct = $"INSERT INTO \"{Conexion.ORIGEN}\".\"@SINCROERROR\" (\"DocEntry\",\"DocNum\",\"U_docunum\",\"U_tipo\",\"U_pais\",\"U_mensaje\",\"U_fecha\",\"U_hora\")" +
+                        "values(" + numero + "," + numero + ",'" + nomcod + "','" + tip + "','" + pais.ToString() + "','" + RR.Replace("'", "") + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "')";  //Query Actualiza el campo Status y DocEntry_SAP, Tabla Encabezado
+                    OdbcCommand cmc1 = new OdbcCommand(queryAct, conn9);
+                    cmc1.ExecuteNonQuery();
+                    conn9.Close();
+                }
+               
+                LiberaMemoria.FlushMemory();
+            }
+            catch (Exception ex)
+            {            
+
+                objRegistraLog.Graba("Error Inserterror : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+
+            }
+          
+    
+        }
+
+        public static Respuesta CrearFabricanteTODAS(string bd, string codigo)
+        {
+            int resul = 0;       
+            Respuesta R = new Respuesta();
+            try
+            {               
+                    if (conecta_service_layer(bd, "fcspa-cloud\\mch05", "QUtg!335Gb", "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
+                    {
+                        R.Codigo = -2;
+                        R.Mensaje = RR;
+                        objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
+                        return R;
+                    }                      
+                        Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();                              
+                        JsonObject.Add(new JProperty("ManufacturerName", codigo));
+                        var myjs = JsonObject.ToString();
+                        resul = EnviaSap("POST", JsonObject, "https://hana-mcholding.fcspa-cloud.net:50000/b1s/v1/Manufacturers"); //
+                        if (resul == 0) // Caso que inserto 
+                        {
+                            objRegistraLog.Graba("Insertado a Sap el fabricante : " + codigo + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+                        }
+                        else
+                        {
+                            objRegistraLog.Graba("Error insertando fabricante: " + RR + " " + codigo + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// 
+                            Inserterror("AMD", "OMRC", codigo);
+                        }                
+
+                        LiberaMemoria.FlushMemory();            
+                     }            
+            catch (Exception ex)
+            {
+                R.Codigo = -1;
+                R.Mensaje = "Alerta: " + ex.Message;
+                objRegistraLog.Graba("Error al intentar Insertar FabricanteTD : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+            }
+            return R;
+        }
+
 
         private static JObject CrearObjetoJson(OdbcDataReader dataReader)
         {

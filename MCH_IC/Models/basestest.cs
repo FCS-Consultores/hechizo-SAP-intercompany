@@ -8,7 +8,7 @@ namespace Intercompany.Models
 {
     class basestest
     {
-         string aceros = "20043_ACEROS_PESADOS_TEST";
+         public static string aceros = "20043_ACEROS_PESADOS_TEST";
         string amd = "20043_AMD_MUNDIALES_TEST";
         string boquete = "20043_BOQUETE_TEST";
         string calypso = "20043_CALYPSO_TEST";

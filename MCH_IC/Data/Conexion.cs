@@ -11,21 +11,11 @@ namespace Intercompany.Data
 {
     public class Conexion
     {
-        public static string ORIGEN=ori();
-        public static string acero=aceros();
-        public static string amd= amd();
-        public static string boquete = boquete();
-        public static string calypso = calypso();
-        public static string canaima = canaima();
-        public static string constru = constru();
-        public static string eco = eco();
-        public static string farmar = farmar();
-        public static string ideo = ideo();
-        public static string iverco = iverco();
-        public static string panco = panco();
-        public static string pgjp = pgjp();
-        public static string world = world();
-        public static string zhej = zhej();
+
+       // public static string ORIGEN;
+       //public static string baseaceros=aceros();
+   
+      
       
 
         public static string conexionhana()
@@ -58,9 +48,43 @@ namespace Intercompany.Data
 
 
         }
+
+        //public static string aceros()
+        //{1
+        //    RegistroLog objRegistraLog = new RegistroLog(); //Log en caso de error
+        //    try
+        //    {
+        //        IniFile IniFil;
+        //        IniFil = new IniFile(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "/config.ini");
+        //         string aceros = IniFil.LeerINI("ConexionHanaProd", "aceros");
+        //        return aceros;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        objRegistraLog.Graba(ex + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));
+        //        return "";
+        //    }
+        //}
+
+        public static string strCon = conexionhana();
+        public static string ORIGEN =   ori();
+        public static string baseamd = amd();
+        public static string baseboquete = boquete();
+        public static string basecalypso =calypso();
+        public static string basecanaima = amd();
+        public static string baseconstru = amd();
+        public static string baseeco = amd();
+        public static string basefarmar = amd();
+        public static string baseideo = amd();
+        public static string baseiverco = amd();
+        public static string basepanco = amd();
+        public static string basepgjp = amd();
+        public static string baseworld = amd();
+        public static string basezhej = amd();
+
         public static string ori()
         {
-             RegistroLog objRegistraLog = new RegistroLog(); //Log en caso de error
+            RegistroLog objRegistraLog = new RegistroLog(); //Log en caso de error
 
             try
             {
@@ -68,7 +92,7 @@ namespace Intercompany.Data
                 IniFile IniFil;
                 // IniFil = new IniFile(Application.StartupPath + "/config.ini"); //"Application.StartupPath" (Este se usan con el using Forms) //el archivo config.ini queda alojado en el la carpeta bin del publicado
                 IniFil = new IniFile(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "/config.ini");
-                string ORIGEN = IniFil.LeerINI("ConexionHanaProd", "ORIGEN");               
+                string ORIGEN = IniFil.LeerINI("ConexionHanaProd", "ORIGEN");
                 return ORIGEN;
             }
             catch (Exception ex)
@@ -79,22 +103,6 @@ namespace Intercompany.Data
 
 
 
-        }
-        public static string aceros()
-        {
-            RegistroLog objRegistraLog = new RegistroLog(); //Log en caso de error
-            try
-            {
-                IniFile IniFil;
-                IniFil = new IniFile(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "/config.ini");
-                string aceros = IniFil.LeerINI("ConexionHanaProd", "aceros");
-                return aceros;
-            }
-            catch (Exception ex)
-            {
-                objRegistraLog.Graba(ex + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));
-                return "";
-            }
         }
         public static string amd()
         {
@@ -304,6 +312,6 @@ namespace Intercompany.Data
                 return "";
             }
         }
-        public static string strCon = conexionhana();
+     
      }
 }

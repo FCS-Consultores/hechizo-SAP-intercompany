@@ -1,2 +1,8 @@
 c:\users\consult07\documents\visual studio 2015\Projects\MCH_IC\MCH_IC\bin\x64\Debug\MCH_IC.exe.config
 E:\haydee\MCH\MCH_IC\MCH_IC\bin\x64\Debug\MCH_IC.exe.config
+E:\haydee\MCH\MCH_IC\MCH_IC\bin\x64\Debug\MCH_IC.exe
+E:\haydee\MCH\MCH_IC\MCH_IC\bin\x64\Debug\MCH_IC.pdb
+E:\haydee\MCH\MCH_IC\MCH_IC\bin\x64\Debug\Newtonsoft.Json.dll
+E:\haydee\MCH\MCH_IC\MCH_IC\bin\x64\Debug\Newtonsoft.Json.xml
+E:\haydee\MCH\MCH_IC\MCH_IC\obj\x64\Debug\MCH_IC.exe
+E:\haydee\MCH\MCH_IC\MCH_IC\obj\x64\Debug\MCH_IC.pdb

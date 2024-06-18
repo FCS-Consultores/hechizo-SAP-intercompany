@@ -13,16 +13,26 @@ namespace Intercompany
         static void Main(string[] args)
         {
             Intercompany.tools.OcultarConsola.DisappearConsole();
-            RegistroLog objRegistraLog = new RegistroLog();
-            inter.CrearFabricanteTODAS();      
-            inter.CrearGrupoTODAS();
-            inter.CrearFamiliaTODAS();
-            inter.CrearAduanasTODAS();
-            inter.CrearArticulosTD();
-            inter.CrearAduanasTODAS();
-            inter.ActualizarArticulosTD();
+            //RegistroLog objRegistraLog = new RegistroLog();
+            #region fabricanteGEN
+            Intercompany.Data.Intercompany.Fabricante(Conexion.baseamd);
+            //Fabricante(Conexion.baseamd);
+            //Fabricante(Conexion.baseboquete);
+            //Fabricante(Conexion.baseamd);
+            //Fabricante(Conexion.baseamd);
+            //Fabricante(Conexion.baseamd);
+            //Fabricante(Conexion.baseamd);
 
-            inter.ActualizarArticulosDT();
+            #endregion
+            //inter.CrearFabricanteTODAS();      
+            //inter.CrearGrupoTODAS();
+            //inter.CrearFamiliaTODAS();
+            //inter.CrearAduanasTODAS();
+            //inter.CrearArticulosTD();
+            //inter.CrearAduanasTODAS();
+            //inter.ActualizarArticulosTD();
+
+            //inter.ActualizarArticulosDT();
 
 
             //InsServi_Ord_Vnt.convierteOVTA_OC();
@@ -31,8 +41,8 @@ namespace Intercompany
             //InsServi_Ord_Vnt.NuevaOporautDC();
 
             //InsServi_Ord_Vnt.NuevaOporautCD();
-            inter.NuevaOrdenvtaTD();
-            inter.NuevaOrdenvtaDT();
+            //inter.NuevaOrdenvtaTD();
+            //inter.NuevaOrdenvtaDT();
 
 
             //objRegistraLog.Graba("Prueba log No miercoles");

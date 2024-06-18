@@ -69,7 +69,6 @@
   <ItemGroup>
     <Compile Include="Data\Conexion.cs" />
     <Compile Include="Data\Intercompany.cs" />
-    <Compile Include="Data\JObject.cs" />
     <Compile Include="Models\basestest.cs" />
     <Compile Include="Models\DetallesOPORT.cs" />
     <Compile Include="Program.cs" />
