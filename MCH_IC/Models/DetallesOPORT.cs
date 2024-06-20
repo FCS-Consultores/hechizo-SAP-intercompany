@@ -13,6 +13,8 @@ namespace Intercompany.models
         public decimal Quantity { get; set; }
         public decimal PriceBefDi { get; set; }
         public decimal DiscPrcnt { get; set; }
+        public string VatGroup { get; set; }
+        public string PROYECTO { get; set; }
     }
 
 }

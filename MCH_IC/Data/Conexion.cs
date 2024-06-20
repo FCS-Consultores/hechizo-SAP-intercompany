@@ -71,16 +71,16 @@ namespace Intercompany.Data
         public static string baseamd = amd();
         public static string baseboquete = boquete();
         public static string basecalypso =calypso();
-        public static string basecanaima = amd();
-        public static string baseconstru = amd();
-        public static string baseeco = amd();
-        public static string basefarmar = amd();
-        public static string baseideo = amd();
-        public static string baseiverco = amd();
-        public static string basepanco = amd();
-        public static string basepgjp = amd();
-        public static string baseworld = amd();
-        public static string basezhej = amd();
+        public static string basecanaima = canaima();
+        public static string baseconstru = constru();
+        public static string baseeco =eco();
+        public static string basefarmar = farmar();
+        public static string baseideo = ideo();
+        public static string baseiverco =iverco();
+        public static string basepanco = panco();
+        public static string basepgjp = pgjp();
+        public static string baseworld = world();
+        public static string basezhej =zhej();
 
         public static string ori()
         {
