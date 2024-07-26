@@ -11,10 +11,11 @@ namespace Intercompany.models
         public int DocEntry { get; set; }
         public string ItemCode { get; set; }
         public decimal Quantity { get; set; }
-        public decimal PriceBefDi { get; set; }
+        public decimal LineTotal { get; set; }
         public decimal DiscPrcnt { get; set; }
         public string VatGroup { get; set; }
         public string PROYECTO { get; set; }
+
     }
 
 }

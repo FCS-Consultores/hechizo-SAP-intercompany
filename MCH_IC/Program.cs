@@ -14,7 +14,8 @@ namespace Intercompany
         {
             Intercompany.tools.OcultarConsola.DisappearConsole();
             //RegistroLog objRegistraLog = new RegistroLog();
-            //#region fabricanteGEN
+            Intercompany.Data.Intercompany.SINCROERROR();
+            #region fabricanteGEN
             //Intercompany.Data.Intercompany.Fabricante(Conexion.baseamd);
             //Intercompany.Data.Intercompany.Fabricante(Conexion.baseboquete);
             //Intercompany.Data.Intercompany.Fabricante(Conexion.basecalypso);
@@ -23,15 +24,15 @@ namespace Intercompany
             //Intercompany.Data.Intercompany.Fabricante(Conexion.baseeco);
             //Intercompany.Data.Intercompany.Fabricante(Conexion.basefarmar);
             //Intercompany.Data.Intercompany.Fabricante(Conexion.baseideo);
-            //Intercompany.Data.Intercompany.Fabricante(Conexion.baseiverco);
+            Intercompany.Data.Intercompany.Fabricante(Conexion.baseiverco);
             //Intercompany.Data.Intercompany.Fabricante(Conexion.basepanco);
             //Intercompany.Data.Intercompany.Fabricante(Conexion.basepgjp);
-            //Intercompany.Data.Intercompany.Fabricante(Conexion.baseworld);
+            Intercompany.Data.Intercompany.Fabricante(Conexion.baseworld);
             //Intercompany.Data.Intercompany.Fabricante(Conexion.basezhej);
-            //#endregion
+            #endregion
 
 
-            //#region GRUPOGEN
+            #region GRUPOGEN
             //Intercompany.Data.Intercompany.Grupo(Conexion.baseamd);
             //Intercompany.Data.Intercompany.Grupo(Conexion.baseboquete);
             //Intercompany.Data.Intercompany.Grupo(Conexion.basecalypso);
@@ -40,14 +41,50 @@ namespace Intercompany
             //Intercompany.Data.Intercompany.Grupo(Conexion.baseeco);
             //Intercompany.Data.Intercompany.Grupo(Conexion.basefarmar);
             //Intercompany.Data.Intercompany.Grupo(Conexion.baseideo);
-            //Intercompany.Data.Intercompany.Grupo(Conexion.baseiverco);
+            Intercompany.Data.Intercompany.Grupo(Conexion.baseiverco);
             //Intercompany.Data.Intercompany.Grupo(Conexion.basepanco);
             //Intercompany.Data.Intercompany.Grupo(Conexion.basepgjp);
-            //Intercompany.Data.Intercompany.Grupo(Conexion.baseworld);
+            Intercompany.Data.Intercompany.Grupo(Conexion.baseworld);
             //Intercompany.Data.Intercompany.Grupo(Conexion.basezhej);
-            //#endregion
+            #endregion
 
-            //#region ADUANAGEN
+            #region GRUPOSNGEN
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.baseamd);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.baseboquete);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.basecalypso);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.basecanaima);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.baseconstru);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.baseeco);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.basefarmar);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.baseideo);
+            Intercompany.Data.Intercompany.GrupoSN(Conexion.baseiverco);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.basepanco);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.basepgjp);
+            ///////////////Intercompany.Data.Intercompany.GrupoSN(Conexion.baseworld);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.basezhej);
+            #endregion
+
+ 
+
+
+           
+            #region CondicionesGEN
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.baseamd);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.baseboquete);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.basecalypso);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.basecanaima);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.baseconstru);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.baseeco);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.basefarmar);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.baseideo);
+            Intercompany.Data.Intercompany.condicionespago(Conexion.baseiverco);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.basepanco);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.basepgjp);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.baseworld);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.basezhej);
+            #endregion
+
+            #region ADUANAGEN
             //Intercompany.Data.Intercompany.ADUANA(Conexion.baseamd);
             //Intercompany.Data.Intercompany.ADUANA(Conexion.baseboquete);
             //Intercompany.Data.Intercompany.ADUANA(Conexion.basecalypso);
@@ -61,9 +98,14 @@ namespace Intercompany
             //Intercompany.Data.Intercompany.ADUANA(Conexion.basepgjp);
             //Intercompany.Data.Intercompany.ADUANA(Conexion.baseworld);
             //Intercompany.Data.Intercompany.ADUANA(Conexion.basezhej);
+            #endregion
+
+            //#region familia_subfamilia
+            //Intercompany.Data.Intercompany.CrearFAMI_SUBFAMI(Conexion.ORIGEN);         
+ 
             //#endregion
 
-            //#region articuloGEN
+            #region articuloGEN
             //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseamd);
             //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseboquete);
             //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basecalypso);
@@ -72,12 +114,36 @@ namespace Intercompany
             //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseeco);
             //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basefarmar);
             //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseideo);
-            //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseiverco);
+            Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseiverco);
             //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basepanco);
             //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basepgjp);
-            //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseworld);
+            ////////////////////////Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseworld);
             //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basezhej);
-            //#endregion
+            #endregion
+
+            Intercompany.Data.Intercompany.CreararticuloWORLD(Conexion.baseworld);
+
+
+
+            #region SOCIO_GEN
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseamd);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseboquete);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basecalypso);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basecanaima);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseconstru);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseeco);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basefarmar);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseideo);
+            Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseiverco);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basepanco);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basepgjp);
+            /////////////////////Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseworld);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basezhej);
+
+            #endregion
+
+           // Intercompany.Data.Intercompany.CrearSOCIOTODASWORLD(Conexion.baseworld);
+
 
             #region SCSucursalGEN
             //Intercompany.Data.Intercompany.SCSucursal(Conexion.baseamd);
@@ -89,26 +155,121 @@ namespace Intercompany
             //Intercompany.Data.Intercompany.SCSucursal(Conexion.basefarmar);
             //Intercompany.Data.Intercompany.SCSucursal(Conexion.baseideo);
             Intercompany.Data.Intercompany.SCSucursal(Conexion.baseiverco);
-            Intercompany.Data.Intercompany.SCSucursal(Conexion.basepanco);
-            Intercompany.Data.Intercompany.SCSucursal(Conexion.basepgjp);
-            Intercompany.Data.Intercompany.SCSucursal(Conexion.baseworld);
-            Intercompany.Data.Intercompany.SCSucursal(Conexion.basezhej);
+            //Intercompany.Data.Intercompany.SCSucursal(Conexion.basepanco);
+            //Intercompany.Data.Intercompany.SCSucursal(Conexion.basepgjp);
+            //Intercompany.Data.Intercompany.SCSucursal(Conexion.baseworld);
+            //Intercompany.Data.Intercompany.SCSucursal(Conexion.basezhej);
             #endregion
 
-            //inter.ActualizarArticulosDT();
+            #region SCImportcGEN
+            //Intercompany.Data.Intercompany.SCImportc(Conexion.baseamd);
+            //Intercompany.Data.Intercompany.SCImportc(Conexion.baseboquete);
+            //Intercompany.Data.Intercompany.SCImportc(Conexion.basecalypso);
+            //Intercompany.Data.Intercompany.SCImportc(Conexion.basecanaima);
+            //Intercompany.Data.Intercompany.SCImportc(Conexion.baseconstru);
+            //Intercompany.Data.Intercompany.SCImportc(Conexion.baseeco);
+            //Intercompany.Data.Intercompany.SCImportc(Conexion.basefarmar);
+            //Intercompany.Data.Intercompany.SCImportc(Conexion.baseideo);
+            Intercompany.Data.Intercompany.SCImportc(Conexion.baseiverco);
+            //Intercompany.Data.Intercompany.SCImportc(Conexion.basepanco);
+            //Intercompany.Data.Intercompany.SCImportc(Conexion.basepgjp);
+            //Intercompany.Data.Intercompany.SCImportc(Conexion.baseworld);//preguntar a omar si esta la quito ya que sino quedaria wolrbrand a world brande y no tiene sentuido
+            //Intercompany.Data.Intercompany.SCImportc(Conexion.basezhej);
+            #endregion
+     
 
 
-            //InsServi_Ord_Vnt.convierteOVTA_OC();
+            #region OFERTAMCH_SUCGEN
+            //Intercompany.Data.Intercompany.OFERTAMCH_SUC(Conexion.baseamd);
+            //Intercompany.Data.Intercompany.OFERTAMCH_SUC(Conexion.baseboquete);
+            //Intercompany.Data.Intercompany.OFERTAMCH_SUC(Conexion.basecalypso);
+            //Intercompany.Data.Intercompany.OFERTAMCH_SUC(Conexion.basecanaima);
+            //Intercompany.Data.Intercompany.OFERTAMCH_SUC(Conexion.baseconstru);
+            //Intercompany.Data.Intercompany.OFERTAMCH_SUC(Conexion.baseeco);
+            //Intercompany.Data.Intercompany.OFERTAMCH_SUC(Conexion.basefarmar);
+            //Intercompany.Data.Intercompany.OFERTAMCH_SUC(Conexion.baseideo);
+            Intercompany.Data.Intercompany.OFERTAMCH_SUC(Conexion.baseiverco);
+            //Intercompany.Data.Intercompany.OFERTAMCH_SUC(Conexion.basepanco);
+            //Intercompany.Data.Intercompany.OFERTAMCH_SUC(Conexion.basepgjp);
+           // Intercompany.Data.Intercompany.OFERTAMCH_SUC(Conexion.baseworld);
+            //Intercompany.Data.Intercompany.OFERTAMCH_SUC(Conexion.basezhej);
+            #endregion
 
-            //se cambia el metodo de arriba por el metodo de abajo segun solicitud de minuta el 09/04
-            //InsServi_Ord_Vnt.NuevaOporautDC();
-
-            //InsServi_Ord_Vnt.NuevaOporautCD();
-            //inter.NuevaOrdenvtaTD();
-            //inter.NuevaOrdenvtaDT();
 
 
-            //objRegistraLog.Graba("Prueba log No miercoles");
+            #region actualizaMCH_OFERTA
+            //Intercompany.Data.Intercompany.BuscaACT_OFERTASUC(Conexion.baseamd);
+            //Intercompany.Data.Intercompany.BuscaACT_OFERTASUC(Conexion.baseboquete);
+            //Intercompany.Data.Intercompany.BuscaACT_OFERTASUC(Conexion.basecalypso);
+            //Intercompany.Data.Intercompany.BuscaACT_OFERTASUC(Conexion.basecanaima);
+            //Intercompany.Data.Intercompany.BuscaACT_OFERTASUC(Conexion.baseconstru);
+            //Intercompany.Data.Intercompany.BuscaACT_OFERTASUC(Conexion.baseeco);
+            //Intercompany.Data.Intercompany.BuscaACT_OFERTASUC(Conexion.basefarmar);
+            //Intercompany.Data.Intercompany.BuscaACT_OFERTASUC(Conexion.baseideo);
+            Intercompany.Data.Intercompany.BuscaACT_OFERTASUC(Conexion.baseiverco);
+            //Intercompany.Data.Intercompany.BuscaACT_OFERTASUC(Conexion.basepanco);
+            //Intercompany.Data.Intercompany.BuscaACT_OFERTASUC(Conexion.basepgjp);
+            Intercompany.Data.Intercompany.BuscaACT_OFERTASUC(Conexion.baseworld);
+            //Intercompany.Data.Intercompany.BuscaACT_OFERTASUC(Conexion.basezhej);
+            #endregion
+
+            #region orden_compra_sucursal
+
+            //Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.baseamd);
+            //Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.baseboquete);
+            //Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.basecalypso);
+            //Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.basecanaima);
+            //Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.baseconstru);
+            //Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.baseeco);
+            //Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.basefarmar);
+            //Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.baseideo);
+            Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.baseiverco);
+            //Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.basepanco);
+            //Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.basepgjp);
+            Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.baseworld);
+            //Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.basezhej);
+            #endregion
+
+
+            #region actualizaMCH_OCOMPRA
+            //Intercompany.Data.Intercompany.BuscaACT_OCMCH(Conexion.baseamd);
+            //Intercompany.Data.Intercompany.BuscaACT_OCMCH(Conexion.baseboquete);
+            //Intercompany.Data.Intercompany.BuscaACT_OCMCH(Conexion.basecalypso);
+            //Intercompany.Data.Intercompany.BuscaACT_OCMCH(Conexion.basecanaima);
+            //Intercompany.Data.Intercompany.BuscaACT_OCMCH(Conexion.baseconstru);
+            //Intercompany.Data.Intercompany.BuscaACT_OCMCH(Conexion.baseeco);
+            //Intercompany.Data.Intercompany.BuscaACT_OCMCH(Conexion.basefarmar);
+            //Intercompany.Data.Intercompany.BuscaACT_OCMCH(Conexion.baseideo);
+            Intercompany.Data.Intercompany.BuscaACT_OCMCH(Conexion.baseiverco);
+            //Intercompany.Data.Intercompany.BuscaACT_OCMCH(Conexion.basepanco);
+            //Intercompany.Data.Intercompany.BuscaACT_OCMCH(Conexion.basepgjp);
+            Intercompany.Data.Intercompany.BuscaACT_OCMCH(Conexion.baseworld);
+            //Intercompany.Data.Intercompany.BuscaACT_OCMCH(Conexion.basezhej);
+            #endregion
+
+            #region orden_compra_WORLD_sucursal
+
+            //Intercompany.Data.Intercompany.OC_World_a_SUC(Conexion.baseamd);
+            //Intercompany.Data.Intercompany.OC_World_a_SUC(Conexion.baseboquete);
+            //Intercompany.Data.Intercompany.OC_World_a_SUC(Conexion.basecalypso);
+            //Intercompany.Data.Intercompany.OC_World_a_SUC(Conexion.basecanaima);
+            //Intercompany.Data.Intercompany.OC_World_a_SUC(Conexion.baseconstru);
+            //Intercompany.Data.Intercompany.OC_World_a_SUC(Conexion.baseeco);
+            //Intercompany.Data.Intercompany.OC_World_a_SUC(Conexion.basefarmar);
+            //Intercompany.Data.Intercompany.OC_World_a_SUC(Conexion.baseideo);
+            Intercompany.Data.Intercompany.OC_World_a_SUC(Conexion.baseiverco);
+            //Intercompany.Data.Intercompany.OC_World_a_SUC(Conexion.basepanco);
+            //Intercompany.Data.Intercompany.OC_World_a_SUC(Conexion.basepgjp);
+            //Intercompany.Data.Intercompany.OC_World_a_SUC(Conexion.baseworld);
+            //Intercompany.Data.Intercompany.OC_World_a_SUC(Conexion.basezhej);
+            #endregion
+
+
+       
+
+            #region ORDEN_VENTA
+            Intercompany.Data.Intercompany.Ovta_World_a_Wolrd(Conexion.baseworld);
+            #endregion
 
         }
     }
