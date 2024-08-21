@@ -1,0 +1,6 @@
+﻿Insertado a CrearSOCIOTODAS : OMAR dos/ Hora: 15:26:15 PM
+Insertado a CrearSOCIOTODAS : OMAR dos/ Hora: 17:14:05 PM
+Insertado a CrearSOCIOTODAS : OMAR tres/ Hora: 17:24:01 PM
+Error al intentar Insertar articulo : Index and length must refer to a location within the string.
+Parameter name: length/ Hora: 17:24:08 PM
+Insertado a CrearSOCIOTODAS : OMAR tres/ Hora: 17:24:22 PM

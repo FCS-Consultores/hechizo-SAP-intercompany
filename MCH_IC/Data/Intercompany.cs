@@ -461,7 +461,7 @@ namespace Intercompany.Data
                                 TaxDate = dr2["TaxDate"].ToString();
                                 ReqDate = dr2["ReqDate"].ToString();
                                 //BUSCO CODIGO DE proveedor DE UNA VEZ
-                                string query = $"SELECT  \"CardCode\"   FROM \"{bd}\".\"OCRD\" WHERE \"CardName\"='" + CardName + "'"; //Query Encabezado
+                                string query = $"SELECT  \"CardCode\"   FROM \"{bd}\".\"OCRD\" WHERE \"CardName\"='" + CardName + "' and \"CardType\"='S'"; //Query Encabezado
                                 OdbcCommand cmand = new OdbcCommand(query, conn1);
                                 conn1.Open();
                                 OdbcDataReader dr1 = cmand.ExecuteReader();
@@ -522,7 +522,8 @@ namespace Intercompany.Data
                 using (OdbcConnection conn1 = new OdbcConnection(Conexion.strCon))
                 {
                     {
-                        string queryEn = $"select \"DocEntry\",\"CardName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\" from  \"{Conexion.ORIGEN}\".\"OPOR\" where \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"U_Origen\"='" + bd + "'";//bd.Substring(6, 6)
+                        // aca se busca  alreves a asolicitud de omar porque cuando se copia de oferta a pedido arrastra el enviado en 1 entonces 1 significa queno se ha enviado y 0 es que ya se envio solo en oc 
+                        string queryEn = $"select \"DocEntry\",\"CardName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\" from  \"{Conexion.ORIGEN}\".\"OPOR\" where \"U_Enviado\" ='1' and \"U_ENVIOSUC\"='Y' and \"U_Origen\"='" + bd + "'";//bd.Substring(6, 6)
                         OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                         conn.Open();
                         using (OdbcDataReader dr2 = CmD1.ExecuteReader())
@@ -539,7 +540,10 @@ namespace Intercompany.Data
                                 ReqDate = dr2["ReqDate"].ToString();
                                 //en la sucursal tiene que aquedar a nombre de worl brand 
                                 //string query = $"SELECT  \"CardCode\"   FROM \"{bd}\".\"OCRD\" WHERE \"CardName\"='" + CardName + "'"; //Query Encabezado
-                                string query = $"SELECT  \"CardCode\"   FROM \"{bd}\".\"OCRD\" WHERE \"U_Base_Datos\"='" + Conexion.ORIGEN + "' and \"CardType\" ='S'"; //Query Encabezado
+
+                                string query = $"SELECT  \"CardCode\"   FROM \"{bd}\".\"OCRD\" WHERE \"CardName\"='" + CardName + "' and \"CardType\" ='S'"; //Query Encabezado
+                                //string query = $"SELECT  \"CardCode\"   FROM \"{bd}\".\"OCRD\" WHERE \"U_Base_Datos\"='" + Conexion.ORIGEN + "' and \"CardType\" ='S'"; //Query Encabezado
+
                                 OdbcCommand cmand = new OdbcCommand(query, conn1);
                                 conn1.Open();
                                 OdbcDataReader dr1 = cmand.ExecuteReader();
@@ -550,6 +554,7 @@ namespace Intercompany.Data
                                 }
                                 dr1.Close();
                                 conn1.Close();
+
                                 //BUSCO CODIGO DE PROYECTO DE UNA VEZ
                                 query = $"SELECT  \"PrjCode\"   FROM \"{bd}\".\"OPRJ\" WHERE \"PrjName\"='" + U_PROYECTO + "'"; //Query Encabezado
                                 cmand = new OdbcCommand(query, conn1);
@@ -600,7 +605,8 @@ namespace Intercompany.Data
                 using (OdbcConnection conn1 = new OdbcConnection(Conexion.strCon))
                 {
                     {
-                        string queryEn = $"select \"DocEntry\",\"CardName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\" from  \"{Conexion.baseworld}\".\"OPOR\" where \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"U_Origen\"='" + bd + "'";//bd.Substring(6, 6)
+                        // aca se busca  alreves a asolicitud de omar porque cuando se copia de oferta a pedido arrastra el enviado en 1 entonces 1 significa queno se ha enviado y 0 es que ya se envio solo en oc 
+                        string queryEn = $"select \"DocEntry\",\"CardName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\" from  \"{Conexion.baseworld}\".\"OPOR\" where \"U_Enviado\" ='1' and \"U_ENVIOSUC\"='Y' and \"U_Origen\"='" + bd + "'";//bd.Substring(6, 6)
                         OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                         conn.Open();
                         using (OdbcDataReader dr2 = CmD1.ExecuteReader())
@@ -1065,6 +1071,7 @@ namespace Intercompany.Data
                             }
                             while (dr.Read())
                             {
+
                                 nomcod = dr["ItemCode"].ToString();
                                 Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
                                 JsonObject = CrearObjetoJson(dr);
@@ -1173,10 +1180,13 @@ namespace Intercompany.Data
         {
             int resul = 0;
             string nomcod = string.Empty;
+            int cuantos = 0;
+            string bd2 = string.Empty;
             Respuesta R = new Respuesta();
             try
             {
                 using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
+                using (OdbcConnection conn2 = new OdbcConnection(Conexion.strCon))
                 {
                     string query = $"CALL \"{Conexion.ORIGEN}\".IC_ADD_SN('{bd}')"; //Query Encabezado
                     OdbcCommand CmD = new OdbcCommand(query, conn); // llama al Query Encabezado con la conexion
@@ -1192,27 +1202,52 @@ namespace Intercompany.Data
                                 objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
                                 return R;
                             }
+
                             while (dr.Read())
                             {
                                 nomcod = dr["CardName"].ToString();
-                                Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
-                                JsonObject = CrearObjetoJson(dr);
-                                var myjs = JsonObject.ToString();
-                                resul = EnviaSap("POST", JsonObject, "https://hana-mcholding:50000/b1s/v1/BusinessPartners");//
+                                string queryEn = $"select count(\"CardName\") \"conteo\"   from  \"{bd}\".\"OCRD\" where \"CardName\" = '" + nomcod + "'";
+                                OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
+                                conn2.Open();
+                                using (OdbcDataReader dr2 = CmD1.ExecuteReader())
+                                    while (dr2.Read())
+                                    {
+                            
+                                        cuantos = Convert.ToInt32(dr2["conteo"]);
 
-                                if (resul == 0) // Caso que inserto 
-                                {
-                                    objRegistraLog.Graba("Insertado a CrearSOCIOTODAS : " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                }
-                                else
-                                {
-                                    objRegistraLog.Graba("Error CrearSOCIOTODAS: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// 
-                                    Inserterror(bd.Substring(6, 6), "OCRD", nomcod);
-                                }
+                                        if (cuantos==0 )
+                                        {
+                                                Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
+                                                JsonObject = CrearObjetoJson(dr);
+                                                var myjs = JsonObject.ToString();
+                                                resul = EnviaSap("POST", JsonObject, "https://hana-mcholding:50000/b1s/v1/BusinessPartners");//
+
+                                                if (resul == 0) // Caso que inserto 
+                                                {
+                                                            objRegistraLog.Graba("Insertado a CrearSOCIOTODAS : " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+                                                        bd2 = bd.Substring(0, 18);
+                                                        if (bd2 == "20043_WORLD_BRANDS")
+                                                            {
+                                                            query = $"UPDATE  \"{Conexion.ORIGEN}\".\"OCRD\" SET \"U_Enviado\" = '1' WHERE \"CardName\" =  '" + nomcod + "'";
+                                                            OdbcCommand cmand = new OdbcCommand(query, conn);
+                                                            OdbcDataReader dr1 = cmand.ExecuteReader();
+                                                        }
+                                                }
+                                                else
+                                                {
+                                                    objRegistraLog.Graba("Error CrearSOCIOTODAS: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// 
+                                                    Inserterror(bd.Substring(6, 6), "OCRD", nomcod);
+                                                }
+                                        }
+                                    }
+                                conn2.Close();
                             }
-                            LiberaMemoria.FlushMemory();
+
+                                     
                         }
-                    }
+                        LiberaMemoria.FlushMemory();
+             
+                }
                     conn.Close();
                 }
             }
@@ -1224,62 +1259,7 @@ namespace Intercompany.Data
             }
             return R;
         }
-      
-        public static Respuesta CrearSOCIOTODASWORLD(string bd)
-        {
-            int resul = 0;
-            string nomcod = string.Empty;
-            Respuesta R = new Respuesta();
-            try
-            {
-                using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
-                {
-                    string query = $"CALL \"{Conexion.ORIGEN}\".\"IC_ADD_SN_WORLD\"('{bd}')"; //Query Encabezado
-                    OdbcCommand CmD = new OdbcCommand(query, conn); // llama al Query Encabezado con la conexion
-                    conn.Open();
-                    using (OdbcDataReader dr = CmD.ExecuteReader())
-                    {
-                        if (dr.RecordsAffected != 0)
-                        {
-                            if (conecta_service_layer(bd, "fcspa-cloud\\mch36", "Qht!045!BN", "https://hana-mcholding:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
-                            {
-                                R.Codigo = -2;
-                                R.Mensaje = RR;
-                                objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
-                                return R;
-                            }
-                            while (dr.Read())
-                            {
-                                nomcod = dr["CardName"].ToString();
-                                Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
-                                JsonObject = CrearObjetoJson(dr);
-                                var myjs = JsonObject.ToString();
-                                resul = EnviaSap("POST", JsonObject, "https://hana-mcholding:50000/b1s/v1/BusinessPartners");//
-
-                                if (resul == 0) // Caso que inserto 
-                                {
-                                    objRegistraLog.Graba("Insertado a CrearSOCIOTODASWORLD : " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                }
-                                else
-                                {
-                                    objRegistraLog.Graba("Error CrearSOCIOTODASWORLD: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// 
-                                    Inserterror(bd.Substring(6, 6), "OCRDWORLD", nomcod);
-                                }
-                            }
-                            LiberaMemoria.FlushMemory();
-                        }
-                    }
-                    conn.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                R.Codigo = -1;
-                R.Mensaje = "Alerta: " + ex.Message;
-                objRegistraLog.Graba("Error al intentar Insertar articulo : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
-            }
-            return R;
-        }
+     
         public static Respuesta CrearADUANATODAS(string bd, string CstGrpName, string GroupNum, double Custom, double BuyTax, double OtherTax, double TotalTax, string Locked, string DataSource, string cstAllcAcc, string cstExpAcc, string PortAddr, string PortState, string ExciExpAcc, string ExciAlcAcc)
         {
             int resul = 0;
@@ -1795,7 +1775,9 @@ namespace Intercompany.Data
                                 resul = EnviaSap("POST", JsonObject, "https://hana-mcholding:50000/b1s/v1/PurchaseOrders"); //
                                 if (resul == 0) // Caso que inserto 
                                 {
-                                    string query = $"UPDATE  \"{Conexion.baseworld}\".\"OPOR\" SET \"U_Enviado\" = '1' WHERE \"DocEntry\" =  '" + DocEntry + "'";
+                                    // string queryAct = $"UPDATE \"{BRETASV}\".\"OITM\" SET \"U_act\" = '" + vac + "' WHERE \"ItemCode\" =  '" + En_DN + "'"; //Query Actualiza Entry_fac
+
+                                    string query = $"UPDATE  \"{Conexion.baseworld}\".\"OPOR\" SET \"U_Enviado\" = '0' WHERE \"DocEntry\" =  '" + DocEntry + "'";
 
                                     // string queryAct = $"UPDATE \"{BRETASV}\".\"OITM\" SET \"U_act\" = '" + vac + "' WHERE \"ItemCode\" =  '" + En_DN + "'"; //Query Actualiza Entry_fac
                                     OdbcCommand cmand = new OdbcCommand(query, conn);
@@ -1839,6 +1821,7 @@ namespace Intercompany.Data
                 }
                 using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
                 {
+
                     string queryEn = $"SELECT \"ItemCode\",	 A.\"Quantity\", A.\"VatGroup\",A.\"LineTotal\" FROM \"{Conexion.ORIGEN}\".\"POR1\" A  where A.\"DocEntry\"='" + DocEntry + "'";
 
                     OdbcCommand CmD = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
@@ -1916,7 +1899,8 @@ namespace Intercompany.Data
                                 resul = EnviaSap("POST", JsonObject, "https://hana-mcholding:50000/b1s/v1/PurchaseOrders"); //
                                 if (resul == 0) // Caso que inserto 
                                 {
-                                    string query = $"UPDATE  \"{Conexion.ORIGEN}\".\"OPOR\" SET \"U_Enviado\" = '1' WHERE \"DocEntry\" =  '" + DocEntry + "'";
+                                    // aca se actualiza alreves a asolicitud de omar porque cuando se copia de oferta a pedido arrastra el enviado en 1 entonces 0 significa que ya se envio 
+                                    string query = $"UPDATE  \"{Conexion.ORIGEN}\".\"OPOR\" SET \"U_Enviado\" = '0' WHERE \"DocEntry\" =  '" + DocEntry + "'";
 
                                     // string queryAct = $"UPDATE \"{BRETASV}\".\"OITM\" SET \"U_act\" = '" + vac + "' WHERE \"ItemCode\" =  '" + En_DN + "'"; //Query Actualiza Entry_fac
                                     OdbcCommand cmand = new OdbcCommand(query, conn);
@@ -2151,7 +2135,7 @@ namespace Intercompany.Data
                     }
                     //cerrar todos los doc diferentes al que aceptaron de ese empresa
                     Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
-                    string queryEn = $"SELECT \"DocEntry\" FROM \"{Conexion.ORIGEN}\".\"OPRQ\" where   \"U_Origen\"='{bd}' and \"DocEntry\"!='" + Entry + "'  and \"DocStatus\"='O' and \"U_entrySC\"='" + EntrySC + "'";
+                    string queryEn = $"SELECT \"DocEntry\" FROM \"{Conexion.ORIGEN}\".\"OPOR\" where   \"U_Origen\"='{bd}' and \"DocEntry\"='" + Entry + "'  and \"DocStatus\"='O'";
 
                     OdbcCommand CmD = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                     conn.Open();
@@ -2177,7 +2161,7 @@ namespace Intercompany.Data
                             }
                             else
                             {
-                                objRegistraLog.Graba("Error actualizaPAMCH: " + RR + " " + DocEntry + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// 
+                                objRegistraLog.Graba("Error actualizaOC_MCH: " + RR + " " + DocEntry + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// 
                                 Inserterror(bd.Substring(6, 6), "OPRQact", Convert.ToString(DocEntry));
                             }
                             }

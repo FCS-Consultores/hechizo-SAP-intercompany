@@ -1,0 +1,10 @@
+﻿Sin conectar a Service Layer : Unable to connect to the remote server/ Hora: 15:21:42 PM
+Sin conectar a Service Layer : Unable to connect to the remote server/ Hora: 15:21:43 PM
+Sin conectar a Service Layer : Unable to connect to the remote server/ Hora: 15:21:48 PM
+Error CrearOfertaTODAS: In "BP Code", enter vendor code  63/ Hora: 15:27:52 PM
+Error CrearOfertaTODAS: In "BP Code", enter vendor code  63/ Hora: 15:39:30 PM
+Error CrearOfertaTODAS: In "BP Code", enter vendor code  63/ Hora: 15:43:10 PM
+Error CrearOfertaTODAS: In "BP Code", enter vendor code  63/ Hora: 15:44:09 PM
+Error CrearOfertaTODAS: In "BP Code", enter vendor code  63/ Hora: 15:53:31 PM
+Error CrearOfertaTODAS: In "BP Code", enter vendor code  63/ Hora: 16:04:43 PM
+Error CrearOfertaTODAS: In "BP Code", enter vendor code  63/ Hora: 16:05:52 PM

@@ -6,4 +6,24 @@ E:\haydee\MCH\MCH_IC\MCH_IC\bin\x64\Debug\Newtonsoft.Json.dll
 E:\haydee\MCH\MCH_IC\MCH_IC\bin\x64\Debug\Newtonsoft.Json.xml
 E:\haydee\MCH\MCH_IC\MCH_IC\obj\x64\Debug\MCH_IC.exe
 E:\haydee\MCH\MCH_IC\MCH_IC\obj\x64\Debug\MCH_IC.pdb
-E:\haydee\MCH\MCH_IC\MCH_IC\obj\x64\Debug\MCH_IC.csprojResolveAssemblyReference.cache
+E:\haydee\MCH\MCH_IC bd test\MCH_IC\bin\x64\Debug\MCH_IC.exe.config
+E:\haydee\MCH\MCH_IC bd test\MCH_IC\bin\x64\Debug\MCH_IC.exe
+E:\haydee\MCH\MCH_IC bd test\MCH_IC\bin\x64\Debug\MCH_IC.pdb
+E:\haydee\MCH\MCH_IC bd test\MCH_IC\bin\x64\Debug\Newtonsoft.Json.dll
+E:\haydee\MCH\MCH_IC bd test\MCH_IC\bin\x64\Debug\Newtonsoft.Json.xml
+E:\haydee\MCH\MCH_IC bd test\MCH_IC\obj\x64\Debug\MCH_IC.exe
+E:\haydee\MCH\MCH_IC bd test\MCH_IC\obj\x64\Debug\MCH_IC.pdb
+E:\haydee\MCH\MCH_IC bd test - Copy\MCH_IC\bin\x64\Debug\MCH_IC.exe.config
+E:\haydee\MCH\MCH_IC bd test - Copy\MCH_IC\obj\x64\Debug\MCH_IC.exe
+E:\haydee\MCH\MCH_IC bd test - Copy\MCH_IC\obj\x64\Debug\MCH_IC.pdb
+E:\haydee\MCH\MCH_IC bd test - Copy\MCH_IC\bin\x64\Debug\MCH_IC.exe
+E:\haydee\MCH\MCH_IC bd test - Copy\MCH_IC\bin\x64\Debug\MCH_IC.pdb
+E:\haydee\MCH\MCH_IC bd test - Copy\MCH_IC\bin\x64\Debug\Newtonsoft.Json.dll
+E:\haydee\MCH\MCH_IC bd test - Copy\MCH_IC\bin\x64\Debug\Newtonsoft.Json.xml
+E:\haydee\MCH\MCH_IC bd productivo\MCH_IC\bin\x64\Debug\MCH_IC.exe.config
+E:\haydee\MCH\MCH_IC bd productivo\MCH_IC\obj\x64\Debug\MCH_IC.exe
+E:\haydee\MCH\MCH_IC bd productivo\MCH_IC\obj\x64\Debug\MCH_IC.pdb
+E:\haydee\MCH\MCH_IC bd productivo\MCH_IC\bin\x64\Debug\MCH_IC.exe
+E:\haydee\MCH\MCH_IC bd productivo\MCH_IC\bin\x64\Debug\MCH_IC.pdb
+E:\haydee\MCH\MCH_IC bd productivo\MCH_IC\bin\x64\Debug\Newtonsoft.Json.dll
+E:\haydee\MCH\MCH_IC bd productivo\MCH_IC\bin\x64\Debug\Newtonsoft.Json.xml
