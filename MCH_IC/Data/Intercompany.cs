@@ -300,7 +300,7 @@ namespace Intercompany.Data
             string DocDueDate;
             string TaxDate;
             string ReqDate;
-        
+            string doctype;
             //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
             Respuesta R = new Respuesta();
             try
@@ -310,7 +310,7 @@ namespace Intercompany.Data
                 {
                     {
                        
-                          string queryEn = $"select \"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\" from \"{bd}\".\"OPRQ\" where \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"U_TipoCompra\" in ('1','2')";
+                          string queryEn = $"select \"DocType\",\"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\" from \"{bd}\".\"OPRQ\" where \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"U_TipoCompra\" in ('1','2') and \"DocStatus\"='O'";
                         
                         OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                         conn.Open();
@@ -326,7 +326,7 @@ namespace Intercompany.Data
                                 DocDueDate = dr2["DocDueDate"].ToString();
                                 TaxDate = dr2["TaxDate"].ToString();
                                 ReqDate = dr2["ReqDate"].ToString();
-                          
+                                doctype = dr2["DocType"].ToString();
                                 //BUSCO CODIGO DE PROYECTO DE UNA VEZ
                                 string query = $"SELECT  \"PrjCode\"   FROM \"{Conexion.ORIGEN}\".\"OPRJ\" WHERE \"PrjName\"='"+ U_PROYECTO +"'"; //Query Encabezado
                                 OdbcCommand cmand = new OdbcCommand(query, conn1);
@@ -339,7 +339,7 @@ namespace Intercompany.Data
                                 }
                                 dr1.Close();
                                 conn1.Close();
-                                CrearSCTODAS(bd, DocEntry, ReqName, U_PROYECTO, U_TipoCompra, Comments, DocDate, DocDueDate, TaxDate, ReqDate, CODPROYE);
+                                CrearSCTODAS(doctype, bd, DocEntry, ReqName, U_PROYECTO, U_TipoCompra, Comments, DocDate, DocDueDate, TaxDate, ReqDate, CODPROYE);
                             }
                     }
 
@@ -367,7 +367,7 @@ namespace Intercompany.Data
             string DocDueDate;
             string TaxDate;
             string ReqDate;
-  
+            string doctype;
             //omar en esta sc a worl brand tambien hay que mandar codigo interno_
 
             Respuesta R = new Respuesta();
@@ -378,7 +378,7 @@ namespace Intercompany.Data
                 {
                     {
 
-                        string queryEn = $"select \"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\" from \"{bd}\".\"OPRQ\" where \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"U_TipoCompra\"='3'";
+                        string queryEn = $"select \"DocType\",\"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\" from \"{bd}\".\"OPRQ\" where \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"U_TipoCompra\"='3'  and \"DocStatus\"='O'";
 
                         OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                         conn.Open();
@@ -394,7 +394,7 @@ namespace Intercompany.Data
                                 DocDueDate = dr2["DocDueDate"].ToString();
                                 TaxDate = dr2["TaxDate"].ToString();
                                 ReqDate = dr2["ReqDate"].ToString();
-                               
+                                doctype = dr2["DocType"].ToString();
                                 //BUSCO CODIGO DE PROYECTO DE UNA VEZ
                                 string query = $"SELECT  \"PrjCode\"   FROM \"{Conexion.baseworld}\".\"OPRJ\" WHERE \"PrjName\"='" + U_PROYECTO + "'"; //Query Encabezado
                                 OdbcCommand cmand = new OdbcCommand(query, conn1);
@@ -407,7 +407,7 @@ namespace Intercompany.Data
                                 }
                                 dr1.Close();
                                 conn1.Close();
-                                CrearSCworld(bd, DocEntry, ReqName, U_PROYECTO, U_TipoCompra, Comments, DocDate, DocDueDate, TaxDate, ReqDate, CODPROYE);
+                                CrearSCworld(doctype, bd, DocEntry, ReqName, U_PROYECTO, U_TipoCompra, Comments, DocDate, DocDueDate, TaxDate, ReqDate, CODPROYE);
                             }
                     }
 
@@ -445,7 +445,7 @@ namespace Intercompany.Data
                 using (OdbcConnection conn1 = new OdbcConnection(Conexion.strCon))
                 {
                     {
-                        string queryEn = $"select \"DocEntry\",\"CardName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\" from  \"{Conexion.ORIGEN}\".\"OPQT\" where \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"DocStatus\"='O' AND \"U_Origen\"='" + bd +"'";
+                        string queryEn = $"select \"DocEntry\",\"CardName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\" from  \"{Conexion.ORIGEN}\".\"OPQT\" where \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"DocStatus\"='O' AND \"U_Origen\"='" + bd +"' ";
                         OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                         conn.Open();
                         using (OdbcDataReader dr2 = CmD1.ExecuteReader())
@@ -523,7 +523,7 @@ namespace Intercompany.Data
                 {
                     {
                         // aca se busca  alreves a asolicitud de omar porque cuando se copia de oferta a pedido arrastra el enviado en 1 entonces 1 significa queno se ha enviado y 0 es que ya se envio solo en oc 
-                        string queryEn = $"select \"DocEntry\",\"CardName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\" from  \"{Conexion.ORIGEN}\".\"OPOR\" where \"U_Enviado\" ='1' and \"U_ENVIOSUC\"='Y' and \"U_Origen\"='" + bd + "'";//bd.Substring(6, 6)
+                        string queryEn = $"select \"DocEntry\",\"CardName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\" from  \"{Conexion.ORIGEN}\".\"OPOR\" where \"U_Enviado\" ='1' and \"U_ENVIOSUC\"='Y' and \"U_Origen\"='" + bd + "'  and \"DocStatus\"='O'";//bd.Substring(6, 6)
                         OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                         conn.Open();
                         using (OdbcDataReader dr2 = CmD1.ExecuteReader())
@@ -606,7 +606,7 @@ namespace Intercompany.Data
                 {
                     {
                         // aca se busca  alreves a asolicitud de omar porque cuando se copia de oferta a pedido arrastra el enviado en 1 entonces 1 significa queno se ha enviado y 0 es que ya se envio solo en oc 
-                        string queryEn = $"select \"DocEntry\",\"CardName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\" from  \"{Conexion.baseworld}\".\"OPOR\" where \"U_Enviado\" ='1' and \"U_ENVIOSUC\"='Y' and \"U_Origen\"='" + bd + "'";//bd.Substring(6, 6)
+                        string queryEn = $"select \"DocEntry\",\"CardName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\" from  \"{Conexion.baseworld}\".\"OPOR\" where \"U_Enviado\" ='1' and \"U_ENVIOSUC\"='Y' and \"U_Origen\"='" + bd + "'  and \"DocStatus\"='O'";//bd.Substring(6, 6)
                         OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                         conn.Open();
                         using (OdbcDataReader dr2 = CmD1.ExecuteReader())
@@ -684,7 +684,7 @@ namespace Intercompany.Data
                 using (OdbcConnection conn1 = new OdbcConnection(Conexion.strCon))
                 {
                     {
-                        string queryEn = $"select \"DocEntry\",\"CardName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\" from  \"{Conexion.baseworld}\".\"OPOR\" where   \"U_ENVIOSUC\"='Y' and \"U_Origen\"='" + bd + "' and ifnull(\"U_creavta\",'')='" + vacio + "'";
+                        string queryEn = $"select \"DocEntry\",\"CardName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\" from  \"{Conexion.baseworld}\".\"OPOR\" where   \"U_ENVIOSUC\"='Y' and \"U_Origen\"='" + bd + "' and ifnull(\"U_creavta\",'')='" + vacio + "'  and \"DocStatus\"='O'";
                         OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                         conn.Open();
                         using (OdbcDataReader dr2 = CmD1.ExecuteReader())
@@ -754,7 +754,7 @@ namespace Intercompany.Data
                 using (OdbcConnection conn2 = new OdbcConnection(Conexion.strCon))
                 {
                     {
-                        string queryEn = $"select \"DocEntry\" ,\"U_entryPA\" ,\"U_entrySC\"  from  \"{bd}\".\"OPQT\" where \"UpdateDate\" =(select to_date(CURRENT_DATE,'YYYY-MM-DD') from dummy ) and \"DocStatus\"='O' AND \"U_Origen\"='{bd}' and \"U_Seleccionada\"='Y' and \"U_TipoCompra\" in ('1','2') ";
+                        string queryEn = $"select \"DocEntry\" ,\"U_entryPA\" ,\"U_entrySC\"  from  \"{bd}\".\"OPQT\" where \"UpdateDate\" =(select to_date(CURRENT_DATE,'YYYY-MM-DD') from dummy ) and \"DocStatus\"='O' AND \"U_Origen\"='{bd}' and \"U_Seleccionada\"='Y' and \"U_TipoCompra\" in ('1','2')  and \"DocStatus\"='O' ";
                         OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                         conn.Open();
                         using (OdbcDataReader dr2 = CmD1.ExecuteReader())
@@ -798,7 +798,7 @@ namespace Intercompany.Data
                 using (OdbcConnection conn2 = new OdbcConnection(Conexion.strCon))
                 {
                     {
-                        string queryEn = $"select \"DocEntry\" ,\"U_entryPA\",\"U_entrySC\" from  \"{bd}\".\"OPOR\" where \"UpdateDate\" =(select to_date(CURRENT_DATE,'YYYY-MM-DD') from dummy ) and \"DocStatus\"='O' AND \"U_Origen\"='{bd}' and \"U_Seleccionada\"='Y' and \"U_TipoCompra\" in ('1','2') ";
+                        string queryEn = $"select \"DocEntry\" ,\"U_entryPA\",\"U_entrySC\" from  \"{bd}\".\"OPOR\" where \"UpdateDate\" =(select to_date(CURRENT_DATE,'YYYY-MM-DD') from dummy ) and \"DocStatus\"='O' AND \"U_Origen\"='{bd}' and \"U_Seleccionada\"='Y' and \"U_TipoCompra\" in ('1','2')  and \"DocStatus\"='O' ";
                         OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                         conn.Open();
                         using (OdbcDataReader dr2 = CmD1.ExecuteReader())
@@ -1050,10 +1050,12 @@ namespace Intercompany.Data
         {
             int resul = 0;
             string nomcod = string.Empty;
+            int cuantos = 0;
             Respuesta R = new Respuesta();
             try
             {
                 using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
+                using (OdbcConnection conn2 = new OdbcConnection(Conexion.strCon))
                 {
                     string query = $"CALL \"{Conexion.ORIGEN}\".IC_ADD_ITEMS2('{bd}')"; //Query Encabezado
                     OdbcCommand CmD = new OdbcCommand(query, conn); // llama al Query Encabezado con la conexion
@@ -1073,35 +1075,40 @@ namespace Intercompany.Data
                             {
 
                                 nomcod = dr["ItemCode"].ToString();
-                                Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
-                                JsonObject = CrearObjetoJson(dr);
-                                var myjs = JsonObject.ToString();
-                                resul = EnviaSap("POST", JsonObject, "https://hana-mcholding:50000/b1s/v1/Items");//
-
-                                if (resul == 0) // Caso que inserto 
-                                {
-                                    if (bd == Conexion.baseworld)
+                                string queryEn = $"select count(\"ItemCode\") \"conteo\"   from  \"{bd}\".\"OITM\" where \"ItemCode\" = '" + nomcod + "'";
+                                OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
+                                conn2.Open();
+                                using (OdbcDataReader dr2 = CmD1.ExecuteReader())
+                                    while (dr2.Read())
+                                    {
+                                        cuantos = Convert.ToInt32(dr2["conteo"]);
+                                        if (cuantos == 0)
                                         {
-
-                                        query = $"UPDATE  \"{Conexion.baseworld}\".\"OITM\" SET \"U_Codigo_Interno\" = nomcod WHERE \"ItemCode\" =  '" + ObjSap.DocEntry + "'";
-                                        OdbcCommand cmand = new OdbcCommand(query, conn);
-                                        OdbcDataReader dr1 = cmand.ExecuteReader();
+                                            Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
+                                            JsonObject = CrearObjetoJson(dr);
+                                            var myjs = JsonObject.ToString();
+                                            resul = EnviaSap("POST", JsonObject, "https://hana-mcholding:50000/b1s/v1/Items");//
+                                            if (resul == 0) // Caso que inserto 
+                                            {
+                                                if (bd == Conexion.baseworld)
+                                                {
+                                                    query = $"UPDATE  \"{Conexion.baseworld}\".\"OITM\" SET \"U_Codigo_Interno\" = nomcod WHERE \"ItemCode\" =  '" + ObjSap.DocEntry + "'";
+                                                    OdbcCommand cmand = new OdbcCommand(query, conn);
+                                                    OdbcDataReader dr1 = cmand.ExecuteReader();
+                                                }
+                                           
+                                                objRegistraLog.Graba("Insertado a Sap el articulo : " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+                                            }
+                                            else
+                                            {
+                                                objRegistraLog.Graba("Error insertando articulo: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// 
+                                                Inserterror(bd.Substring(6, 6), "OITM", nomcod);
+                                            }
+                                        }
+                                        LiberaMemoria.FlushMemory();
                                     }
-                                    //if (bd == Conexion.basezhej)
-                                    //{
-                                    //    query = $"UPDATE  \"{Conexion.basezhej}\".\"OITM\" SET \"U_Enviado\" = '1' WHERE \"ItemCode\" =  '" + ObjSap.DocEntry + "'";
-                                    //    OdbcCommand cmand = new OdbcCommand(query, conn);
-                                    //    OdbcDataReader dr1 = cmand.ExecuteReader();
-                                    //}
-                                    objRegistraLog.Graba("Insertado a Sap el articulo : " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                }
-                                else
-                                {
-                                    objRegistraLog.Graba("Error insertando articulo: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// 
-                                    Inserterror(bd.Substring(6, 6), "OITM", nomcod);
-                                }
-                            }
-                            LiberaMemoria.FlushMemory();
+                                conn2.Close();
+                            }                        
                         }
                     }
                     conn.Close();
@@ -1312,7 +1319,7 @@ namespace Intercompany.Data
             }
             return R;
         }
-        public static Respuesta CrearSCTODAS(string bd, int DocEntry, string ReqName, string U_PROYECTO, string U_TipoCompra, string Comments, string DocDate, string DocDueDate, string TaxDate, string ReqDate, string CODPROYE)
+        public static Respuesta CrearSCTODAS(string DocType, string bd, int DocEntry, string ReqName, string U_PROYECTO, string U_TipoCompra, string Comments, string DocDate, string DocDueDate, string TaxDate, string ReqDate, string CODPROYE)
         {
             int resul = 0;
             Respuesta R = new Respuesta();
@@ -1344,6 +1351,7 @@ namespace Intercompany.Data
                                 decimal Quantity = (decimal)dr["Quantity"];
                                 string impto = (string)dr["VatGroup"];
                                 string codprj = CODPROYE;
+                              
 
                                 detallesFacturas.Add(new DetallesOPORT
                                 {
@@ -1353,6 +1361,7 @@ namespace Intercompany.Data
                                     // PriceBefDi = PriceBefDi,
                                     VatGroup = impto,
                                     PROYECTO = codprj
+                                 
 
                                 });
                             }
@@ -1387,7 +1396,7 @@ namespace Intercompany.Data
                                 JsonObject.Add(new JProperty("RequriedDate", date4));
                                 JsonObject.Add(new JProperty("SendNotification", "tNO"));
                                 JsonObject.Add(new JProperty("U_Origen", bd));
-
+                                JsonObject.Add(new JProperty("DocType", DocType));
                                 var list = new ArrayList();
                                 foreach (var detalle in grupo.Detalles)
                                 {
@@ -1397,7 +1406,7 @@ namespace Intercompany.Data
                                     //JsonObjectRow.Add(new JProperty("UnitPrice", detalle.PriceBefDi));
                                     JsonObjectRow.Add(new JProperty("VatGroup", detalle.VatGroup));
                                     //JsonObjectRow.Add(new JProperty("ProjectCode", detalle.PROYECTO));
-
+                        
                                     list.Add(JsonObjectRow);
                                 }
 
@@ -1436,7 +1445,7 @@ namespace Intercompany.Data
             }
             return R;
         }
-        public static Respuesta CrearSCworld(string bd, int DocEntry, string ReqName, string U_PROYECTO, string U_TipoCompra, string Comments, string DocDate, string DocDueDate, string TaxDate, string ReqDate, string CODPROYE)
+        public static Respuesta CrearSCworld(string Doctype, string bd, int DocEntry, string ReqName, string U_PROYECTO, string U_TipoCompra, string Comments, string DocDate, string DocDueDate, string TaxDate, string ReqDate, string CODPROYE)
         {
             int resul = 0;
             Respuesta R = new Respuesta();
@@ -1469,7 +1478,7 @@ namespace Intercompany.Data
                                 decimal Quantity = (decimal)dr["Quantity"];
                                 string impto = (string)dr["VatGroup"];
                                 string codprj = CODPROYE;
-
+                             
                                 detallesFacturas.Add(new DetallesOPORT
                                 {
                                     DocEntry = DocEntry,
@@ -1478,7 +1487,7 @@ namespace Intercompany.Data
                                     // PriceBefDi = PriceBefDi,
                                     VatGroup = impto,
                                     PROYECTO = codprj
-
+                                
                                 });
                             }
                             var detallesAgrupados = detallesFacturas
@@ -1512,7 +1521,7 @@ namespace Intercompany.Data
                                 JsonObject.Add(new JProperty("RequriedDate", date4));
                                 JsonObject.Add(new JProperty("SendNotification", "tNO"));
                                 JsonObject.Add(new JProperty("U_Origen", bd));
-
+                                JsonObject.Add(new JProperty("DocType", Doctype ));
                                 var list = new ArrayList();
                                 foreach (var detalle in grupo.Detalles)
                                 {
@@ -1521,8 +1530,7 @@ namespace Intercompany.Data
                                     JsonObjectRow.Add(new JProperty("Quantity", detalle.Quantity));
                                     //JsonObjectRow.Add(new JProperty("UnitPrice", detalle.PriceBefDi));
                                     JsonObjectRow.Add(new JProperty("VatGroup", detalle.VatGroup));
-                                    //JsonObjectRow.Add(new JProperty("ProjectCode", detalle.PROYECTO));
-
+                                    //JsonObjectRow.Add(new JProperty("ProjectCode", detalle.PROYECTO));                                
                                     list.Add(JsonObjectRow);
                                 }
 
@@ -1544,8 +1552,6 @@ namespace Intercompany.Data
                                     objRegistraLog.Graba("Error CrearSCworld: " + RR + " " + DocEntry + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// 
                                     Inserterror(bd.Substring(6, 6), "OPRQ", Convert.ToString(DocEntry));
                                 }
-
-
                             }
                         }
                     }
