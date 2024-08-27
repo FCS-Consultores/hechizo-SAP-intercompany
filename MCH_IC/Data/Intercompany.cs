@@ -1105,10 +1105,115 @@ namespace Intercompany.Data
                                                 Inserterror(bd.Substring(6, 6), "OITM", nomcod);
                                             }
                                         }
+                                        else
+                                          {
+                                            Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
+                                            JsonObject = CrearObjetoJson(dr);
+                                            var myjs = JsonObject.ToString();
+                                            resul = EnviaSap("PATCH", JsonObject, "https://hana-mcholding:50000/b1s/v1/Items('" + nomcod + "')");//
+                                        }
                                         LiberaMemoria.FlushMemory();
                                     }
                                 conn2.Close();
                             }                        
+                        }
+                    }
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                R.Codigo = -1;
+                R.Mensaje = "Alerta: " + ex.Message;
+                objRegistraLog.Graba("Error al intentar Insertar articulo : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+            }
+            return R;
+        }
+        public static Respuesta ActualizararticuloTODAS(string bd)
+        {
+            int resul = 0;
+            string nomcod = string.Empty;
+            int cuantos = 0;
+            Respuesta R = new Respuesta();
+            try
+            {
+                using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
+                using (OdbcConnection conn2 = new OdbcConnection(Conexion.strCon))
+                using (OdbcConnection conn3 = new OdbcConnection(Conexion.strCon))
+                {
+                    string query = $"CALL \"{Conexion.ORIGEN}\".IC_UPD_ITEMS2('{bd}')"; //Query Encabezado
+                    OdbcCommand CmD = new OdbcCommand(query, conn); // llama al Query Encabezado con la conexion
+                    conn.Open();
+                    using (OdbcDataReader dr = CmD.ExecuteReader())
+                    {
+                        if (dr.RecordsAffected != 0)
+                        {
+                            if (conecta_service_layer(bd, "fcspa-cloud\\mch36", "Qht!045!BN", "https://hana-mcholding:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
+                            {
+                                R.Codigo = -2;
+                                R.Mensaje = RR;
+                                objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
+                                return R;
+                            }
+                            while (dr.Read())
+                            {
+
+                                nomcod = dr["ItemCode"].ToString();
+                                string queryEn = $"select count(\"ItemCode\") \"conteo\"   from  \"{bd}\".\"OITM\" where \"ItemCode\" = '" + nomcod + "'";
+                                OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
+                                conn2.Open();
+                                using (OdbcDataReader dr2 = CmD1.ExecuteReader())
+                                    while (dr2.Read())
+                                    {
+                                        cuantos = Convert.ToInt32(dr2["conteo"]);
+                                        if (cuantos == 0)
+                                        {
+                                            Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
+                                            JsonObject = CrearObjetoJson(dr);
+                                            var myjs = JsonObject.ToString();
+                                            resul = EnviaSap("POST", JsonObject, "https://hana-mcholding:50000/b1s/v1/Items");//
+                                            if (resul == 0) // Caso que inserto 
+                                            {
+
+                                               objRegistraLog.Graba("Insertado a Sap el articulo : " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+                                                 
+                                             
+                                            }
+                                            else
+                                            {
+                                                objRegistraLog.Graba("Error insertando articulo: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// 
+                                                Inserterror(bd.Substring(6, 6), "OITM", nomcod);
+                                            }
+                                        }
+                                        else
+                                        {
+                                                                             
+                                            Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
+                                            JsonObject = CrearObjetoJson(dr);
+                                            var myjs = JsonObject.ToString();
+                                            resul = EnviaSap("PATCH", JsonObject, "https://hana-mcholding:50000/b1s/v1/Items('" + nomcod + "')");//
+                                            if (resul == 0) // Caso que inserto 
+                                            {                                            
+
+                                                objRegistraLog.Graba("actualizado en Sap el articulo : " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+                                                if (bd == Conexion.baseworld)
+                                                {
+                                                   
+                                                    query = $"UPDATE  \"{Conexion.ORIGEN}\".\"OITM\" SET \"U_Enviado\" = '1' WHERE \"ItemCode\" =  '" + nomcod + "'";
+                                                    OdbcCommand cmand = new OdbcCommand(query, conn);
+                                                    OdbcDataReader dr1 = cmand.ExecuteReader();
+                                                }
+                                            }
+                                            else
+                                            {
+                                                objRegistraLog.Graba("Error actualizando articulo: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// 
+                                                Inserterror(bd.Substring(6, 6), "OITM", nomcod);
+                                            }
+                                        }
+                                        LiberaMemoria.FlushMemory();
+                                    }
+                                conn2.Close();
+                            }
                         }
                     }
                     conn.Close();
@@ -1266,7 +1371,113 @@ namespace Intercompany.Data
             }
             return R;
         }
-     
+        public static Respuesta ActualizaSOCIOTODAS(string bd)
+        {
+            int resul = 0;
+            string nomcod = string.Empty;
+            string codigo = string.Empty;
+            string bd2 = string.Empty;
+            Respuesta R = new Respuesta();
+            try
+            {
+                using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
+                using (OdbcConnection conn2 = new OdbcConnection(Conexion.strCon))
+                using (OdbcConnection conn3 = new OdbcConnection(Conexion.strCon))
+                {
+                    string query = $"CALL \"{Conexion.ORIGEN}\".IC_UPD_SN('{bd}')"; //Query Encabezado
+                    OdbcCommand CmD = new OdbcCommand(query, conn); // llama al Query Encabezado con la conexion
+                    conn.Open();
+                    using (OdbcDataReader dr = CmD.ExecuteReader())
+                    {
+                        if (dr.RecordsAffected != 0)
+                        {
+                            if (conecta_service_layer(bd, "fcspa-cloud\\mch36", "Qht!045!BN", "https://hana-mcholding:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
+                            {
+                                R.Codigo = -2;
+                                R.Mensaje = RR;
+                                objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
+                                return R;
+                            }
+
+                            while (dr.Read())
+                            {
+                                nomcod = dr["CardName"].ToString();
+                                string queryEn = $"select \"CardCode\" \"codigo\"   from  \"{bd}\".\"OCRD\" where \"CardName\" = '" + nomcod + "'";
+                                OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
+                                conn2.Open();
+
+                                using (OdbcDataReader dr2 = CmD1.ExecuteReader())
+                                  
+                                if (dr2.Read())
+                                    {
+
+                                        codigo = dr2["codigo"].ToString();
+
+                                        if (codigo == "")
+                                        {
+                                            Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
+                                            JsonObject = CrearObjetoJson(dr);
+                                            var myjs = JsonObject.ToString();
+                                            resul = EnviaSap("POST", JsonObject, "https://hana-mcholding:50000/b1s/v1/BusinessPartners");//
+
+                                            if (resul == 0) // Caso que inserto 
+                                            {
+                                                objRegistraLog.Graba("Insertado a actualizado SOCIOTODAS : " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+
+
+                                            }
+                                            else
+                                            {
+                                                objRegistraLog.Graba("Error actualizado SOCIOTODAS: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// 
+                                                Inserterror(bd.Substring(6, 6), "OCRD", nomcod);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
+                                            JsonObject = CrearObjetoJson(dr);
+                                            var myjs = JsonObject.ToString();
+                                            resul = EnviaSap("PATCH", JsonObject, "https://hana-mcholding:50000/b1s/v1/BusinessPartners('" + codigo + "')");//
+
+                                            if (resul == 0) // Caso que inserto 
+                                            {
+                                                objRegistraLog.Graba("actualizado a CrearSOCIOTODAS : " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+                                                bd2 = bd.Substring(0, 18);
+                                             
+                                                if (bd2 == "20043_WORLD_BRANDS")
+                                                {
+                                                    query = $"UPDATE  \"{Conexion.ORIGEN}\".\"OCRD\" SET \"U_Enviado\" = '1' WHERE \"CardName\" =  '" + nomcod + "'";
+                                                    OdbcCommand cmand = new OdbcCommand(query, conn);
+                                                    OdbcDataReader dr1 = cmand.ExecuteReader();
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                                objRegistraLog.Graba("Error actualizado SOCIOTODAS: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// 
+                                                Inserterror(bd.Substring(6, 6), "OCRD", nomcod);
+                                            }
+                                        }
+                                    }
+                                conn2.Close();
+                            }
+
+
+                        }
+                        LiberaMemoria.FlushMemory();
+
+                    }
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                R.Codigo = -1;
+                R.Mensaje = "Alerta: " + ex.Message;
+                objRegistraLog.Graba("Error al intentar Insertar articulo : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+            }
+            return R;
+        }
         public static Respuesta CrearADUANATODAS(string bd, string CstGrpName, string GroupNum, double Custom, double BuyTax, double OtherTax, double TotalTax, string Locked, string DataSource, string cstAllcAcc, string cstExpAcc, string PortAddr, string PortState, string ExciExpAcc, string ExciAlcAcc)
         {
             int resul = 0;

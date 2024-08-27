@@ -123,6 +123,21 @@ namespace Intercompany
             Intercompany.Data.Intercompany.CreararticuloWORLD(Conexion.baseworld);
 
 
+            #region articuloactualiza
+            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseamd);
+            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseboquete);
+            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basecalypso);
+            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basecanaima);
+            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseconstru);
+            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseeco);
+            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basefarmar);
+            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseideo);
+            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseiverco);
+            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basepanco);
+            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basepgjp);
+            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basezhej);
+            #endregion
+            
 
             #region SOCIO_GEN
             Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseamd);
@@ -140,7 +155,22 @@ namespace Intercompany
             Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseworld);
             #endregion
 
-
+     
+                  #region SOCIOactualiza
+            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseamd);
+            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseboquete);
+            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basecalypso);
+            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basecanaima);
+            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseconstru);
+            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseeco);
+            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basefarmar);
+            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseideo);
+            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseiverco);
+            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basepanco);
+            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basepgjp);
+            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basezhej);
+            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseworld);
+            #endregion
 
             #region SCSucursalGEN
             Intercompany.Data.Intercompany.SCSucursal(Conexion.baseamd);
