@@ -1318,6 +1318,12 @@ namespace Intercompany.Data
                             while (dr.Read())
                             {
                                 nomcod = dr["CardName"].ToString();
+                                if (nomcod== "ERIC EDGARDO MONROY GONZALEZ")
+                                    if (bd== "20043_IDEO")
+                                        {
+                                    string hola= string.Empty;
+
+                                }
                                 string queryEn = $"select count(\"CardName\") \"conteo\"   from  \"{bd}\".\"OCRD\" where \"CardName\" = '" + nomcod + "'";
                                 OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                                 conn2.Open();
@@ -1398,77 +1404,88 @@ namespace Intercompany.Data
                                 objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
                                 return R;
                             }
-
+                          
                             while (dr.Read())
                             {
                                 nomcod = dr["CardName"].ToString();
                                 string queryEn = $"select \"CardCode\" \"codigo\"   from  \"{bd}\".\"OCRD\" where \"CardName\" = '" + nomcod + "'";
                                 OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                                 conn2.Open();
-
                                 using (OdbcDataReader dr2 = CmD1.ExecuteReader())
-                                  
-                                if (dr2.Read())
+                                    if (dr2.Read())
                                     {
-
+                                        nomcod = dr["CardName"].ToString();
                                         codigo = dr2["codigo"].ToString();
-
-                                        if (codigo == "")
+                                        Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
+                                        JsonObject = CrearObjetoJson(dr);
+                                        var myjs = JsonObject.ToString();
+                                        resul = EnviaSap("PATCH", JsonObject, "https://hana-mcholding:50000/b1s/v1/BusinessPartners('" + codigo + "')");//
+                                        if (resul == 0) // Caso que inserto 
                                         {
-                                            Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
-                                            JsonObject = CrearObjetoJson(dr);
-                                            var myjs = JsonObject.ToString();
-                                            resul = EnviaSap("POST", JsonObject, "https://hana-mcholding:50000/b1s/v1/BusinessPartners");//
+                                            objRegistraLog.Graba("actualizado a CrearSOCIOTODAS : " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+                                            bd2 = bd.Substring(0, 18);
 
-                                            if (resul == 0) // Caso que inserto 
+                                            if (bd2 == "20043_WORLD_BRANDS")
                                             {
-                                                objRegistraLog.Graba("Insertado a actualizado SOCIOTODAS : " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-
-
+                                                query = $"UPDATE  \"{Conexion.ORIGEN}\".\"OCRD\" SET \"U_Enviado\" = '1' WHERE \"CardName\" =  '" + nomcod + "'";
+                                                OdbcCommand cmand = new OdbcCommand(query, conn);
+                                                OdbcDataReader dr1 = cmand.ExecuteReader();
                                             }
-                                            else
+
+                                        }
+                                        else
+                                        {
+                                            objRegistraLog.Graba("Error actualizado SOCIOTODAS: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// 
+                                            Inserterror(bd.Substring(6, 6), "OCRD", nomcod);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
+                                        JsonObject = CrearObjetoJson(dr);
+
+                                        var myjs = JsonObject.ToString();
+                                        string tipo= dr["CardType"].ToString();
+                                        if (tipo=="S")
+                                        {
+                                            JsonObject["Series"] = "72";
+                                        }
+                                        else
+                                        {
+                                            JsonObject["Series"] = "70";
+                                        }
+                                        
+                                        resul = EnviaSap("POST", JsonObject, "https://hana-mcholding:50000/b1s/v1/BusinessPartners");//
+
+                                        if (resul == 0) // Caso que inserto 
+                                        {
+                                            objRegistraLog.Graba("Insertado a actualizado SOCIOTODAS : " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
+                                            bd2 = bd.Substring(0, 18);
+                                            if (bd2 == "20043_WORLD_BRANDS")
                                             {
-                                                objRegistraLog.Graba("Error actualizado SOCIOTODAS: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// 
-                                                Inserterror(bd.Substring(6, 6), "OCRD", nomcod);
+                                                query = $"UPDATE  \"{Conexion.ORIGEN}\".\"OCRD\" SET \"U_Enviado\" = '1' WHERE \"CardName\" =  '" + nomcod + "'";
+                                                OdbcCommand cmand = new OdbcCommand(query, conn);
+                                                OdbcDataReader dr1 = cmand.ExecuteReader();
                                             }
                                         }
                                         else
                                         {
-                                            Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
-                                            JsonObject = CrearObjetoJson(dr);
-                                            var myjs = JsonObject.ToString();
-                                            resul = EnviaSap("PATCH", JsonObject, "https://hana-mcholding:50000/b1s/v1/BusinessPartners('" + codigo + "')");//
-
-                                            if (resul == 0) // Caso que inserto 
-                                            {
-                                                objRegistraLog.Graba("actualizado a CrearSOCIOTODAS : " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                                bd2 = bd.Substring(0, 18);
-                                             
-                                                if (bd2 == "20043_WORLD_BRANDS")
-                                                {
-                                                    query = $"UPDATE  \"{Conexion.ORIGEN}\".\"OCRD\" SET \"U_Enviado\" = '1' WHERE \"CardName\" =  '" + nomcod + "'";
-                                                    OdbcCommand cmand = new OdbcCommand(query, conn);
-                                                    OdbcDataReader dr1 = cmand.ExecuteReader();
-                                                }
-
-                                            }
-                                            else
-                                            {
-                                                objRegistraLog.Graba("Error actualizado SOCIOTODAS: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// 
-                                                Inserterror(bd.Substring(6, 6), "OCRD", nomcod);
-                                            }
+                                            objRegistraLog.Graba("Error actualizado SOCIOTODAS: " + RR + " " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// 
+                                            Inserterror(bd.Substring(6, 6), "OCRD", nomcod);
                                         }
+
                                     }
                                 conn2.Close();
+                            }
+                               
                             }
 
 
                         }
                         LiberaMemoria.FlushMemory();
-
-                    }
                     conn.Close();
-                }
+                }                   
+                
             }
             catch (Exception ex)
             {
