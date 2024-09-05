@@ -1,0 +1,23 @@
+﻿Insertado a CrearSOCIOTODAS : FLAMENCO DRYSTACK, S.A./ Hora: 10:48:33 AM
+Error al intentar Insertar articulo : Index and length must refer to a location within the string.
+Parameter name: length/ Hora: 10:48:33 AM
+actualizado a CrearSOCIOTODAS : ERIC EDGARDO MONROY GONZALEZ/ Hora: 10:48:48 AM
+actualizado a CrearSOCIOTODAS : ERIC EDGARDO MONROY GONZALEZ/ Hora: 10:49:05 AM
+Error al intentar Insertar articulo : Index and length must refer to a location within the string.
+Parameter name: length/ Hora: 10:49:05 AM
+actualizado a CrearSOCIOTODAS : MERCANTIL FACTORING & FINANCE, INC./ Hora: 10:49:16 AM
+Error al intentar Insertar articulo : Index and length must refer to a location within the string.
+Parameter name: length/ Hora: 10:49:16 AM
+Error actualizado SOCIOTODAS: (6666) ***** Agregue un correo electrónico, tener solo un @, no tener espacios entre letras o la letra ñ ***** NEMINCA/ Hora: 10:49:34 AM
+Error actualizado SOCIOTODAS: (2) ****RUC ya fue asignado a otro Proveedor. ERIC EDGARDO MONROY GONZALEZ/ Hora: 10:49:42 AM
+actualizado a CrearSOCIOTODAS : FLAMENCO DRYSTACK, S.A./ Hora: 10:49:57 AM
+Error al intentar Insertar articulo : Index and length must refer to a location within the string.
+Parameter name: length/ Hora: 10:49:57 AM
+Error CrearSCTODAS: Required date is missing (1) 36/ Hora: 10:50:01 AM
+Error CrearSCTODAS: Required date is missing (1) 39/ Hora: 10:50:03 AM
+Error CrearSCTODAS: Required date is missing (1) 40/ Hora: 10:50:06 AM
+Error CrearSCTODAS: Required date is missing (1) 41/ Hora: 10:50:08 AM
+Error CrearSCTODAS: Required date is missing (1) 38/ Hora: 10:50:11 AM
+Error CrearSCTODAS: Required date is missing (1) 56/ Hora: 10:50:13 AM
+Error CrearSCTODAS: Required date is missing (1) 63/ Hora: 10:50:16 AM
+Error CrearSCTODAS: Required date is missing (1) 85/ Hora: 10:50:20 AM
