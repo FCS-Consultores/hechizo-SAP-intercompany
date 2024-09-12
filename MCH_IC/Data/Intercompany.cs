@@ -1343,8 +1343,8 @@ namespace Intercompany.Data
                                                 if (resul == 0) // Caso que inserto 
                                                 {
                                                             objRegistraLog.Graba("Insertado a CrearSOCIOTODAS : " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                                        bd2 = bd.Substring(0, 18);
-                                                        if (bd2 == "20043_WORLD_BRANDS")
+                                                        bd2 = bd.Substring(0, 10);
+                                                        if (bd2 == "20043_WORL")
                                                             {
                                                             query = $"UPDATE  \"{Conexion.ORIGEN}\".\"OCRD\" SET \"U_Enviado\" = '1' WHERE \"CardName\" =  '" + nomcod + "'";
                                                             OdbcCommand cmand = new OdbcCommand(query, conn);
@@ -1423,9 +1423,9 @@ namespace Intercompany.Data
                                         if (resul == 0) // Caso que inserto 
                                         {
                                             objRegistraLog.Graba("actualizado a CrearSOCIOTODAS : " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                            bd2 = bd.Substring(0, 18);
+                                            bd2 = bd.Substring(0, 10);
 
-                                            if (bd2 == "20043_WORLD_BRANDS")
+                                            if (bd2 == "20043_WORL")
                                             {
                                                 query = $"UPDATE  \"{Conexion.ORIGEN}\".\"OCRD\" SET \"U_Enviado\" = '1' WHERE \"CardName\" =  '" + nomcod + "'";
                                                 OdbcCommand cmand = new OdbcCommand(query, conn);
@@ -1460,8 +1460,8 @@ namespace Intercompany.Data
                                         if (resul == 0) // Caso que inserto 
                                         {
                                             objRegistraLog.Graba("Insertado a actualizado SOCIOTODAS : " + nomcod + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar si fue satisfactorio
-                                            bd2 = bd.Substring(0, 18);
-                                            if (bd2 == "20043_WORLD_BRANDS")
+                                            bd2 = bd.Substring(0, 10);
+                                            if (bd2 == "20043_WORL")
                                             {
                                                 query = $"UPDATE  \"{Conexion.ORIGEN}\".\"OCRD\" SET \"U_Enviado\" = '1' WHERE \"CardName\" =  '" + nomcod + "'";
                                                 OdbcCommand cmand = new OdbcCommand(query, conn);

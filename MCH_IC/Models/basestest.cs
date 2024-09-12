@@ -8,11 +8,11 @@ namespace Intercompany.Models
 {
     class bases
     {
-         public static string aceros = "20043_ACEROS_PESADOS_";
-        string amd = "20043_AMD_MUNDIALES_";
-        string boquete = "20043_BOQUETE_";
-        string calypso = "20043_CALYPSO_";
-        string canaima = "20043_CANAIMA_";
+         public static string aceros = "20043_ACEROS_PESADOS";
+        string amd = "20043_AMD_MUNDIALES";
+        string boquete = "20043_BOQUETE";
+        string calypso = "20043_CALYPSO";
+        string canaima = "20043_CANAIMA";
         string constru = "20043_CONSTRUMAX_";
         string eco = "20043_ECO_CARIBE_";
         string farmar = "20043_FARMAR_";
