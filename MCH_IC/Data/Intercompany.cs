@@ -301,6 +301,7 @@ namespace Intercompany.Data
             string TaxDate;
             string ReqDate;
             string doctype;
+            string desc;
             //string connectionString = "DRIVER={HDBODBC};SERVERNODE=hana-HANA-PNM2005:30015;Database=20025_COMERCIAL_RALI_TEST;Uid=SYSTEM;Pwd=Fc53rp!!!";
             Respuesta R = new Respuesta();
             try
@@ -327,6 +328,7 @@ namespace Intercompany.Data
                                 TaxDate = dr2["TaxDate"].ToString();
                                 ReqDate = dr2["ReqDate"].ToString();
                                 doctype = dr2["DocType"].ToString();
+                               
                                 //BUSCO CODIGO DE PROYECTO DE UNA VEZ
                                 string query = $"SELECT  \"PrjCode\"   FROM \"{Conexion.ORIGEN}\".\"OPRJ\" WHERE \"PrjName\"='"+ U_PROYECTO +"'"; //Query Encabezado
                                 OdbcCommand cmand = new OdbcCommand(query, conn1);
@@ -1318,12 +1320,7 @@ namespace Intercompany.Data
                             while (dr.Read())
                             {
                                 nomcod = dr["CardName"].ToString();
-                                if (nomcod== "ERIC EDGARDO MONROY GONZALEZ")
-                                    if (bd== "20043_IDEO")
-                                        {
-                                    string hola= string.Empty;
-
-                                }
+                             
                                 string queryEn = $"select count(\"CardName\") \"conteo\"   from  \"{bd}\".\"OCRD\" where \"CardName\" = '" + nomcod + "'";
                                 OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                                 conn2.Open();
@@ -1383,6 +1380,7 @@ namespace Intercompany.Data
             string nomcod = string.Empty;
             string codigo = string.Empty;
             string bd2 = string.Empty;
+            string cardty;
             Respuesta R = new Respuesta();
             try
             {
@@ -1408,7 +1406,8 @@ namespace Intercompany.Data
                             while (dr.Read())
                             {
                                 nomcod = dr["CardName"].ToString();
-                                string queryEn = $"select \"CardCode\" \"codigo\"   from  \"{bd}\".\"OCRD\" where \"CardName\" = '" + nomcod + "'";
+                                cardty = dr["CardType"].ToString();
+                                string queryEn = $"select \"CardCode\" \"codigo\"   from  \"{bd}\".\"OCRD\" where \"CardName\" = '" + nomcod + "' AND \"CardType\"=  '" + cardty + "'";
                                 OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                                 conn2.Open();
                                 using (OdbcDataReader dr2 = CmD1.ExecuteReader())
@@ -1564,7 +1563,7 @@ namespace Intercompany.Data
 
                 using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
                 {
-                    string queryEn = $"SELECT \"ItemCode\",	 \"Quantity\", \"VatGroup\" FROM \"{bd}\".\"PRQ1\" where \"DocEntry\"='" + DocEntry + "'";
+                    string queryEn = $"SELECT \"ItemCode\",	 \"Quantity\", \"VatGroup\",\"Dscription\" FROM \"{bd}\".\"PRQ1\" where \"DocEntry\"='" + DocEntry + "'";
 
                     OdbcCommand CmD = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                     conn.Open();
@@ -1573,25 +1572,53 @@ namespace Intercompany.Data
                         if (dr.HasRows)
                         {
                             List<DetallesOPORT> detallesFacturas = new List<DetallesOPORT>();
-                            while (dr.Read())
+                            if (DocType == "I")
                             {
-                                string ItemCode = (string)dr["ItemCode"];
-                                decimal Quantity = (decimal)dr["Quantity"];
-                                string impto = (string)dr["VatGroup"];
-                                string codprj = CODPROYE;
-                              
-
-                                detallesFacturas.Add(new DetallesOPORT
+                                while (dr.Read())
                                 {
-                                    DocEntry = DocEntry,
-                                    ItemCode = ItemCode,
-                                    Quantity = Quantity,
-                                    // PriceBefDi = PriceBefDi,
-                                    VatGroup = impto,
-                                    PROYECTO = codprj
-                                 
+                                    string ItemCode = (string)dr["ItemCode"];
+                                    decimal Quantity = (decimal)dr["Quantity"];
+                                    string impto = (string)dr["VatGroup"];
+                                    string codprj = CODPROYE;
 
-                                });
+
+                                    detallesFacturas.Add(new DetallesOPORT
+                                    {
+                                        DocEntry = DocEntry,
+                                        ItemCode = ItemCode,
+                                        Quantity = Quantity,
+                                        // PriceBefDi = PriceBefDi,
+                                        VatGroup = impto,
+                                        PROYECTO = codprj
+
+
+                                    });
+                                }
+                            }
+                            if (DocType == "S")
+                            {
+                                while (dr.Read())
+                                {
+                                    string ItemDescription = (string)dr["Dscription"];
+                                    decimal Quantity = (decimal)dr["Quantity"];
+                                    string impto = (string)dr["VatGroup"];
+                                    string codprj = CODPROYE;
+
+
+                                    detallesFacturas.Add(new DetallesOPORT
+                                    {
+                                        DocEntry = DocEntry,
+                                        //ItemCode = ItemCode,
+                                        Quantity = Quantity,
+                                        // PriceBefDi = PriceBefDi,
+                                        VatGroup = impto,
+                                        PROYECTO = codprj,
+                                        ItemDescription = ItemDescription
+                                    });
+         
+
+                            }
+                       
                             }
                             var detallesAgrupados = detallesFacturas
                             .GroupBy(detalle => detalle.DocEntry)
@@ -1626,18 +1653,34 @@ namespace Intercompany.Data
                                 JsonObject.Add(new JProperty("U_Origen", bd));
                                 JsonObject.Add(new JProperty("DocType", DocType));
                                 var list = new ArrayList();
-                                foreach (var detalle in grupo.Detalles)
+                                if (DocType == "S")
                                 {
-                                    Newtonsoft.Json.Linq.JObject JsonObjectRow = new Newtonsoft.Json.Linq.JObject();
-                                    JsonObjectRow.Add(new JProperty("ItemCode", detalle.ItemCode));
-                                    JsonObjectRow.Add(new JProperty("Quantity", detalle.Quantity));
-                                    //JsonObjectRow.Add(new JProperty("UnitPrice", detalle.PriceBefDi));
-                                    JsonObjectRow.Add(new JProperty("VatGroup", detalle.VatGroup));
-                                    //JsonObjectRow.Add(new JProperty("ProjectCode", detalle.PROYECTO));
-                        
-                                    list.Add(JsonObjectRow);
-                                }
+                                    foreach (var detalle in grupo.Detalles)
+                                    {
+                                        Newtonsoft.Json.Linq.JObject JsonObjectRow = new Newtonsoft.Json.Linq.JObject();
+                                        JsonObjectRow.Add(new JProperty("ItemDescription", detalle.ItemDescription));
+                                        JsonObjectRow.Add(new JProperty("Quantity", detalle.Quantity));
+                                        //JsonObjectRow.Add(new JProperty("UnitPrice", detalle.PriceBefDi));
+                                        JsonObjectRow.Add(new JProperty("VatGroup", detalle.VatGroup));
+                                        //JsonObjectRow.Add(new JProperty("ProjectCode", detalle.PROYECTO));
 
+                                        list.Add(JsonObjectRow);
+                                    }
+                                }
+                                if (DocType == "I")
+                                {
+                                    foreach (var detalle in grupo.Detalles)
+                                    {
+                                        Newtonsoft.Json.Linq.JObject JsonObjectRow = new Newtonsoft.Json.Linq.JObject();
+                                        JsonObjectRow.Add(new JProperty("ItemCode", detalle.ItemCode));
+                                        JsonObjectRow.Add(new JProperty("Quantity", detalle.Quantity));
+                                        //JsonObjectRow.Add(new JProperty("UnitPrice", detalle.PriceBefDi));
+                                        JsonObjectRow.Add(new JProperty("VatGroup", detalle.VatGroup));
+                                        //JsonObjectRow.Add(new JProperty("ProjectCode", detalle.PROYECTO));
+
+                                        list.Add(JsonObjectRow);
+                                    }
+                                }
                                 JsonObject.Add(new JProperty("DocumentLines", list));
                                 string data = JsonObject.ToString();
 

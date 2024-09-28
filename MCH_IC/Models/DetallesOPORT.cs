@@ -15,7 +15,7 @@ namespace Intercompany.models
         public decimal DiscPrcnt { get; set; }
         public string VatGroup { get; set; }
         public string PROYECTO { get; set; }
-      
+      public string ItemDescription { get; set; }
 
     }
 
