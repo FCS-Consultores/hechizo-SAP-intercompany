@@ -1,0 +1,920 @@
+﻿Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 14:31:57 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 14:31:59 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 14:32:03 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:32:05 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:32:05 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:32:05 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:32:05 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:32:05 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:32:05 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:32:05 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:32:05 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:32:06 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:32:06 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:32:06 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:32:06 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 14:32:11 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 14:32:12 PM
+actualizado en Sap el articulo : PANE270/ Hora: 14:32:12 PM
+actualizado en Sap el articulo : CAJA220/ Hora: 14:32:12 PM
+actualizado en Sap el articulo : PANE812/ Hora: 14:32:12 PM
+actualizado en Sap el articulo : COFE400/ Hora: 14:32:13 PM
+actualizado en Sap el articulo : CODO114/ Hora: 14:32:13 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 14:32:13 PM
+actualizado en Sap el articulo : CAMA416/ Hora: 14:32:14 PM
+actualizado en Sap el articulo : TRAM123/ Hora: 14:32:14 PM
+actualizado en Sap el articulo : GRAP001/ Hora: 14:32:14 PM
+actualizado en Sap el articulo : CODO097/ Hora: 14:32:15 PM
+actualizado en Sap el articulo : CONE100/ Hora: 14:32:15 PM
+actualizado en Sap el articulo : TACO161/ Hora: 14:32:15 PM
+actualizado en Sap el articulo : TORN112/ Hora: 14:32:15 PM
+actualizado en Sap el articulo : PANE125/ Hora: 14:32:16 PM
+actualizado en Sap el articulo : ART064/ Hora: 14:32:16 PM
+actualizado en Sap el articulo : ART068/ Hora: 14:32:16 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 14:32:19 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 14:32:20 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 14:32:20 PM
+actualizado en Sap el articulo : ART064/ Hora: 14:32:21 PM
+actualizado en Sap el articulo : ART068/ Hora: 14:32:22 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 14:32:25 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 14:32:26 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 14:32:27 PM
+actualizado en Sap el articulo : ART064/ Hora: 14:32:27 PM
+actualizado en Sap el articulo : ART068/ Hora: 14:32:28 PM
+actualizado a CrearSOCIOTODAS : GALAXY COMMUNICATIONS CORP./ Hora: 14:32:44 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 14:32:47 PM
+actualizado a CrearSOCIOTODAS : CARLOS SARRIA/ Hora: 14:32:48 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 14:32:48 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 14:32:48 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 14:32:49 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 14:32:52 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 14:32:52 PM
+Error actualizado SOCIOTODAS: (2) ****RUC ya fue asignado a otro Cliente. FERREMAX BOCAS, S.A./ Hora: 14:32:53 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 14:32:56 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 14:32:56 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 14:33:02 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 14:33:02 PM
+actualizado a CrearSOCIOTODAS : AGENCIA DE ADUANAS ZEBALLOS/ Hora: 14:33:03 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 14:33:03 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 14:33:04 PM
+Error CrearSCTODAS: Required date is missing (1) 66/ Hora: 14:33:07 PM
+Error CrearSCTODAS: Required date is missing (1) 63/ Hora: 14:33:11 PM
+Error CrearSCTODAS: Required date is missing (1) 73/ Hora: 14:33:14 PM
+Error CrearSCTODAS: Required date is missing (2) 72/ Hora: 14:33:18 PM
+Error CrearSCTODAS: Required date is missing (3) 76/ Hora: 14:33:21 PM
+Error CrearSCTODAS: Required date is missing (1) 77/ Hora: 14:33:24 PM
+Error CrearSCTODAS: Required date is missing (1) 80/ Hora: 14:33:27 PM
+Error CrearSCTODAS: Required date is missing (1) 167/ Hora: 14:33:33 PM
+Error CrearSCTODAS: Required date is missing (1) 178/ Hora: 14:33:36 PM
+Error CrearSCTODAS: Required date is missing (1) 179/ Hora: 14:33:39 PM
+Error CrearSCTODAS: Required date is missing (1) 181/ Hora: 14:33:41 PM
+Error CrearSCTODAS: Required date is missing (1) 182/ Hora: 14:33:44 PM
+Error CrearSCTODAS: Required date is missing (5) 201/ Hora: 14:33:47 PM
+Error CrearSCTODAS: Required date is missing (1) 85/ Hora: 14:33:51 PM
+Error CrearSCTODAS: Required date is missing (1) 111/ Hora: 14:33:53 PM
+Error CrearSCTODAS: Required date is missing (1) 114/ Hora: 14:33:56 PM
+Error CrearSCTODAS: Required date is missing (1) 120/ Hora: 14:33:59 PM
+Error CrearSCTODAS: Required date is missing (3) 118/ Hora: 14:34:03 PM
+Error CrearSCTODAS: Required date is missing (1) 141/ Hora: 14:34:06 PM
+Error CrearSCTODAS: Required date is missing (1) 142/ Hora: 14:34:09 PM
+Error CrearSCTODAS: Required date is missing (1) 144/ Hora: 14:34:12 PM
+Error CrearSCTODAS: Required date is missing (2) 146/ Hora: 14:34:15 PM
+Error CrearSCTODAS: Required date is missing (1) 158/ Hora: 14:34:17 PM
+Error CrearSCTODAS: Required date is missing (1) 176/ Hora: 14:34:20 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:34:23 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:34:23 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:34:23 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:34:23 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:34:23 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:34:23 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:34:23 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:34:24 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:34:24 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:34:24 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:34:24 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:34:24 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:34:24 PM
+Error CrearOC: In "BP Code", enter vendor code  1171/ Hora: 14:35:51 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:35:52 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:35:53 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:35:53 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:35:53 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:35:53 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:35:53 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:35:53 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:35:53 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:35:53 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:35:54 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:35:54 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:35:54 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:35:54 PM
+Error OC_World_a_SUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_Origen: line 1 col 195 (at pos 194)/ Hora: 14:35:54 PM
+Error OC_World_a_SUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_Origen: line 1 col 195 (at pos 194)/ Hora: 14:35:54 PM
+Error OC_World_a_SUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_Origen: line 1 col 195 (at pos 194)/ Hora: 14:35:54 PM
+Error OC_World_a_SUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_Origen: line 1 col 195 (at pos 194)/ Hora: 14:35:54 PM
+Error OC_World_a_SUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_Origen: line 1 col 195 (at pos 194)/ Hora: 14:35:55 PM
+Error OC_World_a_SUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_Origen: line 1 col 195 (at pos 194)/ Hora: 14:35:55 PM
+Error OC_World_a_SUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_Origen: line 1 col 195 (at pos 194)/ Hora: 14:35:55 PM
+Error OC_World_a_SUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_Origen: line 1 col 195 (at pos 194)/ Hora: 14:35:55 PM
+Error OC_World_a_SUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_Origen: line 1 col 195 (at pos 194)/ Hora: 14:35:55 PM
+Error OC_World_a_SUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_Origen: line 1 col 195 (at pos 194)/ Hora: 14:35:55 PM
+Error OC_World_a_SUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_Origen: line 1 col 195 (at pos 194)/ Hora: 14:35:55 PM
+Error OC_World_a_SUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_Origen: line 1 col 195 (at pos 194)/ Hora: 14:35:56 PM
+Error OC_World_a_SUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_Origen: line 1 col 195 (at pos 194)/ Hora: 14:35:56 PM
+Error Ovta_World_a_Wolrd : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_Origen: line 1 col 176 (at pos 175)/ Hora: 14:35:56 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 14:36:22 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 14:36:24 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 14:36:27 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:36:29 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:36:29 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:36:29 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:36:29 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:36:29 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:36:29 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:36:29 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:36:30 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:36:30 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:36:30 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:36:30 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:36:30 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 14:36:33 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 14:36:34 PM
+actualizado en Sap el articulo : PANE270/ Hora: 14:36:34 PM
+actualizado en Sap el articulo : CAJA220/ Hora: 14:36:34 PM
+actualizado en Sap el articulo : PANE812/ Hora: 14:36:35 PM
+actualizado en Sap el articulo : COFE400/ Hora: 14:36:35 PM
+actualizado en Sap el articulo : CODO114/ Hora: 14:36:40 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 14:36:41 PM
+actualizado en Sap el articulo : CAMA416/ Hora: 14:36:41 PM
+actualizado en Sap el articulo : TRAM123/ Hora: 14:36:41 PM
+actualizado en Sap el articulo : GRAP001/ Hora: 14:36:42 PM
+actualizado en Sap el articulo : CODO097/ Hora: 14:36:42 PM
+actualizado en Sap el articulo : CONE100/ Hora: 14:36:43 PM
+actualizado en Sap el articulo : TACO161/ Hora: 14:36:43 PM
+actualizado en Sap el articulo : TORN112/ Hora: 14:36:43 PM
+actualizado en Sap el articulo : PANE125/ Hora: 14:36:44 PM
+actualizado en Sap el articulo : ART064/ Hora: 14:36:44 PM
+actualizado en Sap el articulo : ART068/ Hora: 14:36:45 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 14:36:48 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 14:36:48 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 14:36:49 PM
+actualizado en Sap el articulo : ART064/ Hora: 14:36:49 PM
+actualizado en Sap el articulo : ART068/ Hora: 14:36:49 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 14:36:53 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 14:36:53 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 14:36:54 PM
+actualizado en Sap el articulo : ART064/ Hora: 14:36:54 PM
+actualizado en Sap el articulo : ART068/ Hora: 14:36:55 PM
+actualizado a CrearSOCIOTODAS : GALAXY COMMUNICATIONS CORP./ Hora: 14:37:11 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 14:37:14 PM
+actualizado a CrearSOCIOTODAS : CARLOS SARRIA/ Hora: 14:37:14 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 14:37:15 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 14:37:15 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 14:37:16 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 14:37:19 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 14:37:19 PM
+Error actualizado SOCIOTODAS: (2) ****RUC ya fue asignado a otro Cliente. FERREMAX BOCAS, S.A./ Hora: 14:37:19 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 14:37:26 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 14:37:27 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 14:37:30 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 14:37:30 PM
+actualizado a CrearSOCIOTODAS : AGENCIA DE ADUANAS ZEBALLOS/ Hora: 14:37:31 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 14:37:31 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 14:37:32 PM
+Error CrearSCTODAS: Required date is missing (1) 66/ Hora: 14:37:35 PM
+Error CrearSCTODAS: Required date is missing (1) 63/ Hora: 14:37:38 PM
+Error CrearSCTODAS: Required date is missing (1) 73/ Hora: 14:37:41 PM
+Error CrearSCTODAS: Required date is missing (2) 72/ Hora: 14:37:44 PM
+Error CrearSCTODAS: Required date is missing (3) 76/ Hora: 14:37:49 PM
+Error CrearSCTODAS: Required date is missing (1) 77/ Hora: 14:37:52 PM
+Error CrearSCTODAS: Required date is missing (1) 80/ Hora: 14:37:54 PM
+Error CrearSCTODAS: Required date is missing (1) 167/ Hora: 14:37:57 PM
+Error CrearSCTODAS: Required date is missing (1) 178/ Hora: 14:38:00 PM
+Error CrearSCTODAS: Required date is missing (1) 179/ Hora: 14:38:02 PM
+Error CrearSCTODAS: Required date is missing (1) 181/ Hora: 14:38:05 PM
+Error CrearSCTODAS: Required date is missing (1) 182/ Hora: 14:38:10 PM
+Error CrearSCTODAS: Required date is missing (5) 201/ Hora: 14:38:14 PM
+Error CrearSCTODAS: Required date is missing (1) 85/ Hora: 14:38:17 PM
+Error CrearSCTODAS: Required date is missing (1) 111/ Hora: 14:38:19 PM
+Error CrearSCTODAS: Required date is missing (1) 114/ Hora: 14:38:22 PM
+Error CrearSCTODAS: Required date is missing (1) 120/ Hora: 14:38:25 PM
+Error CrearSCTODAS: Required date is missing (3) 118/ Hora: 14:38:28 PM
+Error CrearSCTODAS: Required date is missing (1) 141/ Hora: 14:38:32 PM
+Error CrearSCTODAS: Required date is missing (1) 142/ Hora: 14:38:35 PM
+Error CrearSCTODAS: Required date is missing (1) 144/ Hora: 14:38:37 PM
+Error CrearSCTODAS: Required date is missing (2) 146/ Hora: 14:38:40 PM
+Error CrearSCTODAS: Required date is missing (1) 158/ Hora: 14:38:43 PM
+Error CrearSCTODAS: Required date is missing (1) 176/ Hora: 14:38:46 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:38:49 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:38:49 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:38:49 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:38:49 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:38:49 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:38:49 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:38:50 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:38:50 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:38:50 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:38:50 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:38:50 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:38:50 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:38:50 PM
+Error CrearOC: In "BP Code", enter vendor code  1171/ Hora: 14:38:54 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:40:03 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:40:08 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:40:11 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:40:15 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:40:19 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:40:23 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:40:26 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:40:30 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 14:48:47 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 14:48:49 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 14:48:52 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:48:54 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:48:54 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:48:54 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:48:55 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:48:55 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:48:55 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:48:55 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:48:55 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:48:55 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:48:55 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:48:55 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 14:48:56 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 14:48:59 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 14:48:59 PM
+actualizado en Sap el articulo : PANE270/ Hora: 14:49:00 PM
+actualizado en Sap el articulo : CAJA220/ Hora: 14:49:00 PM
+actualizado en Sap el articulo : PANE812/ Hora: 14:49:00 PM
+actualizado en Sap el articulo : COFE400/ Hora: 14:49:01 PM
+actualizado en Sap el articulo : CODO114/ Hora: 14:49:01 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 14:49:01 PM
+actualizado en Sap el articulo : CAMA416/ Hora: 14:49:02 PM
+actualizado en Sap el articulo : TRAM123/ Hora: 14:49:02 PM
+actualizado en Sap el articulo : GRAP001/ Hora: 14:49:02 PM
+actualizado en Sap el articulo : CODO097/ Hora: 14:49:03 PM
+actualizado en Sap el articulo : CONE100/ Hora: 14:49:03 PM
+actualizado en Sap el articulo : TACO161/ Hora: 14:49:03 PM
+actualizado en Sap el articulo : TORN112/ Hora: 14:49:04 PM
+actualizado en Sap el articulo : PANE125/ Hora: 14:49:04 PM
+actualizado en Sap el articulo : ART064/ Hora: 14:49:05 PM
+actualizado en Sap el articulo : ART068/ Hora: 14:49:05 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 14:49:08 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 14:49:09 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 14:49:09 PM
+actualizado en Sap el articulo : ART064/ Hora: 14:49:10 PM
+actualizado en Sap el articulo : ART068/ Hora: 14:49:10 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 14:49:14 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 14:49:15 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 14:49:15 PM
+actualizado en Sap el articulo : ART064/ Hora: 14:49:16 PM
+actualizado en Sap el articulo : ART068/ Hora: 14:49:16 PM
+actualizado a CrearSOCIOTODAS : GALAXY COMMUNICATIONS CORP./ Hora: 14:49:33 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 14:49:36 PM
+actualizado a CrearSOCIOTODAS : CARLOS SARRIA/ Hora: 14:49:36 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 14:49:36 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 14:49:37 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 14:49:37 PM
+actualizado a CrearSOCIOTODAS : ALEJANDRO LEUNG/ Hora: 14:49:37 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 14:49:40 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 14:49:40 PM
+Error actualizado SOCIOTODAS: (2) ****RUC ya fue asignado a otro Cliente. FERREMAX BOCAS, S.A./ Hora: 14:49:41 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 14:49:43 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 14:49:44 PM
+actualizado a CrearSOCIOTODAS : ALEJANDRO LEUNG/ Hora: 14:49:44 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 14:49:48 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 14:49:48 PM
+actualizado a CrearSOCIOTODAS : AGENCIA DE ADUANAS ZEBALLOS/ Hora: 14:49:49 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 14:49:49 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 14:49:49 PM
+actualizado a CrearSOCIOTODAS : ALEJANDRO LEUNG/ Hora: 14:49:50 PM
+Error CrearSCTODAS: Required date is missing (1) 66/ Hora: 14:49:53 PM
+Error CrearSCTODAS: Required date is missing (1) 63/ Hora: 14:49:57 PM
+Error CrearSCTODAS: Required date is missing (1) 73/ Hora: 14:50:00 PM
+Error CrearSCTODAS: Required date is missing (2) 72/ Hora: 14:50:03 PM
+Error CrearSCTODAS: Required date is missing (3) 76/ Hora: 14:50:06 PM
+Error CrearSCTODAS: Required date is missing (1) 77/ Hora: 14:50:08 PM
+Error CrearSCTODAS: Required date is missing (1) 80/ Hora: 14:50:10 PM
+Error CrearSCTODAS: Required date is missing (1) 167/ Hora: 14:50:13 PM
+Error CrearSCTODAS: Required date is missing (1) 178/ Hora: 14:50:15 PM
+Error CrearSCTODAS: Required date is missing (1) 179/ Hora: 14:50:17 PM
+Error CrearSCTODAS: Required date is missing (1) 181/ Hora: 14:50:19 PM
+Error CrearSCTODAS: Required date is missing (1) 182/ Hora: 14:50:22 PM
+Error CrearSCTODAS: Required date is missing (5) 201/ Hora: 14:50:25 PM
+Error CrearSCTODAS: Required date is missing (1) 85/ Hora: 14:50:28 PM
+Error CrearSCTODAS: Required date is missing (1) 111/ Hora: 14:50:31 PM
+Error CrearSCTODAS: Required date is missing (1) 114/ Hora: 14:50:33 PM
+Error CrearSCTODAS: Required date is missing (1) 120/ Hora: 14:50:36 PM
+Error CrearSCTODAS: Required date is missing (3) 118/ Hora: 14:50:38 PM
+Error CrearSCTODAS: Required date is missing (1) 141/ Hora: 14:50:41 PM
+Error CrearSCTODAS: Required date is missing (1) 142/ Hora: 14:50:43 PM
+Error CrearSCTODAS: Required date is missing (1) 144/ Hora: 14:50:46 PM
+Error CrearSCTODAS: Required date is missing (2) 146/ Hora: 14:50:48 PM
+Error CrearSCTODAS: Required date is missing (1) 158/ Hora: 14:50:50 PM
+Error CrearSCTODAS: Required date is missing (1) 176/ Hora: 14:50:53 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:50:56 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:50:56 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:50:56 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:50:56 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:50:56 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:50:56 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:50:57 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:50:57 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_Origen: line 1 col 174 (at pos 173)/ Hora: 14:50:57 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:50:57 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:50:57 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:50:57 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 14:50:57 PM
+Error CrearOC: In "BP Code", enter vendor code  1171/ Hora: 14:51:01 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:51:33 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:51:34 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:51:35 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:51:36 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:51:40 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:51:43 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:51:46 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 14:51:52 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_Origen: line 1 col 172 (at pos 171)/ Hora: 15:02:00 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 15:02:13 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 15:02:15 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 15:02:18 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:02:20 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:02:20 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:02:20 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:02:20 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:02:21 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:02:21 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:02:21 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:02:21 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:02:21 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:02:21 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:02:21 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:02:21 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 15:02:25 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 15:02:25 PM
+actualizado en Sap el articulo : PANE270/ Hora: 15:02:25 PM
+actualizado en Sap el articulo : CAJA220/ Hora: 15:02:26 PM
+actualizado en Sap el articulo : PANE812/ Hora: 15:02:26 PM
+actualizado en Sap el articulo : COFE400/ Hora: 15:02:26 PM
+actualizado en Sap el articulo : CODO114/ Hora: 15:02:27 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 15:02:27 PM
+actualizado en Sap el articulo : CAMA416/ Hora: 15:02:28 PM
+actualizado en Sap el articulo : TRAM123/ Hora: 15:02:28 PM
+actualizado en Sap el articulo : GRAP001/ Hora: 15:02:28 PM
+actualizado en Sap el articulo : CODO097/ Hora: 15:02:29 PM
+actualizado en Sap el articulo : CONE100/ Hora: 15:02:29 PM
+actualizado en Sap el articulo : TACO161/ Hora: 15:02:30 PM
+actualizado en Sap el articulo : TORN112/ Hora: 15:02:30 PM
+actualizado en Sap el articulo : PANE125/ Hora: 15:02:30 PM
+actualizado en Sap el articulo : ART064/ Hora: 15:02:31 PM
+actualizado en Sap el articulo : ART068/ Hora: 15:02:31 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 15:02:34 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 15:02:34 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 15:02:34 PM
+actualizado en Sap el articulo : ART064/ Hora: 15:02:35 PM
+actualizado en Sap el articulo : ART068/ Hora: 15:02:35 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 15:02:39 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 15:02:39 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 15:02:40 PM
+actualizado en Sap el articulo : ART064/ Hora: 15:02:40 PM
+actualizado en Sap el articulo : ART068/ Hora: 15:02:41 PM
+actualizado a CrearSOCIOTODAS : GALAXY COMMUNICATIONS CORP./ Hora: 15:02:57 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 15:02:59 PM
+actualizado a CrearSOCIOTODAS : CARLOS SARRIA/ Hora: 15:03:00 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 15:03:00 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 15:03:00 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 15:03:00 PM
+actualizado a CrearSOCIOTODAS : ALEJANDRO LEUNG/ Hora: 15:03:01 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 15:03:04 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 15:03:04 PM
+Error actualizado SOCIOTODAS: (2) ****RUC ya fue asignado a otro Cliente. FERREMAX BOCAS, S.A./ Hora: 15:03:04 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 15:03:09 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 15:03:09 PM
+actualizado a CrearSOCIOTODAS : ALEJANDRO LEUNG/ Hora: 15:03:09 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 15:03:12 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 15:03:12 PM
+actualizado a CrearSOCIOTODAS : AGENCIA DE ADUANAS ZEBALLOS/ Hora: 15:03:12 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 15:03:13 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 15:03:13 PM
+actualizado a CrearSOCIOTODAS : ALEJANDRO LEUNG/ Hora: 15:03:13 PM
+Error CrearSCTODAS: Required date is missing (1) 66/ Hora: 15:03:17 PM
+Error CrearSCTODAS: Required date is missing (1) 63/ Hora: 15:03:20 PM
+Error CrearSCTODAS: Required date is missing (1) 73/ Hora: 15:03:22 PM
+Error CrearSCTODAS: Required date is missing (2) 72/ Hora: 15:03:28 PM
+Error CrearSCTODAS: Required date is missing (3) 76/ Hora: 15:03:34 PM
+Error CrearSCTODAS: Required date is missing (1) 77/ Hora: 15:03:36 PM
+Error CrearSCTODAS: Required date is missing (1) 80/ Hora: 15:03:39 PM
+Error CrearSCTODAS: Required date is missing (1) 167/ Hora: 15:03:42 PM
+Error CrearSCTODAS: Required date is missing (1) 178/ Hora: 15:03:45 PM
+Error CrearSCTODAS: Required date is missing (1) 179/ Hora: 15:03:48 PM
+Error CrearSCTODAS: Required date is missing (1) 181/ Hora: 15:03:50 PM
+Error CrearSCTODAS: Required date is missing (1) 182/ Hora: 15:03:53 PM
+Error CrearSCTODAS: Required date is missing (5) 201/ Hora: 15:03:55 PM
+Error CrearSCTODAS: Required date is missing (1) 85/ Hora: 15:03:59 PM
+Error CrearSCTODAS: Required date is missing (1) 111/ Hora: 15:04:02 PM
+Error CrearSCTODAS: Required date is missing (1) 114/ Hora: 15:04:05 PM
+Error CrearSCTODAS: Required date is missing (1) 120/ Hora: 15:04:09 PM
+Error CrearSCTODAS: Required date is missing (3) 118/ Hora: 15:04:12 PM
+Error CrearSCTODAS: Required date is missing (1) 141/ Hora: 15:04:17 PM
+Error CrearSCTODAS: Required date is missing (1) 142/ Hora: 15:04:20 PM
+Error CrearSCTODAS: Required date is missing (1) 144/ Hora: 15:04:23 PM
+Error CrearSCTODAS: Required date is missing (2) 146/ Hora: 15:04:27 PM
+Error CrearSCTODAS: Required date is missing (1) 158/ Hora: 15:04:30 PM
+Error CrearSCTODAS: Required date is missing (1) 176/ Hora: 15:04:33 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 15:04:54 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 33 (at pos 32)/ Hora: 15:05:12 PM
+Error CrearOC: In "BP Code", enter vendor code  1171/ Hora: 15:10:58 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 15:26:37 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 15:26:40 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 15:26:43 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:26:45 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:26:45 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:26:45 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:26:45 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:26:45 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:26:45 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:26:46 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:26:46 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:26:46 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:26:46 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:26:46 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:26:46 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 15:26:50 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 15:26:51 PM
+actualizado en Sap el articulo : PANE270/ Hora: 15:26:51 PM
+actualizado en Sap el articulo : CAJA220/ Hora: 15:26:52 PM
+actualizado en Sap el articulo : PANE812/ Hora: 15:26:52 PM
+actualizado en Sap el articulo : COFE400/ Hora: 15:26:52 PM
+actualizado en Sap el articulo : CODO114/ Hora: 15:26:53 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 15:26:53 PM
+actualizado en Sap el articulo : CAMA416/ Hora: 15:26:54 PM
+actualizado en Sap el articulo : TRAM123/ Hora: 15:26:54 PM
+actualizado en Sap el articulo : GRAP001/ Hora: 15:26:54 PM
+actualizado en Sap el articulo : CODO097/ Hora: 15:26:55 PM
+actualizado en Sap el articulo : CONE100/ Hora: 15:26:55 PM
+actualizado en Sap el articulo : TACO161/ Hora: 15:26:56 PM
+actualizado en Sap el articulo : TORN112/ Hora: 15:26:56 PM
+actualizado en Sap el articulo : PANE125/ Hora: 15:26:56 PM
+actualizado en Sap el articulo : ART064/ Hora: 15:26:57 PM
+actualizado en Sap el articulo : ART068/ Hora: 15:26:57 PM
+actualizado en Sap el articulo : ART070/ Hora: 15:26:57 PM
+actualizado en Sap el articulo : ART071/ Hora: 15:26:58 PM
+actualizado en Sap el articulo : ART072/ Hora: 15:26:58 PM
+actualizado en Sap el articulo : ART073/ Hora: 15:26:59 PM
+Insertado a Sap el articulo : ART074/ Hora: 15:26:59 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 15:27:02 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 15:27:02 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 15:27:03 PM
+actualizado en Sap el articulo : ART064/ Hora: 15:27:03 PM
+actualizado en Sap el articulo : ART068/ Hora: 15:27:04 PM
+actualizado en Sap el articulo : ART070/ Hora: 15:27:04 PM
+actualizado en Sap el articulo : ART071/ Hora: 15:27:04 PM
+actualizado en Sap el articulo : ART072/ Hora: 15:27:05 PM
+actualizado en Sap el articulo : ART073/ Hora: 15:27:05 PM
+Insertado a Sap el articulo : ART074/ Hora: 15:27:06 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 15:27:09 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 15:27:09 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 15:27:10 PM
+actualizado en Sap el articulo : ART064/ Hora: 15:27:10 PM
+actualizado en Sap el articulo : ART068/ Hora: 15:27:11 PM
+actualizado en Sap el articulo : ART070/ Hora: 15:27:11 PM
+actualizado en Sap el articulo : ART071/ Hora: 15:27:12 PM
+actualizado en Sap el articulo : ART072/ Hora: 15:27:12 PM
+actualizado en Sap el articulo : ART073/ Hora: 15:27:13 PM
+Insertado a Sap el articulo : ART074/ Hora: 15:27:13 PM
+actualizado a CrearSOCIOTODAS : GALAXY COMMUNICATIONS CORP./ Hora: 15:27:30 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 15:27:34 PM
+actualizado a CrearSOCIOTODAS : CARLOS SARRIA/ Hora: 15:27:34 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 15:27:35 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 15:27:35 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 15:27:35 PM
+actualizado a CrearSOCIOTODAS : ALEJANDRO LEUNG/ Hora: 15:27:36 PM
+actualizado a CrearSOCIOTODAS : PRODUTOS MARIBEL SA/ Hora: 15:27:36 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 15:27:39 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 15:27:39 PM
+Error actualizado SOCIOTODAS: (2) ****RUC ya fue asignado a otro Cliente. FERREMAX BOCAS, S.A./ Hora: 15:27:40 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 15:27:42 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 15:27:43 PM
+actualizado a CrearSOCIOTODAS : ALEJANDRO LEUNG/ Hora: 15:27:43 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 15:27:46 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 15:27:47 PM
+actualizado a CrearSOCIOTODAS : AGENCIA DE ADUANAS ZEBALLOS/ Hora: 15:27:47 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 15:27:47 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 15:27:48 PM
+actualizado a CrearSOCIOTODAS : ALEJANDRO LEUNG/ Hora: 15:27:48 PM
+Error CrearSCTODAS: Required date is missing (1) 66/ Hora: 15:27:52 PM
+Error CrearSCTODAS: Required date is missing (1) 63/ Hora: 15:27:55 PM
+Error CrearSCTODAS: Required date is missing (1) 73/ Hora: 15:27:58 PM
+Error CrearSCTODAS: Required date is missing (2) 72/ Hora: 15:28:01 PM
+Error CrearSCTODAS: Required date is missing (3) 76/ Hora: 15:28:04 PM
+Error CrearSCTODAS: Required date is missing (1) 77/ Hora: 15:28:06 PM
+Error CrearSCTODAS: Required date is missing (1) 80/ Hora: 15:28:09 PM
+Error CrearSCTODAS: Required date is missing (1) 167/ Hora: 15:28:12 PM
+Error CrearSCTODAS: Required date is missing (1) 178/ Hora: 15:28:16 PM
+Error CrearSCTODAS: Required date is missing (1) 179/ Hora: 15:28:18 PM
+Error CrearSCTODAS: Required date is missing (1) 181/ Hora: 15:28:20 PM
+Error CrearSCTODAS: Required date is missing (1) 182/ Hora: 15:28:23 PM
+Error CrearSCTODAS: Required date is missing (5) 201/ Hora: 15:28:25 PM
+Error CrearSCTODAS: Required date is missing (1) 204/ Hora: 15:28:29 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 15:38:25 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 15:38:28 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 15:38:31 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:38:32 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:38:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:38:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:38:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:38:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:38:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:38:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:38:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:38:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:38:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:38:34 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:38:34 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 15:38:37 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 15:38:38 PM
+actualizado en Sap el articulo : PANE270/ Hora: 15:38:38 PM
+actualizado en Sap el articulo : CAJA220/ Hora: 15:38:39 PM
+actualizado en Sap el articulo : PANE812/ Hora: 15:38:39 PM
+actualizado en Sap el articulo : COFE400/ Hora: 15:38:40 PM
+actualizado en Sap el articulo : CODO114/ Hora: 15:38:40 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 15:38:40 PM
+actualizado en Sap el articulo : CAMA416/ Hora: 15:38:41 PM
+actualizado en Sap el articulo : TRAM123/ Hora: 15:38:41 PM
+actualizado en Sap el articulo : GRAP001/ Hora: 15:38:42 PM
+actualizado en Sap el articulo : CODO097/ Hora: 15:38:42 PM
+actualizado en Sap el articulo : CONE100/ Hora: 15:38:43 PM
+actualizado en Sap el articulo : TACO161/ Hora: 15:38:43 PM
+actualizado en Sap el articulo : TORN112/ Hora: 15:38:44 PM
+actualizado en Sap el articulo : PANE125/ Hora: 15:38:44 PM
+actualizado en Sap el articulo : ART064/ Hora: 15:38:45 PM
+actualizado en Sap el articulo : ART068/ Hora: 15:38:45 PM
+actualizado en Sap el articulo : ART070/ Hora: 15:38:45 PM
+actualizado en Sap el articulo : ART071/ Hora: 15:38:46 PM
+actualizado en Sap el articulo : ART072/ Hora: 15:38:46 PM
+actualizado en Sap el articulo : ART073/ Hora: 15:38:47 PM
+actualizado en Sap el articulo : ART074/ Hora: 15:38:47 PM
+actualizado en Sap el articulo : ART078/ Hora: 15:38:48 PM
+actualizado en Sap el articulo : ART079/ Hora: 15:38:48 PM
+actualizado en Sap el articulo : ART080/ Hora: 15:38:48 PM
+actualizado en Sap el articulo : ART081/ Hora: 15:38:49 PM
+actualizado en Sap el articulo : ART082/ Hora: 15:38:50 PM
+actualizado en Sap el articulo : ART083/ Hora: 15:38:50 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 15:38:53 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 15:38:54 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 15:38:54 PM
+actualizado en Sap el articulo : ART064/ Hora: 15:38:55 PM
+actualizado en Sap el articulo : ART068/ Hora: 15:38:55 PM
+actualizado en Sap el articulo : ART070/ Hora: 15:38:55 PM
+actualizado en Sap el articulo : ART071/ Hora: 15:38:56 PM
+actualizado en Sap el articulo : ART072/ Hora: 15:38:56 PM
+actualizado en Sap el articulo : ART073/ Hora: 15:38:57 PM
+actualizado en Sap el articulo : ART074/ Hora: 15:38:57 PM
+actualizado en Sap el articulo : ART078/ Hora: 15:38:58 PM
+actualizado en Sap el articulo : ART079/ Hora: 15:38:58 PM
+actualizado en Sap el articulo : ART080/ Hora: 15:38:58 PM
+actualizado en Sap el articulo : ART081/ Hora: 15:38:59 PM
+actualizado en Sap el articulo : ART082/ Hora: 15:38:59 PM
+actualizado en Sap el articulo : ART083/ Hora: 15:39:00 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 15:39:04 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 15:39:05 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 15:39:05 PM
+actualizado en Sap el articulo : ART064/ Hora: 15:39:06 PM
+actualizado en Sap el articulo : ART068/ Hora: 15:39:06 PM
+actualizado en Sap el articulo : ART070/ Hora: 15:39:07 PM
+actualizado en Sap el articulo : ART071/ Hora: 15:39:07 PM
+actualizado en Sap el articulo : ART072/ Hora: 15:39:08 PM
+actualizado en Sap el articulo : ART073/ Hora: 15:39:08 PM
+actualizado en Sap el articulo : ART074/ Hora: 15:39:09 PM
+actualizado en Sap el articulo : ART078/ Hora: 15:39:09 PM
+actualizado en Sap el articulo : ART079/ Hora: 15:39:10 PM
+actualizado en Sap el articulo : ART080/ Hora: 15:39:10 PM
+actualizado en Sap el articulo : ART081/ Hora: 15:39:11 PM
+actualizado en Sap el articulo : ART082/ Hora: 15:39:11 PM
+actualizado en Sap el articulo : ART083/ Hora: 15:39:17 PM
+actualizado a CrearSOCIOTODAS : GALAXY COMMUNICATIONS CORP./ Hora: 15:39:35 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 15:39:39 PM
+actualizado a CrearSOCIOTODAS : CARLOS SARRIA/ Hora: 15:39:40 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 15:39:40 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 15:39:40 PM
+actualizado a CrearSOCIOTODAS : ALEJANDRO LEUNG/ Hora: 15:39:41 PM
+actualizado a CrearSOCIOTODAS : PRODUTOS MARIBEL SA/ Hora: 15:39:41 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 15:39:41 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 15:39:44 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 15:39:45 PM
+Error actualizado SOCIOTODAS: (2) ****RUC ya fue asignado a otro Cliente. FERREMAX BOCAS, S.A./ Hora: 15:39:45 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 15:39:49 PM
+actualizado a CrearSOCIOTODAS : ALEJANDRO LEUNG/ Hora: 15:39:50 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 15:39:50 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 15:39:54 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 15:39:55 PM
+actualizado a CrearSOCIOTODAS : AGENCIA DE ADUANAS ZEBALLOS/ Hora: 15:39:55 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 15:39:56 PM
+actualizado a CrearSOCIOTODAS : ALEJANDRO LEUNG/ Hora: 15:39:56 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 15:39:57 PM
+Error CrearSCTODAS: Required date is missing (1) 66/ Hora: 15:44:16 PM
+Error CrearSCTODAS: Required date is missing (1) 63/ Hora: 15:44:57 PM
+Error CrearSCTODAS: Required date is missing (1) 73/ Hora: 15:45:07 PM
+Error CrearSCTODAS: Required date is missing (2) 72/ Hora: 15:45:19 PM
+Error CrearSCTODAS: Required date is missing (3) 76/ Hora: 15:45:37 PM
+Error CrearSCTODAS: Required date is missing (1) 77/ Hora: 15:45:46 PM
+Error CrearSCTODAS: Required date is missing (1) 80/ Hora: 15:45:55 PM
+Error CrearSCTODAS: Required date is missing (1) 167/ Hora: 15:46:11 PM
+Error CrearSCTODAS: Required date is missing (1) 178/ Hora: 15:46:25 PM
+Error CrearSCTODAS: Required date is missing (1) 179/ Hora: 15:46:33 PM
+Error CrearSCTODAS: Required date is missing (1) 181/ Hora: 15:46:40 PM
+Error CrearSCTODAS: Required date is missing (1) 182/ Hora: 15:46:46 PM
+Error CrearSCTODAS: Required date is missing (11) 201/ Hora: 15:46:58 PM
+Error CrearSCTODAS: Required date is missing (1) 204/ Hora: 15:47:06 PM
+Error CrearSCTODAS: Required date is missing (1) 85/ Hora: 15:47:23 PM
+Error CrearSCTODAS: Required date is missing (1) 111/ Hora: 15:47:31 PM
+Error CrearSCTODAS: Required date is missing (1) 114/ Hora: 15:47:35 PM
+Error CrearSCTODAS: Required date is missing (1) 120/ Hora: 15:47:38 PM
+Error CrearSCTODAS: Required date is missing (3) 118/ Hora: 15:47:41 PM
+Error CrearSCTODAS: Required date is missing (1) 141/ Hora: 15:47:44 PM
+Error CrearSCTODAS: Required date is missing (1) 142/ Hora: 15:47:46 PM
+Error CrearSCTODAS: Required date is missing (1) 144/ Hora: 15:47:49 PM
+Error CrearSCTODAS: Required date is missing (2) 146/ Hora: 15:47:52 PM
+Error CrearSCTODAS: Required date is missing (1) 158/ Hora: 15:47:55 PM
+Error CrearSCTODAS: Required date is missing (1) 176/ Hora: 15:47:57 PM
+Error CrearOfertaTODAS: In "BP Code", enter vendor code  45/ Hora: 15:48:05 PM
+Error CrearOC: In "BP Code", enter vendor code  1171/ Hora: 15:48:11 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 15:48:57 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 15:49:01 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 15:50:26 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 15:50:28 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 15:50:31 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:50:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:50:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:50:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:50:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:50:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:50:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:50:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:50:34 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:50:34 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:50:34 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:50:34 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 15:50:34 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 15:50:38 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 15:50:39 PM
+actualizado en Sap el articulo : PANE270/ Hora: 15:50:39 PM
+actualizado en Sap el articulo : CAJA220/ Hora: 15:50:39 PM
+actualizado en Sap el articulo : PANE812/ Hora: 15:50:40 PM
+actualizado en Sap el articulo : COFE400/ Hora: 15:50:40 PM
+actualizado en Sap el articulo : CODO114/ Hora: 15:50:40 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 15:50:41 PM
+actualizado en Sap el articulo : CAMA416/ Hora: 15:50:41 PM
+actualizado en Sap el articulo : TRAM123/ Hora: 15:50:41 PM
+actualizado en Sap el articulo : GRAP001/ Hora: 15:50:42 PM
+actualizado en Sap el articulo : CODO097/ Hora: 15:50:42 PM
+actualizado en Sap el articulo : CONE100/ Hora: 15:50:42 PM
+actualizado en Sap el articulo : TACO161/ Hora: 15:50:43 PM
+actualizado en Sap el articulo : TORN112/ Hora: 15:50:43 PM
+actualizado en Sap el articulo : PANE125/ Hora: 15:50:43 PM
+actualizado en Sap el articulo : ART064/ Hora: 15:50:44 PM
+actualizado en Sap el articulo : ART068/ Hora: 15:50:44 PM
+actualizado en Sap el articulo : ART070/ Hora: 15:50:44 PM
+actualizado en Sap el articulo : ART071/ Hora: 15:50:45 PM
+actualizado en Sap el articulo : ART072/ Hora: 15:50:45 PM
+actualizado en Sap el articulo : ART073/ Hora: 15:50:45 PM
+actualizado en Sap el articulo : ART074/ Hora: 15:50:45 PM
+actualizado en Sap el articulo : ART078/ Hora: 15:50:46 PM
+actualizado en Sap el articulo : ART079/ Hora: 15:50:46 PM
+actualizado en Sap el articulo : ART080/ Hora: 15:50:46 PM
+actualizado en Sap el articulo : ART081/ Hora: 15:50:47 PM
+actualizado en Sap el articulo : ART082/ Hora: 15:50:47 PM
+actualizado en Sap el articulo : ART083/ Hora: 15:50:48 PM
+actualizado en Sap el articulo : BREK602/ Hora: 15:50:48 PM
+actualizado en Sap el articulo : ART084/ Hora: 15:50:49 PM
+actualizado en Sap el articulo : ELE005/ Hora: 15:50:49 PM
+actualizado en Sap el articulo : BRAK201/ Hora: 15:50:50 PM
+actualizado en Sap el articulo : ELE043/ Hora: 15:50:50 PM
+actualizado en Sap el articulo : ELE101/ Hora: 15:50:50 PM
+actualizado en Sap el articulo : ELE018/ Hora: 15:50:51 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 15:50:54 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 15:50:55 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 15:50:55 PM
+actualizado en Sap el articulo : ART064/ Hora: 15:50:55 PM
+actualizado en Sap el articulo : ART068/ Hora: 15:50:56 PM
+actualizado en Sap el articulo : ART070/ Hora: 15:50:56 PM
+actualizado en Sap el articulo : ART071/ Hora: 15:50:57 PM
+actualizado en Sap el articulo : ART072/ Hora: 15:50:57 PM
+actualizado en Sap el articulo : ART073/ Hora: 15:50:58 PM
+actualizado en Sap el articulo : ART074/ Hora: 15:50:58 PM
+actualizado en Sap el articulo : ART078/ Hora: 15:50:59 PM
+actualizado en Sap el articulo : ART079/ Hora: 15:50:59 PM
+actualizado en Sap el articulo : ART080/ Hora: 15:50:59 PM
+actualizado en Sap el articulo : ART081/ Hora: 15:51:00 PM
+actualizado en Sap el articulo : ART082/ Hora: 15:51:00 PM
+actualizado en Sap el articulo : ART083/ Hora: 15:51:01 PM
+actualizado en Sap el articulo : ART084/ Hora: 15:51:01 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 15:51:04 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 15:51:05 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 15:51:05 PM
+actualizado en Sap el articulo : ART064/ Hora: 15:51:06 PM
+actualizado en Sap el articulo : ART068/ Hora: 15:51:06 PM
+actualizado en Sap el articulo : ART070/ Hora: 15:51:07 PM
+actualizado en Sap el articulo : ART071/ Hora: 15:51:07 PM
+actualizado en Sap el articulo : ART072/ Hora: 15:51:08 PM
+actualizado en Sap el articulo : ART073/ Hora: 15:51:08 PM
+actualizado en Sap el articulo : ART074/ Hora: 15:51:09 PM
+actualizado en Sap el articulo : ART078/ Hora: 15:51:09 PM
+actualizado en Sap el articulo : ART079/ Hora: 15:51:10 PM
+actualizado en Sap el articulo : ART080/ Hora: 15:51:10 PM
+actualizado en Sap el articulo : ART081/ Hora: 15:51:11 PM
+actualizado en Sap el articulo : ART082/ Hora: 15:51:11 PM
+actualizado en Sap el articulo : CEM033/ Hora: 15:51:11 PM
+actualizado en Sap el articulo : ART083/ Hora: 15:51:15 PM
+actualizado en Sap el articulo : ART084/ Hora: 15:51:16 PM
+actualizado a CrearSOCIOTODAS : GALAXY COMMUNICATIONS CORP./ Hora: 15:51:33 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 15:51:37 PM
+actualizado a CrearSOCIOTODAS : CARLOS SARRIA/ Hora: 15:51:37 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 15:51:37 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 15:51:38 PM
+actualizado a CrearSOCIOTODAS : ALEJANDRO LEUNG/ Hora: 15:51:38 PM
+actualizado a CrearSOCIOTODAS : PRODUTOS MARIBEL SA/ Hora: 15:51:38 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 15:51:39 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 15:51:43 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 15:51:43 PM
+Error actualizado SOCIOTODAS: (2) ****RUC ya fue asignado a otro Cliente. FERREMAX BOCAS, S.A./ Hora: 15:51:43 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 15:51:48 PM
+actualizado a CrearSOCIOTODAS : ALEJANDRO LEUNG/ Hora: 15:51:49 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 15:51:49 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 15:51:53 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 15:51:54 PM
+actualizado a CrearSOCIOTODAS : AGENCIA DE ADUANAS ZEBALLOS/ Hora: 15:51:54 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 15:51:55 PM
+actualizado a CrearSOCIOTODAS : ALEJANDRO LEUNG/ Hora: 15:51:55 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 15:51:55 PM
+Error CrearSCTODAS: Required date is missing (1) 66/ Hora: 15:52:02 PM
+Error CrearSCTODAS: Required date is missing (1) 63/ Hora: 15:52:05 PM
+Error CrearSCTODAS: Required date is missing (1) 73/ Hora: 15:52:08 PM
+Error CrearSCTODAS: Required date is missing (2) 72/ Hora: 15:52:11 PM
+Error CrearSCTODAS: Required date is missing (3) 76/ Hora: 15:52:15 PM
+Error CrearSCTODAS: Required date is missing (1) 77/ Hora: 15:52:17 PM
+Error CrearSCTODAS: Required date is missing (1) 80/ Hora: 15:52:20 PM
+Error CrearSCTODAS: Required date is missing (1) 167/ Hora: 15:52:24 PM
+Error CrearSCTODAS: Required date is missing (1) 178/ Hora: 15:52:27 PM
+Error CrearSCTODAS: Required date is missing (1) 179/ Hora: 15:52:30 PM
+Error CrearSCTODAS: Required date is missing (1) 181/ Hora: 15:52:32 PM
+Error CrearSCTODAS: Required date is missing (1) 182/ Hora: 15:52:36 PM
+Error CrearSCTODAS: Required date is missing (14) 201/ Hora: 15:52:39 PM
+Error CrearSCTODAS: Required date is missing (1) 204/ Hora: 15:52:42 PM
+Error CrearSCTODAS: Required date is missing (1) 210/ Hora: 15:52:45 PM
+Error CrearSCTODAS: Required date is missing (1) 85/ Hora: 15:52:48 PM
+Error CrearSCTODAS: Required date is missing (1) 111/ Hora: 15:52:51 PM
+Error CrearSCTODAS: Required date is missing (1) 114/ Hora: 15:52:53 PM
+Error CrearSCTODAS: Required date is missing (1) 120/ Hora: 15:52:56 PM
+Error CrearSCTODAS: Required date is missing (3) 118/ Hora: 15:52:59 PM
+Error CrearSCTODAS: Required date is missing (1) 141/ Hora: 15:53:03 PM
+Error CrearSCTODAS: Required date is missing (1) 142/ Hora: 15:53:05 PM
+Error CrearSCTODAS: Required date is missing (1) 144/ Hora: 15:53:08 PM
+Error CrearSCTODAS: Required date is missing (2) 146/ Hora: 15:53:10 PM
+Error CrearSCTODAS: Required date is missing (1) 158/ Hora: 15:53:13 PM
+Error CrearSCTODAS: Required date is missing (1) 176/ Hora: 15:53:17 PM
+Error CrearOC: In "BP Code", enter vendor code  1171/ Hora: 16:00:11 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 16:00:13 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 16:00:13 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 16:01:25 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 16:01:27 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 16:01:30 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:01:32 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:01:32 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:01:32 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:01:32 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:01:32 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:01:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:01:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:01:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:01:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:01:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:01:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:01:33 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 16:01:37 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 16:01:37 PM
+actualizado en Sap el articulo : PANE270/ Hora: 16:01:37 PM
+actualizado en Sap el articulo : CAJA220/ Hora: 16:01:38 PM
+actualizado en Sap el articulo : PANE812/ Hora: 16:01:38 PM
+actualizado en Sap el articulo : COFE400/ Hora: 16:01:39 PM
+actualizado en Sap el articulo : CODO114/ Hora: 16:01:39 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 16:01:39 PM
+actualizado en Sap el articulo : CAMA416/ Hora: 16:01:40 PM
+actualizado en Sap el articulo : TRAM123/ Hora: 16:01:40 PM
+actualizado en Sap el articulo : GRAP001/ Hora: 16:01:40 PM
+actualizado en Sap el articulo : CODO097/ Hora: 16:01:44 PM
+actualizado en Sap el articulo : CONE100/ Hora: 16:01:45 PM
+actualizado en Sap el articulo : TACO161/ Hora: 16:01:45 PM
+actualizado en Sap el articulo : TORN112/ Hora: 16:01:45 PM
+actualizado en Sap el articulo : PANE125/ Hora: 16:01:46 PM
+actualizado en Sap el articulo : ART064/ Hora: 16:01:46 PM
+actualizado en Sap el articulo : ART068/ Hora: 16:01:47 PM
+actualizado en Sap el articulo : ART070/ Hora: 16:01:47 PM
+actualizado en Sap el articulo : ART071/ Hora: 16:01:47 PM
+actualizado en Sap el articulo : ART072/ Hora: 16:01:48 PM
+actualizado en Sap el articulo : ART073/ Hora: 16:01:48 PM
+actualizado en Sap el articulo : ART074/ Hora: 16:01:49 PM
+actualizado en Sap el articulo : ART078/ Hora: 16:01:49 PM
+actualizado en Sap el articulo : ART079/ Hora: 16:01:49 PM
+actualizado en Sap el articulo : ART080/ Hora: 16:01:50 PM
+actualizado en Sap el articulo : ART081/ Hora: 16:01:50 PM
+actualizado en Sap el articulo : ART082/ Hora: 16:01:51 PM
+actualizado en Sap el articulo : ART083/ Hora: 16:01:51 PM
+actualizado en Sap el articulo : BREK602/ Hora: 16:01:51 PM
+actualizado en Sap el articulo : ART084/ Hora: 16:01:52 PM
+actualizado en Sap el articulo : ELE005/ Hora: 16:01:52 PM
+actualizado en Sap el articulo : BRAK201/ Hora: 16:01:52 PM
+actualizado en Sap el articulo : ELE043/ Hora: 16:01:53 PM
+actualizado en Sap el articulo : ELE101/ Hora: 16:01:53 PM
+actualizado en Sap el articulo : ELE018/ Hora: 16:01:54 PM
+actualizado en Sap el articulo : ELE019/ Hora: 16:01:54 PM
+actualizado en Sap el articulo : ELE017/ Hora: 16:01:54 PM
+actualizado en Sap el articulo : PL096/ Hora: 16:01:55 PM
+actualizado en Sap el articulo : ELE020/ Hora: 16:01:55 PM
+actualizado en Sap el articulo : TERM002/ Hora: 16:01:55 PM
+actualizado en Sap el articulo : UEMT001/ Hora: 16:01:56 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 16:01:59 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 16:01:59 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 16:02:00 PM
+actualizado en Sap el articulo : ART064/ Hora: 16:02:00 PM
+actualizado en Sap el articulo : ART068/ Hora: 16:02:00 PM
+actualizado en Sap el articulo : ART070/ Hora: 16:02:01 PM
+actualizado en Sap el articulo : ART071/ Hora: 16:02:01 PM
+actualizado en Sap el articulo : ART072/ Hora: 16:02:02 PM
+actualizado en Sap el articulo : ART073/ Hora: 16:02:02 PM
+actualizado en Sap el articulo : ART074/ Hora: 16:02:02 PM
+actualizado en Sap el articulo : ART078/ Hora: 16:02:03 PM
+actualizado en Sap el articulo : ART079/ Hora: 16:02:03 PM
+actualizado en Sap el articulo : ART080/ Hora: 16:02:04 PM
+actualizado en Sap el articulo : ART081/ Hora: 16:02:04 PM
+actualizado en Sap el articulo : ART082/ Hora: 16:02:04 PM
+actualizado en Sap el articulo : ART083/ Hora: 16:02:05 PM
+actualizado en Sap el articulo : ART084/ Hora: 16:02:05 PM
+actualizado en Sap el articulo : PL096/ Hora: 16:02:06 PM
+actualizado en Sap el articulo : ELCT20/ Hora: 16:02:09 PM
+actualizado en Sap el articulo : UOFC0007/ Hora: 16:02:10 PM
+actualizado en Sap el articulo : UOFC0026/ Hora: 16:02:10 PM
+actualizado en Sap el articulo : ART064/ Hora: 16:02:11 PM
+actualizado en Sap el articulo : ART068/ Hora: 16:02:11 PM
+actualizado en Sap el articulo : ART070/ Hora: 16:02:12 PM
+actualizado en Sap el articulo : ART071/ Hora: 16:02:12 PM
+actualizado en Sap el articulo : ART072/ Hora: 16:02:14 PM
+actualizado en Sap el articulo : ART073/ Hora: 16:02:15 PM
+actualizado en Sap el articulo : ART074/ Hora: 16:02:15 PM
+actualizado en Sap el articulo : ART078/ Hora: 16:02:16 PM
+actualizado en Sap el articulo : ART079/ Hora: 16:02:16 PM
+actualizado en Sap el articulo : ART080/ Hora: 16:02:16 PM
+actualizado en Sap el articulo : ART081/ Hora: 16:02:17 PM
+actualizado en Sap el articulo : ART082/ Hora: 16:02:17 PM
+actualizado en Sap el articulo : CEM033/ Hora: 16:02:18 PM
+actualizado en Sap el articulo : PL096/ Hora: 16:02:18 PM
+actualizado en Sap el articulo : ART083/ Hora: 16:02:22 PM
+actualizado en Sap el articulo : ART084/ Hora: 16:02:22 PM
+actualizado a CrearSOCIOTODAS : GALAXY COMMUNICATIONS CORP./ Hora: 16:02:39 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 16:02:42 PM
+actualizado a CrearSOCIOTODAS : CARLOS SARRIA/ Hora: 16:02:42 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 16:02:43 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 16:02:43 PM
+actualizado a CrearSOCIOTODAS : ALEJANDRO LEUNG/ Hora: 16:02:43 PM
+actualizado a CrearSOCIOTODAS : PRODUTOS MARIBEL SA/ Hora: 16:02:44 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 16:02:44 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 16:02:47 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 16:02:48 PM
+Error actualizado SOCIOTODAS: (2) ****RUC ya fue asignado a otro Cliente. FERREMAX BOCAS, S.A./ Hora: 16:02:48 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 16:02:55 PM
+actualizado a CrearSOCIOTODAS : ALEJANDRO LEUNG/ Hora: 16:02:56 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 16:02:56 PM
+actualizado a CrearSOCIOTODAS : JELLINI S.A/ Hora: 16:03:00 PM
+actualizado a CrearSOCIOTODAS : AUTO REPUESTOS LK H2/ Hora: 16:03:00 PM
+actualizado a CrearSOCIOTODAS : AGENCIA DE ADUANAS ZEBALLOS/ Hora: 16:03:01 PM
+actualizado a CrearSOCIOTODAS : ULTRAMAR COMMERCIAL CORPORATION/ Hora: 16:03:01 PM
+actualizado a CrearSOCIOTODAS : ALEJANDRO LEUNG/ Hora: 16:03:02 PM
+actualizado a CrearSOCIOTODAS : COCHEZ Y CIA S.A./ Hora: 16:03:02 PM
+Error CrearSCTODAS: Required date is missing (1) 66/ Hora: 16:03:39 PM
+Error CrearSCTODAS: Required date is missing (1) 63/ Hora: 16:03:42 PM
+Error CrearSCTODAS: Required date is missing (1) 73/ Hora: 16:03:45 PM
+Error CrearSCTODAS: Required date is missing (2) 72/ Hora: 16:03:50 PM
+Error CrearSCTODAS: Required date is missing (3) 76/ Hora: 16:03:53 PM
+Error CrearSCTODAS: Required date is missing (1) 77/ Hora: 16:03:56 PM
+Error CrearSCTODAS: Required date is missing (1) 80/ Hora: 16:04:01 PM
+Error CrearSCTODAS: Required date is missing (1) 167/ Hora: 16:04:04 PM
+Error CrearSCTODAS: Required date is missing (1) 178/ Hora: 16:04:07 PM
+Error CrearSCTODAS: Required date is missing (1) 179/ Hora: 16:04:10 PM
+Error CrearSCTODAS: Required date is missing (1) 181/ Hora: 16:04:13 PM
+Error CrearSCTODAS: Required date is missing (1) 182/ Hora: 16:04:17 PM
+Error CrearSCTODAS: Required date is missing (1) 204/ Hora: 16:04:21 PM
+Error CrearSCTODAS: Required date is missing (1) 210/ Hora: 16:04:24 PM
+Error CrearSCTODAS: Required date is missing (1) 85/ Hora: 16:04:28 PM
+Error CrearSCTODAS: Required date is missing (1) 111/ Hora: 16:04:30 PM
+Error CrearSCTODAS: Required date is missing (1) 114/ Hora: 16:04:33 PM
+Error CrearSCTODAS: Required date is missing (1) 120/ Hora: 16:04:36 PM
+Error CrearSCTODAS: Required date is missing (3) 118/ Hora: 16:04:39 PM
+Error CrearSCTODAS: Required date is missing (1) 141/ Hora: 16:04:43 PM
+Error CrearSCTODAS: Required date is missing (1) 142/ Hora: 16:04:46 PM
+Error CrearSCTODAS: Required date is missing (1) 144/ Hora: 16:04:49 PM
+Error CrearSCTODAS: Required date is missing (2) 146/ Hora: 16:04:52 PM
+Error CrearSCTODAS: Required date is missing (1) 158/ Hora: 16:04:55 PM
+Error CrearSCTODAS: Required date is missing (1) 176/ Hora: 16:04:58 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 16:11:07 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 16:11:08 PM

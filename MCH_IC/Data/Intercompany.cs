@@ -756,7 +756,7 @@ namespace Intercompany.Data
                 using (OdbcConnection conn2 = new OdbcConnection(Conexion.strCon))
                 {
                     {
-                        string queryEn = $"select \"DocEntry\" ,\"U_entryPA\" ,\"U_entrySC\"  from  \"{bd}\".\"OPQT\" where \"UpdateDate\" =(select to_date(CURRENT_DATE,'YYYY-MM-DD') from dummy ) and \"DocStatus\"='O' AND \"U_Origen\"='{bd}' and \"U_Seleccionada\"='Y' and \"U_TipoCompra\" in ('1','2')  and \"DocStatus\"='O' ";
+                        string queryEn = $"select \"DocEntry\" ,\"U_entryPA\",\"U_entrySC\"     from  \"{Conexion.ORIGEN}\".\"OPQT\" where \"UpdateDate\" =(select to_date(CURRENT_DATE,'YYYY-MM-DD') from dummy ) and \"DocStatus\"='O' AND \"U_Origen\"='{bd}' and \"U_Seleccionada\"='Y' and \"U_TipoCompra\" in ('1','2')  and \"DocStatus\"='O' ";
                         OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                         conn.Open();
                         using (OdbcDataReader dr2 = CmD1.ExecuteReader())
@@ -2165,7 +2165,6 @@ namespace Intercompany.Data
                                     JsonObjectRow.Add(new JProperty("LineTotal", detalle.LineTotal));
                                     JsonObjectRow.Add(new JProperty("VatGroup", detalle.VatGroup));
                                     JsonObjectRow.Add(new JProperty("ProjectCode", CODPROYE));
-
                                     list.Add(JsonObjectRow);
                                 }
 

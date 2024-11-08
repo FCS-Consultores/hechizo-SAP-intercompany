@@ -20,6 +20,7 @@ namespace Intercompany.Models
         string iverco = "20043_IVERCO_";
         string mc = "20043_MC_HOLDING_";
         string panco = "20043_PANCO_";
+        string torino = "20043_TORINO_";
         string pgjp = "20043_PGJP_";
         string world = "20043_WORLD_BRANDS_";
         string shej = "20043_ZHEJIANG_";

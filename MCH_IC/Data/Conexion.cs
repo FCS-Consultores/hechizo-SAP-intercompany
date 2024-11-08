@@ -78,6 +78,7 @@ namespace Intercompany.Data
         public static string baseideo = ideo();
         public static string baseiverco =iverco();
         public static string basepanco = panco();
+        public static string basetorino = torino();
         public static string basepgjp = pgjp();
         public static string baseworld = world();
         public static string basezhej =zhej();
@@ -193,6 +194,22 @@ namespace Intercompany.Data
                 IniFil = new IniFile(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "/config.ini");
                 string eco = IniFil.LeerINI("ConexionHanaProd", "eco");
                 return eco;
+            }
+            catch (Exception ex)
+            {
+                objRegistraLog.Graba(ex + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));
+                return "";
+            }
+        }
+        public static string torino()
+        {
+            RegistroLog objRegistraLog = new RegistroLog(); //Log en caso de error
+            try
+            {
+                IniFile IniFil;
+                IniFil = new IniFile(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "/config.ini");
+                string torino = IniFil.LeerINI("ConexionHanaProd", "torino");
+                return torino;
             }
             catch (Exception ex)
             {

@@ -27,6 +27,7 @@ namespace Intercompany
             Intercompany.Data.Intercompany.Fabricante(Conexion.baseiverco);
             Intercompany.Data.Intercompany.Fabricante(Conexion.basepanco);
             Intercompany.Data.Intercompany.Fabricante(Conexion.basepgjp);
+            Intercompany.Data.Intercompany.Fabricante(Conexion.basetorino);
             Intercompany.Data.Intercompany.Fabricante(Conexion.baseworld);
             Intercompany.Data.Intercompany.Fabricante(Conexion.basezhej);
             #endregion
@@ -44,6 +45,7 @@ namespace Intercompany
             Intercompany.Data.Intercompany.Grupo(Conexion.baseiverco);
             Intercompany.Data.Intercompany.Grupo(Conexion.basepanco);
             Intercompany.Data.Intercompany.Grupo(Conexion.basepgjp);
+            Intercompany.Data.Intercompany.Grupo(Conexion.basetorino);
             Intercompany.Data.Intercompany.Grupo(Conexion.baseworld);
             Intercompany.Data.Intercompany.Grupo(Conexion.basezhej);
             #endregion
@@ -59,6 +61,8 @@ namespace Intercompany
             Intercompany.Data.Intercompany.GrupoSN(Conexion.baseideo);
             Intercompany.Data.Intercompany.GrupoSN(Conexion.baseiverco);
             Intercompany.Data.Intercompany.GrupoSN(Conexion.basepanco);
+            Intercompany.Data.Intercompany.GrupoSN(Conexion.basetorino);
+
             Intercompany.Data.Intercompany.GrupoSN(Conexion.basepgjp);
            Intercompany.Data.Intercompany.GrupoSN(Conexion.baseworld);
             Intercompany.Data.Intercompany.GrupoSN(Conexion.basezhej);
@@ -80,6 +84,7 @@ namespace Intercompany
             Intercompany.Data.Intercompany.condicionespago(Conexion.baseiverco);
             Intercompany.Data.Intercompany.condicionespago(Conexion.basepanco);
             Intercompany.Data.Intercompany.condicionespago(Conexion.basepgjp);
+            Intercompany.Data.Intercompany.condicionespago(Conexion.basetorino);
             Intercompany.Data.Intercompany.condicionespago(Conexion.baseworld);
             Intercompany.Data.Intercompany.condicionespago(Conexion.basezhej);
             #endregion
@@ -95,6 +100,7 @@ namespace Intercompany
             //Intercompany.Data.Intercompany.ADUANA(Conexion.baseideo);
             //Intercompany.Data.Intercompany.ADUANA(Conexion.baseiverco);
             //Intercompany.Data.Intercompany.ADUANA(Conexion.basepanco);
+            //Intercompany.Data.Intercompany.ADUANA(Conexion.basetorino);
             //Intercompany.Data.Intercompany.ADUANA(Conexion.basepgjp);
             //Intercompany.Data.Intercompany.ADUANA(Conexion.baseworld);
             //Intercompany.Data.Intercompany.ADUANA(Conexion.basezhej);
@@ -117,6 +123,7 @@ namespace Intercompany
             Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseiverco);
             Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basepanco);
             Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basepgjp);
+            Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basetorino);
             Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basezhej);
             #endregion
 
@@ -134,6 +141,7 @@ namespace Intercompany
             Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseideo);
             Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseiverco);
             Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basepanco);
+            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basetorino);
             Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basepgjp);
             Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basezhej);
             #endregion
@@ -151,6 +159,7 @@ namespace Intercompany
             Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseiverco);
             Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basepanco);
             Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basepgjp);
+            Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basetorino);
             Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basezhej);
             Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseworld);
             #endregion
@@ -168,6 +177,7 @@ namespace Intercompany
             Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseiverco);
             Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basepanco);
             Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basepgjp);
+            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basetorino);
             Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basezhej);
             Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseworld);
             #endregion
@@ -184,6 +194,7 @@ namespace Intercompany
             Intercompany.Data.Intercompany.SCSucursal(Conexion.baseiverco);
             Intercompany.Data.Intercompany.SCSucursal(Conexion.basepanco);
             Intercompany.Data.Intercompany.SCSucursal(Conexion.basepgjp);
+            Intercompany.Data.Intercompany.SCSucursal(Conexion.basetorino);
             Intercompany.Data.Intercompany.SCSucursal(Conexion.baseworld);
             Intercompany.Data.Intercompany.SCSucursal(Conexion.basezhej);
             #endregion
@@ -200,6 +211,7 @@ namespace Intercompany
             Intercompany.Data.Intercompany.SCImportc(Conexion.baseiverco);
             Intercompany.Data.Intercompany.SCImportc(Conexion.basepanco);
             Intercompany.Data.Intercompany.SCImportc(Conexion.basepgjp);
+            Intercompany.Data.Intercompany.SCImportc(Conexion.basetorino);
             Intercompany.Data.Intercompany.SCImportc(Conexion.baseworld);//preguntar a omar si esta la quito ya que sino quedaria wolrbrand a world brande y no tiene sentuido
             Intercompany.Data.Intercompany.SCImportc(Conexion.basezhej);
             #endregion
@@ -218,6 +230,7 @@ namespace Intercompany
             Intercompany.Data.Intercompany.OFERTAMCH_SUC(Conexion.baseiverco);
             Intercompany.Data.Intercompany.OFERTAMCH_SUC(Conexion.basepanco);
             Intercompany.Data.Intercompany.OFERTAMCH_SUC(Conexion.basepgjp);
+            Intercompany.Data.Intercompany.OFERTAMCH_SUC(Conexion.basetorino);
             Intercompany.Data.Intercompany.OFERTAMCH_SUC(Conexion.baseworld);
             Intercompany.Data.Intercompany.OFERTAMCH_SUC(Conexion.basezhej);
             #endregion
@@ -236,6 +249,7 @@ namespace Intercompany
             Intercompany.Data.Intercompany.BuscaACT_OFERTASUC(Conexion.baseiverco);
             Intercompany.Data.Intercompany.BuscaACT_OFERTASUC(Conexion.basepanco);
             Intercompany.Data.Intercompany.BuscaACT_OFERTASUC(Conexion.basepgjp);
+            Intercompany.Data.Intercompany.BuscaACT_OFERTASUC(Conexion.basetorino);
             Intercompany.Data.Intercompany.BuscaACT_OFERTASUC(Conexion.baseworld);
             Intercompany.Data.Intercompany.BuscaACT_OFERTASUC(Conexion.basezhej);
             #endregion
@@ -252,6 +266,7 @@ namespace Intercompany
             Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.baseideo);
             Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.baseiverco);
             Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.basepanco);
+            Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.basetorino);
             Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.basepgjp);
             Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.baseworld);
             Intercompany.Data.Intercompany.OC_MCH_a_SUC(Conexion.basezhej);
@@ -270,6 +285,7 @@ namespace Intercompany
             Intercompany.Data.Intercompany.BuscaACT_OCMCH(Conexion.baseiverco);
             Intercompany.Data.Intercompany.BuscaACT_OCMCH(Conexion.basepanco);
             Intercompany.Data.Intercompany.BuscaACT_OCMCH(Conexion.basepgjp);
+            Intercompany.Data.Intercompany.BuscaACT_OCMCH(Conexion.basetorino);
             Intercompany.Data.Intercompany.BuscaACT_OCMCH(Conexion.baseworld);
             Intercompany.Data.Intercompany.BuscaACT_OCMCH(Conexion.basezhej);
             #endregion
@@ -287,6 +303,7 @@ namespace Intercompany
             Intercompany.Data.Intercompany.OC_World_a_SUC(Conexion.baseiverco);
             Intercompany.Data.Intercompany.OC_World_a_SUC(Conexion.basepanco);
             Intercompany.Data.Intercompany.OC_World_a_SUC(Conexion.basepgjp);
+            Intercompany.Data.Intercompany.OC_World_a_SUC(Conexion.basetorino);
             Intercompany.Data.Intercompany.OC_World_a_SUC(Conexion.baseworld);
             Intercompany.Data.Intercompany.OC_World_a_SUC(Conexion.basezhej);
             #endregion
