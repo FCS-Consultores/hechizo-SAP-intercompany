@@ -1,0 +1,140 @@
+﻿Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 16:55:39 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 16:55:41 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 16:55:44 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 16:55:47 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:55:48 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:55:48 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:55:48 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:55:48 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:55:48 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:55:48 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:55:49 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:55:49 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:55:49 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:55:49 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:55:49 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:55:49 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 16:55:49 PM
+actualizado en Sap el articulo : TR-230-TX1/ Hora: 16:55:52 PM
+actualizado en Sap el articulo : TR-230-TX2/ Hora: 16:55:53 PM
+actualizado en Sap el articulo : TR-230-TE1/ Hora: 16:55:53 PM
+actualizado en Sap el articulo : TR-230-TE2/ Hora: 16:55:54 PM
+actualizado en Sap el articulo : TR-230-BOLT/ Hora: 16:55:54 PM
+actualizado en Sap el articulo : INS-G52-5-Z700/ Hora: 16:55:57 PM
+actualizado en Sap el articulo : TR-230-TX1/ Hora: 16:56:00 PM
+actualizado en Sap el articulo : TR-230-TX2/ Hora: 16:56:01 PM
+actualizado en Sap el articulo : TR-230-TE1/ Hora: 16:56:01 PM
+actualizado en Sap el articulo : TR-230-TE2/ Hora: 16:56:01 PM
+actualizado en Sap el articulo : TR-230-BOLT/ Hora: 16:56:02 PM
+actualizado en Sap el articulo : INS-G52-5-Z700/ Hora: 16:56:02 PM
+actualizado a CrearSOCIOTODAS : BUILDING AND HOUSES, S.A./ Hora: 16:57:56 PM
+actualizado a CrearSOCIOTODAS : LOTIS YASMINA OCHI AVILA/ Hora: 16:57:59 PM
+actualizado a CrearSOCIOTODAS : HOPSA, S.A./ Hora: 16:57:59 PM
+actualizado a CrearSOCIOTODAS : LOTIS YASMINA OCHI AVILA/ Hora: 16:58:03 PM
+Error actualizado SOCIOTODAS: (2) ****RUC ya fue asignado a otro Proveedor. HOPSA, S.A./ Hora: 17:23:39 PM
+actualizado a CrearSOCIOTODAS : HOPSA, S.A./ Hora: 17:23:48 PM
+actualizado a CrearSOCIOTODAS : HOPSA, S.A./ Hora: 17:23:51 PM
+actualizado a CrearSOCIOTODAS : LOTIS YASMINA OCHI AVILA/ Hora: 17:23:55 PM
+actualizado a CrearSOCIOTODAS : INSPIRELINK LIMITED/ Hora: 17:23:55 PM
+actualizado a CrearSOCIOTODAS : BUILDING AND HOUSES, S.A./ Hora: 17:23:55 PM
+actualizado a CrearSOCIOTODAS : WALTER ANTONIO VASQUEZ BLANCO/ Hora: 17:23:56 PM
+actualizado a CrearSOCIOTODAS : HOPSA, S.A./ Hora: 17:23:56 PM
+Error al intentar Insertar SC: Can not add property U_TipoCompra to Newtonsoft.Json.Linq.JObject. Property with the same name already exists on object./ Hora: 17:49:30 PM
+Error CrearSCTODAS: Required date is missing (1) 244/ Hora: 17:50:00 PM
+Error CrearSCTODAS: Required date is missing (1) 512/ Hora: 17:50:38 PM
+Error CrearSCTODAS: Required date is missing (1) 120/ Hora: 17:50:50 PM
+Error CrearSCTODAS: Required date is missing (1) 295/ Hora: 17:50:53 PM
+Error CrearSCTODAS: Required date is missing (1) 320/ Hora: 17:50:55 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 17:50:59 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 17:51:00 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 17:51:00 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 17:51:00 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 17:51:00 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 17:51:00 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 17:51:00 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 17:51:00 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 17:51:00 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 17:51:01 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 17:51:01 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 17:51:01 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 17:51:01 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 17:51:01 PM
+Error CrearOC: In "BP Code", enter vendor code  2090/ Hora: 17:51:37 PM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 17:51:44 PM
+Error CrearOC: No matching records found (ODBC -2028) 1686/ Hora: 17:51:59 PM
+Error CrearOC: In "BP Code", enter vendor code  1929/ Hora: 17:52:02 PM
+Error CrearOC: In "BP Code", enter vendor code  2002/ Hora: 17:52:05 PM
+Error CrearOC: In "BP Code", enter vendor code  2079/ Hora: 17:52:07 PM
+Error CrearOC: No matching records found (ODBC -2028) 2107/ Hora: 17:52:10 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 17:52:12 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 17:52:13 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 18:26:22 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 18:26:24 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 18:26:27 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 18:26:31 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 18:26:31 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 18:26:32 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 18:26:32 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 18:26:32 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 18:26:32 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 18:26:32 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 18:26:32 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 18:26:32 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 18:26:32 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 18:26:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 18:26:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 18:26:33 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 18:26:33 PM
+actualizado en Sap el articulo : TR-230-TX1/ Hora: 18:26:38 PM
+actualizado en Sap el articulo : TR-230-TX2/ Hora: 18:26:39 PM
+actualizado en Sap el articulo : TR-230-TE1/ Hora: 18:26:39 PM
+actualizado en Sap el articulo : TR-230-TE2/ Hora: 18:26:40 PM
+actualizado en Sap el articulo : TR-230-BOLT/ Hora: 18:26:40 PM
+actualizado en Sap el articulo : INS-G52-5-Z700/ Hora: 18:26:45 PM
+actualizado en Sap el articulo : TR-230-TX1/ Hora: 18:26:51 PM
+actualizado en Sap el articulo : TR-230-TX2/ Hora: 18:26:51 PM
+actualizado en Sap el articulo : TR-230-TE1/ Hora: 18:26:51 PM
+actualizado en Sap el articulo : TR-230-TE2/ Hora: 18:26:52 PM
+actualizado en Sap el articulo : TR-230-BOLT/ Hora: 18:26:52 PM
+actualizado en Sap el articulo : INS-G52-5-Z700/ Hora: 18:26:53 PM
+actualizado a CrearSOCIOTODAS : BUILDING AND HOUSES, S.A./ Hora: 18:27:10 PM
+actualizado a CrearSOCIOTODAS : LOTIS YASMINA OCHI AVILA/ Hora: 18:27:15 PM
+actualizado a CrearSOCIOTODAS : HOPSA, S.A./ Hora: 18:27:15 PM
+actualizado a CrearSOCIOTODAS : LOTIS YASMINA OCHI AVILA/ Hora: 18:27:21 PM
+Error actualizado SOCIOTODAS: (2) ****RUC ya fue asignado a otro Proveedor. HOPSA, S.A./ Hora: 18:27:22 PM
+actualizado a CrearSOCIOTODAS : HOPSA, S.A./ Hora: 18:27:32 PM
+actualizado a CrearSOCIOTODAS : HOPSA, S.A./ Hora: 18:27:39 PM
+actualizado a CrearSOCIOTODAS : LOTIS YASMINA OCHI AVILA/ Hora: 18:27:46 PM
+actualizado a CrearSOCIOTODAS : INSPIRELINK LIMITED/ Hora: 18:27:47 PM
+actualizado a CrearSOCIOTODAS : BUILDING AND HOUSES, S.A./ Hora: 18:27:47 PM
+actualizado a CrearSOCIOTODAS : WALTER ANTONIO VASQUEZ BLANCO/ Hora: 18:27:47 PM
+actualizado a CrearSOCIOTODAS : HOPSA, S.A./ Hora: 18:27:48 PM
+Error CrearSCTODAS: Required date is missing (11) 72/ Hora: 18:27:55 PM
+Error CrearSCTODAS: Required date is missing (1) 244/ Hora: 18:27:58 PM
+Error CrearSCTODAS: Required date is missing (1) 512/ Hora: 18:28:04 PM
+Error CrearSCTODAS: Required date is missing (1) 120/ Hora: 18:28:08 PM
+Error CrearSCTODAS: Required date is missing (1) 295/ Hora: 18:28:11 PM
+Error CrearSCTODAS: Required date is missing (1) 320/ Hora: 18:28:16 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 18:28:20 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 18:28:20 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 18:28:20 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 18:28:21 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 18:28:21 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 18:28:21 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 18:28:21 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 18:28:21 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 18:28:21 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 18:28:21 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 18:28:21 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 18:28:22 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 18:28:22 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 18:28:22 PM
+Error CrearOC: In "BP Code", enter vendor code  2090/ Hora: 18:28:25 PM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 18:28:28 PM
+Error CrearOC: No matching records found (ODBC -2028) 1686/ Hora: 18:28:33 PM
+Error CrearOC: In "BP Code", enter vendor code  1929/ Hora: 18:28:39 PM
+Error CrearOC: In "BP Code", enter vendor code  2002/ Hora: 18:28:42 PM
+Error CrearOC: In "BP Code", enter vendor code  2079/ Hora: 18:28:45 PM
+Error CrearOC: No matching records found (ODBC -2028) 2107/ Hora: 18:28:50 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 18:28:52 PM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 18:28:52 PM
