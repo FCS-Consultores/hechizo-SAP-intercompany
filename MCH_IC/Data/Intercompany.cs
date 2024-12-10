@@ -731,7 +731,7 @@ namespace Intercompany.Data
                 {
                     {
 
-                        string queryEn = $"select \"DocType\",\"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\",\"U_Adelanto\",  \"U_Porcentaje\", \"U_Pago_Procesado\", \"CardName\" from \"{bd}\".\"OPOR\" where  \"DocType\"= 'S' and \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"DocStatus\"='O' and \"U_TipoCompra\" in ('1','2')  ";
+                        string queryEn = $"select \"DocType\",\"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\",\"U_Adelanto\",  \"U_Porcentaje\", \"U_Pago_Procesado\", \"CardName\" from \"{bd}\".\"OPOR\" where  \"DocType\"= 'S' and \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"DocStatus\"='O' and \"U_TipoCompra\" in ('1','2') AND \"DocDate\" =(select to_date(CURRENT_DATE,'YYYY-MM-DD') from dummy ) ";
 
                         OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                         conn.Open();
@@ -2499,6 +2499,7 @@ namespace Intercompany.Data
                                 JsonObject.Add(new JProperty("DocDueDate", date2));
                                 JsonObject.Add(new JProperty("TaxDate", date3));
                                 JsonObject.Add(new JProperty("U_Origen", bd));
+                                JsonObject.Add(new JProperty("U_Aprobado", 'Y'));
                                 //JsonObject.Add(new JProperty("RequriedDate", date4));
                                 JsonObject.Add(new JProperty("U_entryPA", DocEntry));//con este se quien es el que acptaron
 
