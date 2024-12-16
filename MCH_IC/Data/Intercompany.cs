@@ -2499,7 +2499,7 @@ namespace Intercompany.Data
                                 JsonObject.Add(new JProperty("DocDueDate", date2));
                                 JsonObject.Add(new JProperty("TaxDate", date3));
                                 JsonObject.Add(new JProperty("U_Origen", bd));
-                                JsonObject.Add(new JProperty("U_Aprobado", 'Y'));
+                                JsonObject.Add(new JProperty("U_Aprobado", "Y"));
                                 //JsonObject.Add(new JProperty("RequriedDate", date4));
                                 JsonObject.Add(new JProperty("U_entryPA", DocEntry));//con este se quien es el que acptaron
 

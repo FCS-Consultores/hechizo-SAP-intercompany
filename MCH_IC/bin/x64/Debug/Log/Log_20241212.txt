@@ -1,0 +1,78 @@
+﻿Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 17:15:56 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 17:15:58 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 17:16:00 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 17:16:04 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 17:16:07 PM
+Error al intentar Insertar articulo : ERROR [23000] [SAP AG][LIBODBCHDB DLL][HDBODBC] Integrity constraint violation;301 unique constraint violated: "20043_MC_HOLDING"."IC_ADD_FAMI_SUBFAMI": line 6 col 1 (at pos 58): Table(@SUB_FAMILIA) with error: unique constraint violation on pos=1 for table NDB::20043_ACEROS_PESADOS:@SUB_FAMILIAen, key: Code=12 already exists as udiv=12/ Hora: 17:16:18 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:16:19 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:16:19 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:16:19 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:16:19 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:16:19 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:16:19 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:16:19 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:16:19 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:16:19 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:16:20 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:16:20 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:16:20 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:16:20 PM
+Error insertando articulo: (6666) ***** Debe de Agregar las empresas para las cuales se utiliza este Articulo en la ventana Propiedades ***** INV00632/ Hora: 17:17:07 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 17:17:17 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 17:17:19 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 17:17:21 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 17:17:24 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 17:17:28 PM
+Error al intentar Insertar articulo : ERROR [23000] [SAP AG][LIBODBCHDB DLL][HDBODBC] Integrity constraint violation;301 unique constraint violated: "20043_MC_HOLDING"."IC_ADD_FAMI_SUBFAMI": line 6 col 1 (at pos 58): Table(@SUB_FAMILIA) with error: unique constraint violation on pos=1 for table NDB::20043_ACEROS_PESADOS:@SUB_FAMILIAen, key: Code=12 already exists as udiv=12/ Hora: 17:17:29 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:17:30 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:17:30 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:17:30 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:17:30 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:17:30 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:17:30 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:17:30 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:17:30 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:17:30 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:17:31 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:17:31 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:17:31 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:17:31 PM
+Error insertando articulo: (6666) ***** Debe de Agregar las empresas para las cuales se utiliza este Articulo en la ventana Propiedades ***** INV00632/ Hora: 17:17:50 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 17:19:06 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 17:19:08 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 17:19:10 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 17:19:14 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 17:19:17 PM
+Error al intentar Insertar articulo : ERROR [23000] [SAP AG][LIBODBCHDB DLL][HDBODBC] Integrity constraint violation;301 unique constraint violated: "20043_MC_HOLDING"."IC_ADD_FAMI_SUBFAMI": line 6 col 1 (at pos 58): Table(@SUB_FAMILIA) with error: unique constraint violation on pos=1 for table NDB::20043_ACEROS_PESADOS:@SUB_FAMILIAen, key: Code=12 already exists as udiv=12/ Hora: 17:19:19 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:19:19 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:19:19 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:19:19 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:19:19 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:19:19 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:19:20 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:19:20 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:19:20 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:19:20 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:19:20 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:19:20 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:19:20 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;328 invalid name of function or procedure: no procedure with name IC_ADD_ITEMS2 found: line 1 col 25 (at pos 24)/ Hora: 17:19:20 PM
+Insertado a Sap el articulo : INV00632/ Hora: 17:19:36 PM
+Insertado a Sap el articulo : INV00633/ Hora: 17:19:48 PM
+Insertado a Sap el articulo : INV00634/ Hora: 17:19:49 PM
+actualizado en Sap el articulo : EL0149/ Hora: 17:19:54 PM
+actualizado en Sap el articulo : EL0150/ Hora: 17:19:54 PM
+actualizado en Sap el articulo : EL0151/ Hora: 17:19:55 PM
+actualizado en Sap el articulo : IMPR595/ Hora: 17:19:55 PM
+actualizado en Sap el articulo : TRAM0124/ Hora: 17:19:59 PM
+actualizado en Sap el articulo : TRAM0125/ Hora: 17:20:00 PM
+actualizado en Sap el articulo : AC0503/ Hora: 17:20:00 PM
+actualizado en Sap el articulo : EL0149/ Hora: 17:20:01 PM
+actualizado en Sap el articulo : EL0150/ Hora: 17:20:01 PM
+actualizado en Sap el articulo : EL0151/ Hora: 17:20:02 PM
+actualizado en Sap el articulo : TRAM0124/ Hora: 17:20:06 PM
+actualizado en Sap el articulo : TRAM0125/ Hora: 17:20:07 PM
+actualizado en Sap el articulo : AC0503/ Hora: 17:20:07 PM
+actualizado en Sap el articulo : EL0149/ Hora: 17:20:08 PM
+actualizado en Sap el articulo : EL0150/ Hora: 17:20:08 PM
+actualizado en Sap el articulo : EL0151/ Hora: 17:20:09 PM

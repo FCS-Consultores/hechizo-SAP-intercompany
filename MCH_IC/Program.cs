@@ -48,7 +48,7 @@ namespace Intercompany
             Intercompany.Data.Intercompany.Grupo(Conexion.basetorino);
             Intercompany.Data.Intercompany.Grupo(Conexion.baseworld);
             Intercompany.Data.Intercompany.Grupo(Conexion.basezhej);
-            #endregion
+#endregion
 
             #region GRUPOSNGEN
             Intercompany.Data.Intercompany.GrupoSN(Conexion.baseamd);
@@ -199,7 +199,7 @@ namespace Intercompany
             Intercompany.Data.Intercompany.SCSucursal(Conexion.basezhej);
             #endregion
 
-           // NEW METODO
+            // NEW METODO
             #region OCSucursal_MCH
             Intercompany.Data.Intercompany.OCSucursal_MCH(Conexion.baseamd);
             Intercompany.Data.Intercompany.OCSucursal_MCH(Conexion.baseboquete);
@@ -216,8 +216,8 @@ namespace Intercompany
             Intercompany.Data.Intercompany.OCSucursal_MCH(Conexion.baseworld);
             Intercompany.Data.Intercompany.OCSucursal_MCH(Conexion.basezhej);
             #endregion
-           // FIN NEW METODO
-           // NEW METODO actualiza oc sucursal a mch
+            // FIN NEW METODO
+            // NEW METODO actualiza oc sucursal a mch
             #region OCSucursal_MCH
             Intercompany.Data.Intercompany.STATUSSucursal_MCH(Conexion.baseamd);
             Intercompany.Data.Intercompany.STATUSSucursal_MCH(Conexion.baseboquete);
