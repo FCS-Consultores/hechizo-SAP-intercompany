@@ -1,0 +1,54 @@
+﻿Error STATUSSucursal_MCH: Document is already closed. 821/ Hora: 09:33:42 AM
+Error STATUSSucursal_MCH: Document is already closed. 872/ Hora: 09:33:45 AM
+Error STATUSSucursal_MCH: Document is already closed. 661/ Hora: 09:33:50 AM
+Error STATUSSucursal_MCH: Document is already closed. 915/ Hora: 09:33:50 AM
+Error STATUSSucursal_MCH: Document is already closed. 837/ Hora: 09:33:51 AM
+Error STATUSSucursal_MCH: Document is already closed. 1046/ Hora: 09:33:51 AM
+Error STATUSSucursal_MCH: Document is already closed. 1139/ Hora: 09:33:51 AM
+Error STATUSSucursal_MCH: Document is already closed. 861/ Hora: 09:33:52 AM
+Error STATUSSucursal_MCH: Document is already closed. 896/ Hora: 09:33:58 AM
+Error STATUSSucursal_MCH: Document is already closed. 530/ Hora: 09:34:10 AM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 09:34:20 AM
+Error STATUSSucursal_MCH: Document is already closed. 856/ Hora: 09:34:27 AM
+Error STATUSSucursal_MCH: Document is already closed. 993/ Hora: 09:34:29 AM
+Error STATUSSucursal_MCH: Document is already closed. 975/ Hora: 09:34:30 AM
+Error STATUSSucursal_MCH: Document is already closed. 1053/ Hora: 09:34:30 AM
+Error STATUSSucursal_MCH: Document is already closed. 1079/ Hora: 09:34:30 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 09:35:02 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 09:35:02 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 09:35:02 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 09:35:02 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 09:35:02 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 09:35:02 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 09:35:02 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 09:35:02 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 09:35:02 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 09:35:02 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 09:35:03 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 09:35:03 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 09:35:03 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 09:35:03 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:35:06 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:35:09 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:35:13 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:35:15 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:35:18 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:35:21 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:35:24 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:35:27 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:35:30 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:35:32 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 09:35:33 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 09:35:33 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:44:05 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:44:08 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:44:10 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:44:13 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:44:16 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:44:19 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:44:21 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:44:24 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:44:27 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 09:44:31 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 09:44:32 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 09:44:32 AM

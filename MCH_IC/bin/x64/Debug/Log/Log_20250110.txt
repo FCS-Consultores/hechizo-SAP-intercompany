@@ -1,0 +1,61 @@
+﻿Error al consultar ocSUCMCH : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;266 inconsistent datatype: DATE type is not comparable with INT type.: line 1 col 356 (at pos 355)/ Hora: 11:11:58 AM
+Error al consultar ocSUCMCH : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;266 inconsistent datatype: DATE type is not comparable with INT type.: line 1 col 350 (at pos 349)/ Hora: 11:12:14 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 13203/ Hora: 11:17:10 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 4787/ Hora: 11:17:14 AM
+Error STATUSSucursal_MCH: Document is already closed. 821/ Hora: 11:17:38 AM
+Error STATUSSucursal_MCH: Document is already closed. 872/ Hora: 11:17:43 AM
+Error STATUSSucursal_MCH: Document is already closed. 661/ Hora: 11:17:47 AM
+Error STATUSSucursal_MCH: Document is already closed. 915/ Hora: 11:17:48 AM
+Error STATUSSucursal_MCH: Document is already closed. 530/ Hora: 11:18:03 AM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 11:18:15 AM
+Error STATUSSucursal_MCH: Document is already closed. 856/ Hora: 11:18:21 AM
+Error STATUSSucursal_MCH: Document is already closed. 993/ Hora: 11:18:21 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 11:18:52 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 11:18:53 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 11:18:53 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 11:18:53 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 11:18:53 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 11:18:53 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 11:18:53 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 11:18:53 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 11:18:53 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 11:18:53 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 11:18:53 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 11:18:54 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 11:18:54 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 11:18:54 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 11:18:57 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 11:18:59 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 11:19:02 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 11:19:04 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 11:19:07 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 11:19:10 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 11:19:13 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 11:19:16 AM
+Error CrearOC: No matching records found (ODBC -2028) 1686/ Hora: 11:19:27 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 11:19:31 AM
+Error al intentar Insertar SC: Unable to cast object of type 'System.DBNull' to type 'System.String'./ Hora: 11:19:34 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 11:19:35 AM
+Error  BuscaACT_OFERTASUC : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: U_entrySC: line 1 col 32 (at pos 31)/ Hora: 11:19:35 AM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 12:05:32 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 12:05:34 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 12:05:36 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 12:05:39 PM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 12:05:43 PM
+Error al intentar Insertar articulo : ERROR [23000] [SAP AG][LIBODBCHDB DLL][HDBODBC] Integrity constraint violation;301 unique constraint violated: "20043_MC_HOLDING"."IC_ADD_FAMI_SUBFAMI": line 6 col 1 (at pos 58): Table(@SUB_FAMILIA) with error: unique constraint violation on pos=1 for table NDB::20043_ACEROS_PESADOS:@SUB_FAMILIAen, key: Code=12 already exists as udiv=12/ Hora: 12:05:44 PM
+actualizado a CrearSOCIOTODAS : INTERAMERICANA DE FIANZAS Y SEGUROS, S.A./ Hora: 12:05:54 PM
+actualizado a CrearSOCIOTODAS : CAJA MENUDA (RAUL ESPINOSA)/ Hora: 12:05:58 PM
+actualizado a CrearSOCIOTODAS : INTERAMERICANA DE FIANZAS Y SEGUROS, S.A./ Hora: 12:05:58 PM
+Error al intentar Insertar SC: ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: A.A.ItemCode: line 1 col 134 (at pos 133)/ Hora: 12:06:57 PM
+Error al intentar Insertar SC: ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: A.A.ItemCode: line 1 col 134 (at pos 133)/ Hora: 12:07:20 PM
+Error al intentar Insertar SC: ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: A.A.ItemCode: line 1 col 132 (at pos 131)/ Hora: 12:07:52 PM
+Error al intentar Insertar SC: ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: A.A.ItemCode: line 1 col 132 (at pos 131)/ Hora: 12:07:54 PM
+Error al intentar Insertar SC: ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: A.A.ItemCode: line 1 col 132 (at pos 131)/ Hora: 12:07:57 PM
+Error al intentar Insertar SC: ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: A.A.ItemCode: line 1 col 132 (at pos 131)/ Hora: 12:08:00 PM
+Error al intentar Insertar SC: ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: A.A.ItemCode: line 1 col 132 (at pos 131)/ Hora: 12:08:04 PM
+Error al intentar Insertar SC: ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: A.A.ItemCode: line 1 col 132 (at pos 131)/ Hora: 12:08:06 PM
+Error al intentar Insertar SC: ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: A.A.ItemCode: line 1 col 132 (at pos 131)/ Hora: 12:08:11 PM
+Error al intentar Insertar SC: ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: A.A.ItemCode: line 1 col 132 (at pos 131)/ Hora: 12:08:13 PM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 13203/ Hora: 12:10:55 PM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 13215/ Hora: 12:10:58 PM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 4787/ Hora: 12:11:01 PM

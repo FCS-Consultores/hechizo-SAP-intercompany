@@ -15,7 +15,7 @@ namespace Intercompany
             Intercompany.tools.OcultarConsola.DisappearConsole();
             RegistroLog objRegistraLog = new RegistroLog();
             Intercompany.Data.Intercompany.SINCROERROR();
-            #region fabricanteGEN
+            //#region fabricanteGEN
             Intercompany.Data.Intercompany.Fabricante(Conexion.baseamd);
             Intercompany.Data.Intercompany.Fabricante(Conexion.baseboquete);
             Intercompany.Data.Intercompany.Fabricante(Conexion.basecalypso);
@@ -30,10 +30,10 @@ namespace Intercompany
             Intercompany.Data.Intercompany.Fabricante(Conexion.basetorino);
             Intercompany.Data.Intercompany.Fabricante(Conexion.baseworld);
             Intercompany.Data.Intercompany.Fabricante(Conexion.basezhej);
-            #endregion
+            //#endregion
 
 
-            #region GRUPOGEN
+            //#region GRUPOGEN
             Intercompany.Data.Intercompany.Grupo(Conexion.baseamd);
             Intercompany.Data.Intercompany.Grupo(Conexion.baseboquete);
             Intercompany.Data.Intercompany.Grupo(Conexion.basecalypso);
@@ -48,9 +48,9 @@ namespace Intercompany
             Intercompany.Data.Intercompany.Grupo(Conexion.basetorino);
             Intercompany.Data.Intercompany.Grupo(Conexion.baseworld);
             Intercompany.Data.Intercompany.Grupo(Conexion.basezhej);
-#endregion
+            //#endregion
 
-            #region GRUPOSNGEN
+            //#region GRUPOSNGEN
             Intercompany.Data.Intercompany.GrupoSN(Conexion.baseamd);
             Intercompany.Data.Intercompany.GrupoSN(Conexion.baseboquete);
             Intercompany.Data.Intercompany.GrupoSN(Conexion.basecalypso);
@@ -66,13 +66,13 @@ namespace Intercompany
             Intercompany.Data.Intercompany.GrupoSN(Conexion.basepgjp);
             Intercompany.Data.Intercompany.GrupoSN(Conexion.baseworld);
             Intercompany.Data.Intercompany.GrupoSN(Conexion.basezhej);
-            #endregion
+            //#endregion
 
 
 
 
 
-            #region CondicionesGEN
+            //#region CondicionesGEN
             Intercompany.Data.Intercompany.condicionespago(Conexion.baseamd);
             Intercompany.Data.Intercompany.condicionespago(Conexion.baseboquete);
             Intercompany.Data.Intercompany.condicionespago(Conexion.basecalypso);
@@ -87,31 +87,31 @@ namespace Intercompany
             Intercompany.Data.Intercompany.condicionespago(Conexion.basetorino);
             Intercompany.Data.Intercompany.condicionespago(Conexion.baseworld);
             Intercompany.Data.Intercompany.condicionespago(Conexion.basezhej);
-            #endregion
+            //#endregion
 
-            #region ADUANAGEN
-            Intercompany.Data.Intercompany.ADUANA(Conexion.baseamd);
-            Intercompany.Data.Intercompany.ADUANA(Conexion.baseboquete);
-            Intercompany.Data.Intercompany.ADUANA(Conexion.basecalypso);
-            Intercompany.Data.Intercompany.ADUANA(Conexion.basecanaima);
-            Intercompany.Data.Intercompany.ADUANA(Conexion.baseconstru);
-            Intercompany.Data.Intercompany.ADUANA(Conexion.baseeco);
-            Intercompany.Data.Intercompany.ADUANA(Conexion.basefarmar);
-            Intercompany.Data.Intercompany.ADUANA(Conexion.baseideo);
-            Intercompany.Data.Intercompany.ADUANA(Conexion.baseiverco);
-            Intercompany.Data.Intercompany.ADUANA(Conexion.basepanco);
-            Intercompany.Data.Intercompany.ADUANA(Conexion.basetorino);
-            Intercompany.Data.Intercompany.ADUANA(Conexion.basepgjp);
-            Intercompany.Data.Intercompany.ADUANA(Conexion.baseworld);
-            Intercompany.Data.Intercompany.ADUANA(Conexion.basezhej);
-            #endregion
+            //////////////////////#region ADUANAGEN
+            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseamd);
+            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseboquete);
+            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basecalypso);
+            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basecanaima);
+            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseconstru);
+            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseeco);
+            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basefarmar);
+            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseideo);
+            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseiverco);
+            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basepanco);
+            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basetorino);
+            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basepgjp);
+            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseworld);
+            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basezhej);
+            //////////////////////#endregion
 
-            #region familia_subfamilia
+            //#region familia_subfamilia
             Intercompany.Data.Intercompany.CrearFAMI_SUBFAMI(Conexion.ORIGEN);
 
-            #endregion
+            //#endregion
 
-            #region articuloGEN
+            //#region articuloGEN
             Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseamd);
             Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseboquete);
             Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basecalypso);
@@ -125,12 +125,12 @@ namespace Intercompany
             Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basepgjp);
             Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basetorino);
             Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basezhej);
-            #endregion
+            //#endregion
 
             Intercompany.Data.Intercompany.CreararticuloWORLD(Conexion.baseworld);
 
 
-            #region articuloactualiza
+            //#region articuloactualiza
             Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseamd);
             Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseboquete);
             Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basecalypso);
@@ -144,10 +144,10 @@ namespace Intercompany
             Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basetorino);
             Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basepgjp);
             Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basezhej);
-            #endregion
+            //#endregion
 
 
-            #region SOCIO_GEN
+            //#region SOCIO_GEN
             Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseamd);
             Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseboquete);
             Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basecalypso);
@@ -162,10 +162,10 @@ namespace Intercompany
             Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basetorino);
             Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basezhej);
             Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseworld);
-            #endregion
+//#endregion
 
 
-            #region SOCIOactualiza
+            //#region SOCIOactualiza
             Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseamd);
             Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseboquete);
             Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basecalypso);
@@ -180,9 +180,9 @@ namespace Intercompany
             Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basetorino);
             Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basezhej);
             Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseworld);
-            #endregion
+            //#endregion
 
-            #region SCSucursalGEN
+            //#region SCSucursalGEN
             Intercompany.Data.Intercompany.SCSucursal(Conexion.baseamd);
             Intercompany.Data.Intercompany.SCSucursal(Conexion.baseboquete);
             Intercompany.Data.Intercompany.SCSucursal(Conexion.basecalypso);
@@ -197,9 +197,9 @@ namespace Intercompany
             Intercompany.Data.Intercompany.SCSucursal(Conexion.basetorino);
             Intercompany.Data.Intercompany.SCSucursal(Conexion.baseworld);
             Intercompany.Data.Intercompany.SCSucursal(Conexion.basezhej);
-            #endregion
+            //#endregion
 
-            // NEW METODO
+            //NEW METODO
             #region OCSucursal_MCH
             Intercompany.Data.Intercompany.OCSucursal_MCH(Conexion.baseamd);
             Intercompany.Data.Intercompany.OCSucursal_MCH(Conexion.baseboquete);

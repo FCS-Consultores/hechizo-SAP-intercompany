@@ -58,8 +58,6 @@ namespace Intercompany.Data
             return R;
         }   
 
-
-
         public static void Fabricante(string bd)
         {
             int resul = 0;
@@ -211,8 +209,6 @@ namespace Intercompany.Data
             }
         }
 
-
-
         public static void ADUANA(string bd)
         {
             int resul = 0;
@@ -316,6 +312,10 @@ namespace Intercompany.Data
                     {
                        
                           string queryEn = $"select \"DocType\",\"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\",\"U_Adelanto\",  \"U_Porcentaje\", \"U_Pago_Procesado\" from \"{bd}\".\"OPRQ\" where \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"U_TipoCompra\" in ('1','2') and \"DocStatus\"='O'";
+
+                       // string queryEn = $"select \"DocType\",\"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\",\"U_Adelanto\",  \"U_Porcentaje\", \"U_Pago_Procesado\" from \"{bd}\".\"OPRQ\" where \"DocNum\" in (160, 164, 165)";
+
+
                         
                         OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                         conn.Open();
@@ -551,6 +551,7 @@ namespace Intercompany.Data
                     {
                         // aca se busca  alreves a asolicitud de omar porque cuando se copia de oferta a pedido arrastra el enviado en 1 entonces 1 significa queno se ha enviado y 0 es que ya se envio solo en oc 
                         string queryEn = $"select \"DocEntry\",\"CardName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\",\"U_Adelanto\", \"U_Porcentaje\", \"U_Pago_Procesado\" from  \"{Conexion.ORIGEN}\".\"OPOR\" where \"U_Enviado\" ='1' and \"U_ENVIOSUC\"='Y' and \"U_Origen\"='" + bd + "'  and \"DocStatus\"='O'";//bd.Substring(6, 6)
+                      
                         OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                         conn.Open();
                         using (OdbcDataReader dr2 = CmD1.ExecuteReader())
@@ -731,8 +732,10 @@ namespace Intercompany.Data
                 {
                     {
 
-                        string queryEn = $"select \"DocType\",\"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\",\"U_Adelanto\",  \"U_Porcentaje\", \"U_Pago_Procesado\", \"CardName\" from \"{bd}\".\"OPOR\" where  \"DocType\"= 'S' and \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"DocStatus\"='O' and \"U_TipoCompra\" in ('1','2') AND \"DocDate\" =(select to_date(CURRENT_DATE,'YYYY-MM-DD') from dummy ) ";
+                        string queryEn = $"select \"DocType\",\"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\",\"U_Adelanto\",  \"U_Porcentaje\", \"U_Pago_Procesado\", \"CardName\" from \"{bd}\".\"OPOR\" where  \"DocType\"= 'S' and \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"DocStatus\"='O' and \"U_TipoCompra\" in ('1','2') AND \"DocDate\" >=(SELECT ADD_DAYS(TO_DATE(CURRENT_DATE, 'YYYY-MM-DD'), -5) FROM DUMMY) ";
+                      // string queryEn = $"select \"DocType\",\"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\",\"U_Adelanto\",  \"U_Porcentaje\", \"U_Pago_Procesado\", \"CardName\" from \"{bd}\".\"OPOR\" where  \"DocType\"= 'S' and  \"DocNum\" in (1318)" ;
 
+                        
                         OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                         conn.Open();
                         using (OdbcDataReader dr2 = CmD1.ExecuteReader())
@@ -899,7 +902,7 @@ namespace Intercompany.Data
                 using (OdbcConnection conn2 = new OdbcConnection(Conexion.strCon))
                 {
                     {
-                        string queryEn = $"select \"DocEntry\" ,\"U_entryPA\",\"U_entrySC\"     from  \"{Conexion.ORIGEN}\".\"OPQT\" where \"UpdateDate\" =(select to_date(CURRENT_DATE,'YYYY-MM-DD') from dummy ) and \"DocStatus\"='O' AND \"U_Origen\"='{bd}' and \"U_Seleccionada\"='Y' and \"U_TipoCompra\" in ('1','2')  and \"DocStatus\"='O' ";
+                        string queryEn = $"select \"DocEntry\" ,\"U_entryPA\",\"U_entrySC\"     from  \"{Conexion.ORIGEN}\".\"OPQT\" where \"UpdateDate\" >=(SELECT ADD_DAYS(TO_DATE(CURRENT_DATE, 'YYYY-MM-DD'), -2) FROM DUMMY) and \"DocStatus\"='O' AND \"U_Origen\"='{bd}' and \"U_Seleccionada\"='Y' and \"U_TipoCompra\" in ('1','2')  and \"DocStatus\"='O' ";
                         OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                         conn.Open();
                         using (OdbcDataReader dr2 = CmD1.ExecuteReader())
@@ -944,7 +947,7 @@ namespace Intercompany.Data
                 using (OdbcConnection conn2 = new OdbcConnection(Conexion.strCon))
                 {
                     {
-                        string queryEn = $"select \"DocEntry\" ,\"U_entryPA\",\"U_entrySC\" from  \"{bd}\".\"OPOR\" where \"UpdateDate\" =(select to_date(CURRENT_DATE,'YYYY-MM-DD') from dummy ) and \"DocStatus\"='O' AND \"U_Origen\"='{bd}' and \"U_Seleccionada\"='Y' and \"U_TipoCompra\" in ('1','2')  and \"DocStatus\"='O' ";
+                        string queryEn = $"select \"DocEntry\" ,\"U_entryPA\",\"U_entrySC\" from  \"{bd}\".\"OPOR\" where \"UpdateDate\" >=(SELECT ADD_DAYS(TO_DATE(CURRENT_DATE, 'YYYY-MM-DD'), -2) FROM DUMMY)  and \"DocStatus\"='O' AND \"U_Origen\"='{bd}' and \"U_Seleccionada\"='Y' and \"U_TipoCompra\" in ('1','2')  and \"DocStatus\"='O' ";
                         OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                         conn.Open();
                         using (OdbcDataReader dr2 = CmD1.ExecuteReader())
@@ -1707,7 +1710,7 @@ namespace Intercompany.Data
 
                 using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
                 {
-                    string queryEn = $"SELECT \"ItemCode\",	 \"Quantity\", \"VatGroup\",\"Dscription\" FROM \"{bd}\".\"PRQ1\" where \"DocEntry\"='" + DocEntry + "'";
+                    string queryEn = $"SELECT A.\"ItemCode\",	 A.\"Quantity\", A.\"VatGroup\",A.\"Dscription\" FROM \"{bd}\".\"PRQ1\" A left join \"{bd}\".\"OITM\" B  ON A.\"ItemCode\"= B.\"ItemCode\" where A.\"DocEntry\"='" + DocEntry + "' and  B.\"ItemType\"='I'";
 
                     OdbcCommand CmD = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                     conn.Open();
@@ -2495,9 +2498,9 @@ namespace Intercompany.Data
                                 JsonObject.Add(new JProperty("U_TipoCompra", U_TipoCompra));
 
                                 JsonObject.Add(new JProperty("CardCode", CardCode));
-                                JsonObject.Add(new JProperty("DocDate", date1));
-                                JsonObject.Add(new JProperty("DocDueDate", date2));
-                                JsonObject.Add(new JProperty("TaxDate", date3));
+                                JsonObject.Add(new JProperty("DocDate", DateTime.Today));
+                                JsonObject.Add(new JProperty("DocDueDate", DateTime.Today));
+                                JsonObject.Add(new JProperty("TaxDate", DateTime.Today));
                                 JsonObject.Add(new JProperty("U_Origen", bd));
                                 JsonObject.Add(new JProperty("U_Aprobado", "Y"));
                                 //JsonObject.Add(new JProperty("RequriedDate", date4));
@@ -2851,7 +2854,7 @@ namespace Intercompany.Data
                                 resul = EnviaSap("POST", JsonObject, "https://hana-mcholding:50000/b1s/v1/PurchaseOrders(" + entrydoc + ")/Close");
                                 if (resul == 0) // Caso que inserto 
                                 {
-                                    string query = $"UPDATE  \"{bd}\".\"OPOR\" SET \"U_Aprobado\" = 'Y' WHERE \"DocEntry\" =  " + entpa + "";
+                                    string query = $"UPDATE  \"{bd}\".\"OPOR\" SET \"U_Aprobado\" = 'Y', \"DocDate\"=(Select current_date from dummy) WHERE \"DocEntry\" =  " + entpa + "";
                                     conn2.Open();
                                     OdbcCommand cmand = new OdbcCommand(query, conn2);
                                     OdbcDataReader dr1 = cmand.ExecuteReader();
