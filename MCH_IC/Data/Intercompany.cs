@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using System.Collections;
 using Intercompany.Models;
+using MCH_IC.Tools;
 
 namespace Intercompany.Data
 {
@@ -23,7 +24,7 @@ namespace Intercompany.Data
         static Marketing ObjSap = new Marketing();
         static string RR = "";
         private static Marketing marketing;
-
+        static int valanexo;
         public static Respuesta SINCROERROR()
         {
             Respuesta R = new Respuesta();
@@ -290,8 +291,9 @@ namespace Intercompany.Data
             string ReqName;
             string U_PROYECTO;
             string Comments;
-          
-             int DocEntry;
+            string TABLA;
+            int DocEntry;
+            int idanexo;
             string  U_TipoCompra;
             string DocDate;
             string DocDueDate;
@@ -311,12 +313,9 @@ namespace Intercompany.Data
                 {
                     {
                        
-                          string queryEn = $"select \"DocType\",\"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\",\"U_Adelanto\",  \"U_Porcentaje\", \"U_Pago_Procesado\" from \"{bd}\".\"OPRQ\" where \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"U_TipoCompra\" in ('1','2') and \"DocStatus\"='O'";
+                      string queryEn = $"select \"DocType\",\"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\",\"U_Adelanto\",  \"U_Porcentaje\", \"U_Pago_Procesado\",\"AtcEntry\" from \"{bd}\".\"OPRQ\" where \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"U_TipoCompra\" in ('1','2') and \"DocStatus\"='O'";
 
-                       // string queryEn = $"select \"DocType\",\"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\",\"U_Adelanto\",  \"U_Porcentaje\", \"U_Pago_Procesado\" from \"{bd}\".\"OPRQ\" where \"DocNum\" in (160, 164, 165)";
-
-
-                        
+                       // string queryEn = $"select \"DocType\",\"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\",\"U_Adelanto\",  \"U_Porcentaje\", \"U_Pago_Procesado\" from \"{bd}\".\"OPRQ\" where \"DocNum\" in (160, 164, 165)";                        
                         OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                         conn.Open();
                         using (OdbcDataReader dr2 = CmD1.ExecuteReader())
@@ -332,7 +331,7 @@ namespace Intercompany.Data
                                 TaxDate = dr2["TaxDate"].ToString();
                                 ReqDate = dr2["ReqDate"].ToString();
                                 doctype = dr2["DocType"].ToString();
-
+                                idanexo = Convert.ToInt32(dr2["AtcEntry"]);
                                 adel = dr2["U_Adelanto"].ToString();
                              
                                 porcen = Convert.ToDouble(dr2["U_Porcentaje"]);
@@ -349,8 +348,15 @@ namespace Intercompany.Data
                                      CODPROYE = dr1["PrjCode"].ToString();
                                 }
                                 dr1.Close();
-                                conn1.Close();
+                        
+                                conn1.Close();                               
                                 CrearSCTODAS(doctype, bd, DocEntry, ReqName, U_PROYECTO, U_TipoCompra, Comments, DocDate, DocDueDate, TaxDate, ReqDate, CODPROYE, adel,  porcen, pagopro);
+                                if (idanexo != 0)
+                                {
+                                    TABLA = "OPRQ";
+                                    moveranexosorigen(bd, idanexo,TABLA);
+                                }
+
                             }
                     }
 
@@ -365,6 +371,7 @@ namespace Intercompany.Data
                 objRegistraLog.Graba("Error al consultar SC : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
             }
         }
+
         public static void SCImportc(string bd)
         {
             int resul = 0;
@@ -375,11 +382,13 @@ namespace Intercompany.Data
             int DocEntry;
             string U_TipoCompra;
             string DocDate;
+            int idanexo;
             string DocDueDate;
             string TaxDate;
             string ReqDate;
             string doctype;
             string adel;
+            string TABLA;
             string  pagopro;
             double porcen;
             //omar en esta sc a worl brand tambien hay que mandar codigo interno_
@@ -392,7 +401,7 @@ namespace Intercompany.Data
                 {
                     {
 
-                        string queryEn = $"select \"DocType\",\"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\",\"U_Adelanto\", \"U_Porcentaje\", \"U_Pago_Procesado\" from \"{bd}\".\"OPRQ\" where \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"U_TipoCompra\"='3'  and \"DocStatus\"='O'";
+                        string queryEn = $"select \"DocType\",\"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\",\"U_Adelanto\", \"U_Porcentaje\", \"U_Pago_Procesado\",\"AtcEntry\" from \"{bd}\".\"OPRQ\" where \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"U_TipoCompra\"='3'  and \"DocStatus\"='O'";
 
                         OdbcCommand CmD1 = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
                         conn.Open();
@@ -409,7 +418,7 @@ namespace Intercompany.Data
                                 TaxDate = dr2["TaxDate"].ToString();
                                 ReqDate = dr2["ReqDate"].ToString();
                                 doctype = dr2["DocType"].ToString();
-
+                                idanexo = Convert.ToInt32(dr2["AtcEntry"]);
                                 adel = dr2["U_Adelanto"].ToString();
           
                                 porcen = Convert.ToDouble(dr2["U_Porcentaje"]);
@@ -427,6 +436,11 @@ namespace Intercompany.Data
                                 dr1.Close();
                                 conn1.Close();
                                 CrearSCworld(doctype, bd, DocEntry, ReqName, U_PROYECTO, U_TipoCompra, Comments, DocDate, DocDueDate, TaxDate, ReqDate, CODPROYE, adel,  porcen, pagopro);
+                                if (idanexo != 0)
+                                {
+                                    TABLA = "OPRQ";
+                                    moveranexosorigen(bd, idanexo,TABLA);
+                                }
                             }
                     }
 
@@ -709,7 +723,7 @@ namespace Intercompany.Data
             string ReqName;
             string U_PROYECTO;
             string Comments;
-
+            int idanexo;
             int DocEntry;
             string U_TipoCompra;
             string DocDate;
@@ -719,6 +733,7 @@ namespace Intercompany.Data
             string doctype;
             string desc;
             string adel;
+            string TABLA;
             string pagopro;
             double porcen;
             string CardCode;
@@ -731,8 +746,9 @@ namespace Intercompany.Data
                 using (OdbcConnection conn1 = new OdbcConnection(Conexion.strCon))
                 {
                     {
+                        string queryEn = $"select \"DocType\",\"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\",\"U_Adelanto\",  \"U_Porcentaje\", \"U_Pago_Procesado\", \"CardName\",\"AtcEntry\"  from \"{bd}\".\"OPOR\" where  \"DocType\"= 'S' and \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"DocStatus\"='O' and \"U_TipoCompra\" in ('1','2') ";
 
-                        string queryEn = $"select \"DocType\",\"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\",\"U_Adelanto\",  \"U_Porcentaje\", \"U_Pago_Procesado\", \"CardName\" from \"{bd}\".\"OPOR\" where  \"DocType\"= 'S' and \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"DocStatus\"='O' and \"U_TipoCompra\" in ('1','2') AND \"DocDate\" >=(SELECT ADD_DAYS(TO_DATE(CURRENT_DATE, 'YYYY-MM-DD'), -5) FROM DUMMY) ";
+                        //string queryEn = $"select \"DocType\",\"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\",\"U_Adelanto\",  \"U_Porcentaje\", \"U_Pago_Procesado\", \"CardName\" from \"{bd}\".\"OPOR\" where  \"DocType\"= 'S' and \"U_Enviado\" ='0' and \"U_ENVIOSUC\"='Y' and \"DocStatus\"='O' and \"U_TipoCompra\" in ('1','2') AND \"DocDate\" >=(SELECT ADD_DAYS(TO_DATE(CURRENT_DATE, 'YYYY-MM-DD'), -5) FROM DUMMY) ";
                       // string queryEn = $"select \"DocType\",\"DocEntry\",\"ReqName\" ,\"U_PROYECTO\",\"U_TipoCompra\",\"Comments\",\"DocDate\",\"DocDueDate\",\"TaxDate\",\"ReqDate\",\"U_Adelanto\",  \"U_Porcentaje\", \"U_Pago_Procesado\", \"CardName\" from \"{bd}\".\"OPOR\" where  \"DocType\"= 'S' and  \"DocNum\" in (1318)" ;
 
                         
@@ -751,7 +767,7 @@ namespace Intercompany.Data
                                 TaxDate = dr2["TaxDate"].ToString();
                                 ReqDate = dr2["ReqDate"].ToString();
                                 doctype = dr2["DocType"].ToString();
-
+                                idanexo = Convert.ToInt32(dr2["AtcEntry"]);
                                 adel = dr2["U_Adelanto"].ToString();
 
                                 porcen = Convert.ToDouble(dr2["U_Porcentaje"]);
@@ -787,6 +803,12 @@ namespace Intercompany.Data
                             //    conn1.Close();
                              
                                 CrearOCTODASSUCMCH(doctype, bd, DocEntry, ReqName, U_PROYECTO, U_TipoCompra, Comments, DocDate, DocDueDate, TaxDate, ReqDate,  adel, porcen, pagopro, CardCode);
+                                if (idanexo != 0)
+                                {
+                                    TABLA = "OPOR";
+                                    moveranexosorigen(bd, idanexo,TABLA);
+                                }
+
                             }
                     }
 
@@ -1014,6 +1036,95 @@ namespace Intercompany.Data
             }
 
 
+        }
+        public static Respuesta moveranexosorigen(string bd, int entryanex,string tablita )
+        {
+            int resul = 0;
+            Respuesta R = new Respuesta();           
+            try
+            {
+                using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
+                using (OdbcConnection conn1 = new OdbcConnection(Conexion.strCon))
+                {
+                    if (conecta_service_layer(Conexion.ORIGEN, "fcspa-cloud\\mch36", "Qht!045!BN", "https://hana-mcholding:50000/b1s/v1/Login") != 0) //"10032_SOL_ARA" //"10030_STELLINA_TEST"
+                    {
+                        R.Codigo = -2;
+                        R.Mensaje = RR;
+                        objRegistraLog.Graba("Sin conectar a Service Layer : " + R.Mensaje + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error                   
+                        return R;
+                    }
+                    Newtonsoft.Json.Linq.JObject JsonObject = new Newtonsoft.Json.Linq.JObject();
+                 
+                    string USUA = "mch36";
+                    string query = $"SELECT  \"USERID\"   FROM \"{Conexion.ORIGEN}\".\"OUSR\" WHERE  \"USER_CODE\" = '" + USUA + "'"; //Query Encabezado
+                                                                                                                                                                // string query = $"SELECT  \"CardCode\" FROM \"{Conexion.baseworld}\".\"OCRD\" WHERE \"CardName\"='" + CardName + "'"; //Query Encabezado
+                    OdbcCommand cmand = new OdbcCommand(query, conn);
+                    conn.Open();
+                    OdbcDataReader dr1 = cmand.ExecuteReader();
+                    int idusu=-1;
+                    while (dr1.Read())
+                    {
+                        idusu = Convert.ToInt32(dr1["USERID"]);
+                    }
+                    dr1.Close();
+                    conn.Close();
+                    query = $"SELECT  \"FileName\" ,\"trgtPath\",\"FileExt\" FROM  \"{bd}\".\"ATC1\" WHERE \"AbsEntry\"=" + entryanex + ""; //Query Encabezado
+                    OdbcCommand cmand1 = new OdbcCommand(query, conn1);
+                    conn1.Open();
+                    OdbcDataReader dr3 = cmand1.ExecuteReader();
+                    string filename = string.Empty;
+                    string rutt = string.Empty;
+                    string ext = string.Empty;
+                    string rutanew = $@"\ccc\ccc$\CloudControlCenter\SharedFolder\{Conexion.ORIGEN}\Attachments";
+                    var list = new ArrayList();
+                    while (dr3.Read())
+                    {
+                        filename = dr3["FileName"].ToString();
+                        rutt = dr3["trgtPath"].ToString();
+                        ext = dr3["FileExt"].ToString();
+
+                        JObject JsonObjectRow = new JObject(); // <- mover esto adentro
+
+                        JsonObjectRow.Add(new JProperty("FileName", filename));
+                        JsonObjectRow.Add(new JProperty("FileExtension", ext));
+                        JsonObjectRow.Add(new JProperty("SourcePath", rutanew));
+                        JsonObjectRow.Add(new JProperty("Override", "tYES"));
+                        JsonObjectRow.Add(new JProperty("UserID", idusu));
+
+                        list.Add(JsonObjectRow);
+                    }
+                    JsonObject.Add(new JProperty("Attachment2_Lines", list));
+                    string data = JsonObject.ToString();
+                    var myjs = JsonObject.ToString();
+                    resul = EnviaSap("POST", JsonObject, "https://hana-mcholding:50000/b1s/v1/Attachments2"); //
+                    if (resul == 0) // Caso que inserto 
+                    {
+                        valanexo= ObjSap.DocEntry ;
+                        string archivo = filename;
+                        string origen = @rutt; 
+                        string destino = @rutanew; 
+                        //     string origen = @"C:\Temp\Origen"; rutt
+                       // string destino = @"C:\Temp\Destino"; rutanew
+
+                        gestorarchivos.MoverArchivo(archivo, origen, destino);
+                    }
+                    else
+                    {
+                        objRegistraLog.Graba("Error Crearanexo: " + RR + " " + filename + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// 
+                        Inserterror(bd.Substring(6, 6), "ATC1", Convert.ToString(filename));
+                    }                
+                    dr3.Close();
+                    conn1.Close();      
+                    LiberaMemoria.FlushMemory();
+                }
+            }
+            catch (Exception ex)
+            {
+                R.Codigo = -1;
+                R.Mensaje = "Alerta: " + ex.Message;
+                objRegistraLog.Graba("Error al intentar Insertar articulo : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+            }
+            return R;
         }
         public static Respuesta CrearFAMI_SUBFAMI(string bd)
         {
@@ -2709,7 +2820,7 @@ namespace Intercompany.Data
 
                     string queryEn = $"SELECT top 1 \"DocEntry\" FROM \"{Conexion.ORIGEN}\".\"OPQT\" where \"U_Origen\"= '{bd}' and \"DocEntry\"!='" + Entry + "'and \"DocStatus\"='O'  and \"U_entrySC\"='" + EntrySC + "' ";
 
-                    OdbcCommand CmD = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion
+                    OdbcCommand CmD = new OdbcCommand(queryEn, conn); // llama al Query Encabezado con la conexion+
                     conn.Open();
                     using (OdbcDataReader dr = CmD.ExecuteReader())
                     {

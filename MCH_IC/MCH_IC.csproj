@@ -74,6 +74,7 @@
     <Compile Include="Models\DetallesOPORT.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\gestorarchivos.cs" />
     <Compile Include="Tools\IniFile.cs" />
     <Compile Include="Tools\LiberaMemoria.cs" />
     <Compile Include="Tools\OcultarConsola.cs" />

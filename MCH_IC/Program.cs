@@ -15,172 +15,172 @@ namespace Intercompany
             Intercompany.tools.OcultarConsola.DisappearConsole();
             RegistroLog objRegistraLog = new RegistroLog();
             Intercompany.Data.Intercompany.SINCROERROR();
-            //#region fabricanteGEN
-            Intercompany.Data.Intercompany.Fabricante(Conexion.baseamd);
-            Intercompany.Data.Intercompany.Fabricante(Conexion.baseboquete);
-            Intercompany.Data.Intercompany.Fabricante(Conexion.basecalypso);
-            Intercompany.Data.Intercompany.Fabricante(Conexion.basecanaima);
-            Intercompany.Data.Intercompany.Fabricante(Conexion.baseconstru);
-            Intercompany.Data.Intercompany.Fabricante(Conexion.baseeco);
-            Intercompany.Data.Intercompany.Fabricante(Conexion.basefarmar);
-            Intercompany.Data.Intercompany.Fabricante(Conexion.baseideo);
-            Intercompany.Data.Intercompany.Fabricante(Conexion.baseiverco);
-            Intercompany.Data.Intercompany.Fabricante(Conexion.basepanco);
-            Intercompany.Data.Intercompany.Fabricante(Conexion.basepgjp);
-            Intercompany.Data.Intercompany.Fabricante(Conexion.basetorino);
-            Intercompany.Data.Intercompany.Fabricante(Conexion.baseworld);
-            Intercompany.Data.Intercompany.Fabricante(Conexion.basezhej);
-            //#endregion
+            ////#region fabricanteGEN
+            //Intercompany.Data.Intercompany.Fabricante(Conexion.baseamd);
+            //Intercompany.Data.Intercompany.Fabricante(Conexion.baseboquete);
+            //Intercompany.Data.Intercompany.Fabricante(Conexion.basecalypso);
+            //Intercompany.Data.Intercompany.Fabricante(Conexion.basecanaima);
+            //Intercompany.Data.Intercompany.Fabricante(Conexion.baseconstru);
+            //Intercompany.Data.Intercompany.Fabricante(Conexion.baseeco);
+            //Intercompany.Data.Intercompany.Fabricante(Conexion.basefarmar);
+            //Intercompany.Data.Intercompany.Fabricante(Conexion.baseideo);
+            //Intercompany.Data.Intercompany.Fabricante(Conexion.baseiverco);
+            //Intercompany.Data.Intercompany.Fabricante(Conexion.basepanco);
+            //Intercompany.Data.Intercompany.Fabricante(Conexion.basepgjp);
+            //Intercompany.Data.Intercompany.Fabricante(Conexion.basetorino);
+            //Intercompany.Data.Intercompany.Fabricante(Conexion.baseworld);
+            //Intercompany.Data.Intercompany.Fabricante(Conexion.basezhej);
+            ////#endregion
 
 
-            //#region GRUPOGEN
-            Intercompany.Data.Intercompany.Grupo(Conexion.baseamd);
-            Intercompany.Data.Intercompany.Grupo(Conexion.baseboquete);
-            Intercompany.Data.Intercompany.Grupo(Conexion.basecalypso);
-            Intercompany.Data.Intercompany.Grupo(Conexion.basecanaima);
-            Intercompany.Data.Intercompany.Grupo(Conexion.baseconstru);
-            Intercompany.Data.Intercompany.Grupo(Conexion.baseeco);
-            Intercompany.Data.Intercompany.Grupo(Conexion.basefarmar);
-            Intercompany.Data.Intercompany.Grupo(Conexion.baseideo);
-            Intercompany.Data.Intercompany.Grupo(Conexion.baseiverco);
-            Intercompany.Data.Intercompany.Grupo(Conexion.basepanco);
-            Intercompany.Data.Intercompany.Grupo(Conexion.basepgjp);
-            Intercompany.Data.Intercompany.Grupo(Conexion.basetorino);
-            Intercompany.Data.Intercompany.Grupo(Conexion.baseworld);
-            Intercompany.Data.Intercompany.Grupo(Conexion.basezhej);
-            //#endregion
+            ////#region GRUPOGEN
+            //Intercompany.Data.Intercompany.Grupo(Conexion.baseamd);
+            //Intercompany.Data.Intercompany.Grupo(Conexion.baseboquete);
+            //Intercompany.Data.Intercompany.Grupo(Conexion.basecalypso);
+            //Intercompany.Data.Intercompany.Grupo(Conexion.basecanaima);
+            //Intercompany.Data.Intercompany.Grupo(Conexion.baseconstru);
+            //Intercompany.Data.Intercompany.Grupo(Conexion.baseeco);
+            //Intercompany.Data.Intercompany.Grupo(Conexion.basefarmar);
+            //Intercompany.Data.Intercompany.Grupo(Conexion.baseideo);
+            //Intercompany.Data.Intercompany.Grupo(Conexion.baseiverco);
+            //Intercompany.Data.Intercompany.Grupo(Conexion.basepanco);
+            //Intercompany.Data.Intercompany.Grupo(Conexion.basepgjp);
+            //Intercompany.Data.Intercompany.Grupo(Conexion.basetorino);
+            //Intercompany.Data.Intercompany.Grupo(Conexion.baseworld);
+            //Intercompany.Data.Intercompany.Grupo(Conexion.basezhej);
+            ////#endregion
 
-            //#region GRUPOSNGEN
-            Intercompany.Data.Intercompany.GrupoSN(Conexion.baseamd);
-            Intercompany.Data.Intercompany.GrupoSN(Conexion.baseboquete);
-            Intercompany.Data.Intercompany.GrupoSN(Conexion.basecalypso);
-            Intercompany.Data.Intercompany.GrupoSN(Conexion.basecanaima);
-            Intercompany.Data.Intercompany.GrupoSN(Conexion.baseconstru);
-            Intercompany.Data.Intercompany.GrupoSN(Conexion.baseeco);
-            Intercompany.Data.Intercompany.GrupoSN(Conexion.basefarmar);
-            Intercompany.Data.Intercompany.GrupoSN(Conexion.baseideo);
-            Intercompany.Data.Intercompany.GrupoSN(Conexion.baseiverco);
-            Intercompany.Data.Intercompany.GrupoSN(Conexion.basepanco);
-            Intercompany.Data.Intercompany.GrupoSN(Conexion.basetorino);
+            ////#region GRUPOSNGEN
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.baseamd);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.baseboquete);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.basecalypso);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.basecanaima);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.baseconstru);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.baseeco);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.basefarmar);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.baseideo);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.baseiverco);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.basepanco);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.basetorino);
 
-            Intercompany.Data.Intercompany.GrupoSN(Conexion.basepgjp);
-            Intercompany.Data.Intercompany.GrupoSN(Conexion.baseworld);
-            Intercompany.Data.Intercompany.GrupoSN(Conexion.basezhej);
-            //#endregion
-
-
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.basepgjp);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.baseworld);
+            //Intercompany.Data.Intercompany.GrupoSN(Conexion.basezhej);
+            ////#endregion
 
 
 
-            //#region CondicionesGEN
-            Intercompany.Data.Intercompany.condicionespago(Conexion.baseamd);
-            Intercompany.Data.Intercompany.condicionespago(Conexion.baseboquete);
-            Intercompany.Data.Intercompany.condicionespago(Conexion.basecalypso);
-            Intercompany.Data.Intercompany.condicionespago(Conexion.basecanaima);
-            Intercompany.Data.Intercompany.condicionespago(Conexion.baseconstru);
-            Intercompany.Data.Intercompany.condicionespago(Conexion.baseeco);
-            Intercompany.Data.Intercompany.condicionespago(Conexion.basefarmar);
-            Intercompany.Data.Intercompany.condicionespago(Conexion.baseideo);
-            Intercompany.Data.Intercompany.condicionespago(Conexion.baseiverco);
-            Intercompany.Data.Intercompany.condicionespago(Conexion.basepanco);
-            Intercompany.Data.Intercompany.condicionespago(Conexion.basepgjp);
-            Intercompany.Data.Intercompany.condicionespago(Conexion.basetorino);
-            Intercompany.Data.Intercompany.condicionespago(Conexion.baseworld);
-            Intercompany.Data.Intercompany.condicionespago(Conexion.basezhej);
-            //#endregion
-
-            //////////////////////#region ADUANAGEN
-            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseamd);
-            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseboquete);
-            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basecalypso);
-            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basecanaima);
-            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseconstru);
-            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseeco);
-            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basefarmar);
-            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseideo);
-            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseiverco);
-            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basepanco);
-            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basetorino);
-            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basepgjp);
-            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseworld);
-            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basezhej);
-            //////////////////////#endregion
-
-            //#region familia_subfamilia
-            Intercompany.Data.Intercompany.CrearFAMI_SUBFAMI(Conexion.ORIGEN);
-
-            //#endregion
-
-            //#region articuloGEN
-            Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseamd);
-            Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseboquete);
-            Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basecalypso);
-            Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basecanaima);
-            Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseconstru);
-            Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseeco);
-            Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basefarmar);
-            Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseideo);
-            Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseiverco);
-            Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basepanco);
-            Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basepgjp);
-            Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basetorino);
-            Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basezhej);
-            //#endregion
-
-            Intercompany.Data.Intercompany.CreararticuloWORLD(Conexion.baseworld);
 
 
-            //#region articuloactualiza
-            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseamd);
-            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseboquete);
-            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basecalypso);
-            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basecanaima);
-            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseconstru);
-            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseeco);
-            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basefarmar);
-            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseideo);
-            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseiverco);
-            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basepanco);
-            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basetorino);
-            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basepgjp);
-            Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basezhej);
-            //#endregion
+            ////#region CondicionesGEN
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.baseamd);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.baseboquete);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.basecalypso);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.basecanaima);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.baseconstru);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.baseeco);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.basefarmar);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.baseideo);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.baseiverco);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.basepanco);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.basepgjp);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.basetorino);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.baseworld);
+            //Intercompany.Data.Intercompany.condicionespago(Conexion.basezhej);
+            ////#endregion
+
+            ////            //////////////////////#region ADUANAGEN
+            ////            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseamd);
+            ////            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseboquete);
+            ////            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basecalypso);
+            ////            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basecanaima);
+            ////            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseconstru);
+            ////            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseeco);
+            ////            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basefarmar);
+            ////            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseideo);
+            ////            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseiverco);
+            ////            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basepanco);
+            ////            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basetorino);
+            ////            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basepgjp);
+            ////            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.baseworld);
+            ////            ////////////////////Intercompany.Data.Intercompany.ADUANA(Conexion.basezhej);
+            ////            //////////////////////#endregion
+
+            ////            //#region familia_subfamilia
+            ////            Intercompany.Data.Intercompany.CrearFAMI_SUBFAMI(Conexion.ORIGEN);
+
+            ////            //#endregion
+
+            ////#region articuloGEN
+            //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseamd);
+            //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseboquete);
+            //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basecalypso);
+            //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basecanaima);
+            //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseconstru);
+            //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseeco);
+            //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basefarmar);
+            //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseideo);
+            //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.baseiverco);
+            //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basepanco);
+            //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basepgjp);
+            //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basetorino);
+            //Intercompany.Data.Intercompany.CreararticuloTODAS(Conexion.basezhej);
+            ////#endregion
+
+            ////            Intercompany.Data.Intercompany.CreararticuloWORLD(Conexion.baseworld);
 
 
-            //#region SOCIO_GEN
-            Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseamd);
-            Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseboquete);
-            Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basecalypso);
-            Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basecanaima);
-            Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseconstru);
-            Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseeco);
-            Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basefarmar);
-            Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseideo);
-            Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseiverco);
-            Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basepanco);
-            Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basepgjp);
-            Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basetorino);
-            Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basezhej);
-            Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseworld);
-//#endregion
+            ////#region articuloactualiza
+            //Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseamd);
+            //Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseboquete);
+            //Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basecalypso);
+            //Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basecanaima);
+            //Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseconstru);
+            //Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseeco);
+            //Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basefarmar);
+            //Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseideo);
+            //Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.baseiverco);
+            //Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basepanco);
+            //Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basetorino);
+            //Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basepgjp);
+            //Intercompany.Data.Intercompany.ActualizararticuloTODAS(Conexion.basezhej);
+            ////#endregion
 
 
-            //#region SOCIOactualiza
-            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseamd);
-            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseboquete);
-            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basecalypso);
-            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basecanaima);
-            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseconstru);
-            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseeco);
-            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basefarmar);
-            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseideo);
-            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseiverco);
-            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basepanco);
-            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basepgjp);
-            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basetorino);
-            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basezhej);
-            Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseworld);
-            //#endregion
+            ////#region SOCIO_GEN
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseamd);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseboquete);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basecalypso);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basecanaima);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseconstru);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseeco);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basefarmar);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseideo);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseiverco);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basepanco);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basepgjp);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basetorino);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.basezhej);
+            //Intercompany.Data.Intercompany.CrearSOCIOTODAS(Conexion.baseworld);
+            ////#endregion
+
+
+            ////#region SOCIOactualiza
+            //Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseamd);
+            //Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseboquete);
+            //Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basecalypso);
+            //Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basecanaima);
+            //Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseconstru);
+            //Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseeco);
+            //Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basefarmar);
+            //Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseideo);
+            //Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseiverco);
+            //Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basepanco);
+            //Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basepgjp);
+            //Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basetorino);
+            //Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.basezhej);
+            //Intercompany.Data.Intercompany.ActualizaSOCIOTODAS(Conexion.baseworld);
+            ////#endregion
 
             //#region SCSucursalGEN
             Intercompany.Data.Intercompany.SCSucursal(Conexion.baseamd);

@@ -1,0 +1,185 @@
+﻿Error al consultar SC : Object cannot be cast from DBNull to other types./ Hora: 08:54:35 AM
+Error al consultar SC : Object cannot be cast from DBNull to other types./ Hora: 08:54:36 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1026/ Hora: 08:54:41 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 26569/ Hora: 08:54:44 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1102/ Hora: 08:54:47 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1297/ Hora: 08:54:49 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 9609/ Hora: 08:54:53 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 9612/ Hora: 08:54:55 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 24624/ Hora: 08:54:58 AM
+Error Inserterror : ERROR [23000] [SAP AG][LIBODBCHDB DLL][HDBODBC] Integrity constraint violation;301 unique constraint violated: Table(@SINCROERROR) with error: unique constraint violation on pos=0 for table NDB::20043_MC_HOLDING:@SINCROERROR$delta_1$en, key: DocEntry=5000 already exists as udiv=2125/ Hora: 08:54:58 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 559/ Hora: 08:55:04 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 589/ Hora: 08:55:07 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 530/ Hora: 08:55:09 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1582/ Hora: 08:55:15 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 2004/ Hora: 08:55:18 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 2402/ Hora: 08:55:20 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1630/ Hora: 08:55:23 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1869/ Hora: 08:55:25 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1573/ Hora: 08:55:28 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1732/ Hora: 08:55:31 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1741/ Hora: 08:55:33 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1747/ Hora: 08:55:36 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1565/ Hora: 08:55:39 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1878/ Hora: 08:55:42 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1990/ Hora: 08:55:44 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 2225/ Hora: 08:55:47 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 2916/ Hora: 08:55:50 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1917/ Hora: 08:55:53 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 3020/ Hora: 08:55:55 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1755/ Hora: 08:55:58 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 4509/ Hora: 08:56:00 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 4501/ Hora: 08:56:03 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 2509/ Hora: 08:56:06 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 6144/ Hora: 08:56:08 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 4230/ Hora: 08:56:11 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 48206/ Hora: 08:56:14 AM
+Error STATUSSucursal_MCH: Document is already closed. 821/ Hora: 08:56:32 AM
+Error STATUSSucursal_MCH: Document is already closed. 1322/ Hora: 08:56:36 AM
+Error STATUSSucursal_MCH: Document is already closed. 1535/ Hora: 08:56:36 AM
+Error STATUSSucursal_MCH: Document is already closed. 661/ Hora: 08:56:36 AM
+Error STATUSSucursal_MCH: Document is already closed. 915/ Hora: 08:56:37 AM
+Error STATUSSucursal_MCH: Document is already closed. 544/ Hora: 08:56:37 AM
+Error STATUSSucursal_MCH: Document is already closed. 1367/ Hora: 08:56:38 AM
+Error STATUSSucursal_MCH: Document is already closed. 1432/ Hora: 08:56:38 AM
+Error STATUSSucursal_MCH: Document is already closed. 1438/ Hora: 08:56:38 AM
+Error STATUSSucursal_MCH: Document is already closed. 1547/ Hora: 08:56:39 AM
+Error STATUSSucursal_MCH: Document is already closed. 1703/ Hora: 08:56:39 AM
+Error STATUSSucursal_MCH: Document is already closed. 1747/ Hora: 08:56:43 AM
+Error STATUSSucursal_MCH: Document is already closed. 1527/ Hora: 08:56:44 AM
+Error STATUSSucursal_MCH: Document is already closed. 1247/ Hora: 08:56:44 AM
+Error STATUSSucursal_MCH: Document is already closed. 1008/ Hora: 08:56:44 AM
+Error STATUSSucursal_MCH: Document is already closed. 642/ Hora: 08:56:45 AM
+Error STATUSSucursal_MCH: Document is already closed. 1750/ Hora: 08:56:45 AM
+Error STATUSSucursal_MCH: Document is already closed. 1823/ Hora: 08:56:46 AM
+Error STATUSSucursal_MCH: Document is already closed. 2251/ Hora: 08:56:46 AM
+Error STATUSSucursal_MCH: Document is already closed. 2211/ Hora: 08:56:46 AM
+Error STATUSSucursal_MCH: Document is already closed. 1390/ Hora: 08:56:47 AM
+Error STATUSSucursal_MCH: Document is already closed. 2668/ Hora: 08:56:47 AM
+Error STATUSSucursal_MCH: Document is already closed. 2667/ Hora: 08:56:47 AM
+Error STATUSSucursal_MCH: Document is already closed. 2665/ Hora: 08:56:48 AM
+Error Inserterror : ERROR [23000] [SAP AG][LIBODBCHDB DLL][HDBODBC] Integrity constraint violation;301 unique constraint violated: Table(@SINCROERROR) with error: unique constraint violation on pos=0 for table NDB::20043_MC_HOLDING:@SINCROERROR$delta_1$en, key: DocEntry=5106 already exists as udiv=2233/ Hora: 08:56:48 AM
+Error STATUSSucursal_MCH: Document is already closed. 2279/ Hora: 08:56:48 AM
+Error STATUSSucursal_MCH: Document is already closed. 2682/ Hora: 08:56:49 AM
+Error STATUSSucursal_MCH: Document is already closed. 2123/ Hora: 08:56:49 AM
+Error STATUSSucursal_MCH: Document is already closed. 2846/ Hora: 08:56:49 AM
+Error STATUSSucursal_MCH: Document is already closed. 2895/ Hora: 08:56:50 AM
+Error STATUSSucursal_MCH: Document is already closed. 2520/ Hora: 08:56:50 AM
+Error STATUSSucursal_MCH: Document is already closed. 578/ Hora: 08:56:50 AM
+Error STATUSSucursal_MCH: Document is already closed. 3438/ Hora: 08:56:51 AM
+Error STATUSSucursal_MCH: Document is already closed. 2398/ Hora: 08:56:51 AM
+Error STATUSSucursal_MCH: Document is already closed. 2397/ Hora: 08:56:52 AM
+Error STATUSSucursal_MCH: Document is already closed. 2323/ Hora: 08:56:52 AM
+Error STATUSSucursal_MCH: Document is already closed. 3088/ Hora: 08:56:52 AM
+Error STATUSSucursal_MCH: Document is already closed. 2479/ Hora: 08:56:53 AM
+Error STATUSSucursal_MCH: Document is already closed. 3254/ Hora: 08:56:53 AM
+Error STATUSSucursal_MCH: Document is already closed. 3253/ Hora: 08:57:00 AM
+Error STATUSSucursal_MCH: Document is already closed. 3028/ Hora: 08:57:00 AM
+Error STATUSSucursal_MCH: Document is already closed. 1657/ Hora: 08:57:06 AM
+Error STATUSSucursal_MCH: Document is already closed. 1770/ Hora: 08:57:11 AM
+Error STATUSSucursal_MCH: Document is already closed. 1417/ Hora: 08:57:11 AM
+Error STATUSSucursal_MCH: Document is already closed. 1771/ Hora: 08:57:12 AM
+Error STATUSSucursal_MCH: Document is already closed. 2299/ Hora: 08:57:12 AM
+Error STATUSSucursal_MCH: Document is already closed. 1669/ Hora: 08:57:12 AM
+Error STATUSSucursal_MCH: Document is already closed. 530/ Hora: 08:57:24 AM
+Sin conectar a Service Layer : The remote server returned an error: (401) Unauthorized./ Hora: 08:57:33 AM
+Error STATUSSucursal_MCH: Document is already closed. 1199/ Hora: 08:57:41 AM
+Error STATUSSucursal_MCH: Document is already closed. 1134/ Hora: 08:57:44 AM
+Error STATUSSucursal_MCH: Document is already closed. 1135/ Hora: 08:57:44 AM
+Error STATUSSucursal_MCH: Document is already closed. 1136/ Hora: 08:57:45 AM
+Error STATUSSucursal_MCH: Document is already closed. 1722/ Hora: 08:57:45 AM
+Error STATUSSucursal_MCH: Document is already closed. 993/ Hora: 08:57:46 AM
+Error STATUSSucursal_MCH: Document is already closed. 975/ Hora: 08:57:46 AM
+Error STATUSSucursal_MCH: Document is already closed. 1972/ Hora: 08:57:46 AM
+Error STATUSSucursal_MCH: Document is already closed. 1373/ Hora: 08:57:47 AM
+Error STATUSSucursal_MCH: Document is already closed. 1276/ Hora: 08:57:47 AM
+Error STATUSSucursal_MCH: Document is already closed. 1159/ Hora: 08:57:47 AM
+Error STATUSSucursal_MCH: Document is already closed. 1510/ Hora: 08:57:48 AM
+Error STATUSSucursal_MCH: Document is already closed. 856/ Hora: 08:57:48 AM
+Error STATUSSucursal_MCH: Document is already closed. 3137/ Hora: 08:57:49 AM
+Error STATUSSucursal_MCH: Document is already closed. 1316/ Hora: 08:57:49 AM
+Error STATUSSucursal_MCH: Document is already closed. 1328/ Hora: 08:57:49 AM
+Error STATUSSucursal_MCH: Document is already closed. 1321/ Hora: 08:57:50 AM
+Error Inserterror : ERROR [23000] [SAP AG][LIBODBCHDB DLL][HDBODBC] Integrity constraint violation;301 unique constraint violated: Table(@SINCROERROR) with error: unique constraint violation on pos=0 for table NDB::20043_MC_HOLDING:@SINCROERROR$delta_1$en, key: DocEntry=5193 already exists as udiv=68/ Hora: 08:57:50 AM
+Error STATUSSucursal_MCH: Document is already closed. 1690/ Hora: 08:57:50 AM
+Error STATUSSucursal_MCH: Document is already closed. 1521/ Hora: 08:57:50 AM
+Error STATUSSucursal_MCH: Document is already closed. 1503/ Hora: 08:57:51 AM
+Error STATUSSucursal_MCH: Document is already closed. 1691/ Hora: 08:57:51 AM
+Error STATUSSucursal_MCH: Document is already closed. 1692/ Hora: 08:57:58 AM
+Error STATUSSucursal_MCH: Document is already closed. 1577/ Hora: 08:57:58 AM
+Error STATUSSucursal_MCH: Document is already closed. 1760/ Hora: 08:57:59 AM
+Error STATUSSucursal_MCH: Document is already closed. 1763/ Hora: 08:57:59 AM
+Error STATUSSucursal_MCH: Document is already closed. 2143/ Hora: 08:58:07 AM
+Error STATUSSucursal_MCH: Document is already closed. 1694/ Hora: 08:58:07 AM
+Error STATUSSucursal_MCH: Document is already closed. 1695/ Hora: 08:58:08 AM
+Error STATUSSucursal_MCH: Document is already closed. 1801/ Hora: 08:58:08 AM
+Error STATUSSucursal_MCH: Document is already closed. 1800/ Hora: 08:58:08 AM
+Error STATUSSucursal_MCH: Document is already closed. 1848/ Hora: 08:58:09 AM
+Error STATUSSucursal_MCH: Document is already closed. 1949/ Hora: 08:58:09 AM
+Error STATUSSucursal_MCH: Document is already closed. 1951/ Hora: 08:58:10 AM
+Error STATUSSucursal_MCH: Document is already closed. 1952/ Hora: 08:58:10 AM
+Error STATUSSucursal_MCH: Document is already closed. 1956/ Hora: 08:58:10 AM
+Error STATUSSucursal_MCH: Document is already closed. 2040/ Hora: 08:58:11 AM
+Error STATUSSucursal_MCH: Document is already closed. 2041/ Hora: 08:58:11 AM
+Error STATUSSucursal_MCH: Document is already closed. 2034/ Hora: 08:58:11 AM
+Error STATUSSucursal_MCH: Document is already closed. 1955/ Hora: 08:58:12 AM
+Error STATUSSucursal_MCH: Document is already closed. 1796/ Hora: 08:58:12 AM
+Error STATUSSucursal_MCH: Document is already closed. 1641/ Hora: 08:58:13 AM
+Error STATUSSucursal_MCH: Document is already closed. 3089/ Hora: 08:58:13 AM
+Error STATUSSucursal_MCH: Document is already closed. 2418/ Hora: 08:58:13 AM
+Error STATUSSucursal_MCH: Document is already closed. 2421/ Hora: 08:58:14 AM
+Error STATUSSucursal_MCH: Document is already closed. 2738/ Hora: 08:58:14 AM
+Error STATUSSucursal_MCH: Document is already closed. 2731/ Hora: 08:58:15 AM
+Error STATUSSucursal_MCH: Document is already closed. 2679/ Hora: 08:58:15 AM
+Error STATUSSucursal_MCH: Document is already closed. 2470/ Hora: 08:58:15 AM
+Error STATUSSucursal_MCH: Document is already closed. 2473/ Hora: 08:58:16 AM
+Error STATUSSucursal_MCH: Document is already closed. 2690/ Hora: 08:58:16 AM
+Error STATUSSucursal_MCH: Document is already closed. 2215/ Hora: 08:58:17 AM
+Error STATUSSucursal_MCH: Document is already closed. 3127/ Hora: 08:58:17 AM
+Error STATUSSucursal_MCH: Document is already closed. 3491/ Hora: 08:58:17 AM
+Error STATUSSucursal_MCH: Document is already closed. 3538/ Hora: 08:58:18 AM
+Error STATUSSucursal_MCH: Document is already closed. 2827/ Hora: 08:58:18 AM
+Error STATUSSucursal_MCH: Document is already closed. 2692/ Hora: 08:58:19 AM
+Error STATUSSucursal_MCH: Document is already closed. 2733/ Hora: 08:58:19 AM
+Error STATUSSucursal_MCH: Document is already closed. 2734/ Hora: 08:58:19 AM
+Error STATUSSucursal_MCH: Document is already closed. 2785/ Hora: 08:58:20 AM
+Error STATUSSucursal_MCH: Document is already closed. 2901/ Hora: 08:58:20 AM
+Error STATUSSucursal_MCH: Document is already closed. 2900/ Hora: 08:58:21 AM
+Error STATUSSucursal_MCH: Document is already closed. 2899/ Hora: 08:58:21 AM
+Error STATUSSucursal_MCH: Document is already closed. 2896/ Hora: 08:58:21 AM
+Error STATUSSucursal_MCH: Document is already closed. 2994/ Hora: 08:58:22 AM
+Error STATUSSucursal_MCH: Document is already closed. 2897/ Hora: 08:58:22 AM
+Error STATUSSucursal_MCH: Document is already closed. 3210/ Hora: 08:58:23 AM
+Error STATUSSucursal_MCH: Document is already closed. 3032/ Hora: 08:58:23 AM
+Error STATUSSucursal_MCH: Document is already closed. 3031/ Hora: 08:58:23 AM
+Error STATUSSucursal_MCH: Document is already closed. 3076/ Hora: 08:58:24 AM
+Error STATUSSucursal_MCH: Document is already closed. 3083/ Hora: 08:58:24 AM
+Error STATUSSucursal_MCH: Document is already closed. 3139/ Hora: 08:58:31 AM
+Error STATUSSucursal_MCH: Document is already closed. 3134/ Hora: 08:58:32 AM
+Error STATUSSucursal_MCH: Document is already closed. 3532/ Hora: 08:58:32 AM
+Error STATUSSucursal_MCH: Document is already closed. 3274/ Hora: 08:58:32 AM
+Error STATUSSucursal_MCH: Document is already closed. 3432/ Hora: 08:58:33 AM
+Error STATUSSucursal_MCH: Document is already closed. 3149/ Hora: 08:58:33 AM
+Error STATUSSucursal_MCH: Document is already closed. 3430/ Hora: 08:58:34 AM
+Error STATUSSucursal_MCH: Document is already closed. 3267/ Hora: 08:58:34 AM
+Error STATUSSucursal_MCH: Document is already closed. 3148/ Hora: 08:58:34 AM
+Error STATUSSucursal_MCH: Document is already closed. 3417/ Hora: 08:58:35 AM
+Error STATUSSucursal_MCH: Document is already closed. 3235/ Hora: 08:58:35 AM
+Error STATUSSucursal_MCH: Document is already closed. 3636/ Hora: 08:58:36 AM
+Error STATUSSucursal_MCH: Document is already closed. 3663/ Hora: 08:58:36 AM
+Error al consultar SC : Object cannot be cast from DBNull to other types./ Hora: 09:30:23 AM
+Error al consultar SC : Object cannot be cast from DBNull to other types./ Hora: 09:30:23 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1026/ Hora: 09:30:28 AM
+Error Crearanexo: Internal server error. 15707 (2)/ Hora: 09:38:44 AM
+Error al consultar SC : Object cannot be cast from DBNull to other types./ Hora: 10:33:48 AM
+Error al consultar SC : Object cannot be cast from DBNull to other types./ Hora: 10:33:49 AM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1026/ Hora: 10:33:52 AM
+Error al consultar SC : Object cannot be cast from DBNull to other types./ Hora: 14:14:29 PM
+Error al consultar SC : Object cannot be cast from DBNull to other types./ Hora: 14:14:29 PM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1026/ Hora: 14:14:33 PM
+Error al consultar SC : Object cannot be cast from DBNull to other types./ Hora: 14:18:00 PM
+Error al consultar SC : Object cannot be cast from DBNull to other types./ Hora: 14:18:01 PM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1026/ Hora: 14:18:05 PM
+Error al consultar SC : Object cannot be cast from DBNull to other types./ Hora: 14:20:28 PM
+Error al consultar SC : Object cannot be cast from DBNull to other types./ Hora: 14:20:28 PM
+Error CrearOCTODASSUCMCH: In "BP Code", enter vendor code   [Message 439-6] 1026/ Hora: 14:20:32 PM
