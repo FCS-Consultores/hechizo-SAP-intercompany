@@ -1,0 +1,41 @@
+﻿Error actualizando articulo: No matching records found (ODBC -2028) MT-X24-RJ-9/ Hora: 08:22:55 AM
+Error al intentar Insertar articulo : startIndex cannot be larger than length of string.
+Parameter name: startIndex/ Hora: 08:23:39 AM
+Error actualizando artículo MT-X24-RJ-9 en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MT-X24-RJ-9/ Hora: 08:27:07 AM
+Error actualizando artículo MT-X24-RJ-9M en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MT-X24-RJ-9M/ Hora: 08:27:19 AM
+Error actualizando artículo MT-X25-NG-10 en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MT-X25-NG-10/ Hora: 08:27:49 AM
+Error actualizando artículo MT-X25-NG-10M en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MT-X25-NG-10M/ Hora: 08:27:50 AM
+Error actualizando artículo MT-X25-NG-11 en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MT-X25-NG-11/ Hora: 08:27:51 AM
+Error actualizando artículo MT-X25-NG-8 en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MT-X25-NG-8/ Hora: 08:27:52 AM
+Error actualizando artículo MT-X25-NG-8M en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MT-X25-NG-8M/ Hora: 08:27:53 AM
+Error actualizando artículo MT-X25-NG-9 en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MT-X25-NG-9/ Hora: 08:27:54 AM
+Error actualizando artículo MT-X25-NG-9M en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MT-X25-NG-9M/ Hora: 08:27:55 AM
+Error actualizando artículo MTY-X25-NG-1 en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MTY-X25-NG-1/ Hora: 08:27:56 AM
+Error actualizando artículo MTY-X25-NG-2 en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MTY-X25-NG-2/ Hora: 08:27:57 AM
+Error actualizando artículo MTY-X25-NG-3 en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MTY-X25-NG-3/ Hora: 08:27:58 AM
+Error actualizando artículo MTY-X25-NG-4 en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MTY-X25-NG-4/ Hora: 08:27:59 AM
+Error actualizando artículo MTY-X25-NG-5 en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MTY-X25-NG-5/ Hora: 08:27:59 AM
+Error actualizando artículo MTY-X25-NG-6 en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MTY-X25-NG-6/ Hora: 08:28:00 AM
+Error actualizando artículo MTY-X25-NG-7 en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MTY-X25-NG-7/ Hora: 08:28:01 AM
+Error Actualizando artículo en la base destinno hogar:  [OITM.ItmsGrpCod] , 'Linked value -1 does not exist' JBALON002-#5-NJ/ Hora: 08:28:02 AM
+Error actualizando artículo JSAN-VE-8 en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) JSAN-VE-8/ Hora: 08:28:03 AM
+Error Actualizando artículo en la base destinno hogar:  [OITM.ItmsGrpCod] , 'Linked value -1 does not exist' JBALON002-#5-ST/ Hora: 08:28:12 AM
+Error actualizando artículo MT-X22-BL-9 en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MT-X22-BL-9/ Hora: 08:28:13 AM
+Error actualizando artículo MT-X22-BL-9M en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MT-X22-BL-9M/ Hora: 08:28:15 AM
+Error actualizando artículo MT-X22-NG-10 en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MT-X22-NG-10/ Hora: 08:28:16 AM
+Error actualizando artículo MT-X22-NG-10M en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MT-X22-NG-10M/ Hora: 08:28:17 AM
+Error actualizando artículo MT-X22-NG-11 en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MT-X22-NG-11/ Hora: 08:28:18 AM
+Error actualizando artículo MT-X22-NG-8 en 10071_HOGAR_IDEAL: No matching records found (ODBC -2028) MT-X22-NG-8/ Hora: 08:28:19 AM
+Insertado a Sap el articulo : JBALON002-#5-NJ/ Hora: 08:43:58 AM
+Error actualizando artículo JBALON002-#5-NJ en 10071_HOGAR_IDEAL: Unrecognized resource path. JBALON002-#5-NJ/ Hora: 08:46:33 AM
+Insertado a Sap el articulo : JBALON002-#5-ST/ Hora: 08:46:36 AM
+Insertado a Sap el articulo : M07-VE-L/ Hora: 09:35:20 AM
+Insertado a Sap el articulo : ROUTERS-01/ Hora: 09:41:22 AM
+Insertado a Sap el articulo : ROUTERS-02/ Hora: 09:41:22 AM
+Insertado a Sap el articulo : JBALON002-#5-NJ/ Hora: 09:47:40 AM
+Insertado a Sap el articulo : JBALON002-#5-ST/ Hora: 09:56:15 AM
+Insertado a Sap el articulo : M07-VE-S/ Hora: 10:26:46 AM
+Insertado a Sap el articulo : M07-VE-L/ Hora: 10:29:58 AM
+Insertado a Sap el articulo : ROUTERS-01/ Hora: 10:30:09 AM
+Insertado a Sap el articulo : ROUTERS-02/ Hora: 10:30:09 AM
+Error insertando articulo JBALON002-%235-NJ en la bdDestino 10071_DEPORTES_SUR: 1320000002 - Enter an item number without any of the following characters: * { } ! ^ = < > ? | JBALON002-%235-NJ/ Hora: 21:15:51 PM

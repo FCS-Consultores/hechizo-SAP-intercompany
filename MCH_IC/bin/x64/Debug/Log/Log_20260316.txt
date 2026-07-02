@@ -1,0 +1,14 @@
+﻿Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: MensajeError
+ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;-10210 Invalid command state (No prepared SQL command)/ Hora: 13:27:54 PM
+Error al intentar Insertar articulo : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;260 invalid column name: MensajeError
+ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;-10210 Invalid command state (No prepared SQL command)/ Hora: 13:28:00 PM
+Error insertando artículo M07-VE-L en la bdDestino omdo:  [OITM.ItmsGrpCod] , 'Linked value 5000 does not exist' M07-VE-L/ Hora: 13:33:01 PM
+Error insertando artículo PRUEBA-2 en la bdDestino omdo:  [OITM.ItmsGrpCod] , 'Linked value 5000 does not exist' PRUEBA-2/ Hora: 13:33:30 PM
+Error insertando artículo PRUEBA-1 en la bdDestino omdo:  [OITM.ItmsGrpCod] , 'Linked value 5000 does not exist' PRUEBA-1/ Hora: 13:33:58 PM
+Error insertando artículo M07-VE-L en la bdDestino omdo:  [OITM.ItmsGrpCod] , 'Linked value 5000 does not exist' M07-VE-L/ Hora: 13:55:01 PM
+Error insertando artículo PRUEBA-2 en la bdDestino omdo:  [OITM.ItmsGrpCod] , 'Linked value 5000 does not exist' PRUEBA-2/ Hora: 13:55:17 PM
+Error insertando artículo PRUEBA-1 en la bdDestino omdo:  [OITM.ItmsGrpCod] , 'Linked value 5000 does not exist' PRUEBA-1/ Hora: 13:55:36 PM
+Error insertando artículo M07-VE-L en la bdDestino nedn:  [OITM.ItmsGrpCod] , 'Linked value 5000 does not exist' M07-VE-L/ Hora: 16:07:27 PM
+Error insertando artículo PRUEBA-2 en la bdDestino nedn:  [OITM.ItmsGrpCod] , 'Linked value 5000 does not exist' PRUEBA-2/ Hora: 16:08:55 PM
+Error insertando artículo PRUEBA-1 en la bdDestino nedn:  [OITM.ItmsGrpCod] , 'Linked value 5000 does not exist' PRUEBA-1/ Hora: 16:09:40 PM
+Error insertando artículo M07-VE-L en la bdDestino flores:  [OITM.ItmsGrpCod] , 'Linked value 5000 does not exist' M07-VE-L/ Hora: 16:15:56 PM

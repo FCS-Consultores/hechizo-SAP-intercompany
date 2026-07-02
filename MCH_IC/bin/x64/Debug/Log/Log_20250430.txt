@@ -1,2 +1,0 @@
-﻿Error CrearSCTODAS: Required date is missing (4) 459/ Hora: 19:53:24 PM
-Error CrearSCTODAS: Required date is missing (4) 466/ Hora: 19:53:27 PM

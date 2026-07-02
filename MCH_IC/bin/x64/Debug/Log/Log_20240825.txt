@@ -1,3 +1,0 @@
-﻿Error CrearSCTODAS: Required date is missing (1) 36/ Hora: 14:53:44 PM
-Error CrearSCTODAS: Required date is missing (1) 39/ Hora: 14:54:29 PM
-Error CrearSCTODAS: Required date is missing (1) 36/ Hora: 16:10:59 PM

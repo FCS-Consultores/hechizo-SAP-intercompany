@@ -5,12 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MCH_IC.Tools
+namespace Inter_Hechiz.Tools
 {
     public class gestorarchivos
     {
-        public static void MoverArchivo(string nombreArchivo, string rutaOrigen, string rutaDestino)
+        public static int paso = 0;
+
+        public static void MoverArchivo(string nombreArchivo, string rutaOrigen, string rutaDestino,string ext)
         {
+            paso = 0;
             try
             {
                 // Asegurarse de que la ruta de origen exista
@@ -25,9 +28,9 @@ namespace MCH_IC.Tools
                 {
                     Directory.CreateDirectory(rutaDestino);
                 }
-
+                string archivito = nombreArchivo + "." + ext;
                 // Ruta completa del archivo a buscar
-                string rutaArchivoOrigen = Path.Combine(rutaOrigen, nombreArchivo);
+                string rutaArchivoOrigen = Path.Combine(rutaOrigen, archivito);
 
                 if (!File.Exists(rutaArchivoOrigen))
                 {
@@ -36,13 +39,22 @@ namespace MCH_IC.Tools
                 }
 
                 // Ruta final en el destino
-                string rutaArchivoDestino = Path.Combine(rutaDestino, nombreArchivo);
+                string rutaArchivoDestino = Path.Combine(rutaDestino, archivito);
 
                 // Mover el archivo
-                File.Move(rutaArchivoOrigen, rutaArchivoDestino);
-
-                Console.WriteLine("Archivo movido correctamente.");
-            }
+                if (!File.Exists(rutaArchivoDestino))
+                {
+                    File.Copy(rutaArchivoOrigen, rutaArchivoDestino, true);
+                    paso = 1;
+                }
+                else
+                {
+                    File.Copy(rutaArchivoOrigen, rutaArchivoDestino, true);
+                    Console.WriteLine("Archivo movido correctamente.");
+                    paso = 1;
+                }
+                
+    }
             catch (IOException ex)
             {
                 Console.WriteLine("Error al mover el archivo: " + ex.Message);
@@ -51,6 +63,6 @@ namespace MCH_IC.Tools
             {
                 Console.WriteLine("Error inesperado: " + ex.Message);
             }
-        }
+          }
     }
 }

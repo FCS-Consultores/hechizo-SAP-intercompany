@@ -1,0 +1,16 @@
+﻿Error al intentar Insertar articulo : ERROR [IM014] [Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application/ Hora: 16:53:15 PM
+Error al intentar Insertar articulo : ERROR [IM014] [Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application/ Hora: 16:53:29 PM
+Error al intentar Insertar articulo : ERROR [IM014] [Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application/ Hora: 16:53:29 PM
+Error al intentar Insertar articulo : ERROR [IM014] [Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application/ Hora: 16:53:29 PM
+Error al intentar Insertar articulo : ERROR [IM014] [Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application/ Hora: 16:53:29 PM
+Error al intentar Insertar articulo : ERROR [IM014] [Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application/ Hora: 16:53:29 PM
+Error al intentar Insertar articulo : ERROR [IM014] [Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application/ Hora: 16:53:29 PM
+Error al intentar Insertar articulo : ERROR [IM014] [Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application/ Hora: 16:53:29 PM
+Error al intentar Insertar articulo : ERROR [IM014] [Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application/ Hora: 16:53:29 PM
+Error al intentar Insertar articulo : ERROR [IM014] [Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application/ Hora: 16:53:29 PM
+Error al intentar Insertar articulo : ERROR [IM014] [Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application/ Hora: 16:53:29 PM
+Error al intentar Insertar articulo : ERROR [IM014] [Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application/ Hora: 16:53:29 PM
+Error al intentar Insertar articulo : ERROR [IM014] [Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application/ Hora: 16:53:29 PM
+Error al intentar Insertar articulo : ERROR [IM014] [Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application/ Hora: 16:53:29 PM
+Error al intentar Insertar articulo : ERROR [IM014] [Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application/ Hora: 16:53:37 PM
+Error al intentar Insertar articulo : ERROR [IM014] [Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application/ Hora: 16:53:41 PM

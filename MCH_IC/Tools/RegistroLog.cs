@@ -5,33 +5,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Intercompany.tools
+namespace Inter_Hechiz.tools
 {
    public class RegistroLog
     {
-        public int Graba(string strLog)
+        public void Graba(string strLog)
         {
-            string strDestinoLog = Directory.GetCurrentDirectory() + @"\Log\"; //System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath + @"\Log\"; 
-
-
-            if (!Directory.Exists(strDestinoLog))
-            {
-                Directory.CreateDirectory(strDestinoLog);
-
-            }
-
-            string strNombreArchivoLog = "Log_" + DateTime.Now.ToString("yyyyMMdd") + ".txt";
             try
             {
-                StreamWriter sw = new StreamWriter(strDestinoLog + strNombreArchivoLog, true, System.Text.Encoding.UTF8);
-                sw.WriteLine(strLog);
-                sw.Close();
+                string basePath = AppDomain.CurrentDomain.BaseDirectory;
+                string logPath = Path.Combine(basePath, "Log");
+
+                if (!Directory.Exists(logPath))
+                    Directory.CreateDirectory(logPath);
+
+                string file = Path.Combine(
+                    logPath,
+                    $"Log_{DateTime.Now:yyyyMMdd}.txt"
+                );
+
+                File.AppendAllText(file, strLog + Environment.NewLine, Encoding.UTF8);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                //MessageBox.Show("Exception: " + ex1.Message);
+                // Mínimo deja rastro
+                File.AppendAllText(
+                    @"C:\Temp\log_fatal.txt",
+                    DateTime.Now + " - " + ex + Environment.NewLine
+                );
             }
-            return 0;
         }
 
         public int GrabaProc(string strLog)
@@ -57,6 +59,33 @@ namespace Intercompany.tools
             }
             return 0;
         }
- 
+
+        public void GrabaJson(string strLog)
+        {
+            try
+            {
+                string basePath = AppDomain.CurrentDomain.BaseDirectory;
+                string logPath = Path.Combine(basePath, "Log");
+
+                if (!Directory.Exists(logPath))
+                    Directory.CreateDirectory(logPath);
+
+                string file = Path.Combine(
+                    logPath,
+                    $"LogJson_{DateTime.Now:yyyyMMdd}.txt"
+                );
+
+                File.AppendAllText(file, strLog + Environment.NewLine, Encoding.UTF8);
+            }
+            catch (Exception ex)
+            {
+                // Mínimo deja rastro
+                File.AppendAllText(
+                    @"C:\Temp\log_fatal.txt",
+                    DateTime.Now + " - " + ex + Environment.NewLine
+                );
+            }
+        }
+
     }
 }

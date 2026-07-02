@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Intercompany.tools
+namespace Inter_Hechiz.tools
 {
     class OcultarConsola
     {

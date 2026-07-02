@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Int_MZ.tools
+namespace Inter_Hechiz.tools
 {
     public class RegistroProcesos
     {

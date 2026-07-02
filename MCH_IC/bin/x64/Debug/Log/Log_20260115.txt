@@ -1,0 +1,4 @@
+﻿[13: 53:58 PM]Error al procesar las OrdCompra en bd destino 10071_NEDN_TEST, ERROR [42000] [SAP AG][LIBODBCHDB DLL][HDBODBC] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 14 col 51 (at pos 869)
+ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;-10210 Invalid command state (No prepared SQL command)
+[13: 54:21 PM]Error al procesar las OrdCompra en bd destino 10071_NEDN_TEST, ERROR [42000] [SAP AG][LIBODBCHDB DLL][HDBODBC] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 14 col 51 (at pos 869)
+ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;-10210 Invalid command state (No prepared SQL command)

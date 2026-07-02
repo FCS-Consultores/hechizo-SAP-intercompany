@@ -1,4 +1,0 @@
-﻿actualizado a CrearSOCIOTODAS : MUNICIPIO DE PANAMA/ Hora: 08:50:11 AM
-Error al intentar Insertar articulo : Index and length must refer to a location within the string.
-Parameter name: length/ Hora: 08:50:43 AM
-Error CrearSCTODAS: Required date is missing (1) 66/ Hora: 08:50:46 AM

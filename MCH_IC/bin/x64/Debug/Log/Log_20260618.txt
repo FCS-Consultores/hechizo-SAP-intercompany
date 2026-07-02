@@ -1,0 +1,5 @@
+﻿Error insertando Grp Descuentos en la BD Destino 10071_3_102_956112_TEST AbsEntry 2: Property 'U_Version' of 'EnhancedDiscountGroup' is invalid / Hora: 08:59:25 AM
+Error insertando Grp Descuentos en la BD Destino 10071_3_102_956112_TEST AbsEntry 2: Property 'U_Version' of 'EnhancedDiscountGroup' is invalid / Hora: 09:02:39 AM
+Error insertando Grp Descuentos en la BD Destino 10071_3_102_956112_TEST AbsEntry 2: Property 'U_Version' of 'EnhancedDiscountGroup' is invalid / Hora: 10:05:29 AM
+Enhanced Discount Group insertado: AbsEntry 2 Hora: 10:29:54 AM
+[15: 59:15 PM]Crendo la solicCompra, ExecuteReader: CommandText property has not been initialized

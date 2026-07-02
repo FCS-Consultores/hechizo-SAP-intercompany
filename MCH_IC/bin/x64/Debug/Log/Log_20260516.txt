@@ -1,0 +1,3 @@
+﻿Cliente Creado : CL00012/ Hora: 10:09:19 AM
+Enhanced Discount Group insertado: AbsEntry 1 Hora: 12:34:59 PM
+[13:47:50 PM] Error Crendo la solicCompra en Hechizo con el docNum 1 de la sucursarl de origen 10071_3_102_956112_TEST: Update the exchange rate  , USD

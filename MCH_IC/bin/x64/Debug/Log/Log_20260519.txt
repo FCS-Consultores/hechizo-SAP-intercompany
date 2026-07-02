@@ -1,0 +1,4 @@
+﻿[01-53-08] Error SINCROERROR: ERROR [IM002] [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified
+[01-53-36] Error SINCROERROR: ERROR [IM002] [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified
+Error actualizando artículo JD252-AZ-28 en 10071_3_102_956112: The logged-on user does not have permission to use this object. JD252-AZ-28/ Hora: 14:02:27 PM
+Error actualizando artículo JD252-AZ-28 en 10071_3_102_956112: The logged-on user does not have permission to use this object. JD252-AZ-28/ Hora: 14:08:02 PM

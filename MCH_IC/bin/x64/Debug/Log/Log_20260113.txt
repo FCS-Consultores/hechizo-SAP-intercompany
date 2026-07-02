@@ -1,0 +1,20 @@
+﻿Cliente Creado : CL00009/ Hora: 11:28:31 AM
+Cliente Creado : CL00009/ Hora: 11:28:36 AM
+Cliente Creado : CL00009/ Hora: 11:28:41 AM
+Cliente Creado : CL00009/ Hora: 11:28:45 AM
+Cliente Creado : CL00009/ Hora: 11:28:50 AM
+Cliente Creado : CL00009/ Hora: 11:28:56 AM
+Cliente Creado : CL00009/ Hora: 11:29:01 AM
+[03-13-13] Error SINCROERROR: ERROR [IM002] [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified
+[15: 13:24 PM]Crendo la solicCompra, ERROR [IM002] [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified
+[15: 13:24 PM]Error al OrdVenta, ERROR [IM002] [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified
+[15: 13:24 PM]Error en Orden Compra, ERROR [IM002] [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified
+[15: 13:24 PM]Error en Orden Compra, ERROR [IM002] [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified
+[15: 13:24 PM]Error en Orden Compra, ERROR [IM002] [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified
+[15: 13:24 PM]Error en Orden Compra, ERROR [IM002] [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified
+[15: 13:24 PM]Error en Orden Compra, ERROR [IM002] [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified
+[15: 13:24 PM]Error en Orden Compra, ERROR [IM002] [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified
+[15: 13:24 PM]Error en Orden Compra, ERROR [IM002] [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified
+[15: 13:24 PM]Error en Orden Compra, ERROR [IM002] [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified
+[15: 13:27 PM]Error al procesar las facturas Provedor en bdDestino, ERROR [IM002] [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified
+[17:07:39 PM] Error creando la NC de proveedor en 10071_OMDO_TEST con el docNum factura deudor 8: No matching records found (ODBC -2028)
