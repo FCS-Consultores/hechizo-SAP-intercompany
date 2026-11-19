@@ -284,9 +284,7 @@ namespace Inter_Hechiz
 
             #endregion
 
-
-
-            //#endregion
+            #endregion
 
 
             #region SOCIOactualiza
