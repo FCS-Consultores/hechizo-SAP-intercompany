@@ -1,0 +1,178 @@
+﻿Error insertando grupo en la base destino 10071_3_102_957515_TEST: Invalid session or session already timeout. 225/ Hora: 10:56:34 AM
+Error insertando grupo en la base destino 10071_3_102_957515_TEST: Invalid session or session already timeout. 103/ Hora: 10:56:34 AM
+Error insertando grupo en la base destino 10071_3_102_957515_TEST: Invalid session or session already timeout. 293/ Hora: 10:56:34 AM
+Error actualizando artículo PRUEBA-2 en 10071_FLORES_DEP_TEST: Entity with value('PRUEBA-2') does not exist PRUEBA-2/ Hora: 10:56:40 AM
+Error al intentar Insertar Cliente desde 10071_ENC_VITAL_TEST hacia 10071_3_102_956112_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_ENC_VITAL_TEST"."ICcondicionesSN": line 44 col 5 (at pos 2424): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_3_102_956112_TEST', unused_constant(), "10071_ENC_VITAL_TEST.OCTG.GroupNum"), 10071_ENC_VITAL_TEST.OCTG.GroupNum = -1[int]
+/ Hora: 10:56:49 AM
+Error al intentar Insertar Cliente desde 10071_ENC_VITAL_TEST hacia 10071_3_102_957626_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_ENC_VITAL_TEST"."ICcondicionesSN": line 54 col 5 (at pos 2966): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_3_102_957626_TEST', unused_constant(), "10071_ENC_VITAL_TEST.OCTG.GroupNum"), 10071_ENC_VITAL_TEST.OCTG.GroupNum = -1[int]
+/ Hora: 10:56:50 AM
+Error CrearSOCIOTODAS en la base destinno 10071_HOGAR_IDEAL_TEST, origen10071_EMDE_TEST :  [OCRD.GroupCode] , 'Linked value -1 does not exist' CL0026000/ Hora: 10:56:53 AM
+Error CrearSOCIOTODAS en la base destinno 10071_DEPORTES_SUR_TEST, origen10071_EMDE_TEST :  [OCRD.GroupCode] , 'Linked value -1 does not exist' CL0026000/ Hora: 10:56:58 AM
+Error CrearSOCIOTODAS en la base destinno 10071_OMDO_TEST, origen10071_EMDE_TEST :  [OCRD.GroupCode] , 'Linked value -1 does not exist' CL0026000/ Hora: 10:57:02 AM
+Error CrearSOCIOTODAS en la base destinno 10071_NEDN_TEST, origen10071_EMDE_TEST :  [OCRD.GroupCode] , 'Linked value -1 does not exist' CL0026000/ Hora: 10:57:05 AM
+Error CrearSOCIOTODAS en la base destinno 10071_FLORES_DEP_TEST, origen10071_EMDE_TEST :  [OCRD.GroupCode] , 'Linked value -1 does not exist' CL0026000/ Hora: 10:57:09 AM
+Error CrearSOCIOTODAS en la base destinno 10071_ENC_VITAL_TEST, origen10071_EMDE_TEST :  [OCRD.GroupCode] , 'Linked value -1 does not exist' CL0026000/ Hora: 10:57:15 AM
+Error CrearSOCIOTODAS en la base destinno 10071_AVECENTRAL_TEST, origen10071_EMDE_TEST :  [OCRD.GroupCode] , 'Linked value -1 does not exist' CL0026000/ Hora: 10:57:18 AM
+Error al intentar Insertar Cliente desde 10071_3_102_956112_TEST hacia 10071_HOGAR_IDEAL_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_956112_TEST"."ICgrupoSN": line 32 col 5 (at pos 1693): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_HOGAR_IDEAL_TEST', unused_constant(), "10071_3_102_956112_TEST.OCRG.GroupCode"), 10071_3_102_956112_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:20 AM
+Error al intentar Insertar Cliente desde 10071_3_102_956112_TEST hacia 10071_DEPORTES_SUR_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_956112_TEST"."ICgrupoSN": line 12 col 5 (at pos 437): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_DEPORTES_SUR_TEST', unused_constant(), "10071_3_102_956112_TEST.OCRG.GroupCode"), 10071_3_102_956112_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:20 AM
+Error al intentar Insertar Cliente desde 10071_3_102_956112_TEST hacia 10071_OMDO_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_956112_TEST"."ICgrupoSN": line 36 col 5 (at pos 1947): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_OMDO_TEST', unused_constant(), "10071_3_102_956112_TEST.OCRG.GroupCode"), 10071_3_102_956112_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:20 AM
+Error al intentar Insertar Cliente desde 10071_3_102_956112_TEST hacia 10071_NEDN_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_956112_TEST"."ICgrupoSN": line 28 col 5 (at pos 1442): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_NEDN_TEST', unused_constant(), "10071_3_102_956112_TEST.OCRG.GroupCode"), 10071_3_102_956112_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:21 AM
+Error al intentar Insertar Cliente desde 10071_3_102_956112_TEST hacia 10071_FLORES_DEP_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_956112_TEST"."ICgrupoSN": line 24 col 5 (at pos 1192): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_FLORES_DEP_TEST', unused_constant(), "10071_3_102_956112_TEST.OCRG.GroupCode"), 10071_3_102_956112_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:21 AM
+Error al intentar Insertar Cliente desde 10071_3_102_956112_TEST hacia 10071_ENC_VITAL_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_956112_TEST"."ICgrupoSN": line 20 col 5 (at pos 938): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_ENC_VITAL_TEST', unused_constant(), "10071_3_102_956112_TEST.OCRG.GroupCode"), 10071_3_102_956112_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:21 AM
+Error al intentar Insertar Cliente desde 10071_3_102_956112_TEST hacia 10071_AVECENTRAL_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_956112_TEST"."ICgrupoSN": line 8 col 5 (at pos 179): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_AVECENTRAL_TEST', unused_constant(), "10071_3_102_956112_TEST.OCRG.GroupCode"), 10071_3_102_956112_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:21 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957626_TEST hacia 10071_HOGAR_IDEAL_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957626_TEST"."ICgrupoSN": line 32 col 5 (at pos 1693): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_HOGAR_IDEAL_TEST', unused_constant(), "10071_3_102_957626_TEST.OCRG.GroupCode"), 10071_3_102_957626_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:22 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957626_TEST hacia 10071_DEPORTES_SUR_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957626_TEST"."ICgrupoSN": line 12 col 5 (at pos 437): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_DEPORTES_SUR_TEST', unused_constant(), "10071_3_102_957626_TEST.OCRG.GroupCode"), 10071_3_102_957626_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:22 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957626_TEST hacia 10071_OMDO_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957626_TEST"."ICgrupoSN": line 36 col 5 (at pos 1947): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_OMDO_TEST', unused_constant(), "10071_3_102_957626_TEST.OCRG.GroupCode"), 10071_3_102_957626_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:22 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957626_TEST hacia 10071_NEDN_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957626_TEST"."ICgrupoSN": line 28 col 5 (at pos 1442): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_NEDN_TEST', unused_constant(), "10071_3_102_957626_TEST.OCRG.GroupCode"), 10071_3_102_957626_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:22 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957626_TEST hacia 10071_FLORES_DEP_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957626_TEST"."ICgrupoSN": line 24 col 5 (at pos 1192): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_FLORES_DEP_TEST', unused_constant(), "10071_3_102_957626_TEST.OCRG.GroupCode"), 10071_3_102_957626_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:22 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957626_TEST hacia 10071_ENC_VITAL_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957626_TEST"."ICgrupoSN": line 20 col 5 (at pos 938): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_ENC_VITAL_TEST', unused_constant(), "10071_3_102_957626_TEST.OCRG.GroupCode"), 10071_3_102_957626_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:22 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957626_TEST hacia 10071_AVECENTRAL_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957626_TEST"."ICgrupoSN": line 8 col 5 (at pos 179): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_AVECENTRAL_TEST', unused_constant(), "10071_3_102_957626_TEST.OCRG.GroupCode"), 10071_3_102_957626_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:23 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957515_TEST hacia 10071_HOGAR_IDEAL_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957515_TEST"."ICgrupoSN": line 32 col 5 (at pos 1693): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_HOGAR_IDEAL_TEST', unused_constant(), "10071_3_102_957515_TEST.OCRG.GroupCode"), 10071_3_102_957515_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:23 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957515_TEST hacia 10071_DEPORTES_SUR_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957515_TEST"."ICgrupoSN": line 12 col 5 (at pos 437): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_DEPORTES_SUR_TEST', unused_constant(), "10071_3_102_957515_TEST.OCRG.GroupCode"), 10071_3_102_957515_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:23 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957515_TEST hacia 10071_OMDO_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957515_TEST"."ICgrupoSN": line 36 col 5 (at pos 1947): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_OMDO_TEST', unused_constant(), "10071_3_102_957515_TEST.OCRG.GroupCode"), 10071_3_102_957515_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:23 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957515_TEST hacia 10071_NEDN_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957515_TEST"."ICgrupoSN": line 28 col 5 (at pos 1442): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_NEDN_TEST', unused_constant(), "10071_3_102_957515_TEST.OCRG.GroupCode"), 10071_3_102_957515_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:23 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957515_TEST hacia 10071_FLORES_DEP_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957515_TEST"."ICgrupoSN": line 24 col 5 (at pos 1192): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_FLORES_DEP_TEST', unused_constant(), "10071_3_102_957515_TEST.OCRG.GroupCode"), 10071_3_102_957515_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:24 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957515_TEST hacia 10071_ENC_VITAL_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957515_TEST"."ICgrupoSN": line 20 col 5 (at pos 938): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_ENC_VITAL_TEST', unused_constant(), "10071_3_102_957515_TEST.OCRG.GroupCode"), 10071_3_102_957515_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:24 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957515_TEST hacia 10071_AVECENTRAL_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957515_TEST"."ICgrupoSN": line 8 col 5 (at pos 179): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_AVECENTRAL_TEST', unused_constant(), "10071_3_102_957515_TEST.OCRG.GroupCode"), 10071_3_102_957515_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 10:57:24 AM
+Error al actualizar método SOCIOTODAS en la bd Destino 10071_3_102_957626_TEST, origen 10071_EMDE_TEST:  [OCRD.GroupCode] , 'Linked value -1 does not exist' CL0026000/ Hora: 10:57:37 AM
+Error al actualizar método SOCIOTODAS en la bd Destino 10071_3_102_957515_TEST, origen 10071_EMDE_TEST:  [OCRD.GroupCode] , 'Linked value -1 does not exist' CL0026000/ Hora: 10:57:43 AM
+Cliente actualizado origen 10071_3_102_957515_TEST,  Destino 10071_HOGAR_IDEAL_TEST : PRUEBAS001/ Hora: 10:57:50 AM
+Cliente actualizado origen 10071_3_102_957515_TEST,  Destino 10071_DEPORTES_SUR_TEST : PRUEBAS001/ Hora: 10:57:54 AM
+Cliente actualizado origen 10071_3_102_957515_TEST,  Destino 10071_OMDO_TEST : PRUEBAS001/ Hora: 10:57:57 AM
+Cliente actualizado origen 10071_3_102_957515_TEST,  Destino 10071_NEDN_TEST : PRUEBAS001/ Hora: 10:58:01 AM
+Cliente actualizado origen 10071_3_102_957515_TEST,  Destino 10071_FLORES_DEP_TEST : PRUEBAS001/ Hora: 10:58:04 AM
+Cliente actualizado origen 10071_3_102_957515_TEST,  Destino 10071_ENC_VITAL_TEST : PRUEBAS001/ Hora: 10:58:07 AM
+Cliente actualizado origen 10071_3_102_957515_TEST,  Destino 10071_AVECENTRAL_TEST : PRUEBAS001/ Hora: 10:58:10 AM
+Error insertando grupo en la base destino 10071_3_102_957515_TEST: Invalid session or session already timeout. 225/ Hora: 11:08:15 AM
+Error insertando grupo en la base destino 10071_3_102_957515_TEST: Invalid session or session already timeout. 103/ Hora: 11:08:15 AM
+Error insertando grupo en la base destino 10071_3_102_957515_TEST: Invalid session or session already timeout. 293/ Hora: 11:08:15 AM
+Error actualizando artículo PRUEBA-2 en 10071_FLORES_DEP_TEST: Entity with value('PRUEBA-2') does not exist PRUEBA-2/ Hora: 11:08:21 AM
+Error al intentar Insertar Cliente desde 10071_ENC_VITAL_TEST hacia 10071_3_102_956112_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_ENC_VITAL_TEST"."ICcondicionesSN": line 44 col 5 (at pos 2424): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_3_102_956112_TEST', unused_constant(), "10071_ENC_VITAL_TEST.OCTG.GroupNum"), 10071_ENC_VITAL_TEST.OCTG.GroupNum = -1[int]
+/ Hora: 11:08:28 AM
+Error al intentar Insertar Cliente desde 10071_ENC_VITAL_TEST hacia 10071_3_102_957626_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_ENC_VITAL_TEST"."ICcondicionesSN": line 54 col 5 (at pos 2966): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_3_102_957626_TEST', unused_constant(), "10071_ENC_VITAL_TEST.OCTG.GroupNum"), 10071_ENC_VITAL_TEST.OCTG.GroupNum = -1[int]
+/ Hora: 11:08:29 AM
+Error CrearSOCIOTODAS en la base destinno 10071_HOGAR_IDEAL_TEST, origen10071_EMDE_TEST :  [OCRD.GroupCode] , 'Linked value -1 does not exist' CL0026000/ Hora: 11:08:31 AM
+Error CrearSOCIOTODAS en la base destinno 10071_DEPORTES_SUR_TEST, origen10071_EMDE_TEST :  [OCRD.GroupCode] , 'Linked value -1 does not exist' CL0026000/ Hora: 11:08:36 AM
+Error CrearSOCIOTODAS en la base destinno 10071_OMDO_TEST, origen10071_EMDE_TEST :  [OCRD.GroupCode] , 'Linked value -1 does not exist' CL0026000/ Hora: 11:08:39 AM
+Error CrearSOCIOTODAS en la base destinno 10071_NEDN_TEST, origen10071_EMDE_TEST :  [OCRD.GroupCode] , 'Linked value -1 does not exist' CL0026000/ Hora: 11:08:42 AM
+Error CrearSOCIOTODAS en la base destinno 10071_FLORES_DEP_TEST, origen10071_EMDE_TEST :  [OCRD.GroupCode] , 'Linked value -1 does not exist' CL0026000/ Hora: 11:08:46 AM
+Error CrearSOCIOTODAS en la base destinno 10071_ENC_VITAL_TEST, origen10071_EMDE_TEST :  [OCRD.GroupCode] , 'Linked value -1 does not exist' CL0026000/ Hora: 11:08:49 AM
+Error CrearSOCIOTODAS en la base destinno 10071_AVECENTRAL_TEST, origen10071_EMDE_TEST :  [OCRD.GroupCode] , 'Linked value -1 does not exist' CL0026000/ Hora: 11:08:52 AM
+Error al intentar Insertar Cliente desde 10071_3_102_956112_TEST hacia 10071_HOGAR_IDEAL_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_956112_TEST"."ICgrupoSN": line 32 col 5 (at pos 1693): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_HOGAR_IDEAL_TEST', unused_constant(), "10071_3_102_956112_TEST.OCRG.GroupCode"), 10071_3_102_956112_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:54 AM
+Error al intentar Insertar Cliente desde 10071_3_102_956112_TEST hacia 10071_DEPORTES_SUR_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_956112_TEST"."ICgrupoSN": line 12 col 5 (at pos 437): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_DEPORTES_SUR_TEST', unused_constant(), "10071_3_102_956112_TEST.OCRG.GroupCode"), 10071_3_102_956112_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:54 AM
+Error al intentar Insertar Cliente desde 10071_3_102_956112_TEST hacia 10071_OMDO_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_956112_TEST"."ICgrupoSN": line 36 col 5 (at pos 1947): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_OMDO_TEST', unused_constant(), "10071_3_102_956112_TEST.OCRG.GroupCode"), 10071_3_102_956112_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:54 AM
+Error al intentar Insertar Cliente desde 10071_3_102_956112_TEST hacia 10071_NEDN_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_956112_TEST"."ICgrupoSN": line 28 col 5 (at pos 1442): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_NEDN_TEST', unused_constant(), "10071_3_102_956112_TEST.OCRG.GroupCode"), 10071_3_102_956112_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:55 AM
+Error al intentar Insertar Cliente desde 10071_3_102_956112_TEST hacia 10071_FLORES_DEP_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_956112_TEST"."ICgrupoSN": line 24 col 5 (at pos 1192): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_FLORES_DEP_TEST', unused_constant(), "10071_3_102_956112_TEST.OCRG.GroupCode"), 10071_3_102_956112_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:55 AM
+Error al intentar Insertar Cliente desde 10071_3_102_956112_TEST hacia 10071_ENC_VITAL_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_956112_TEST"."ICgrupoSN": line 20 col 5 (at pos 938): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_ENC_VITAL_TEST', unused_constant(), "10071_3_102_956112_TEST.OCRG.GroupCode"), 10071_3_102_956112_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:55 AM
+Error al intentar Insertar Cliente desde 10071_3_102_956112_TEST hacia 10071_AVECENTRAL_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_956112_TEST"."ICgrupoSN": line 8 col 5 (at pos 179): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_AVECENTRAL_TEST', unused_constant(), "10071_3_102_956112_TEST.OCRG.GroupCode"), 10071_3_102_956112_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:55 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957626_TEST hacia 10071_HOGAR_IDEAL_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957626_TEST"."ICgrupoSN": line 32 col 5 (at pos 1693): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_HOGAR_IDEAL_TEST', unused_constant(), "10071_3_102_957626_TEST.OCRG.GroupCode"), 10071_3_102_957626_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:56 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957626_TEST hacia 10071_DEPORTES_SUR_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957626_TEST"."ICgrupoSN": line 12 col 5 (at pos 437): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_DEPORTES_SUR_TEST', unused_constant(), "10071_3_102_957626_TEST.OCRG.GroupCode"), 10071_3_102_957626_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:56 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957626_TEST hacia 10071_OMDO_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957626_TEST"."ICgrupoSN": line 36 col 5 (at pos 1947): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_OMDO_TEST', unused_constant(), "10071_3_102_957626_TEST.OCRG.GroupCode"), 10071_3_102_957626_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:56 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957626_TEST hacia 10071_NEDN_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957626_TEST"."ICgrupoSN": line 28 col 5 (at pos 1442): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_NEDN_TEST', unused_constant(), "10071_3_102_957626_TEST.OCRG.GroupCode"), 10071_3_102_957626_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:56 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957626_TEST hacia 10071_FLORES_DEP_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957626_TEST"."ICgrupoSN": line 24 col 5 (at pos 1192): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_FLORES_DEP_TEST', unused_constant(), "10071_3_102_957626_TEST.OCRG.GroupCode"), 10071_3_102_957626_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:56 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957626_TEST hacia 10071_ENC_VITAL_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957626_TEST"."ICgrupoSN": line 20 col 5 (at pos 938): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_ENC_VITAL_TEST', unused_constant(), "10071_3_102_957626_TEST.OCRG.GroupCode"), 10071_3_102_957626_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:56 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957626_TEST hacia 10071_AVECENTRAL_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957626_TEST"."ICgrupoSN": line 8 col 5 (at pos 179): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_AVECENTRAL_TEST', unused_constant(), "10071_3_102_957626_TEST.OCRG.GroupCode"), 10071_3_102_957626_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:56 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957515_TEST hacia 10071_HOGAR_IDEAL_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957515_TEST"."ICgrupoSN": line 32 col 5 (at pos 1693): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_HOGAR_IDEAL_TEST', unused_constant(), "10071_3_102_957515_TEST.OCRG.GroupCode"), 10071_3_102_957515_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:57 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957515_TEST hacia 10071_DEPORTES_SUR_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957515_TEST"."ICgrupoSN": line 12 col 5 (at pos 437): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_DEPORTES_SUR_TEST', unused_constant(), "10071_3_102_957515_TEST.OCRG.GroupCode"), 10071_3_102_957515_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:57 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957515_TEST hacia 10071_OMDO_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957515_TEST"."ICgrupoSN": line 36 col 5 (at pos 1947): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_OMDO_TEST', unused_constant(), "10071_3_102_957515_TEST.OCRG.GroupCode"), 10071_3_102_957515_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:57 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957515_TEST hacia 10071_NEDN_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957515_TEST"."ICgrupoSN": line 28 col 5 (at pos 1442): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_NEDN_TEST', unused_constant(), "10071_3_102_957515_TEST.OCRG.GroupCode"), 10071_3_102_957515_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:57 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957515_TEST hacia 10071_FLORES_DEP_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957515_TEST"."ICgrupoSN": line 24 col 5 (at pos 1192): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_FLORES_DEP_TEST', unused_constant(), "10071_3_102_957515_TEST.OCRG.GroupCode"), 10071_3_102_957515_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:57 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957515_TEST hacia 10071_ENC_VITAL_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957515_TEST"."ICgrupoSN": line 20 col 5 (at pos 938): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_ENC_VITAL_TEST', unused_constant(), "10071_3_102_957515_TEST.OCRG.GroupCode"), 10071_3_102_957515_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:57 AM
+Error al intentar Insertar Cliente desde 10071_3_102_957515_TEST hacia 10071_AVECENTRAL_TEST : ERROR [S1000] [SAP AG][LIBODBCHDB DLL][HDBODBC] General error;1299 no data found: search table error: exception 71001299: exception 71001299: "10071_3_102_957515_TEST"."ICgrupoSN": line 8 col 5 (at pos 179): 
+;[here]evali(unused_constant(), unused_constant(), unused_constant(), unused_constant(), unused_constant(), '10071_AVECENTRAL_TEST', unused_constant(), "10071_3_102_957515_TEST.OCRG.GroupCode"), 10071_3_102_957515_TEST.OCRG.GroupCode = 100[int]
+/ Hora: 11:08:58 AM
+Error al actualizar método SOCIOTODAS en la bd Destino 10071_3_102_957626_TEST, origen 10071_EMDE_TEST:  [OCRD.GroupCode] , 'Linked value -1 does not exist' CL0026000/ Hora: 11:09:09 AM
+Error al actualizar método SOCIOTODAS en la bd Destino 10071_3_102_957515_TEST, origen 10071_EMDE_TEST:  [OCRD.GroupCode] , 'Linked value -1 does not exist' CL0026000/ Hora: 11:09:14 AM
+Cliente actualizado origen 10071_3_102_957515_TEST,  Destino 10071_HOGAR_IDEAL_TEST : PRUEBAS001/ Hora: 11:09:19 AM
+Cliente actualizado origen 10071_3_102_957515_TEST,  Destino 10071_DEPORTES_SUR_TEST : PRUEBAS001/ Hora: 11:09:23 AM
+Cliente actualizado origen 10071_3_102_957515_TEST,  Destino 10071_OMDO_TEST : PRUEBAS001/ Hora: 11:09:26 AM
+Cliente actualizado origen 10071_3_102_957515_TEST,  Destino 10071_NEDN_TEST : PRUEBAS001/ Hora: 11:09:29 AM
+Cliente actualizado origen 10071_3_102_957515_TEST,  Destino 10071_FLORES_DEP_TEST : PRUEBAS001/ Hora: 11:09:32 AM
+Cliente actualizado origen 10071_3_102_957515_TEST,  Destino 10071_ENC_VITAL_TEST : PRUEBAS001/ Hora: 11:09:35 AM
+Cliente actualizado origen 10071_3_102_957515_TEST,  Destino 10071_AVECENTRAL_TEST : PRUEBAS001/ Hora: 11:09:39 AM

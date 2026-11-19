@@ -1,4 +1,0 @@
-﻿Error actualizando artículo JBALON001-#3.5-DO en 10071_HOGAR_IDEAL: Unrecognized resource path. JBALON001-#3.5-DO/ Hora: 14:32:08 PM
-Error actualizando artículo JBALON002-#5-BN en 10071_HOGAR_IDEAL: Unrecognized resource path. JBALON002-#5-BN/ Hora: 14:51:28 PM
-[15:40:48 PM] Error en el proceso de actualizar artículos en bdDestino 10071_HOGAR_IDEAL, ERROR [42000] [SAP AG][LIBODBCHDB DLL][HDBODBC] Syntax error or access violation;257 sql syntax error: incorrect syntax near "/": line 95 col 113 (at pos 7034)
-[15:41:12 PM] Error en el proceso de actualizar artículos en bdDestino 10071_DEPORTES_SUR, ERROR [42000] [SAP AG][LIBODBCHDB DLL][HDBODBC] Syntax error or access violation;257 sql syntax error: incorrect syntax near "/": line 95 col 114 (at pos 7034)

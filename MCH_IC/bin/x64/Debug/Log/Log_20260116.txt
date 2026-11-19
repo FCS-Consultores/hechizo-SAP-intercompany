@@ -1,1 +1,0 @@
-﻿Error actualizando artículo JC-C26-NG1-10 en 10071_ENC_VITAL_TEST: CServiceData::SetPropertyValue failed; Value must be a whole number in property 'ItemsGroupCode' of 'Item' JC-C26-NG1-10/ Hora: 10:54:50 AM

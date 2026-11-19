@@ -256,7 +256,7 @@ namespace Inter_Hechiz.Data
             {
                 R.Codigo = -1;
                 R.Mensaje = "Alerta: " + ex.Message;
-                objRegistraLog.Graba("Error condicionespago : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+                objRegistraLog.Graba($"Error al crear condicionespago hacia {bdDestino}: " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
             }
         }
 
@@ -268,6 +268,7 @@ namespace Inter_Hechiz.Data
         /// <param name="bdOrigen"></param>
         /// <param name="bdDestino"></param>
         /// <param name="tokenDestino"></param>
+        /// 
         public static void ProcesarEnPagoRecibido(string bdOrigen, string bdDestino, string tokenDestino)
         {
 
@@ -520,7 +521,7 @@ namespace Inter_Hechiz.Data
             catch (Exception ex)
             {
 
-                objRegistraLog.Graba($"[{DateTime.Now.ToString("HH: mm:ss tt")}]Crendo la solicCompra, {ex.Message}");
+                objRegistraLog.Graba($"[{DateTime.Now.ToString("HH: mm:ss tt")}]Crendo la solicCompra en {bdOrigen}, {ex.Message}");
             }
         }
 
@@ -644,7 +645,7 @@ namespace Inter_Hechiz.Data
             catch (Exception ex)
             {
 
-                objRegistraLog.Graba($"[{DateTime.Now.ToString("HH: mm:ss tt")}]Error al OrdVenta, {ex.Message}");
+                objRegistraLog.Graba($"[{DateTime.Now.ToString("HH: mm:ss tt")}]Error al OrdVenta hacia {BdHechizo}, {ex.Message}");
             }
         }
 
@@ -687,7 +688,7 @@ namespace Inter_Hechiz.Data
                                      ,""U_DocEntryOrigen""
                                      ,""U_OrigenIntercompany""
                                      FROM ""{BdHechizo}"".ORDR 
-                                     WHERE ""CANCELED"" = 'N'  AND ""DocStatus"" = 'O'  AND  ""U_Estado"" = 'N' AND ( ""U_OrigenIntercompany"" = '{BdDest}' OR ""CardCode""  = '{CardCode}') ";
+                                     WHERE  ""CANCELED"" = 'N'  AND ""DocStatus"" = 'O'  AND  ""U_Estado"" = 'N' AND ( ""U_OrigenIntercompany"" = '{BdDest}' OR ""CardCode""  = '{CardCode}')";
 
 
                 using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
@@ -718,8 +719,8 @@ namespace Inter_Hechiz.Data
 
                                     if (!string.IsNullOrWhiteSpace(bdOrig))//vienen de un documento relacionado se debe de consultar la info de su documento base
                                     {
-                                        DocEntryProcesar = ConsultarDocEntrySolicitudCompra(conn, EntrySolitudHechizo, BdHechizo, "OPRQ");
-                                        StatusDoc = ConsultarStatusDoc(conn, DocEntryProcesar, BdDest, "OPRQ");
+                                        DocEntryProcesar = ConsultarDocEntrySolicitudCompra(conn, EntrySolitudHechizo, BdHechizo, "OPRQ"); //BdHechizo
+                                         StatusDoc = ConsultarStatusDoc(conn, DocEntryProcesar, BdDest, "OPRQ");
 
                                         tablaConsulta1 = "ORDR";//OPRQ
                                         tablaConsulta2 = "RDR1";
@@ -753,7 +754,7 @@ namespace Inter_Hechiz.Data
                                                   ,""GroupNum"" AS ""PaymentGroupCode""                                                
                                                   ,""U_OrigenIntercompany""
                                                  FROM {BDConsulta}.{tablaConsulta1} 
-                                                 EF WHERE ""CANCELED"" = 'N'  AND ""DocStatus"" = 'O' AND ""DocEntry"" = ? ";//""SlpCode"" AS ""SalesPersonCode""  ,""TrnspCode"" AS ""TransportationCode""
+                                                 EF WHERE ""CANCELED"" = 'N'   AND ""DocEntry"" = ? ";//""SlpCode"" AS ""SalesPersonCode""  ,""TrnspCode"" AS ""TransportationCode"" AND ""DocStatus"" = 'O'
 
 
 
@@ -829,7 +830,7 @@ namespace Inter_Hechiz.Data
 
                                         if (resul == 0) // Caso que inserto
                                         {
-                                            string query = $"UPDATE  \"{BdHechizo}\".\"ORDR\" SET \"U_Estado\" = 'Y', \"U_DocNumDestino\" = {ObjSap.DocNum}, \"U_DocEntryDestino\" = {ObjSap.DocEntry}  WHERE \"DocEntry\" = {En_Entry} ";
+                                            string query = $"UPDATE  \"{BdHechizo}\".\"ORDR\" SET \"U_Estado\" = 'Y', \"U_DocNumDestino\" = {ObjSap.DocNum}, \"U_DocEntryDestino\" = {ObjSap.DocEntry}, \"U_ComentarioError\" = NULL WHERE \"DocEntry\" = {En_Entry} ";
                                             OdbcCommand cmand = new OdbcCommand(query, conn);
                                             OdbcDataReader dr1 = cmand.ExecuteReader();
 
@@ -841,10 +842,10 @@ namespace Inter_Hechiz.Data
                                         else
                                         {
                                             string query = $"UPDATE  \"{BdHechizo}\".\"ORDR\" SET \"U_ComentarioError\" = '{RR.Replace("'", "")}', \"U_Estado\" = 'Y' WHERE \"DocEntry\" = {En_Entry}";
-                                            //OdbcCommand cmand = new OdbcCommand(query, conn);
-                                            //OdbcDataReader dr1 = cmand.ExecuteReader();
+                                            OdbcCommand cmand = new OdbcCommand(query, conn);
+                                            OdbcDataReader dr1 = cmand.ExecuteReader();
 
-                                            //objRegistraLog.Graba($"[{DateTime.Now.ToString("HH:mm:ss tt")}] Error creando la Factura de proveedor en {BdDest} con el docNum factura deudor {DocNum}: " + RR.Replace("'", ""));
+                                            objRegistraLog.Graba($"[{DateTime.Now.ToString("HH:mm:ss tt")}] Error creando la Factura de proveedor en {BdDest} con el docNum factura deudor {DocNum}: " + RR.Replace("'", ""));
                                         }
                                     }
                                     else
@@ -875,7 +876,7 @@ namespace Inter_Hechiz.Data
             catch (Exception ex)
             {
 
-                objRegistraLog.Graba($"[{DateTime.Now.ToString("HH: mm:ss tt")}]Error en Orden Compra, {ex.Message}");
+                objRegistraLog.Graba($"[{DateTime.Now.ToString("HH: mm:ss tt")}]Error en Orden Compra hacia {bdDestino}, {ex.Message}");
             }
         }
 
@@ -1099,7 +1100,7 @@ namespace Inter_Hechiz.Data
             catch (Exception ex)
             {
 
-                objRegistraLog.Graba($"[{DateTime.Now.ToString("HH: mm:ss tt")}]Error en Orden Compra, {ex.Message}");
+                objRegistraLog.Graba($"[{DateTime.Now.ToString("HH: mm:ss tt")}]Error en Orden Compra hacia {bdDestino}, {ex.Message}");
             }
         }
 
@@ -1141,7 +1142,7 @@ namespace Inter_Hechiz.Data
                                      ,DF.""BaseEntry""
                                      FROM {BdHechizo}.OINV EF
                                      JOIN {BdHechizo}.INV1 DF ON EF.""DocEntry"" = DF.""DocEntry"" 
-                                     WHERE ""CANCELED"" = 'N'  AND ""DocStatus"" = 'O' AND  ""U_Estado"" = 'N' AND DF.""BaseType"" = 17 AND (""U_OrigenIntercompany"" = '{BdDest}' OR ""CardCode"" = ?)";
+                                     WHERE ""CANCELED"" = 'N'  AND ""DocStatus"" = 'O' AND  ""U_Estado"" = 'N' AND DF.""BaseType"" = 17 AND (""U_OrigenIntercompany"" = '{BdDest}' OR ""CardCode"" = ?)";//
 
                 QueryOrdComp = $@"SELECT 
                                   ""DocEntry""  AS ""U_DocEntryOrigen""
@@ -1293,7 +1294,7 @@ namespace Inter_Hechiz.Data
             }
             catch (Exception ex)
             {
-                objRegistraLog.Graba($"[{DateTime.Now.ToString("HH: mm:ss tt")}]Error al procesar las facturas Provedor en bdDestino, {ex.Message}");
+                objRegistraLog.Graba($"[{DateTime.Now.ToString("HH: mm:ss tt")}]Error al procesar las facturas Provedor en bdDestino {bdDestino}, {ex.Message}");
             }
         }
 
@@ -1432,7 +1433,7 @@ namespace Inter_Hechiz.Data
 
                                         if (resul == 0) // Caso que inserto
                                         {
-                                            string query = $"UPDATE  \"{BdHechizo}\".\"ORIN\" SET \"U_Estado\" = 'Y', \"U_DocNumDestino\" = {ObjSap.DocNum}, \"U_DocEntryDestino\" = {ObjSap.DocEntry}  WHERE \"DocEntry\" = {En_Entry} ";
+                                            string query = $"UPDATE  \"{BdHechizo}\".\"ORIN\" SET \"U_Estado\" = 'Y', \"U_DocNumDestino\" = {ObjSap.DocNum}, \"U_DocEntryDestino\" = {ObjSap.DocEntry}, \"U_ComentarioError\" = NULL WHERE \"DocEntry\" = {En_Entry} ";
                                             OdbcCommand cmand = new OdbcCommand(query, conn);
                                             OdbcDataReader dr1 = cmand.ExecuteReader();
                                         }
@@ -1474,7 +1475,7 @@ namespace Inter_Hechiz.Data
             catch (Exception ex)
             {
 
-                objRegistraLog.Graba($"[{DateTime.Now.ToString("HH: mm:ss tt")}]Error en NotasCredProve, {ex.Message}");
+                objRegistraLog.Graba($"[{DateTime.Now.ToString("HH: mm:ss tt")}]Error en NotasCredProve hacia {bdDestino}, {ex.Message}");
             }
         }
 
@@ -1620,7 +1621,7 @@ namespace Inter_Hechiz.Data
 
                                         if (resul == 0) // Caso que inserto
                                         {
-                                            string query = $"UPDATE  \"{BdHechizo}\".\"ORIN\" SET \"U_Estado\" = 'Y', \"U_DocNumDestino\" = {ObjSap.DocNum}, \"U_DocEntryDestino\" = {ObjSap.DocEntry}  WHERE \"DocEntry\" = {En_Entry} ";
+                                            string query = $"UPDATE  \"{BdHechizo}\".\"ORIN\" SET \"U_Estado\" = 'Y', \"U_DocNumDestino\" = {ObjSap.DocNum}, \"U_DocEntryDestino\" = {ObjSap.DocEntry}, \"U_ComentarioError\" = NULL  WHERE \"DocEntry\" = {En_Entry} ";
                                             OdbcCommand cmand = new OdbcCommand(query, conn);
                                             OdbcDataReader dr1 = cmand.ExecuteReader();
                                         }
@@ -1662,7 +1663,7 @@ namespace Inter_Hechiz.Data
             catch (Exception ex)
             {
 
-                objRegistraLog.Graba($"[{DateTime.Now.ToString("HH: mm:ss tt")}]Error en NotasCredProve, {ex.Message}");
+                objRegistraLog.Graba($"[{DateTime.Now.ToString("HH: mm:ss tt")}]Error en NotasCredProve hacia bd {bdDestino}, {ex.Message}");
             }
         }
 
@@ -1825,7 +1826,6 @@ namespace Inter_Hechiz.Data
                                 }
                                 catch (Exception ex)
                                 {
-
                                     objRegistraLog.Graba($"[{DateTime.Now.ToString("HH: mm:ss tt")}]Error al Actualizar las OrdCompra hacia BdDestino {BdDest}, {ex.Message}");
                                 }
 
@@ -2061,8 +2061,7 @@ namespace Inter_Hechiz.Data
                                 ,""Address""
                                 ,""U_DocEntryDestino""
                                 FROM {BdHechizo}.OINV
-                                EF WHERE ""CANCELED"" = 'N'  AND ""DocStatus"" = 'O' AND ""U_Actualiza"" = 'Y' AND ""CardCode"" = '{CardCode}' "; //,""SlpCode"" AS ""SalesPersonCode"" ,""DiscPrcnt"" AS ""DiscountPercent""
-
+                                EF WHERE ""CANCELED"" = 'N'  AND ""DocStatus"" = 'O' AND ""U_Actualiza"" = 'Y' AND ""CardCode"" = '{CardCode}'";
 
 
 
@@ -2150,7 +2149,6 @@ namespace Inter_Hechiz.Data
                                         objRegistraLog.Graba($"[{DateTime.Now.ToString("HH:mm:ss tt")}] Sin Actualizar: No fue posible Actualizar la Factura {DocNum} en  {BdDest} ya sea porque no se encontró el docentry relacionado: {DocEntryProcesar}  o el documento relacionado esta cerrado o cancelado");
                                     }
 
-
                                 }
                                 catch (Exception ex)
                                 {
@@ -2210,7 +2208,7 @@ namespace Inter_Hechiz.Data
             {
                 R.Codigo = -1;
                 R.Mensaje = "Alerta: " + ex.Message;
-                objRegistraLog.Graba("Error al intentar Insertar Fabricante : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));
+                objRegistraLog.Graba($"Error al intentar Insertar Fabricante en {bdDestino} : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));
             }
             return R;
         }
@@ -2236,7 +2234,7 @@ namespace Inter_Hechiz.Data
                 }
                 else
                 {
-                    objRegistraLog.Graba($"Error insertando grupo en la base destinno {bdDestino}: " + RR + " " + ItemGroups + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));
+                    objRegistraLog.Graba($"Error insertando grupo en la base destino {bdDestino}: " + RR + " " + ItemGroups + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));
 
 
                     Inserterror(bdDestino, "OITB", ItemGroups);
@@ -2248,7 +2246,7 @@ namespace Inter_Hechiz.Data
             {
                 R.Codigo = -1;
                 R.Mensaje = "Alerta: " + ex.Message;
-                objRegistraLog.Graba("Error al intentar Insertar grupo : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+                objRegistraLog.Graba($"Error al intentar Insertar grupo en {bdDestino} : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
             }
             return R;
         }
@@ -2286,7 +2284,7 @@ namespace Inter_Hechiz.Data
             {
                 R.Codigo = -1;
                 R.Mensaje = "Alerta: " + ex.Message;
-                objRegistraLog.Graba("Error al intentar Insertar grupo : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+                objRegistraLog.Graba($"Error al intentar Insertar grupo en {bdDestino} : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
             }
             return R;
         }
@@ -2323,7 +2321,7 @@ namespace Inter_Hechiz.Data
             {
                 R.Codigo = -1;
                 R.Mensaje = "Alerta: " + ex.Message;
-                objRegistraLog.Graba("Error al intentar Insertar grupo : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+                objRegistraLog.Graba($"Error al intentar Insertar grupo en bd destino {bdDestino} : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
             }
             return R;
         }
@@ -2497,7 +2495,6 @@ namespace Inter_Hechiz.Data
                                         LiberaMemoria.FlushMemory();
                                     }
                                 }
-
                                 conn2.Close();
                             }
                         }
@@ -2528,7 +2525,6 @@ namespace Inter_Hechiz.Data
                 string UrlServiceLayer = IniFil.LeerINI("ServiceLayer", "UrlSL");
                 string stUSUARIO = IniFil.LeerINI("ConexionHanaProd", "UserSL");
                 string stPASSWORD = IniFil.LeerINI("ConexionHanaProd", "PassSL");
-                string columnaActualizaDest = ConsultarColumna(bdDestino);
                 string columnaGrpArtDest = ConsultarGrpArt(bdDestino);
                 string bdDest = ConsultarBD(bdDestino);
 
@@ -2802,7 +2798,7 @@ namespace Inter_Hechiz.Data
             {
                 R.Codigo = -1;
                 R.Mensaje = "Alerta: " + ex.Message;
-                objRegistraLog.Graba("Error al intentar Insertar articulo : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+                objRegistraLog.Graba($"Error al intentar Insertar articulo en bd destino {bdDestino}: " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
             }
             return R;
         }
@@ -2825,7 +2821,7 @@ namespace Inter_Hechiz.Data
 
                 using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
                 {
-                    string queryArt = $@"SELECT
+                    string queryArt = $@"SELECT 
                                         IO.""ItemCode"" as ""ItemCode""
                                         ,IO.""ItemName"" as ""ItemName""
                                         ,IO.""FrgnName"" as ""ForeignName""
@@ -2920,13 +2916,13 @@ namespace Inter_Hechiz.Data
                                         ,IO.""QryGroup62"" AS ""Properties62""
                                         ,IO.""QryGroup64"" AS ""Properties64""
                                         FROM ""{Conexion.BD_Hechizo}"".OITM IO
-                                        LEFT JOIN ""{bdDest}"".OITM MM ON IO.""ItemCode"" = MM.""ItemCode""
                                         LEFT JOIN ""_SYS_BIC"".""{Conexion.BD_Hechizo}/IC_GRP_CODE_FAMILIA"" GRPART ON GRPART.""COD_HCHZ"" = IO.""ItmsGrpCod""
                                         LEFT JOIN ""{Conexion.BD_Hechizo}"".OSHP F ON F.""TrnspCode"" = IO.""ShipType""
                                         WHERE
                                              IO.""U_ENVIOSUC"" = 'Y'
-                                            AND IO.""{columnaActualizaDest}"" = 'Y'
-                                            AND IO.""ItemType"" <> 'F'";
+                                             AND IO.""{columnaActualizaDest}"" = 'Y'
+                                             AND IO.""ItemType"" <> 'F'";
+                                            
 
 
                     string queryPList = $@"SELECT  ""PriceList""
@@ -3094,7 +3090,7 @@ namespace Inter_Hechiz.Data
             {
                 R.Codigo = -1;
                 R.Mensaje = "Alerta: " + ex.Message;
-                objRegistraLog.Graba("Error al intentar Insertar vendedor : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+                objRegistraLog.Graba($"Error al intentar Insertar vendedor en {bdDestino} : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
             }
             return R;
         }
@@ -3195,7 +3191,7 @@ namespace Inter_Hechiz.Data
             {
                 R.Codigo = -1;
                 R.Mensaje = "Alerta: " + ex.Message;
-                objRegistraLog.Graba("Error al intentar actualizar vendedor : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+                objRegistraLog.Graba($"Error al intentar actualizar vendedor en {bdDestino}: " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
             }
             return R;
         }
@@ -3286,7 +3282,7 @@ namespace Inter_Hechiz.Data
             {
                 R.Codigo = -1;
                 R.Mensaje = "Alerta: " + ex.Message;
-                objRegistraLog.Graba("Error al intentar Insertar Empleado : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+                objRegistraLog.Graba($"Error al intentar Insertar Empleado en {bdDestino} : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
             }
             return R;
         }
@@ -3371,7 +3367,7 @@ namespace Inter_Hechiz.Data
                                 }
                                 else
                                 {
-                                    objRegistraLog.Graba($"Error actualizando el vendedor  {empleado} en la bdDestino {bdDestino}: " + RR + " " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));
+                                    objRegistraLog.Graba($"Error actualizando el Empleado  {empleado} en la bdDestino {bdDestino}: " + RR + " " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));
 
                                     Inserterror(bdDestino, "OHEM", empleado);
                                 }
@@ -3389,7 +3385,7 @@ namespace Inter_Hechiz.Data
             {
                 R.Codigo = -1;
                 R.Mensaje = "Alerta: " + ex.Message;
-                objRegistraLog.Graba("Error al intentar actualizar vendedor : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+                objRegistraLog.Graba($"Error al intentar actualizar vendedor en {bdDestino} : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
             }
             return R;
         }
@@ -3597,7 +3593,7 @@ namespace Inter_Hechiz.Data
             {
                 R.Codigo = -1;
                 R.Mensaje = "Alerta: " + ex.Message;
-                objRegistraLog.Graba("Error al intentar Insertar articulo : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+                objRegistraLog.Graba($"Error al intentar Insertar articulo en {bdDestino} : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
             }
             return R;
         }
@@ -3727,7 +3723,7 @@ namespace Inter_Hechiz.Data
             {
                 R.Codigo = -1;
                 R.Mensaje = "Error: " + ex.Message;
-                objRegistraLog.Graba("Error Enhanced Discount Group: " + ex.Message);
+                objRegistraLog.Graba($"Error Enhanced Discount Group en {bdDestino}: " + ex.Message);
             }
 
             return R;
@@ -3737,6 +3733,7 @@ namespace Inter_Hechiz.Data
         {
             int resul = 0;
             int absEntry = 0;
+            
             Respuesta R = new Respuesta();
             IniFile IniFil;
             IniFil = new IniFile(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "/config.ini");
@@ -3794,7 +3791,7 @@ namespace Inter_Hechiz.Data
                                     JObject json = new JObject
                                 {
                                     { "AbsEntry", absEntry },
-                                    //{ "U_Version", absEntry },
+                                   // { "U_Version", absEntry },
                                     { "Type", dr["Type"].ToString() },
                                     { "ObjectCode", dr["ObjectCode"].ToString() },
                                     { "DiscountRelations", dr["DiscountRelations"].ToString() },
@@ -3865,6 +3862,10 @@ namespace Inter_Hechiz.Data
                                 {
                                     objRegistraLog.Graba("Enhanced Discount Group insertado: AbsEntry " + absEntry + " Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));
 
+                                    query = $"UPDATE  \"{bdDestino}\".\"OEDG\" SET \"U_Version\" = {absEntry} WHERE \"AbsEntry\" = {ObjSap.AbsEntry}";
+                                    OdbcCommand cmand = new OdbcCommand(query, conn);
+                                    OdbcDataReader dr1 = cmand.ExecuteReader();
+
                                 }
                                 else
                                 {
@@ -3886,7 +3887,7 @@ namespace Inter_Hechiz.Data
             {
                 R.Codigo = -1;
                 R.Mensaje = "Error: " + ex.Message;
-                objRegistraLog.Graba("Error Enhanced Discount Group: " + ex.Message);
+                objRegistraLog.Graba($"Error crear Enhanced Discount Group en {bdDestino}: " + ex.Message);
             }
 
             return R;
@@ -3908,7 +3909,8 @@ namespace Inter_Hechiz.Data
                 using (OdbcConnection connDet = new OdbcConnection(Conexion.strCon))
                 {
                     string query = $@"SELECT
-                                            H.""AbsEntry"",
+                                            D.""AbsEntry"",
+                                            H.""AbsEntry"" AS ""AbsEntryOrigen"",
                                             CASE H.""Type""
                                                 WHEN 'S' THEN 'dgt_SpecificBP'
                                                 WHEN 'C' THEN 'dgt_CustomerGroup'
@@ -3932,7 +3934,8 @@ namespace Inter_Hechiz.Data
                                             H.""ValidForm"" AS ""ValidFrom"",
                                             H.""ValidTo"" AS ""ValidTo""
                                         FROM ""{Conexion.BD_Hechizo}"".""OEDG"" H
-                                        WHERE S.""{columnaActualizaDest}"" = 'Y'
+                                        JOIN ""{bdDest}"".""OEDG"" D ON D.""U_Version""  = H.""AbsEntry""
+                                        WHERE H.""{columnaActualizaDest}"" = 'Y'
                                         ORDER BY H.""AbsEntry""";
 
                     OdbcCommand cmd = new OdbcCommand(query, conn);
@@ -3947,7 +3950,7 @@ namespace Inter_Hechiz.Data
                             if (dr.HasRows)
                             {
                                 absEntry = Convert.ToInt32(dr["AbsEntry"]);
-
+                               int absEntryOrig = Convert.ToInt32(dr["AbsEntryOrigen"]);
                                 // 3️⃣ ARMAR JSON ENCABEZADO
                                 JObject json = new JObject
                             {
@@ -3980,7 +3983,7 @@ namespace Inter_Hechiz.Data
                                                         L.""PayFor"" AS ""PaidQuantity"",
                                                         L.""ForFree"" AS ""FreeQuantity"",
                                                         L.""UpTo"" AS ""MaximumFreeQuantity""
-                                                                FROM {Conexion.BD_Hechizo}EDG1 L
+                                                                FROM {Conexion.BD_Hechizo}.""EDG1"" L
                                                                 WHERE L.""AbsEntry"" = ?
                                                                 ORDER BY
                                                                     L.""ObjType"",
@@ -4015,33 +4018,21 @@ namespace Inter_Hechiz.Data
 
                                 var myjs = json.ToString();
 
-                                //if ((existe == 0))
-                                //{
                                 // json.Remove("AbsEntry");--comentado desde el código de Hayde
                                 resul = EnviaSapPorBasicAuth("PATCH", json, $"{UrlServiceLayer}EnhancedDiscountGroups({absEntry})", TokenDetino);
 
-                                //}
-                                //else
-                                //{
-                                //    resul = EnviaSapPorBasicAuth("POST", json, $"{UrlServiceLayer}EnhancedDiscountGroups", TokenDetino);
-
-                                //}
-
                                 if (resul == 0)
                                 {
-                                    objRegistraLog.Graba("Enhanced Discount Group insertado: AbsEntry " + absEntry + " Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));
-
-                                    //if (bdDestino == Conexion.BD_desampa)
-                                    //{
-                                    //    query = $"UPDATE  \"{Conexion.BD_Hechizo}\".\"OEDG\" SET \"U_POS_SYNC\" = 'Y' WHERE \"AbsEntry\" =  " + absEntry + "";
-                                    //    OdbcCommand cmand = new OdbcCommand(query, conn);
-                                    //    OdbcDataReader dr1 = cmand.ExecuteReader();
-                                    //}
+                                    objRegistraLog.Graba("Enhanced Discount Group actualizado: AbsEntry " + absEntry + " Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));
+                                  
+                                    query = $"UPDATE  \"{Conexion.BD_Hechizo}\".\"OEDG\" SET \"{columnaActualizaDest}\" = 'N' WHERE \"AbsEntry\" =  " + absEntryOrig + "";
+                                    OdbcCommand cmand = new OdbcCommand(query, conn);
+                                    OdbcDataReader dr1 = cmand.ExecuteReader();
 
                                 }
                                 else
                                 {
-                                    objRegistraLog.Graba($"Error insertando Grp Descuentos en la BD Destino {bdDestino} AbsEntry {absEntry}: " + RR + " / " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));//
+                                    objRegistraLog.Graba($"Error actualizando Grp Descuentos en la BD Destino {bdDestino} AbsEntry {absEntry}: " + RR + " / " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));//
 
                                     Inserterror(bdDestino, "OEDG", absEntry.ToString());
                                 }
@@ -4059,7 +4050,7 @@ namespace Inter_Hechiz.Data
             {
                 R.Codigo = -1;
                 R.Mensaje = "Error: " + ex.Message;
-                objRegistraLog.Graba("Error Enhanced Discount Group: " + ex.Message);
+                objRegistraLog.Graba($"Error, actualizar Enhanced Discount Group en {bdDestino}: " + ex.Message);
             }
 
             return R;
@@ -4318,7 +4309,7 @@ namespace Inter_Hechiz.Data
 
 
                                                 /*
-                                                if (bdDestino == Conexion.BD_desampa)
+                                                if (bdDestino == Conexion.BD_metropoli)
                                                 {
                                                     string queryO = $"UPDATE  \"{bdOrigen}\".\"OCRD\" SET \"U_Enviado\" = '1' WHERE \"CardCode\" =  '" + cardCode + "'";
                                                     OdbcCommand cmand = new OdbcCommand(queryO, conn);
@@ -4326,7 +4317,7 @@ namespace Inter_Hechiz.Data
 
                                                 }
 
-                                                if (bdOrigen == Conexion.BD_desampa)
+                                                if (bdOrigen == Conexion.BD_metropoli)
                                                 {
 
                                                     string queryDD = $"UPDATE  \"{bdDestino}\".\"OCRD\" SET \"U_Enviado\" = '1' WHERE \"CardCode\" =  '" + cardCode + "'";
@@ -4366,7 +4357,7 @@ namespace Inter_Hechiz.Data
             {
                 R.Codigo = -1;
                 R.Mensaje = "Alerta: " + ex.Message;
-                objRegistraLog.Graba("Error al intentar Insertar Cliente : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
+                objRegistraLog.Graba($"Error al intentar Insertar Cliente desde {bdOrigen} hacia {bdDestino} : " + ex.Message + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));// grabar el error
             }
             return R;
         }
@@ -4621,7 +4612,7 @@ namespace Inter_Hechiz.Data
                                     OdbcCommand cmand1 = new OdbcCommand(querydes, conn);
                                     OdbcDataReader dR1 = cmand1.ExecuteReader();
 
-                                    if (bdDestino == Conexion.BD_desampa) //Si no soy la la última sucursal que recorre el Main
+                                    if (bdDestino == Conexion.BD_metropoli) //Si no soy la la última sucursal que recorre el Main
                                     {
                                         //actualizo la última sucursal que tiene le emprea Origen
                                         string queryD = $"UPDATE  \"{bdOrigen}\".\"OCRD\" SET \"U_Enviado\" = '1' WHERE \"CardCode\" =  '" + cacode + "'";
@@ -4630,7 +4621,7 @@ namespace Inter_Hechiz.Data
                                     }
 
                                     //Si soy la la última sucursal que recorre el Main Y Soy la última base del recorrido
-                                    if (bdOrigen == Conexion.BD_desampa && bdDestino == Conexion.BD_central)
+                                    if (bdOrigen == Conexion.BD_metropoli && bdDestino == Conexion.BD_jjmax)
                                     {
                                         //actualizo la última sucursal que tiene le emprea Origen
                                         string queryD = $"UPDATE  \"{bdOrigen}\".\"OCRD\" SET \"U_Enviado\" = '1' WHERE \"CardCode\" =  '" + cacode + "'";
@@ -5014,6 +5005,14 @@ namespace Inter_Hechiz.Data
                     sNameBd = IniFil.LeerINI("ConexionHanaProd", "desampa") ?? throw new ArgumentNullException("*desampa (ConsultarBD) no configurado en el archivo config*");
                     break;
 
+                case "jjmax":
+                    sNameBd = IniFil.LeerINI("ConexionHanaProd", "jjmax") ?? throw new ArgumentNullException("*jjmax (ConsultarBD) no configurado en el archivo config*");
+                    break;
+
+                case "metropoli":
+                    sNameBd = IniFil.LeerINI("ConexionHanaProd", "metropoli") ?? throw new ArgumentNullException("*metropoli (ConsultarBD) no configurado en el archivo config*");
+                    break;
+
                 default:
                     sNameBd = string.Empty;
                     break;
@@ -5069,13 +5068,24 @@ namespace Inter_Hechiz.Data
                     break;
 
                 case string s when s.Contains("HECHIZO"):
-                    sNameBd = IniFil.LeerINI("CodSocio", "ORIGEN") ?? throw new ArgumentNullException("*central (ConsultarCardCode) no configurado en el archivo config*");
+                    sNameBd = IniFil.LeerINI("CodSocio", "ORIGEN") ?? throw new ArgumentNullException("*hechizo (ConsultarCardCode) no configurado en el archivo config*");
                     break;
 
                 case "10071_3_102_956112":
                 case "DESAMPA":
-                    sNameBd = IniFil.LeerINI("CodSocio", "desampa") ?? throw new ArgumentNullException("*central (ConsultarCardCode) no configurado en el archivo config*");
+                    sNameBd = IniFil.LeerINI("CodSocio", "desampa") ?? throw new ArgumentNullException("*desampa (ConsultarCardCode) no configurado en el archivo config*");
                     break;
+
+                case string s when s.Contains("10071_3_102_957626"):
+                case "JJMAX":
+                    sNameBd = IniFil.LeerINI("CodSocio", "jjmax") ?? throw new ArgumentNullException("*central (ConsultarCardCode) no configurado en el archivo config*");
+                    break;
+
+                case string s when s.Contains("10071_3_102_957515"):
+                case "METROPOLI":
+                    sNameBd = IniFil.LeerINI("CodSocio", "metropoli") ?? throw new ArgumentNullException("*central (ConsultarCardCode) no configurado en el archivo config*");
+                    break;
+
 
                 default:
                     sNameBd = string.Empty;
@@ -5287,6 +5297,14 @@ namespace Inter_Hechiz.Data
                         ColumName = "U_Envio_Expresso";
                         break;
 
+                    case "jjmax":
+                        ColumName = "U_Envio_JJMax";
+                        break;
+
+                    case "metropoli":
+                        ColumName = "U_Envio_Metropoli";
+                        break;
+
                     default:
                         ColumName = string.Empty;
                         break;
@@ -5351,6 +5369,14 @@ namespace Inter_Hechiz.Data
                         ColumName = "U_Enviado_Expresso";
                         break;
 
+                    case "jjmax":
+                        ColumName = "U_Enviado_JJMax";
+                        break;
+
+                    case "metropoli":
+                        ColumName = "U_Enviado_Metropoli";
+                        break;
+
                     default:
                         ColumName = string.Empty;
                         break;
@@ -5408,6 +5434,14 @@ namespace Inter_Hechiz.Data
 
                     case "desampa":
                         ColumName = "COD_DESAMPA";
+                        break;
+
+                    case "jjmax":
+                        ColumName = "COD_JJMAX";
+                        break;
+
+                    case "metropoli":
+                        ColumName = "COD_METROPOLI";
                         break;
 
                     default:
@@ -8580,6 +8614,7 @@ namespace Inter_Hechiz.Data
     {
         public int DocEntry { get; set; }
         public int DocNum { get; set; }
+        public int AbsEntry { get; set; }
         public List<SapDocumentLine> DocumentLines { get; set; }
     }
 

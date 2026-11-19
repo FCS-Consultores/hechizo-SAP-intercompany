@@ -15,15 +15,14 @@ namespace Inter_Hechiz
         static void Main(string[] args)
         {
 
-
             OcultarConsola.DisappearConsole();
 
             RegistroLog objRegistraLog = new RegistroLog();
             Data.Intercompany.SINCROERROR_V2();
-
+            
             
             #region fabricanteGEN
-
+            
             Data.Intercompany.Fabricante(Conexion.BD_sur, Conexion.token_sur);
             Data.Intercompany.Fabricante(Conexion.BD_omdo, Conexion.token_omdo);
             Data.Intercompany.Fabricante(Conexion.BD_nedn, Conexion.token_nedn);
@@ -33,6 +32,8 @@ namespace Inter_Hechiz
             Data.Intercompany.Fabricante(Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.Fabricante(Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.Fabricante(Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.Fabricante(Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.Fabricante(Conexion.BD_metropoli, Conexion.token_metropoli);
 
             #endregion
 
@@ -47,6 +48,8 @@ namespace Inter_Hechiz
             Data.Intercompany.GrupoArt(Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.GrupoArt(Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.GrupoArt(Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.GrupoArt(Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.GrupoArt(Conexion.BD_metropoli, Conexion.token_metropoli);
 
             #endregion
 
@@ -61,6 +64,8 @@ namespace Inter_Hechiz
             Data.Intercompany.GrupoSN(Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.GrupoSN(Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.GrupoSN(Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.GrupoSN(Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.GrupoSN(Conexion.BD_metropoli, Conexion.token_metropoli);
 
             #endregion
 
@@ -75,6 +80,8 @@ namespace Inter_Hechiz
             Data.Intercompany.condicionespago(Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.condicionespago(Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.condicionespago(Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.condicionespago(Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.condicionespago(Conexion.BD_metropoli, Conexion.token_metropoli);
 
             #endregion
 
@@ -89,7 +96,8 @@ namespace Inter_Hechiz
             Data.Intercompany.CreararticuloTODASV2("emde");
             Data.Intercompany.CreararticuloTODASV2("central");
             Data.Intercompany.CreararticuloTODASV2("desampa");
-
+            Data.Intercompany.CreararticuloTODASV2("jjmax");
+            Data.Intercompany.CreararticuloTODASV2("metropoli");
 
             #endregion
 
@@ -104,6 +112,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ActualizararticuloTODASV2("emde");
             Data.Intercompany.ActualizararticuloTODASV2("central");
             Data.Intercompany.ActualizararticuloTODASV2("desampa");
+            Data.Intercompany.ActualizararticuloTODASV2("jjmax");
+            Data.Intercompany.ActualizararticuloTODASV2("metropoli");
 
             #endregion
 
@@ -120,6 +130,8 @@ namespace Inter_Hechiz
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_hogar, Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_hogar, Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_hogar, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_hogar, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_hogar, Conexion.BD_metropoli, Conexion.token_metropoli);
 
             #endregion
 
@@ -133,6 +145,8 @@ namespace Inter_Hechiz
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_sur, Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_sur, Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_sur, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_sur, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_sur, Conexion.BD_metropoli, Conexion.token_metropoli);
 
             #endregion
 
@@ -146,6 +160,9 @@ namespace Inter_Hechiz
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_omdo, Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_omdo, Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_omdo, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_omdo, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_omdo, Conexion.BD_metropoli, Conexion.token_metropoli);
+
             #endregion
 
             #region enviar socios desde nedn
@@ -158,6 +175,8 @@ namespace Inter_Hechiz
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_nedn, Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_nedn, Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_nedn, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_nedn, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_nedn, Conexion.BD_metropoli, Conexion.token_metropoli);
 
             #endregion
 
@@ -171,6 +190,8 @@ namespace Inter_Hechiz
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_flores, Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_flores, Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_flores, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_flores, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_flores, Conexion.BD_metropoli, Conexion.token_metropoli);
             #endregion
 
             #region enviar socios desde vital
@@ -183,6 +204,8 @@ namespace Inter_Hechiz
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_vital, Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_vital, Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_vital, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_vital, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_vital, Conexion.BD_metropoli, Conexion.token_metropoli);
 
 
             #endregion
@@ -197,6 +220,8 @@ namespace Inter_Hechiz
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_emde, Conexion.BD_vital, Conexion.token_vital);
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_emde, Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_emde, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_emde, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_emde, Conexion.BD_metropoli, Conexion.token_metropoli);
 
             #endregion
 
@@ -210,6 +235,8 @@ namespace Inter_Hechiz
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_central, Conexion.BD_vital, Conexion.token_vital);
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_central, Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_central, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_central, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_central, Conexion.BD_metropoli, Conexion.token_metropoli);
             #endregion
 
             #region enviar socios a desampa (expresso)
@@ -222,10 +249,44 @@ namespace Inter_Hechiz
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_desampa, Conexion.BD_vital, Conexion.token_vital);
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_desampa, Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_desampa, Conexion.BD_central, Conexion.token_central);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_desampa, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_desampa, Conexion.BD_metropoli, Conexion.token_metropoli);
+
+            #endregion
+            
+            #region enviar socios a jjmax
+
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_hogar, Conexion.token_hogarn);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_sur, Conexion.token_sur);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_omdo, Conexion.token_omdo);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_nedn, Conexion.token_nedn);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_flores, Conexion.token_flores);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_vital, Conexion.token_vital);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_emde, Conexion.token_emde);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_central, Conexion.token_central);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_metropoli, Conexion.token_metropoli);
 
             #endregion
 
+            #region enviar socios a metropoli
+
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_hogar, Conexion.token_hogarn);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_sur, Conexion.token_sur);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_omdo, Conexion.token_omdo);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_nedn, Conexion.token_nedn);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_flores, Conexion.token_flores);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_vital, Conexion.token_vital);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_emde, Conexion.token_emde);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_central, Conexion.token_central);
+            Data.Intercompany.CrearSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_jjmax, Conexion.token_jjmax);
+
             #endregion
+
+
+
+            //#endregion
 
 
             #region SOCIOactualiza
@@ -240,6 +301,10 @@ namespace Inter_Hechiz
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_hogar, Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_hogar, Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_hogar, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_hogar, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_hogar, Conexion.BD_metropoli, Conexion.token_metropoli);
+
+
             #endregion
 
             #region actualizar socios desde sur
@@ -252,9 +317,11 @@ namespace Inter_Hechiz
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_sur, Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_sur, Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_sur, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_sur, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_sur, Conexion.BD_metropoli, Conexion.token_metropoli);
 
             #endregion
-
+             
             #region actualizar socios desde Omdo
 
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_omdo, Conexion.BD_hogar, Conexion.token_hogarn);
@@ -265,6 +332,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_omdo, Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_omdo, Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_omdo, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_omdo, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_omdo, Conexion.BD_metropoli, Conexion.token_metropoli);
 
             #endregion
 
@@ -278,6 +347,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_nedn, Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_nedn, Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_nedn, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_nedn, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_nedn, Conexion.BD_metropoli, Conexion.token_metropoli);
 
             #endregion
 
@@ -291,6 +362,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_flores, Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_flores, Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_flores, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_flores, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_flores, Conexion.BD_metropoli, Conexion.token_metropoli);
 
             #endregion
 
@@ -304,6 +377,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_vital, Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_vital, Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_vital, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_vital, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_vital, Conexion.BD_metropoli, Conexion.token_metropoli);
 
             #endregion
 
@@ -317,6 +392,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_emde, Conexion.BD_vital, Conexion.token_vital);
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_emde, Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_emde, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_emde, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_emde, Conexion.BD_metropoli, Conexion.token_metropoli);
 
             #endregion
 
@@ -330,6 +407,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_central, Conexion.BD_vital, Conexion.token_vital);
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_central, Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_central, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_central, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_central, Conexion.BD_metropoli, Conexion.token_metropoli);
 
             #endregion
 
@@ -343,42 +422,75 @@ namespace Inter_Hechiz
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_desampa, Conexion.BD_vital, Conexion.token_vital);
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_desampa, Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_desampa, Conexion.BD_central, Conexion.token_central);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_desampa, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_desampa, Conexion.BD_metropoli, Conexion.token_metropoli);
 
             #endregion
 
+
+            #region actualizar socios desde jjmax
+
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_hogar, Conexion.token_hogarn);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_sur, Conexion.token_sur);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_omdo, Conexion.token_omdo);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_nedn, Conexion.token_nedn);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_flores, Conexion.token_flores);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_vital, Conexion.token_vital);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_emde, Conexion.token_emde);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_central, Conexion.token_central);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_jjmax, Conexion.BD_metropoli, Conexion.token_metropoli);
+
             #endregion
 
 
+            #region actualizar socios desde metropoli
+
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_hogar, Conexion.token_hogarn);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_sur, Conexion.token_sur);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_omdo, Conexion.token_omdo);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_nedn, Conexion.token_nedn);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_flores, Conexion.token_flores);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_vital, Conexion.token_vital);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_emde, Conexion.token_emde);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_central, Conexion.token_central);
+            Data.Intercompany.ActualizaSOCIOTODAS(Conexion.BD_metropoli, Conexion.BD_jjmax, Conexion.token_jjmax);
+
+            #endregion
+
+
+            #endregion
 
             #region Descuentos
 
-            Data.Intercompany.CrearGrupoDescuento(Conexion.BD_sur, Conexion.token_sur);
-            Data.Intercompany.CrearGrupoDescuento(Conexion.BD_omdo, Conexion.token_omdo);
-            Data.Intercompany.CrearGrupoDescuento(Conexion.BD_nedn, Conexion.token_nedn);
-            Data.Intercompany.CrearGrupoDescuento(Conexion.BD_hogar, Conexion.token_hogarn);
-            Data.Intercompany.CrearGrupoDescuento(Conexion.BD_flores, Conexion.token_flores);
-            Data.Intercompany.CrearGrupoDescuento(Conexion.BD_vital, Conexion.token_vital);
-            Data.Intercompany.CrearGrupoDescuento(Conexion.BD_emde, Conexion.token_emde);
-            Data.Intercompany.CrearGrupoDescuento(Conexion.BD_central, Conexion.token_central);
-            Data.Intercompany.CrearGrupoDescuento(Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.CrearGrupoDescuentoV2(Conexion.BD_sur, Conexion.token_sur);
+            Data.Intercompany.CrearGrupoDescuentoV2(Conexion.BD_omdo, Conexion.token_omdo);
+            Data.Intercompany.CrearGrupoDescuentoV2(Conexion.BD_nedn, Conexion.token_nedn);
+            Data.Intercompany.CrearGrupoDescuentoV2(Conexion.BD_hogar, Conexion.token_hogarn);
+            Data.Intercompany.CrearGrupoDescuentoV2(Conexion.BD_flores, Conexion.token_flores);
+            Data.Intercompany.CrearGrupoDescuentoV2(Conexion.BD_vital, Conexion.token_vital);
+            Data.Intercompany.CrearGrupoDescuentoV2(Conexion.BD_emde, Conexion.token_emde);
+            Data.Intercompany.CrearGrupoDescuentoV2(Conexion.BD_central, Conexion.token_central);
+            Data.Intercompany.CrearGrupoDescuentoV2(Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.CrearGrupoDescuentoV2(Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.CrearGrupoDescuentoV2(Conexion.BD_metropoli, Conexion.token_metropoli);
 
-           
-            // Data.Intercompany.CrearGrupoDescuentoV2(Conexion.BD_desampa, Conexion.token_desampa);
-
-            //Data.Intercompany.ActualizarGrupoDescuentoV2("sur", Conexion.token_sur);
-            //Data.Intercompany.ActualizarGrupoDescuentoV2("omdo", Conexion.token_omdo);
-            //Data.Intercompany.ActualizarGrupoDescuentoV2("nedn", Conexion.token_nedn);
-            //Data.Intercompany.ActualizarGrupoDescuentoV2("hogar", Conexion.token_hogarn);
-            //Data.Intercompany.ActualizarGrupoDescuentoV2("flores", Conexion.token_flores);
-            //Data.Intercompany.ActualizarGrupoDescuentoV2("vital", Conexion.token_vital);
-            //Data.Intercompany.ActualizarGrupoDescuentoV2("emde", Conexion.token_emde);
-            //Data.Intercompany.ActualizarGrupoDescuentoV2("central", Conexion.token_central);
-            //Data.Intercompany.ActualizarGrupoDescuentoV2("desampa", Conexion.token_desampa);
+            Data.Intercompany.ActualizarGrupoDescuentoV2("sur", Conexion.token_sur);
+            Data.Intercompany.ActualizarGrupoDescuentoV2("omdo", Conexion.token_omdo);
+            Data.Intercompany.ActualizarGrupoDescuentoV2("nedn", Conexion.token_nedn);
+            Data.Intercompany.ActualizarGrupoDescuentoV2("hogar", Conexion.token_hogarn);
+            Data.Intercompany.ActualizarGrupoDescuentoV2("flores", Conexion.token_flores);
+            Data.Intercompany.ActualizarGrupoDescuentoV2("vital", Conexion.token_vital);
+            Data.Intercompany.ActualizarGrupoDescuentoV2("emde", Conexion.token_emde);
+            Data.Intercompany.ActualizarGrupoDescuentoV2("central", Conexion.token_central);
+            Data.Intercompany.ActualizarGrupoDescuentoV2("desampa", Conexion.token_desampa);
+            Data.Intercompany.ActualizarGrupoDescuentoV2("jjmax", Conexion.token_jjmax);
+            Data.Intercompany.ActualizarGrupoDescuentoV2("metropoli", Conexion.token_metropoli);
 
             #endregion
 
-           
-
+            
             #region CrearVendedores
 
             Data.Intercompany.Crearvendedores("hogar");
@@ -390,6 +502,8 @@ namespace Inter_Hechiz
             Data.Intercompany.Crearvendedores("emde");
             Data.Intercompany.Crearvendedores("central");
             Data.Intercompany.Crearvendedores("desampa");
+            Data.Intercompany.Crearvendedores("jjmax");
+            Data.Intercompany.Crearvendedores("metropoli");
 
             #endregion
 
@@ -404,10 +518,12 @@ namespace Inter_Hechiz
             Data.Intercompany.Actualizarvendedores("emde");
             Data.Intercompany.Actualizarvendedores("central");
             Data.Intercompany.Actualizarvendedores("desampa");
+            Data.Intercompany.Actualizarvendedores("jjmax");
+            Data.Intercompany.Actualizarvendedores("metropoli");
 
             #endregion
 
-
+           
 
             #region CrearEmpleados
 
@@ -420,6 +536,8 @@ namespace Inter_Hechiz
             Data.Intercompany.CrearEmpleados("emde");
             Data.Intercompany.CrearEmpleados("central");
             Data.Intercompany.CrearEmpleados("desampa");
+            Data.Intercompany.CrearEmpleados("jjmax");
+            Data.Intercompany.CrearEmpleados("metropoli");
 
             #endregion
 
@@ -434,6 +552,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ActualizarEmpleados("emde");
             Data.Intercompany.ActualizarEmpleados("central");
             Data.Intercompany.ActualizarEmpleados("desampa");
+            Data.Intercompany.ActualizarEmpleados("jjmax");
+            Data.Intercompany.ActualizarEmpleados("metropoli");
 
             #endregion
 
@@ -448,14 +568,18 @@ namespace Inter_Hechiz
             Data.Intercompany.ProcesarSolictComp("emde", Conexion.token_hechizo);
             Data.Intercompany.ProcesarSolictComp("central", Conexion.token_hechizo);
             Data.Intercompany.ProcesarSolictComp("desampa", Conexion.token_hechizo);
+            Data.Intercompany.ProcesarSolictComp("jjmax", Conexion.token_hechizo);
+            Data.Intercompany.ProcesarSolictComp("metropoli", Conexion.token_hechizo);
 
             #endregion
+         
 
             #region Convertir todas las solicitudes de compra a OrdVenta  (Proceso interno Hechizo, no es entre demás empresas)
 
             Data.Intercompany.ProcesarEnOrdVentaHechizo(Conexion.token_hechizo);
 
             #endregion
+ 
 
             #region Procesa las ord venta de Hechizo a Ord Compra en las sucursales (tomando como documento base las solicitudes de la sucursal de destino)
 
@@ -468,8 +592,10 @@ namespace Inter_Hechiz
             Data.Intercompany.ProcesarEnOrdCompra("emde", Conexion.token_emde);
             Data.Intercompany.ProcesarEnOrdCompra("central", Conexion.token_central);
             Data.Intercompany.ProcesarEnOrdCompra("desampa", Conexion.token_desampa);
+            Data.Intercompany.ProcesarEnOrdCompra("jjmax", Conexion.token_jjmax);
+            Data.Intercompany.ProcesarEnOrdCompra("metropoli", Conexion.token_metropoli);
 
-            //Data.Intercompany.ProcesarEnOrdCompraV2("desampa", Conexion.token_desampa); TEST
+            //Data.Intercompany.ProcesarEnOrdCompraV2("desampa", Conexion.token_desampa); 
 
             #endregion
 
@@ -484,6 +610,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ActualizarEnOrdCompra("emde", Conexion.token_emde);
             Data.Intercompany.ActualizarEnOrdCompra("central", Conexion.token_central);
             Data.Intercompany.ActualizarEnOrdCompra("desampa", Conexion.token_desampa);
+            Data.Intercompany.ActualizarEnOrdCompra("jjmax", Conexion.token_jjmax);
+            Data.Intercompany.ActualizarEnOrdCompra("metropoli", Conexion.token_metropoli);
 
             // Data.Intercompany.ActualizarEnOrdCompraV2("desampa", Conexion.token_desampa); TEST
 
@@ -501,6 +629,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ProcesarFacturaProveEnSucursales("emde", Conexion.token_emde);
             Data.Intercompany.ProcesarFacturaProveEnSucursales("central", Conexion.token_central);
             Data.Intercompany.ProcesarFacturaProveEnSucursales("desampa", Conexion.token_desampa);
+            Data.Intercompany.ProcesarFacturaProveEnSucursales("jjmax", Conexion.token_jjmax);
+            Data.Intercompany.ProcesarFacturaProveEnSucursales("metropoli", Conexion.token_metropoli);
 
             #endregion
 
@@ -515,10 +645,13 @@ namespace Inter_Hechiz
             Data.Intercompany.ProcesarNotasCredProveEnSucursales("emde", Conexion.token_emde);
             Data.Intercompany.ProcesarNotasCredProveEnSucursales("central", Conexion.token_central);
             Data.Intercompany.ProcesarNotasCredProveEnSucursales("desampa", Conexion.token_desampa);
+            Data.Intercompany.ProcesarNotasCredProveEnSucursales("jjmax", Conexion.token_jjmax);
+            Data.Intercompany.ProcesarNotasCredProveEnSucursales("metropoli", Conexion.token_metropoli);
 
             #endregion
 
-            #region Replica la actualizacion de las FacturaVendedor de Hechizo en las FactProve en las sucursales
+
+            #region Replica la actualizacion de las Factura Vendedor de Hechizo en las FactProve en las sucursales
 
             Data.Intercompany.ActualizarEnFacturaProvee("hogar", Conexion.token_hogarn);
             Data.Intercompany.ActualizarEnFacturaProvee("sur", Conexion.token_sur);
@@ -529,6 +662,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ActualizarEnFacturaProvee("emde", Conexion.token_emde);
             Data.Intercompany.ActualizarEnFacturaProvee("central", Conexion.token_central);
             Data.Intercompany.ActualizarEnFacturaProvee("desampa", Conexion.token_desampa);
+            Data.Intercompany.ActualizarEnFacturaProvee("jjmax", Conexion.token_jjmax);
+            Data.Intercompany.ActualizarEnFacturaProvee("metropoli", Conexion.token_metropoli);
 
 
             #endregion
@@ -544,6 +679,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ActualizarEnNotaCredProvee("emde", Conexion.token_hechizo);
             Data.Intercompany.ActualizarEnNotaCredProvee("central", Conexion.token_hechizo);
             Data.Intercompany.ActualizarEnNotaCredProvee("desampa", Conexion.token_desampa);
+            Data.Intercompany.ActualizarEnNotaCredProvee("jjmax", Conexion.token_jjmax);
+            Data.Intercompany.ActualizarEnNotaCredProvee("metropoli", Conexion.token_metropoli);
 
             #endregion
 
@@ -559,6 +696,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ProcesarCuentasdesdeHechizoV2("emde", Conexion.token_emde, Data.Intercompany.ProcesoCuenta.Crear);
             Data.Intercompany.ProcesarCuentasdesdeHechizoV2("central", Conexion.token_central, Data.Intercompany.ProcesoCuenta.Crear);
             Data.Intercompany.ProcesarCuentasdesdeHechizoV2("desampa", Conexion.token_desampa, Data.Intercompany.ProcesoCuenta.Crear);
+            Data.Intercompany.ProcesarCuentasdesdeHechizoV2("jjmax", Conexion.token_jjmax, Data.Intercompany.ProcesoCuenta.Crear);
+            Data.Intercompany.ProcesarCuentasdesdeHechizoV2("metropoli", Conexion.token_metropoli, Data.Intercompany.ProcesoCuenta.Crear);
 
             #endregion
 
@@ -572,6 +711,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ProcesarCuentasdesdeHechizoV2("emde", Conexion.token_emde, Data.Intercompany.ProcesoCuenta.Actualizar);
             Data.Intercompany.ProcesarCuentasdesdeHechizoV2("central", Conexion.token_central, Data.Intercompany.ProcesoCuenta.Actualizar);
             Data.Intercompany.ProcesarCuentasdesdeHechizoV2("desampa", Conexion.token_desampa, Data.Intercompany.ProcesoCuenta.Actualizar);
+            Data.Intercompany.ProcesarCuentasdesdeHechizoV2("jjmax", Conexion.token_jjmax, Data.Intercompany.ProcesoCuenta.Actualizar);
+            Data.Intercompany.ProcesarCuentasdesdeHechizoV2("metropoli", Conexion.token_metropoli, Data.Intercompany.ProcesoCuenta.Actualizar);
             #endregion
 
             #endregion
@@ -589,6 +730,9 @@ namespace Inter_Hechiz
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_emde, Conexion.BD_Hechizo, Conexion.token_hechizo);
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_central, Conexion.BD_Hechizo, Conexion.token_hechizo);
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_desampa, Conexion.BD_Hechizo, Conexion.token_hechizo);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_jjmax, Conexion.BD_Hechizo, Conexion.token_hechizo);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_metropoli, Conexion.BD_Hechizo, Conexion.token_hechizo);
+
 
             #endregion
 
@@ -603,6 +747,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_emde, Conexion.BD_hogar, Conexion.token_hogarn);
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_central, Conexion.BD_hogar, Conexion.token_hogarn);
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_desampa, Conexion.BD_hogar, Conexion.token_hogarn);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_jjmax, Conexion.BD_hogar, Conexion.token_hogarn);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_metropoli, Conexion.BD_hogar, Conexion.token_hogarn);
 
             #endregion
 
@@ -617,6 +763,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_emde, Conexion.BD_sur, Conexion.token_sur);
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_central, Conexion.BD_sur, Conexion.token_sur);
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_desampa, Conexion.BD_sur, Conexion.token_sur);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_jjmax, Conexion.BD_sur, Conexion.token_sur);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_metropoli, Conexion.BD_sur, Conexion.token_sur);
 
             #endregion
 
@@ -631,6 +779,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_emde, Conexion.BD_omdo, Conexion.token_omdo);
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_central, Conexion.BD_omdo, Conexion.token_omdo);
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_desampa, Conexion.BD_omdo, Conexion.token_omdo);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_jjmax, Conexion.BD_omdo, Conexion.token_omdo);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_metropoli, Conexion.BD_omdo, Conexion.token_omdo);
 
             #endregion
 
@@ -645,20 +795,24 @@ namespace Inter_Hechiz
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_emde, Conexion.BD_nedn, Conexion.token_nedn);
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_central, Conexion.BD_nedn, Conexion.token_nedn);
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_desampa, Conexion.BD_nedn, Conexion.token_nedn);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_jjmax, Conexion.BD_nedn, Conexion.token_nedn);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_metropoli, Conexion.BD_nedn, Conexion.token_nedn);
 
             #endregion
 
             #region enviar pagos recibidos a flores
 
-            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_Hechizo, Conexion.BD_flores, Conexion.BD_flores);
-            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_hogar, Conexion.BD_flores, Conexion.BD_flores);
-            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_sur, Conexion.BD_flores, Conexion.BD_flores);
-            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_omdo, Conexion.BD_flores, Conexion.BD_flores);
-            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_nedn, Conexion.BD_flores, Conexion.BD_flores);
-            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_vital, Conexion.BD_flores, Conexion.BD_flores);
-            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_emde, Conexion.BD_flores, Conexion.BD_flores);
-            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_central, Conexion.BD_flores, Conexion.BD_flores);
-            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_desampa, Conexion.BD_flores, Conexion.BD_flores);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_Hechizo, Conexion.BD_flores, Conexion.token_flores);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_hogar, Conexion.BD_flores, Conexion.token_flores);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_sur, Conexion.BD_flores, Conexion.token_flores);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_omdo, Conexion.BD_flores, Conexion.token_flores);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_nedn, Conexion.BD_flores, Conexion.token_flores);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_vital, Conexion.BD_flores, Conexion.token_flores);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_emde, Conexion.BD_flores, Conexion.token_flores);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_central, Conexion.BD_flores, Conexion.token_flores);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_desampa, Conexion.BD_flores, Conexion.token_flores);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_jjmax, Conexion.BD_flores, Conexion.token_flores);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_metropoli, Conexion.BD_flores, Conexion.token_flores);
 
             #endregion
 
@@ -673,6 +827,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_emde, Conexion.BD_vital, Conexion.token_vital);
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_central, Conexion.BD_vital, Conexion.token_vital);
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_desampa, Conexion.BD_vital, Conexion.token_vital);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_jjmax, Conexion.BD_vital, Conexion.token_vital);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_metropoli, Conexion.BD_vital, Conexion.token_vital);
 
             #endregion
 
@@ -687,6 +843,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_vital, Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_central, Conexion.BD_emde, Conexion.token_emde);
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_desampa, Conexion.BD_emde, Conexion.token_emde);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_jjmax, Conexion.BD_emde, Conexion.token_emde);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_metropoli, Conexion.BD_emde, Conexion.token_emde);
 
             #endregion
 
@@ -701,6 +859,8 @@ namespace Inter_Hechiz
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_vital, Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_emde, Conexion.BD_central, Conexion.token_central);
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_desampa, Conexion.BD_central, Conexion.token_central);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_jjmax, Conexion.BD_central, Conexion.token_central);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_metropoli, Conexion.BD_central, Conexion.token_central);
 
             #endregion
 
@@ -715,8 +875,43 @@ namespace Inter_Hechiz
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_vital, Conexion.BD_desampa, Conexion.token_desampa);
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_emde, Conexion.BD_desampa, Conexion.token_desampa);
             Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_central, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_jjmax, Conexion.BD_desampa, Conexion.token_desampa);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_metropoli, Conexion.BD_desampa, Conexion.token_desampa);
 
             #endregion
+
+
+            #region enviar pagos recibidos a jjMax
+
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_Hechizo, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_hogar, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_sur, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_omdo, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_nedn, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_flores, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_vital, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_emde, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_central, Conexion.BD_jjmax, Conexion.token_jjmax);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_metropoli, Conexion.BD_jjmax, Conexion.token_jjmax);
+
+            #endregion
+
+
+            #region enviar pagos recibidos a Metropoli
+
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_Hechizo, Conexion.BD_metropoli, Conexion.token_metropoli);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_hogar, Conexion.BD_metropoli, Conexion.token_metropoli);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_sur, Conexion.BD_metropoli, Conexion.token_metropoli);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_omdo, Conexion.BD_metropoli, Conexion.token_metropoli);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_nedn, Conexion.BD_metropoli, Conexion.token_metropoli);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_flores, Conexion.BD_metropoli, Conexion.token_metropoli);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_vital, Conexion.BD_metropoli, Conexion.token_metropoli);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_emde, Conexion.BD_metropoli, Conexion.token_metropoli);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_central, Conexion.BD_metropoli, Conexion.token_metropoli);
+            Data.Intercompany.ProcesarEnPagoRecibido(Conexion.BD_jjmax, Conexion.BD_metropoli, Conexion.token_metropoli);
+
+            #endregion
+
 
             #endregion
 

@@ -1,1 +1,0 @@
-﻿Error al intentar Insertar articulo : ERROR [42000] [SAP AG][LIBODBCHDB DLL][HDBODBC] Syntax error or access violation;257 sql syntax error: incorrect syntax near "WHERE": line 99 col 41 (at pos 7485)/ Hora: 16:10:33 PM

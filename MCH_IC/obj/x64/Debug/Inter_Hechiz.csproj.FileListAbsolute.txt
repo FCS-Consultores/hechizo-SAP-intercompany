@@ -40,3 +40,14 @@ E:\J.Daniel-One Drive\OneDrive - FCS Consultores\Project\PROYECTOS C# y Scrip\In
 E:\J.Daniel-One Drive\OneDrive - FCS Consultores\Project\PROYECTOS C# y Scrip\IntercompanyCR\Intercompany hechizos\Intercompany hechizos\MCH_IC\obj\x64\Debug\MCH_IC.exe
 E:\J.Daniel-One Drive\OneDrive - FCS Consultores\Project\PROYECTOS C# y Scrip\IntercompanyCR\Intercompany hechizos\Intercompany hechizos\MCH_IC\obj\x64\Debug\MCH_IC.pdb
 E:\J.Daniel-One Drive\OneDrive - FCS Consultores\Project\PROYECTOS C# y Scrip\IntercompanyCR\Intercompany hechizos\Intercompany hechizos\MCH_IC\obj\x64\Debug\Inter_Hechiz.csproj.AssemblyReference.cache
+E:\Marco\INTERCOMPANY\Intercompany hechizos\MCH_IC\bin\x64\Debug\MCH_IC.exe.config
+E:\Marco\INTERCOMPANY\Intercompany hechizos\MCH_IC\bin\x64\Debug\MCH_IC.exe
+E:\Marco\INTERCOMPANY\Intercompany hechizos\MCH_IC\bin\x64\Debug\MCH_IC.pdb
+E:\Marco\INTERCOMPANY\Intercompany hechizos\MCH_IC\bin\x64\Debug\Newtonsoft.Json.dll
+E:\Marco\INTERCOMPANY\Intercompany hechizos\MCH_IC\bin\x64\Debug\SAPBusinessOneSDK.dll
+E:\Marco\INTERCOMPANY\Intercompany hechizos\MCH_IC\bin\x64\Debug\Newtonsoft.Json.xml
+E:\Marco\INTERCOMPANY\Intercompany hechizos\MCH_IC\obj\x64\Debug\Inter_Hechiz.csproj.CoreCompileInputs.cache
+E:\Marco\INTERCOMPANY\Intercompany hechizos\MCH_IC\obj\x64\Debug\Inter_Hechiz.csproj.CopyComplete
+E:\Marco\INTERCOMPANY\Intercompany hechizos\MCH_IC\obj\x64\Debug\MCH_IC.exe
+E:\Marco\INTERCOMPANY\Intercompany hechizos\MCH_IC\obj\x64\Debug\MCH_IC.pdb
+E:\Marco\INTERCOMPANY\Intercompany hechizos\MCH_IC\obj\x64\Debug\Inter_Hechiz.csproj.AssemblyReference.cache

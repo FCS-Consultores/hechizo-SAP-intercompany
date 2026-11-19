@@ -22,7 +22,9 @@ namespace Inter_Hechiz.Data
         public static string token_vital = CrearToken("BD_vital");
         public static string token_emde = CrearToken("BD_emde");
         public static string token_central = CrearToken("BD_central");
-        public static string token_desampa = CrearToken("BD_desampa"); 
+        public static string token_desampa = CrearToken("BD_desampa");
+        public static string token_jjmax = CrearToken("BD_jjmax");
+        public static string token_metropoli = CrearToken("BD_metropoli");
 
         public static string strCon = conexionhana();
         public static string BD_Hechizo = Consultar_Hechizo();
@@ -35,6 +37,8 @@ namespace Inter_Hechiz.Data
         public static string BD_emde = Consultar_emde();
         public static string BD_central = Consultar_central();
         public static string BD_desampa = Consultar_desampa();
+        public static string BD_jjmax = Consultar_jjMax();
+        public static string BD_metropoli = Consultar_metropoli();
 
         public static string conexionhana()
         {
@@ -229,6 +233,40 @@ namespace Inter_Hechiz.Data
             }
         }
 
+        private static string Consultar_jjMax()
+        {
+            RegistroLog objRegistraLog = new RegistroLog(); //Log en caso de error
+            try
+            {
+                IniFile IniFil;
+                IniFil = new IniFile(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "/config.ini");
+                string farmar = IniFil.LeerINI("ConexionHanaProd", "jjmax");
+                return farmar;
+            }
+            catch (Exception ex)
+            {
+                objRegistraLog.Graba(ex + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));
+                return "";
+            }
+        }
+
+        private static string Consultar_metropoli()
+        {
+            RegistroLog objRegistraLog = new RegistroLog(); //Log en caso de error
+            try
+            {
+                IniFile IniFil;
+                IniFil = new IniFile(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "/config.ini");
+                string farmar = IniFil.LeerINI("ConexionHanaProd", "metropoli");
+                return farmar;
+            }
+            catch (Exception ex)
+            {
+                objRegistraLog.Graba(ex + "/ " + "Hora: " + DateTime.Now.ToString("HH:mm:ss tt"));
+                return "";
+            }
+        }
+
         private static string CrearToken(string _DB)
         {
 
@@ -285,6 +323,14 @@ namespace Inter_Hechiz.Data
 
                     case "BD_desampa":
                         _DB = Consultar_desampa();
+                        break;
+
+                    case "BD_jjmax":
+                        _DB = Consultar_jjMax();
+                        break;
+
+                    case "BD_metropoli":
+                        _DB = Consultar_metropoli();
                         break;
 
                     default:
