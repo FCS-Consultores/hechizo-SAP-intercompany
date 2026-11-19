@@ -1773,7 +1773,9 @@ namespace Inter_Hechiz.Data
 
                                         if (resul == 0) // Caso que inserto
                                         {
-
+                                            // SAP deja en 0 el precio de las líneas existentes cuyo artículo cambió; se valida y corrige de inmediato
+                                            string errorPrecios;
+                                            bool preciosOk = ValidarYCorregirPreciosOrdCompra(EntryActualizar, En_Entry, JArrayDetalle, conn, BdHechizo, BdDest, tokenDestino, UrlServiceLayer, out errorPrecios);
 
                                             #region Consultar si hay en el campo de error mensaje de error previo
 
@@ -1793,7 +1795,9 @@ namespace Inter_Hechiz.Data
 
                                             #endregion
 
-                                            string msg = "OrdComp Actualizada con éxito" + (string.IsNullOrEmpty(errorPrevio) ? "" : ", " + errorPrevio);
+                                            string msg = preciosOk
+                                                ? "OrdComp Actualizada con éxito" + (string.IsNullOrEmpty(errorPrevio) ? "" : ", " + errorPrevio)
+                                                : "OrdComp Actualizada pero con ERROR DE PRECIOS, revisar la OrdCompra destino: " + errorPrecios.Replace("'", "");
 
                                             string query = $"UPDATE  \"{BdHechizo}\".\"ORDR\" SET \"U_Actualiza\" = 'N', \"U_ComentarioError\" = '{msg}'  WHERE \"DocEntry\" = {En_Entry} ";
                                             OdbcCommand cmand = new OdbcCommand(query, conn);
@@ -1826,186 +1830,6 @@ namespace Inter_Hechiz.Data
                                 }
                                 catch (Exception ex)
                                 {
-                                    objRegistraLog.Graba($"[{DateTime.Now.ToString("HH: mm:ss tt")}]Error al Actualizar las OrdCompra hacia BdDestino {BdDest}, {ex.Message}");
-                                }
-
-                            }
-
-                        }
-
-                    }
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-                objRegistraLog.Graba($"[{DateTime.Now.ToString("HH: mm:ss tt")}]Error al ActualizarEnOrdCompra hacia BdDestino {BdDest}, {ex.Message}");
-            }
-        }
-
-        /// <summary>
-        /// Replica en las ordCompra de las sucursales las actualizaciones que se hicieron desde la OrdVenta de Hechizo, agrega el log para validar preciso diferentes
-        /// </summary>
-        /// <param name="bdDestino"></param>
-        /// <param name="tokenDestino"></param>
-        public static void ActualizarEnOrdCompraV2(string bdDestino, string tokenDestino)
-        {
-            string BdHechizo = string.Empty;
-            string BdDest = string.Empty;
-            string QueryOrdComp = string.Empty;
-            string QueryDetComp = string.Empty;
-            int DocEntryProcesar = 0;
-            bool StatusDoc = false;
-            string BDConsulta2 = string.Empty;
-
-            int resul = 0;
-
-            try
-            {
-                IniFile IniFil;
-                IniFil = new IniFile(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "/config.ini");
-                string UrlServiceLayer = IniFil.LeerINI("ServiceLayer", "UrlSL");
-
-                BdHechizo = ConsultarBD("ORIGEN");
-                BdDest = ConsultarBD(bdDestino);
-                string CardCode = ConsultarCardCode(bdDestino.ToUpper());
-
-                QueryOrdComp = $@"SELECT 
-                                ""DocEntry"" 
-                                ,""DocNum"" 
-                                ,""Comments""
-                                ,""DocDate""
-                                ,""DocDueDate""
-                                ,""TaxDate""
-                                ,""DocTotal""
-                                ,""DocCur""
-                                ,""DocRate""
-                                ,""DiscPrcnt"" AS ""DiscountPercent""
-                                ,""GroupNum"" AS ""PaymentGroupCode""
-                                ,""U_DocEntryDestino""
-                                FROM ""{BdHechizo}"".ORDR
-                                EF WHERE ""CANCELED"" = 'N' AND ""DocStatus"" = 'O'  AND ""U_Actualiza"" = 'Y' AND ""CardCode"" = '{CardCode}' ";//,""TrnspCode"" AS ""TransportationCode""
-
-                QueryDetComp = $@"SELECT 
-                                ""ItemCode""
-                                ,""Quantity""                             
-                                ,""TaxCode""
-                                ,""LineTotal""
-                                ,""LineNum""                               
-                                ,""Price"" AS ""UnitPrice""
-                                FROM ""{BdHechizo}"".RDR1
-                                WHERE ""DocEntry"" = ? ";
-
-
-                using (OdbcConnection conn = new OdbcConnection(Conexion.strCon))
-                {
-                    OdbcCommand CmD = new OdbcCommand(QueryOrdComp, conn);
-
-                    conn.Open();
-
-                    using (OdbcDataReader dr = CmD.ExecuteReader())
-                    {
-
-                        if (dr.RecordsAffected != 0)
-                        {
-                            while (dr.Read())
-                            {
-                                try
-                                {
-
-                                    JObject JsonObject = new JObject();
-
-                                    int En_Entry = Convert.ToInt32(dr["DocEntry"]);
-
-                                    int DocNum = Convert.ToInt32(dr["DocNum"]);
-
-                                    int EntryActualizar = dr.IsDBNull(dr.GetOrdinal("U_DocEntryDestino")) ? 0 : dr.GetInt32(dr.GetOrdinal("U_DocEntryDestino"));
-
-                                    StatusDoc = ConsultarStatusDoc(conn, EntryActualizar, BdDest, "OPOR");
-
-                                    if (EntryActualizar != 0 && StatusDoc == true)
-                                    {
-
-                                        JsonObject = CrearObjetoJson(dr);
-
-                                        JsonObject.Remove("DocEntry");
-                                        JsonObject.Remove("DocNum");
-                                        JsonObject.Remove("U_DocEntryDestino");
-                                        JArray JArrayDetalle = new JArray();
-
-                                        OdbcCommand cmc = new OdbcCommand(QueryDetComp, conn);
-                                        cmc.Parameters.Add(new OdbcParameter("@num", En_Entry));
-
-                                        using (OdbcDataReader dtr = cmc.ExecuteReader())
-                                        {
-                                            JArrayDetalle = CrearObjetoJson2(dtr);
-                                        }
-
-                                        JsonObject.Add(new JProperty("DocumentLines", JArrayDetalle));
-
-                                        var myjs = JsonObject.ToString();
-
-                                        resul = EnviaSapPorBasicAuth("PATCH", JsonObject, UrlServiceLayer + $"PurchaseOrders({EntryActualizar})", tokenDestino);
-
-                                        if (resul == 0) // Caso que inserto
-                                        {
-                                            // Comparación de precios contra BD destino
-                                            ComparePricesAndLogActualizacion(EntryActualizar, En_Entry, JArrayDetalle, conn, BdHechizo, BdDest);
-
-                                            #region Consultar si hay en el campo de error mensaje de error previo
-
-                                            string errorPrevio = string.Empty;
-
-                                            string QuerymsgErr = $@"
-                                            SELECT ""U_ComentarioError""
-                                            FROM ""{BdHechizo}"".""ORDR""
-                                            WHERE ""DocEntry"" = '{En_Entry}'";
-
-                                            using (OdbcDataReader drr =
-                                                new OdbcCommand(QuerymsgErr, conn).ExecuteReader())
-                                            {
-                                                if (drr.Read())
-                                                    errorPrevio = drr["U_ComentarioError"].ToString();
-                                            }
-
-                                            #endregion
-
-                                            string msg = "OrdComp Actualizada con éxito" + (string.IsNullOrEmpty(errorPrevio) ? "" : ", " + errorPrevio);
-
-                                            string query = $"UPDATE  \"{BdHechizo}\".\"ORDR\" SET \"U_Actualiza\" = 'N', \"U_ComentarioError\" = '{msg}'  WHERE \"DocEntry\" = {En_Entry} ";
-                                            OdbcCommand cmand = new OdbcCommand(query, conn);
-                                            OdbcDataReader dr1 = cmand.ExecuteReader();
-
-                                            string jsComprimido = CompactJson(myjs);
-                                            objRegistraLog.GrabaJson("");
-                                            objRegistraLog.GrabaJson($"[{DateTime.Now.ToString("HH:mm:ss tt")}] BDOrigen: {BdHechizo} DEntryOrg {En_Entry}, DNumOrg {DocNum} / BDDestino {BdDest}, DEntryDest {EntryActualizar} / Json: {jsComprimido} ");
-                                        }
-                                        else
-                                        {
-                                            string query = $"UPDATE  \"{BdHechizo}\".\"ORDR\" SET \"U_ComentarioError\" = 'Sin Actualizar: {RR.Replace("'", "")}', \"U_Actualiza\" = 'N' WHERE \"DocEntry\" = {En_Entry}";
-                                            OdbcCommand cmand = new OdbcCommand(query, conn);
-                                            OdbcDataReader dr1 = cmand.ExecuteReader();
-
-                                            objRegistraLog.Graba($"[{DateTime.Now.ToString("HH:mm:ss tt")}] Error actualizando el laorden de compra en {BdDest} con el docNum orden de venta {DocNum}: " + RR.Replace("'", ""));
-                                        }
-                                    }
-                                    else
-                                    {
-
-                                        string query = $"UPDATE  \"{BdHechizo}\".\"ORDR\" SET \"U_ComentarioError\" = 'No fue posible Actualizar el documento en {BdDest} ya sea porque no se encontró el docentry relacionado: {DocEntryProcesar} o el documento relacionado esta cerrado o cancelado', \"U_Actualiza\" = 'N' WHERE \"DocEntry\" = {En_Entry}";
-                                        OdbcCommand cmand = new OdbcCommand(query, conn);
-                                        OdbcDataReader dr1 = cmand.ExecuteReader();
-
-                                        objRegistraLog.Graba($"[{DateTime.Now.ToString("HH:mm:ss tt")}] Sin Actualizar: No fue posible Actualizar el documento en {BdDest} ya sea porque no se encontró el docentry relacionado: {DocEntryProcesar}  o el documento relacionado esta cerrado o cancelado");
-                                    }
-
-
-                                }
-                                catch (Exception ex)
-                                {
-
                                     objRegistraLog.Graba($"[{DateTime.Now.ToString("HH: mm:ss tt")}]Error al Actualizar las OrdCompra hacia BdDestino {BdDest}, {ex.Message}");
                                 }
 
@@ -5884,50 +5708,136 @@ namespace Inter_Hechiz.Data
             }
         }
 
-        private static void ComparePricesAndLogActualizacion( int entryActualizar, int enEntryOrig,  JArray sentLines,  OdbcConnection conn, string bdOrigen,  string bdDestino)
+        /// <summary>
+        /// Lee las líneas de la OrdCompra destino (POR1) ordenadas por LineNum
+        /// </summary>
+        private static List<SapDocumentLine> LeerLineasOrdCompraDestino(OdbcConnection conn, int entryDestino, string bdDestino)
+        {
+            string queryLineasDestino = $@"SELECT
+                                        ""LineNum""
+                                       ,""ItemCode""
+                                       ,""Price"" AS ""UnitPrice""
+                                       FROM ""{bdDestino}"".POR1
+                                       WHERE ""DocEntry"" = ?
+                                       ORDER BY ""LineNum""";
+
+            var lineas = new List<SapDocumentLine>();
+
+            OdbcCommand cmd = new OdbcCommand(queryLineasDestino, conn);
+            cmd.Parameters.Add(new OdbcParameter("@entry", entryDestino));
+
+            using (OdbcDataReader rdr = cmd.ExecuteReader())
+            {
+                while (rdr.Read())
+                {
+                    lineas.Add(new SapDocumentLine
+                    {
+                        LineNum = rdr.GetInt32(rdr.GetOrdinal("LineNum")),
+                        ItemCode = rdr["ItemCode"].ToString(),
+                        UnitPrice = rdr.GetDecimal(rdr.GetOrdinal("UnitPrice"))
+                    });
+                }
+            }
+
+            return lineas;
+        }
+
+        /// <summary>
+        /// Después del PATCH de actualización verifica que los precios de la OrdCompra destino coincidan con el origen y,
+        /// si hay diferencias (SAP deja en 0 el precio de las líneas existentes cuyo artículo cambió), las corrige de inmediato
+        /// con un segundo PATCH que envía solo el UnitPrice, sin B1S-ReplaceCollectionsOnPatch.
+        /// </summary>
+        /// <returns>true si al final los precios coinciden; false con el detalle en errorPrecios</returns>
+        private static bool ValidarYCorregirPreciosOrdCompra(int entryActualizar, int enEntryOrig, JArray sentLines, OdbcConnection conn, string bdOrigen, string bdDestino, string tokenDestino, string urlServiceLayer, out string errorPrecios)
+        {
+            errorPrecios = string.Empty;
+
+            try
+            {
+                List<DiferenciaPrecio> diferencias = ComparePricesAndLogActualizacion(entryActualizar, enEntryOrig, sentLines, conn, bdOrigen, bdDestino);
+
+                if (diferencias == null)
+                {
+                    errorPrecios = "No fue posible verificar los precios de la OrdCompra destino";
+                    return false;
+                }
+
+                if (!diferencias.Any())
+                    return true;
+
+                // El segundo PATCH, sin ReplaceCollections, actualiza la colección por posición: un objeto por cada línea del destino,
+                // vacío en las que no se tocan y con LineNum + UnitPrice en las que se corrigen
+                List<SapDocumentLine> lineasDestino = LeerLineasOrdCompraDestino(conn, entryActualizar, bdDestino);
+
+                JArray lineasPatch = new JArray();
+                foreach (SapDocumentLine lineaDest in lineasDestino)
+                {
+                    DiferenciaPrecio dif = diferencias.FirstOrDefault(d => d.LineNum == lineaDest.LineNum);
+
+                    if (dif == null)
+                        lineasPatch.Add(new JObject());
+                    else
+                        lineasPatch.Add(new JObject { { "LineNum", dif.LineNum }, { "UnitPrice", dif.PrecioEsperado } });
+                }
+
+                JObject jsonPrecios = new JObject { { "DocumentLines", lineasPatch } };
+
+                int resPrecios = EnviaSapPorBasicAuth("PATCH", jsonPrecios, urlServiceLayer + $"PurchaseOrders({entryActualizar})", tokenDestino, "N");
+
+                if (resPrecios != 0)
+                {
+                    errorPrecios = $"Falló la corrección de precios ({string.Join("; ", diferencias.Select(d => $"línea {d.LineNum} {d.ItemCode}"))}): {RR}";
+                    objRegistraLog.Graba($"[{DateTime.Now:HH:mm:ss tt}] [ERROR] Corrección de precios BDOrigen: {bdOrigen}, DocEntryOrigen: {enEntryOrig} | BDDestino: {bdDestino}, DocEntryDestino: {entryActualizar}: {RR}");
+                    return false;
+                }
+
+                // Verificación final contra POR1
+                List<DiferenciaPrecio> pendientes = ComparePricesAndLogActualizacion(entryActualizar, enEntryOrig, sentLines, conn, bdOrigen, bdDestino, "TRAS CORRECCION");
+
+                if (pendientes == null || pendientes.Any())
+                {
+                    errorPrecios = pendientes == null
+                        ? "No fue posible verificar los precios tras la corrección"
+                        : "Persisten diferencias de precio tras la corrección: " + string.Join("; ", pendientes.Select(d => $"línea {d.LineNum} {d.ItemCode} esperado {d.PrecioEsperado:F6} obtenido {d.PrecioObtenido:F6}"));
+                    return false;
+                }
+
+                objRegistraLog.Graba($"[{DateTime.Now:HH:mm:ss tt}] [PRECIOS CORREGIDOS] BDOrigen: {bdOrigen}, DocEntryOrigen: {enEntryOrig} | BDDestino: {bdDestino}, DocEntryDestino: {entryActualizar} | Líneas: {string.Join(", ", diferencias.Select(d => d.LineNum))}");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                errorPrecios = "Error validando/corrigiendo precios: " + ex.Message;
+                objRegistraLog.Graba($"[{DateTime.Now:HH:mm:ss tt}] [ERROR] ValidarYCorregirPreciosOrdCompra EntryActualizar {entryActualizar}, BdOrig {bdOrigen} | BdDest {bdDestino}: {ex.Message}");
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Compara los precios enviados contra POR1 del destino y los registra en el log. Devuelve las diferencias, o null si no se pudo verificar.
+        /// </summary>
+        private static List<DiferenciaPrecio> ComparePricesAndLogActualizacion(int entryActualizar, int enEntryOrig, JArray sentLines, OdbcConnection conn, string bdOrigen, string bdDestino, string etapa = "ACTUALIZACION")
         {
             const int PRICE_DECIMALS = 6;
 
             try
             {
                 // Consultar líneas actualizadas directamente desde BD destino
-                string queryLineasDestino = $@"SELECT 
-                                            ""LineNum""
-                                           ,""ItemCode""
-                                           ,""Price"" AS ""UnitPrice""
-                                           FROM ""{bdDestino}"".POR1
-                                           WHERE ""DocEntry"" = ?";
-
-                var responseLines = new List<SapDocumentLine>();
-
-                OdbcCommand cmd = new OdbcCommand(queryLineasDestino, conn);
-                cmd.Parameters.Add(new OdbcParameter("@entry", entryActualizar));
-
-                using (OdbcDataReader rdr = cmd.ExecuteReader())
-                {
-                    while (rdr.Read())
-                    {
-                        responseLines.Add(new SapDocumentLine
-                        {
-                            LineNum = rdr.GetInt32(rdr.GetOrdinal("LineNum")),
-                            ItemCode = rdr["ItemCode"].ToString(),
-                            UnitPrice = rdr.GetDecimal(rdr.GetOrdinal("UnitPrice"))
-                        });
-                    }
-                }
+                List<SapDocumentLine> responseLines = LeerLineasOrdCompraDestino(conn, entryActualizar, bdDestino);
 
                 if (!responseLines.Any())
                 {
                     objRegistraLog.Graba($"[{DateTime.Now:HH:mm:ss tt}] [ADVERTENCIA] " +
                         $"ActualizarComparacion EntryActualizar {entryActualizar}, BdDest: {bdDestino}: " +
                         $"No se encontraron líneas en BD destino. BdOrig: {bdOrigen}, DocEntryOrigen {enEntryOrig}");
-                    return;
+                    return null;
                 }
 
                 // Diccionario indexado por LineNum
                 var destByLineNum = responseLines.ToDictionary(l => l.LineNum, l => l);
 
                 var differences = new List<string>();
+                var diferenciasPrecio = new List<DiferenciaPrecio>();
 
                 foreach (var sentLine in sentLines)
                 {
@@ -5959,13 +5869,21 @@ namespace Inter_Hechiz.Data
                             $"  LineNum: {lineNum,4} | ItemCode: {itemCode,-20} | " +
                             $"Precio enviado: {sentPrice,14:F6} | Precio BD Destino: {destLine.UnitPrice,14:F6}"
                         );
+
+                        diferenciasPrecio.Add(new DiferenciaPrecio
+                        {
+                            LineNum = lineNum,
+                            ItemCode = itemCode,
+                            PrecioEsperado = sentPrice,
+                            PrecioObtenido = destLine.UnitPrice
+                        });
                     }
                 }
 
                 if (differences.Any())
                 {
                     var sb = new StringBuilder();
-                    sb.AppendLine($"[{DateTime.Now:HH:mm:ss tt}] [DIFERENCIA DE PRECIOS - ACTUALIZACION] " +
+                    sb.AppendLine($"[{DateTime.Now:HH:mm:ss tt}] [DIFERENCIA DE PRECIOS - {etapa}] " +
                                   $"BDOrigen: {bdOrigen}, DocEntryOrigen: {enEntryOrig} | " +
                                   $"BDDestino: {bdDestino}, DocEntryDestino: {entryActualizar}");
 
@@ -5975,11 +5893,14 @@ namespace Inter_Hechiz.Data
                     sb.AppendLine(new string('-', 90));
                     objRegistraLog.Graba(sb.ToString());
                 }
+
+                return diferenciasPrecio;
             }
             catch (Exception ex)
             {
                 objRegistraLog.Graba($"[{DateTime.Now:HH:mm:ss tt}] [ERROR] ComparePricesAndLogActualizacion " +
                     $"EntryActualizar {entryActualizar}, BdOrig {bdOrigen} | BdDest {bdDestino}: {ex.Message}");
+                return null;
             }
         }
 
@@ -8641,6 +8562,14 @@ namespace Inter_Hechiz.Data
         public int LineNum { get; set; }
         public string ItemCode { get; set; }
         public decimal UnitPrice { get; set; }
+    }
+
+    public class DiferenciaPrecio
+    {
+        public int LineNum { get; set; }
+        public string ItemCode { get; set; }
+        public decimal PrecioEsperado { get; set; }
+        public decimal PrecioObtenido { get; set; }
     }
 
 }

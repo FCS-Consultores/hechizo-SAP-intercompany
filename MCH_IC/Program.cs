@@ -611,7 +611,6 @@ namespace Inter_Hechiz
             Data.Intercompany.ActualizarEnOrdCompra("jjmax", Conexion.token_jjmax);
             Data.Intercompany.ActualizarEnOrdCompra("metropoli", Conexion.token_metropoli);
 
-            // Data.Intercompany.ActualizarEnOrdCompraV2("desampa", Conexion.token_desampa); TEST
 
 
             #endregion
